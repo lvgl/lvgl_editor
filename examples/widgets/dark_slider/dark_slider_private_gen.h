@@ -26,7 +26,7 @@ extern "C" {
 
 typedef struct {
     lv_slider_t obj;  /* Base widget to extend */
-    lv_color_t color;
+    void * color;
 } dark_slider_t;
 
 /**********************
