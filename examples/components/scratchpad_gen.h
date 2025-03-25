@@ -33,6 +33,7 @@ extern "C" {
 
 #define SCRATCHPAD_LONG 100%
 
+
 lv_obj_t * scratchpad_create(lv_obj_t * parent);
 /**********************
  *      MACROS

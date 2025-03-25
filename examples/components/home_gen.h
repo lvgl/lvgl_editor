@@ -33,6 +33,7 @@ extern "C" {
 
 #define HOME_SLIDER_BOX_WIDTH 155
 
+
 lv_obj_t * home_create(lv_obj_t * parent);
 /**********************
  *      MACROS

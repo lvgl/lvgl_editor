@@ -32,6 +32,9 @@ extern "C" {
  *      DEFINES
  *********************/
 
+// TODO: should this definitions be prefixed with the project name?
+
+
 /**********************
  *      TYPEDEFS
  **********************/
@@ -44,6 +47,10 @@ extern "C" {
 extern lv_font_t * inter_sm;
 extern lv_font_t * inter_md;
 extern lv_font_t * inter_xl;
+
+/*Images*/
+extern const char * screenshot;
+extern const char * wink;
 
 /**********************
  * GLOBAL PROTOTYPES

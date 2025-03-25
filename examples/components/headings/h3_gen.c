@@ -36,7 +36,6 @@ lv_obj_t * h3_create(lv_obj_t * parent, const char * heading_text)
     LV_TRACE_OBJ_CREATE("begin");
 
     static lv_style_t style_main;
-    
 
     static bool style_inited = false;
 
@@ -48,16 +47,14 @@ lv_obj_t * h3_create(lv_obj_t * parent, const char * heading_text)
         style_inited = true;
     }
 
-    lv_obj_t * lv_obj = lv_label_create(parent);
-
-    lv_obj_add_style(lv_obj, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_label_set_text(lv_obj, heading_text);
-
+    lv_obj_t * lv_label_1 = lv_label_create(parent);
+    lv_obj_add_style(lv_label_1, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_label_set_text(lv_label_1, heading_text);
 
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    return lv_obj;
+    return lv_label_1;
 }
 /**********************
  *   STATIC FUNCTIONS
