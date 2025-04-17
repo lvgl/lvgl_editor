@@ -1,10 +1,9 @@
 /**
  * @file h2_gen.h
- *
  */
 
 #ifndef H2_H
-#define LV_TEMPL_H
+#define H2_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,16 +23,11 @@ extern "C" {
  **********************/
 
 /**********************
- *  STATIC PROTOTYPES
- **********************/
-
-/**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-
-
 lv_obj_t * h2_create(lv_obj_t * parent, const char * heading_text);
+
 /**********************
  *      MACROS
  **********************/
@@ -42,4 +36,4 @@ lv_obj_t * h2_create(lv_obj_t * parent, const char * heading_text);
 } /*extern "C"*/
 #endif
 
-#endif /*LV_TEMPL_H*/
+#endif /*H2_H*/

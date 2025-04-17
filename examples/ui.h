@@ -1,6 +1,5 @@
 /**
  * @file ui.h
- *
  */
 
 #ifndef UI_H
@@ -14,9 +13,9 @@ extern "C" {
  *      INCLUDES
  *********************/
 
-/*Include all the UI libraryes*/
+/* Include all the UI libraries */
 #include "lvgl/lvgl.h"
-#include "example.h"
+#include "examples.h"
 
 /*********************
  *      DEFINES

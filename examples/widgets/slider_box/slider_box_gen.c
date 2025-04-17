@@ -45,6 +45,7 @@ const lv_obj_class_t slider_box_class = {
     .event_cb = slider_box_event,
     .instance_size = sizeof(slider_box_t),
     .editable = 1,
+    .name = "slider_box"
 };
 
 /**********************
@@ -71,16 +72,14 @@ static void slider_box_constructor(const lv_obj_class_t * class_p, lv_obj_t * ob
     LV_TRACE_OBJ_CREATE("begin");
 
     slider_box_t * widget = (slider_box_t *)obj;
-
     static lv_style_t style_main;
     static lv_style_t style_button;
-
     static bool style_inited = false;
 
     if(!style_inited) {
         
         lv_style_init(&style_main);
-        lv_style_set_bg_color(&style_main, lv_color_hex(0x666666));
+        lv_style_set_bg_color(&style_main, lv_color_hex(0x000666));
         lv_style_set_bg_opa(&style_main, 255);
         lv_style_set_radius(&style_main, 12);
         lv_style_set_width(&style_main, 180);
@@ -103,7 +102,6 @@ static void slider_box_constructor(const lv_obj_class_t * class_p, lv_obj_t * ob
 
         style_inited = true;
     }
-
     lv_obj_add_style(obj, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_align(obj, LV_ALIGN_CENTER);
 
@@ -112,12 +110,10 @@ static void slider_box_constructor(const lv_obj_class_t * class_p, lv_obj_t * ob
     lv_obj_set_width(lv_button_1, 30);
     lv_obj_set_height(lv_button_1, 30);
     widget->lv_button_1 = lv_button_1;
-
     lv_obj_t * lv_label_1 = lv_label_create(lv_button_1);
     lv_label_set_text(lv_label_1, "-");
     lv_obj_set_align(lv_label_1, LV_ALIGN_CENTER);
     widget->lv_label_1 = lv_label_1;
-
     lv_obj_t * lv_label_2 = lv_label_create(obj);
     lv_obj_set_align(lv_label_2, LV_ALIGN_TOP_MID);
     lv_label_set_text(lv_label_2, "Title");
@@ -126,30 +122,26 @@ static void slider_box_constructor(const lv_obj_class_t * class_p, lv_obj_t * ob
     lv_obj_set_width(lv_label_2, LV_SIZE_CONTENT);
     lv_label_set_long_mode(lv_label_2, LV_LABEL_LONG_MODE_SCROLL);
     widget->lv_label_2 = lv_label_2;
-
     lv_obj_t * lv_button_2 = lv_button_create(obj);
     lv_obj_add_style(lv_button_2, &style_button, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_width(lv_button_2, 30);
     lv_obj_set_height(lv_button_2, 30);
     widget->lv_button_2 = lv_button_2;
-
     lv_obj_t * lv_label_3 = lv_label_create(lv_button_2);
     lv_label_set_text(lv_label_3, "+");
     lv_obj_set_align(lv_label_3, LV_ALIGN_CENTER);
     widget->lv_label_3 = lv_label_3;
-
     lv_obj_t * dark_slider_1 = dark_slider_create(obj);
     lv_obj_set_width(dark_slider_1, lv_pct(100));
     dark_slider_set_color(dark_slider_1, lv_color_hex(0x44aaff));
     lv_obj_set_style_margin_hor(dark_slider_1, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
     widget->dark_slider_1 = dark_slider_1;
 
-
     slider_box_constructor_hook(obj);
 
     LV_TRACE_OBJ_CREATE("finished");
 }
-    
+
 static void slider_box_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
 {
     LV_UNUSED(class_p);

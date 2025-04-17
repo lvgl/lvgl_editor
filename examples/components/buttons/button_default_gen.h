@@ -1,10 +1,9 @@
 /**
  * @file button_default_gen.h
- *
  */
 
 #ifndef BUTTON_DEFAULT_H
-#define LV_TEMPL_H
+#define BUTTON_DEFAULT_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,16 +23,11 @@ extern "C" {
  **********************/
 
 /**********************
- *  STATIC PROTOTYPES
- **********************/
-
-/**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-
-
 lv_obj_t * button_default_create(lv_obj_t * parent, const char * button_label);
+
 /**********************
  *      MACROS
  **********************/
@@ -42,4 +36,4 @@ lv_obj_t * button_default_create(lv_obj_t * parent, const char * button_label);
 } /*extern "C"*/
 #endif
 
-#endif /*LV_TEMPL_H*/
+#endif /*BUTTON_DEFAULT_H*/

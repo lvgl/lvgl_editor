@@ -1,8 +1,6 @@
 /**
  * @file home_gen.c
- *
  * @description Template source file for LVGL objects
- *
  */
 
 /*********************
@@ -31,7 +29,7 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-lv_obj_t * home_create(lv_obj_t * parent)
+lv_obj_t * home_create(void)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
@@ -81,62 +79,60 @@ lv_obj_t * home_create(lv_obj_t * parent)
         style_inited = true;
     }
 
-    lv_obj_t * lv_obj = lv_obj_create(parent);
+    lv_obj_t * lv_obj_1 = lv_obj_create(NULL);
+        lv_obj_add_style(lv_obj_1, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_add_style(lv_obj, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_t * lv_obj_2 = lv_obj_create(lv_obj_1);
+    lv_obj_add_style(lv_obj_2, &style_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_add_style(lv_obj_2, &style_left_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_t * lv_obj_1 = lv_obj_create(lv_obj);
-    lv_obj_add_style(lv_obj_1, &style_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_add_style(lv_obj_1, &style_left_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    lv_obj_t * slider_box_1 = slider_box_create(lv_obj_1);
+    lv_obj_t * slider_box_1 = slider_box_create(lv_obj_2);
     lv_obj_set_width(slider_box_1, 155);
     slider_box_set_title(slider_box_1, "Room 1");
 
-    lv_obj_t * slider_box_2 = slider_box_create(lv_obj_1);
+    lv_obj_t * slider_box_2 = slider_box_create(lv_obj_2);
     lv_obj_set_width(slider_box_2, 155);
     slider_box_set_title(slider_box_2, "Room 2");
 
-    lv_obj_t * slider_box_3 = slider_box_create(lv_obj_1);
+    lv_obj_t * slider_box_3 = slider_box_create(lv_obj_2);
     lv_obj_set_width(slider_box_3, 155);
     slider_box_set_title(slider_box_3, "Room 3");
 
-    lv_obj_t * slider_box_4 = slider_box_create(lv_obj_1);
+    lv_obj_t * slider_box_4 = slider_box_create(lv_obj_2);
     lv_obj_set_width(slider_box_4, 155);
     slider_box_set_title(slider_box_4, "Room 4");
 
-    lv_obj_t * slider_box_5 = slider_box_create(lv_obj_1);
+    lv_obj_t * slider_box_5 = slider_box_create(lv_obj_2);
     lv_obj_set_width(slider_box_5, 155);
     slider_box_set_title(slider_box_5, "Room 5");
 
-    lv_obj_t * lv_obj_2 = lv_obj_create(lv_obj);
-    lv_obj_add_style(lv_obj_2, &style_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_add_style(lv_obj_2, &style_right_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_flex_grow(lv_obj_2, 1);
+    lv_obj_t * lv_obj_3 = lv_obj_create(lv_obj_1);
+    lv_obj_add_style(lv_obj_3, &style_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_add_style(lv_obj_3, &style_right_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_flex_grow(lv_obj_3, 1);
 
-    button_default_create(lv_obj_2, "Ok");
+    button_default_create(lv_obj_3, "Ok");
 
-    button_default_create(lv_obj_2, "Cancel");
+    button_default_create(lv_obj_3, "Cancel");
 
-    lv_obj_t * dark_slider_1 = dark_slider_create(lv_obj_2);
+    lv_obj_t * dark_slider_1 = dark_slider_create(lv_obj_3);
     lv_obj_set_width(dark_slider_1, lv_pct(100));
     dark_slider_set_color(dark_slider_1, lv_color_hex(0xf03c0f));
-    lv_obj_update_flag(dark_slider_1, LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS, true);
 
-    button_warning_create(lv_obj_2, "Alert 1");
+    button_warning_create(lv_obj_3, "Alert 1");
 
-    button_warning_create(lv_obj_2, "Alert 2");
+    button_warning_create(lv_obj_3, "Alert 2");
 
-    button_error_create(lv_obj_2, "Error 1");
+    button_error_create(lv_obj_3, "Error 1");
 
-    button_error_create(lv_obj_2, "Error 2");
-
+    button_error_create(lv_obj_3, "Error 2");
 
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    return lv_obj;
+    return lv_obj_1;
 }
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/

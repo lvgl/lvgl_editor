@@ -1,10 +1,13 @@
 /**
- * @file example_gen.h
- *
+ * @file examples_gen.h
  */
 
-#ifndef EXAMPLE_GEN_H
-#define EXAMPLE_GEN_H
+#ifndef EXAMPLES_GEN_H
+#define EXAMPLES_GEN_H
+
+#ifndef UI_SUBJECT_STRING_LENGTH
+#define UI_SUBJECT_STRING_LENGTH 256
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,18 +22,23 @@ extern "C" {
 /*Include all the widget and components of this library*/
 #include "widgets/dark_slider/dark_slider_gen.h"
 #include "widgets/slider_box/slider_box_gen.h"
+#include "widgets/dark_slider/dark_slider_gen.h"
+#include "widgets/slider_box/slider_box_gen.h"
 #include "components/buttons/button_default_gen.h"
 #include "components/buttons/button_error_gen.h"
 #include "components/buttons/button_warning_gen.h"
 #include "components/headings/h1_gen.h"
 #include "components/headings/h2_gen.h"
 #include "components/headings/h3_gen.h"
-#include "components/home_gen.h"
 #include "components/scratchpad_gen.h"
+#include "screens/home_gen.h"
 
 /*********************
  *      DEFINES
  *********************/
+
+// TODO: should these definitions be prefixed with the project name?
+
 
 /**********************
  *      TYPEDEFS
@@ -45,6 +53,12 @@ extern lv_font_t * inter_sm;
 extern lv_font_t * inter_md;
 extern lv_font_t * inter_xl;
 
+/*Images*/
+extern const void * lvgl_logo;
+extern const void * wink;
+
+extern lv_subject_t subject_room_1_temp;
+
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
@@ -52,7 +66,8 @@ extern lv_font_t * inter_xl;
 /**
  * Initialize the component library
  */
-void example_init_gen(const char * asset_path);
+
+void examples_init_gen(const char * asset_path);
 
 /**********************
  *      MACROS
@@ -62,4 +77,4 @@ void example_init_gen(const char * asset_path);
 } /*extern "C"*/
 #endif
 
-#endif /*EXAMPLE_GEN_H*/
+#endif /*EXAMPLES_GEN_H*/

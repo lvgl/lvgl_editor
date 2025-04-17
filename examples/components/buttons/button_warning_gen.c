@@ -1,8 +1,6 @@
 /**
  * @file button_warning_gen.c
- *
  * @description Template source file for LVGL objects
- *
  */
 
 /*********************
@@ -69,19 +67,18 @@ lv_obj_t * button_warning_create(lv_obj_t * parent, const char * button_label)
         style_inited = true;
     }
 
-    lv_obj_t * lv_obj = lv_button_create(parent);
+    lv_obj_t * lv_button_1 = lv_button_create(parent);
+        lv_obj_add_style(lv_button_1, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_add_style(lv_obj, &style_main, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    lv_obj_t * h3_1 = h3_create(lv_obj, button_label);
+    lv_obj_t * h3_1 = h3_create(lv_button_1, button_label);
     lv_obj_set_align(h3_1, LV_ALIGN_CENTER);
-
 
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    return lv_obj;
+    return lv_button_1;
 }
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/

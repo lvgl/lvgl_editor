@@ -1,10 +1,9 @@
 /**
- * @file ui_test.h
- *
+ * @file home_gen.h
  */
 
-#ifndef UI_TEST_H
-#define UI_TEST_H
+#ifndef HOME_H
+#define HOME_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,8 +12,7 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-#include "ui.h"
-
+#include "lvgl/lvgl.h"
 
 /*********************
  *      DEFINES
@@ -25,24 +23,10 @@ extern "C" {
  **********************/
 
 /**********************
- * GLOBAL VARIABLES
- **********************/
-
-/**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-/**
- * Call after lv_init() and your driver inits to test the example UI
- * directly from C.
- */
-void ui_test_from_c(void);
-
-/**
- * Call after lv_init() and your driver inits to test the example UI
- * directly from XML.
- */
-void ui_test_from_xml(void);
+lv_obj_t * home_create(void);
 
 /**********************
  *      MACROS
@@ -52,4 +36,4 @@ void ui_test_from_xml(void);
 } /*extern "C"*/
 #endif
 
-#endif /*UI_TEST_H*/
+#endif /*HOME_H*/

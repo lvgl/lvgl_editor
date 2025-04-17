@@ -26,7 +26,7 @@ extern "C" {
 
 typedef struct {
     lv_obj_t obj;  /* Base widget to extend */
-    const char * title;
+    void * title;
     lv_obj_t * lv_button_1;
     lv_obj_t * lv_label_1;
     lv_obj_t * lv_label_2;
@@ -38,6 +38,10 @@ typedef struct {
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
+
+#if LV_USE_XML
+    void slider_box_register(void);
+#endif
 
 /**********************
  *      MACROS

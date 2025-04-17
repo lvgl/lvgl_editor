@@ -1,4 +1,4 @@
-<component>
+<screen>
     <consts>
         <int name="slider_box_width" value="155"/>
     </consts>
@@ -6,7 +6,7 @@
     <styles>
         <style name="main"
                bg_color="0x111111"
-               radius="0" 
+               radius="0"
                border_width="0"
                layout="flex"
                flex_flow="row"
@@ -19,14 +19,14 @@
                bg_color="0x333333"
                flex_flow="column"
                layout="flex"
-               radius="0" 
-               pad_all="0" 
+               radius="0"
+               pad_all="0"
                pad_row="16"/>
 
         <style name="left_cont"
                width="content"
                border_width="0"
-               pad_all="16"/>     
+               pad_all="16"/>
 
         <style name="right_cont"
                layout="flex"
@@ -36,26 +36,26 @@
                flex_track_place="center"
                flex_cross_place="center"
                pad_all="16"
-               />     
+               />
     </styles>
 
-    <view extends="lv_obj" styles="main"> 
+    <view extends="lv_obj" styles="main">
         <lv_obj styles="cont left_cont">
             <slider_box width="#slider_box_width" title="Room 1"/>
             <slider_box width="#slider_box_width" title="Room 2"/>
             <slider_box width="#slider_box_width" title="Room 3"/>
             <slider_box width="#slider_box_width" title="Room 4"/>
             <slider_box width="#slider_box_width" title="Room 5"/>
-        </lv_obj>  
+        </lv_obj>
 
         <lv_obj styles="cont right_cont" flex_grow="1">
             <button_default button_label="Ok"/>
             <button_default button_label="Cancel"/>
-            <dark_slider width="100%"  color="0xf03c0f" send_draw_task_events="true"/>
+            <dark_slider width="100%"  color="0xf03c0f"/>
             <button_warning button_label="Alert 1"/>
             <button_warning button_label="Alert 2"/>
             <button_error button_label="Error 1"/>
             <button_error button_label="Error 2"/>
         </lv_obj>
-    </view>        
-</component>
+    </view>
+</screen>

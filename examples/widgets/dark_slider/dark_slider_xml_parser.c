@@ -59,7 +59,7 @@ void dark_slider_xml_apply(lv_xml_parser_state_t * state, const char ** attrs)
     for(int i = 0; attrs[i]; i += 2) {
         const char * name = attrs[i];
         const char * value = attrs[i + 1];
-        if(lv_streq(name, "color")) dark_slider_set_color(item, lv_xml_to_color(value));    
+        if(lv_streq(name, "color")) dark_slider_set_color(item, lv_xml_to_color(value));   
     }
 }
 

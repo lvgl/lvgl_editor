@@ -1,10 +1,9 @@
 /**
  * @file button_warning_gen.h
- *
  */
 
 #ifndef BUTTON_WARNING_H
-#define LV_TEMPL_H
+#define BUTTON_WARNING_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,16 +23,11 @@ extern "C" {
  **********************/
 
 /**********************
- *  STATIC PROTOTYPES
- **********************/
-
-/**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-
-
 lv_obj_t * button_warning_create(lv_obj_t * parent, const char * button_label);
+
 /**********************
  *      MACROS
  **********************/
@@ -42,4 +36,4 @@ lv_obj_t * button_warning_create(lv_obj_t * parent, const char * button_label);
 } /*extern "C"*/
 #endif
 
-#endif /*LV_TEMPL_H*/
+#endif /*BUTTON_WARNING_H*/

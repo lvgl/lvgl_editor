@@ -1,11 +1,15 @@
 <globals>
     <images>
-        <data name="screenshot" src_path="images/lvgl.png" file_format="png"/>
-        <data name="wink" src_path="images/wink.png" file_format="png"/>
+        <data name="lvgl_logo" src_path="images/lvgl.png" file_format="png" color_format="rgb565"/>
+        <file name="wink" src_path="images/wink.png" file_format="png"/>
     </images>
      <fonts>
-        <tinyttf name="inter_sm" src_path="fonts/Inter-SemiBold.ttf" size="14"/>
-        <tinyttf name="inter_md" src_path="fonts/Inter-SemiBold.ttf" size="18"/>
-        <tinyttf name="inter_xl" src_path="fonts/Inter-SemiBold.ttf" size="22"/>
-    </fonts>   
+        <bin name="inter_sm" src_path="fonts/Inter-SemiBold.ttf" size="14" bpp="8"
+        />
+        <tiny_ttf name="inter_md" src_path="fonts/Inter-SemiBold.ttf" size="18" as_file="true"/>
+        <tiny_ttf name="inter_xl" src_path="fonts/Inter-SemiBold.ttf" size="22" as_file="true"/>
+    </fonts>
+    <subjects>
+        <int name="room_1_temp" value="20"/>
+    </subjects>
 </globals>

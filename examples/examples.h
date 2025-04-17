@@ -1,10 +1,9 @@
 /**
- * @file home_gen.h
- *
+ * @file examples.h
  */
 
-#ifndef HOME_H
-#define LV_TEMPL_H
+#ifndef EXAMPLES_H
+#define EXAMPLES_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,7 +12,7 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-#include "lvgl/lvgl.h"
+#include "examples_gen.h"
 
 /*********************
  *      DEFINES
@@ -24,16 +23,18 @@ extern "C" {
  **********************/
 
 /**********************
- *  STATIC PROTOTYPES
+ * GLOBAL VARIABLES
  **********************/
 
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-#define HOME_SLIDER_BOX_WIDTH 155
+/**
+ * Initialize the component library
+ */
+void examples_init(const char * asset_path);
 
-lv_obj_t * home_create(lv_obj_t * parent);
 /**********************
  *      MACROS
  **********************/
@@ -42,4 +43,4 @@ lv_obj_t * home_create(lv_obj_t * parent);
 } /*extern "C"*/
 #endif
 
-#endif /*LV_TEMPL_H*/
+#endif /*EXAMPLES_H*/

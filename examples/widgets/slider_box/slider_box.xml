@@ -4,7 +4,7 @@
 	</api>
     <styles>
         <style name="main" 
-               bg_color="0x666666" bg_opa="255" 
+               bg_color="0x000666" bg_opa="255" 
                radius="12"
                width="180" height="content"
                layout="flex"

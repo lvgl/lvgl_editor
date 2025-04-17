@@ -4,15 +4,40 @@
         <int name="long" value="100%"/>
     </consts>
 
-    <view extends="lv_obj" width="50%" height="100%" flex_flow="column"  style_bg_color="0x114488">
-        <button_default width="#long" button_label="Hello"/>
-        <button_default width="#long" button_label="Hello"/>
-        <button_default width="#long" button_label="Hello"/>
-        <button_error width="#long" button_label="Hello"/>
-        <button_warning width="#long" button_label="Hello"/>
-        <button_default width="#long" button_label="Hello"/>
-        <button_default width="#long" button_label="Hello"/>
-        <button_default width="#long" button_label="Hello"/>
-        <button_default width="#long" button_label="Hello"/>
+    <previews>
+        <preview width="600" height="300" 
+        style_pad_all="10"
+        style_bg_color="0x98b2fc"
+        style_layout="flex"
+        style_flex_flow="row"
+        />
+    </previews>
+
+    <styles>
+        <style name="slider_cont" layout="flex" flex_flow="row" bg_opa="100%" border_opa="0" flex_cross_place="center" flex_track_place="center" pad_column="20"/>
+    </styles>
+
+    <view extends="lv_obj" style_border_width="0" style_radius="0" flex_flow="row" width="100%" height="100%">
+        <lv_obj flex_grow="1" height="100%" flex_flow="column"  style_bg_color="0x114488">
+            <lv_obj width="100%" height="content" styles="slider_cont">    
+                <lv_slider bind_value="room_1_temp" flex_grow="1"/>
+                <lv_label bind_text="room_1_temp" width="25" y="0"></lv_label> 
+            </lv_obj> 
+            <lv_image src="lvgl_logo" inner_align="stretch" width="200" height="80"/>
+            <button_default width="#long" button_label="Hello 1" />
+            <button_warning width="#long" button_label="Hello 2"/>
+            <button_error width="#long" button_label="Hello 4"/>
+            <button_warning width="#long" button_label="Hello 5"/>
+            <button_default width="#long" button_label="Hello 6"/>
+            <button_default width="#long" button_label="Hello 7"/>
+            <button_default width="#long" button_label="Hello 8"/>
+            <button_default width="#long" button_label="Hello 9"/>
+        </lv_obj>
+
+        <lv_chart flex_grow="1" type="bar" height="100%">
+            <lv_chart-series axis="primary_y" color="0xe34141" values="10 20 30 30 20 80 70 90 66"/>
+            <lv_chart-series axis="secondary_y" color="0x4c4ce9" values="3 5 4 7 1 0 3"/>
+            <lv_chart-axis axis="secondary_y" range="0 10"/>
+        </lv_chart>
     </view>        
 </component>
