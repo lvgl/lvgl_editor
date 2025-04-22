@@ -33,11 +33,21 @@ lv_obj_t * scratchpad_create(lv_obj_t * parent)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
+    static lv_style_t style_slider_cont;
 
     static bool style_inited = false;
 
     if(!style_inited) {
         
+        lv_style_init(&style_slider_cont);
+        lv_style_set_layout(&style_slider_cont, LV_LAYOUT_FLEX);
+        lv_style_set_flex_flow(&style_slider_cont, LV_FLEX_FLOW_ROW);
+        lv_style_set_bg_opa(&style_slider_cont, 100);
+        lv_style_set_border_opa(&style_slider_cont, 0);
+        lv_style_set_flex_cross_place(&style_slider_cont, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_flex_track_place(&style_slider_cont, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_pad_column(&style_slider_cont, 20);
+
         style_inited = true;
     }
 
@@ -55,13 +65,9 @@ lv_obj_t * scratchpad_create(lv_obj_t * parent)
     lv_obj_set_style_bg_color(lv_obj_2, lv_color_hex(0x114488), LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_t * lv_obj_3 = lv_obj_create(lv_obj_2);
+    lv_obj_add_style(lv_obj_3, &style_slider_cont, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_width(lv_obj_3, lv_pct(100));
     lv_obj_set_height(lv_obj_3, LV_SIZE_CONTENT);
-    lv_obj_set_flex_flow(lv_obj_3, LV_FLEX_FLOW_ROW);
-    lv_obj_set_style_bg_opa(lv_obj_3, 100, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(lv_obj_3, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_flex_cross_place(lv_obj_3, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_flex_track_place(lv_obj_3, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_t * lv_slider_1 = lv_slider_create(lv_obj_3);
     
@@ -79,7 +85,6 @@ lv_obj_t * scratchpad_create(lv_obj_t * parent)
     lv_image_set_inner_align(lv_image_1, LV_IMAGE_ALIGN_STRETCH);
     lv_obj_set_width(lv_image_1, 200);
     lv_obj_set_height(lv_image_1, 80);
-    lv_image_set_rotation(lv_image_1, 300);
 
     lv_obj_t * button_default_1 = button_default_create(lv_obj_2, "Hello 1");
     lv_obj_set_width(button_default_1, lv_pct(100));
