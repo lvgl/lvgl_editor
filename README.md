@@ -1,6 +1,6 @@
 # LVGL's UI Editor
 
-This repository contains public content related to the LVGL Editor.
+This repository contains public content related to the LVGL Editor. The current version is `v0.2.0-rc1`. v0.2 will be released in a few weeks. 
 
 ## Introduction
 
@@ -21,7 +21,7 @@ We believe designers should work freely in tools like Figma, focusing on creativ
 
 ---
 
-This video provides a step-by-step guide to all the support features
+This video provides a step-by-step guide to all the supported features. A new video for v0.2 is coming soon. 
 
 [![image](https://github.com/user-attachments/assets/2c72c3c9-44fa-4ae4-8616-867e2efe3209)
 ](https://youtu.be/gCxBAK9EByA)
@@ -30,13 +30,13 @@ This video provides a step-by-step guide to all the support features
 ## Get Started
 
 1. **Install Docker**: Docker is required to compile your code and integrate it into the editor. Find the Docker installation guide [here](https://docs.docker.com/engine/install/).
-2. **Download and install the Editor.** Find the installers [here](https://github.com/lvgl/lvgl_editor/releases/tag/v0.1.0).
+2. **Download and install the Editor.** Find the installers [here](https://github.com/lvgl/lvgl_editor/releases/tag/v0.2.0-rc1).
 3. **Fork and clone this repository** to experiment with its CI actions and online preview features. In the repository settings set the source of `Pages` to `GitHub Action`, and on the `Actions` page enable actions. 
 4. **Open the editor** and load the example folder.
 5. **Compile the project** to generate the custom C code in the editor’s preview (use the button in the top-right corner).  
 6. **Edit components**: Open `button_default.xml` and make edits. Save the file (Ctrl+S) to update the preview. Learn more about LVGL's XML language [here](https://docs.lvgl.io/master/details/other-components/xml.html).
 7. **Edit a widget**: Open `slider_box.xml` (a widget) and click "Compile Code." It will compile the C code alongside the widget's XML. Feel free to edit the C code and recompile it.
-8. **Ckeck out Fonts and Images**: Open `globals.xml` to see how images and fonts are handled.
+8. **Check out Fonts and Images**: Open `globals.xml` to see how images and fonts are handled.
 9. **Open the [Figma project](https://www.figma.com/design/itmQpC9m5HessaOZFbYTwK/Example?node-id=0-1&t=oWqPUdcRyVYtRgAY-0)** and duplicate it.
 10. **Use the Figma to LVGL plugin**: Open our plugin, modify the design, and update the XMLs with the new styles.
 11. **Try the online preview**: Commit and push your changes. Wait for the CI to run and check the online preview.
@@ -49,34 +49,34 @@ The goal is to demonstrate the development direction and gather feedback for adj
 
 **Note**: This version is for preview purposes only and not suitable for production.
 
-### Currently Supported Features:
+### Currently Supported Features
 
-- Basic built-in widgets (`lv_obj`, `lv_label`, `lv_slider`, `lv_button`, etc.).
+- Most of the built-in widgets (`lv_obj`, `lv_label`, `lv_slider`, `lv_button`, `lv_chart`, `lv_scale` etc.).
 - Load XML components at runtime from files or data (part of LVGL as an open-source MIT-licensed feature).
-- Style sheets and local styles supporting basic style properties.
+- Style sheets and local styles supporting most of the style properties.
 - Nest components and widgets at any depth.
 - Dynamically instantiate XML components in C.
-- Register images and fonts accessible by name in XML (only files are supported; fonts/images are not exported as C).
+- Register images and fonts accessible by name in XML
 - Use constants for widget and style properties.
 - Define, pass, and use parameters for components.
-
-Please refer to the examples to learn the XML syntax or read [this page](https://docs.lvgl.io/master/details/other-components/xml.html) for more information.
+- XML auto-completion, and syntax error highlighting.
+- Inspector mode to drag and resize the widgets by mouse
+- Event and subject handling.
+- VSCode plugin
+- Update style properties from Figma
+ 
+Please refer to the examples to learn the XML syntax or read [this page](https://docs.lvgl.io/master/details/auxiliary-modules/xml/index.html) for more information.
 
 ### Future Plans
 
-We aim to release v0.2 in **April 2025** and v0.3 in **July 2025**, which will include:
+We aim to release v0.3 in **July 2025**, which will include:
 
-- XML auto-completion, syntax error highlighting, and common hotkeys (e.g., Ctrl+click to jump to declarations).
-- Widget highlighting: Hovering over widgets in the preview will show their size, padding, margins, etc.
-- Support for all style properties.
-- Support for most LVGL widgets, including complex ones like tabview, chart, span, scale, table, and buttonmatrix.
-- MicroPython support.
-- Event and subject handling.
-- Font manager for exporting fonts as C.
-- Image manager for exporting images as C and supporting scaling/color format changes (all configurable via XML).
-- Basic translation support.
-- Memory monitoring and performance estimation tools.
-- Commenting support in the online preview.
+- Translation support.
+- Eclipse plugin
+- Link images to Figma
+- Theme switching support
+- Debug panel to adjust subject
+- Animations
 
 ## Business Model
 
