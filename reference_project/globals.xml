@@ -1,0 +1,38 @@
+<globals>
+    <api>
+        <!-- Goes to gen.h -->
+        <enumdef name="ui_state">
+            <enum name="normal" help="All good"/>
+            <enum name="warning" value="0x20" help="There is a warning"/>
+            <enum name="error"/>
+            <enum name="critical" help="Big problem."/>
+        </enumdef>
+    </api>
+
+    <!-- Export in gen.h as uppercase defines. Add help as comment. --> 
+    <consts>
+        <int name="pad_sm" value="8" help="To make paddings unified."/>
+        <color name="pink" value="0xff00ff"/>
+    </consts>
+
+    <!-- Export to gen.c, no need to wrap it into style_inited.-->
+    <styles>
+        <style name="global_style_1" help="We wil use it on some places" bg_color="#pink" border_color="0xffff00" border_width="4"/>
+    </styles>
+
+    <!-- Export to gen.c -->
+    <images>
+        <data name="bell" src_path="images/bell-solid.png"/>
+    </images>
+
+    <!-- Export to gen.c -->
+    <fonts>
+        <tiny_ttf src_path="fonts/Nunito-SemiBold.ttf" size="40" name="font_md"/>
+    </fonts>
+
+    <!-- Export to gen.c -->
+    <subjects>
+        <int name="subject1" value="10"/>
+        <int name="subject2" value="20"/>
+    </subjects>
+</globals>

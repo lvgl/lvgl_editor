@@ -1,0 +1,61 @@
+<component>
+    <api>
+        <!-- Test many types and default values 
+             All props without default value are mandatory.
+             Code gen can and validation should thorw an error. -->
+        <prop name="button_color" type="color" default="0x000000"/>
+        <prop name="button_opa" type="opa" default="70%"></prop>
+        <prop name="icon" type="image" default="NULL"></prop>
+        <prop name="text" type="string"/> <!-- No default so it's mandatory-->
+        <prop name="subject" type="subject"></prop> <!-- No default so it's mandatory-->
+        <prop name="fmt" type="string" default="%d °C"></prop>
+        <prop name="ref_value" type="int" default="30"></prop>
+    </api>
+
+    <!-- Export constans at the top of gen.c file as defines. 
+         Add the help text as comment.--> 
+    <consts>
+        <color name="red" value="0xff0000"/>
+        <opa name="bg_opa" value="70%"/>
+        <opa name="half_opa" value="128" help="Just a helper."/>
+        <int name="border_width" value="2"/>
+    </consts>
+
+    <!-- Wrap to if(!style_inited) --> 
+    <styles>
+        <style name="normal" bg_opa="#bg_opa" 
+               border_width="#border_width" border_color="#red" border_opa="200"
+               width="100%" height="content"
+               pad_all="#pad_sm"
+               text_font="font_md"/>
+        <style name="pressed" bg_opa="110" />
+        <style name="sb" bg_opa="90%" />
+    </styles>
+
+    <!-- Add lv_obj_set_name(lv_button_1, "mybutton_#"); to set a deafult indexed name.
+         Also take care to $ and # -->
+    
+    <view extends="lv_button" flex_flow="row" style_opa="$button_opa"> 
+        <!-- Converts to lv_obj_add_style. The selector's default value is 0. See lv_obj.xml-->
+        <lv_obj-style name="normal"/>
+        <!-- For lv_obj elements the lv_obj-prefix can be omitted -->
+        <style name="pressed" selector="pressed"/>
+        <!-- Test a complex selector -->
+        <style name="sb" selector="scrollbar|pressed|checked"/>
+        
+        <!--Test bind elements -->
+        <lv_obj-bind_state_if_gt subject="$subject" state="disabled" ref_value="$ref_value"/>
+        <bind_state_if_gt subject="$subject" state="checked" ref_value="20"/>
+
+        <!-- Another element. Note that trigger is an lv_event_code_t enum which is inconsistent.
+             Its items shuld be like LV_EVENT_CODE_CLICKED, but its LV_EVENT_CLICKED.
+             Special handling is needed in code gen  -->
+        <subject_increment_event subject="subject1" trigger="clicked" step="10" max="200"/>
+
+        <!-- Just som children-->
+        <lv_image src="$icon"/>
+        <lv_label text="$text">
+            <style name="normal" selector="checked"/>
+        </lv_label>
+    </view>
+</component>

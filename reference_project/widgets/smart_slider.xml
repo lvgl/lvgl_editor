@@ -1,0 +1,66 @@
+<widget>
+    <api>
+        <!-- Export in _gen.h, also add helps as comments-->
+        <enumdef name="smart_slider_part" help="Parts of the smart slider">
+            <enum name="top" help="The top part" value="10"/>
+            <enum name="bottom" help="The bottom part" value="20"/>
+        </enumdef>
+
+        <!-- Simple proerties exported as "set"-->
+        <prop name="value" type="int"></prop>
+        <prop name="min_value" type="int"/>
+
+        <!-- Export as smart_slider_add_text and return lv_obj (the "type")
+             The add function has an argument.
+             If an arg is not set use the default value, otherwise it's mandatory.
+             There is a setter for each prop. -->
+        <element name="text" access="add" type="lv_obj" >
+            <arg type="color" name="color" help="Color of the text"/>
+            <prop name="font" type="font"></prop>
+        </element>
+        
+        <!-- Same as add, but us the get keyword.
+             If an arg is not set use the default value, otherwise it's mandatory. -->
+        <element name="item" access="get" type="lv_obj">
+            <arg name="idx" type="int" help="The index of the item to get"/>
+            <prop name="size" type="int" ></prop>
+        </element>
+        
+        <!-- Almost like add, but the is not return value and props, only args.
+             It also tests using the new enumdef as type.
+             If an arg is not set use the default value, otherwise it's mandatory. -->
+        <element name="ticks" access="set">
+            <arg type="enum:smart_slider_part" name="part"/>
+            <arg type="int" name="value" default="10"/>
+        </element>
+        
+        <!-- Almost like get, not return value, only args, but 
+             uses the bind keyword. smart_slider_bind_value(subject, fmt); 
+             If an arg is not set use the default value, otherwise it's mandatory.-->
+        <element name="value" access="bind">    
+            <arg type="subject" name="subject"/>
+            <arg type="enum:ui_state" name="state" help="Bind the value to this state"/>
+            <arg type="string" name="fmt" default="%d %%"/>
+        </element>
+    </api>
+
+    <consts>
+        <!-- Export as a defin in gen.c. Also add the help as comment -->    
+        <int name="small" value="4" help="Just a small value"/>
+    </consts>
+
+    <!-- I nthe costructior wrapped into if(!style_inited)-->
+    <styles>
+        <style name="style1" bg_opa="220" border_width="#small"/>
+    </styles>
+
+    <view extends="lv_obj" width="100%">
+        <!-- Some children to see the tree exported correctly -->
+        <lv_label name="title" text="" style_pad_all="#small"/>
+        <lv_slider y="30">
+            <style name="style1" selector="pressed|knob"/>
+            <!-- Test a global style too-->
+            <style name="global_style_1" selector="indicator"/>
+        </lv_slider>
+    </view>
+</widget>

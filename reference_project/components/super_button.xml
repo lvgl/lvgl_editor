@@ -1,0 +1,17 @@
+<!-- Nothing new here, check mybutton.xml for more info -->
+
+<component>
+    <api>
+        <prop name="button_text" type="string"/>
+        <prop name="subject" type="subject"/>
+    </api>
+
+    <consts>
+        <string name="def_fmt" value="Progress %02d"/>
+    </consts>
+
+    <view extends="mybutton" text="$button_text" subject="$subject"
+        button_color="#pink" fmt="#def_fmt">
+        <lv_label name="extra_label" text="Extra" align="right_mid"/>
+    </view>
+</component>

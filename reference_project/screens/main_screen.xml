@@ -1,0 +1,35 @@
+<screen>
+    <consts>
+        <!-- Constant shold be defined at the begiing of the generated C file 
+             with upper case name -->    
+        <string name="btn_text" value="Supet button"/>
+    </consts>
+
+    <view flex_flow="column">
+        <!-- A lot of props are not set. Use the default values as needed-->
+        <mybutton button_color="0xff0000"  subject="subject1" text="My button 1"></mybutton>
+
+        <!-- As width is also set create an lv_obj_t * varaible too -->
+        <mybutton button_opa="200" icon="bell" subject="subject1"  text="My button 2" width="100"></mybutton>
+
+        <!-- Super_button has smaller API -->
+        <super_button button_text="#btn_text" subject="subject1"></super_button>
+
+        <smart_slider value="50">
+            <lv_obj-event_cb callback="my_cb1" trigger="clicked" user_data="1" />
+            <event_cb callback="my_cb1" trigger="pressed"/>
+            
+            <smart_slider-text color="0x00ff00" font="font_md" style_bg_opa="50%"> 
+                <lv_image src="bell" x="100"></lv_image>
+            </smart_slider-text>
+            
+            <smart_slider-item idx="30" size="20"/>
+            <smart_slider-item idx="31"/>
+
+            <smart_slider-ticks part="top"/> <!-- Use the value=10 default, see smart_slider.xml -->
+            <smart_slider-ticks part="bottom" value="200"></smart_slider-ticks>
+            <smart_slider-bind_value subject="subject1" state="warning" fmt="%04d"/>
+            <smart_slider-bind_value subject="subject2" state="critical"/>
+        </smart_slider>
+    </view>
+</screen>
