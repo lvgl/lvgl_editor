@@ -41,6 +41,8 @@ lv_obj_t * main_screen_create(void)
     }
 
     lv_obj_t * lv_obj_1 = lv_obj_create(NULL);
+    lv_obj_set_name(lv_obj_1, "main_screen");
+
     lv_obj_set_flex_flow(lv_obj_1, LV_FLEX_FLOW_COLUMN);
 
     mybutton_create(lv_obj_1, lv_color_hex(0xff0000), (255 * 70 / 100), NULL, "My button 1", &subject1, "%d °C", 30);
@@ -81,6 +83,9 @@ lv_obj_t * main_screen_create(void)
 
     lv_obj_t * h3_3 = h3_create(lv_obj_1);
     lv_label_set_text(h3_3, "Hello");
+
+    lv_obj_t * h3_4 = h3_create(lv_obj_1);
+    lv_label_set_text(h3_4, lv_tr("dog"));
 
     LV_TRACE_OBJ_CREATE("finished");
 

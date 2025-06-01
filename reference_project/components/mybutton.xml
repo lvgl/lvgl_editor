@@ -54,7 +54,7 @@
 
         <!-- Just som children-->
         <lv_image src="$icon"/>
-        <lv_label text="$text">
+        <lv_label text-translated="$text">
             <style name="normal" selector="checked"/>
         </lv_label>
     </view>

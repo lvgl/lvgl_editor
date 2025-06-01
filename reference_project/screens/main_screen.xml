@@ -35,6 +35,7 @@
             <h3 />
             <h3 width="100"/>
             <h3 text="Hello"/>
+            <h3 text-translated="dog"/>
         </smart_slider>
     </view>
 </screen>

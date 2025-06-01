@@ -83,7 +83,7 @@ lv_obj_t * mybutton_create(lv_obj_t * parent, lv_color_t button_color, lv_opa_t 
 
     lv_obj_t * lv_label_1 = lv_label_create(lv_button_1);
     lv_obj_add_style(lv_label_1, &style_normal, 0);
-    lv_label_set_text(lv_label_1, text);
+    lv_label_set_text(lv_label_1, lv_tr(text));
 
     LV_TRACE_OBJ_CREATE("finished");
 
