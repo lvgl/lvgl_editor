@@ -31,11 +31,26 @@
             <smart_slider-bind_value subject="subject1" state="warning" fmt="%04d"/>
             <smart_slider-bind_value subject="subject2" state="critical"/>
 
-            <!-- Test calling lv_obj and lv_label setters -->
+            <!-- Test calling lv_obj and lv_label setters text-transla -->
             <h3 />
             <h3 width="100"/>
             <h3 text="Hello"/>
-            <h3 text-translated="dog"/>
+            <h3 text="Hello&#xA;new line"/> <!--&#xA; should be converted to \n. -->
+            <h3 text-translated="dog"/> <!-- Converts to lv_tr("dog") -->
+
+            <lv_chart >
+                <!-- chart values has int[count] type, so export an array and pass the 
+                     nuber of items as an other parameter -->
+                <lv_chart-series color="0xff0000" values="10 20"/>
+            </lv_chart>
+
+            <!-- The most complicated types. 
+                 map has NULL terminated string type, &#xA; converts to \n too.
+                 ctrl_map  is an enum array where values can be ured too -->
+            <lv_buttonmatrix 
+             map="'first' 'second' '&#xA;' 'third'" 
+             ctrl_map="width_4 checked checkable|disabled"
+             />  
         </smart_slider>
     </view>
 </screen>

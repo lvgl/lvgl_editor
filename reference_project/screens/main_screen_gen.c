@@ -85,7 +85,23 @@ lv_obj_t * main_screen_create(void)
     lv_label_set_text(h3_3, "Hello");
 
     lv_obj_t * h3_4 = h3_create(lv_obj_1);
-    lv_label_set_text(h3_4, lv_tr("dog"));
+    lv_label_set_text(h3_4, "Hello\nnew line");
+
+    lv_obj_t * h3_5 = h3_create(lv_obj_1);
+    lv_label_set_text(h3_5, lv_tr("dog"));
+
+    lv_obj_t * lv_chart_1 = lv_chart_create(lv_obj_1);
+
+    lv_chart_series_t * lv_chart_1_series_1 = lv_chart_add_series(lv_chart_1, lv_color_hex(0xff0000), LV_CHART_AXIS_SECONDARY_Y);
+    int32_t lv_chart_1_series_1_values[2] = {10, 20};
+    lv_chart_set_series_values(lv_chart_1, lv_chart_1_series_1, lv_chart_1_series_1_values, 2);
+
+    lv_obj_t * lv_buttonmatrix_1 = lv_buttonmatrix_create(lv_obj_1);
+    const char * lv_buttonmatrix_1_map[] = {"first", "second", "\n;", "third", NULL};
+    lv_buttonmatrix_set_map(lv_buttonmatrix_1, lv_buttonmatrix_1_map);
+
+    lv_buttonmatrix_ctrl_t lv_buttonmatrix_1_ctrl_map[] = {LV_BUTTONMATRIX_CTRL_WIDTH_4, LV_BUTTONMATRIX_CTRL_CHECKED, LV_BUTTONMATRIX_CTRL_CHECKABLE|LV_BUTTONMATRIX_CTRL_DISABLED};
+    lv_buttonmatrix_set_ctrl_map(lv_buttonmatrix_1, lv_buttonmatrix_1_ctrl_map);
 
     LV_TRACE_OBJ_CREATE("finished");
 
