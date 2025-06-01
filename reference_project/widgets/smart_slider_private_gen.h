@@ -26,9 +26,6 @@ extern "C" {
 
 typedef struct {
     lv_obj_t obj;  /* Base widget to extend */
-    void * smart_slider_part;
-    int32_t value;
-    int32_t min_value;
     void * text;
     void * item;
     void * ticks;

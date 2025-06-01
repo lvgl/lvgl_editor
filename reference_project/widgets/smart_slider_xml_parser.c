@@ -7,6 +7,8 @@
  *      INCLUDES
  *********************/
 #include "lvgl/lvgl.h"
+#if LV_USE_XML
+
 #include "smart_slider_gen.h"
 #include "lvgl/src/others/xml/parsers/lv_xml_obj_parser.h"
 #include "lvgl/src/others/xml/lv_xml_widget.h"
@@ -70,3 +72,5 @@ void smart_slider_register(void)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+
+#endif /*LV_USE_XML*/

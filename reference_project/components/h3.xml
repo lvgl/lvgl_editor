@@ -1,0 +1,3 @@
+<component>
+    <view extends="lv_label" style_text_color="0xff0000"></view>
+</component>

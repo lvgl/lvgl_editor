@@ -14,6 +14,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include "lvgl/lvgl.h"
+#include "reference_project_gen.h"
 
 /*********************
  *      DEFINES
@@ -22,6 +23,22 @@ extern "C" {
 /**********************
  *      TYPEDEFS
  **********************/
+
+/**
+ * Parts of the smart slider
+ */
+typedef enum
+{
+	/**
+	 * The top part
+	 */
+	SMART_SLIDER_PART_TOP = 10,
+
+	/**
+	 * The bottom part
+	 */
+	SMART_SLIDER_PART_BOTTOM = 20,
+}smart_slider_part_t;
 
 /**********************
  * GLOBAL PROTOTYPES
@@ -33,14 +50,6 @@ extern "C" {
  * @return pointer to the created smart_slider
  */
 lv_obj_t * smart_slider_create(lv_obj_t * parent);
-
-
-/**
- * Set the Parts of the smart slider
- * @param obj   pointer to a smart_slider
- * @param smart_slider_part  Parts of the smart slider
- */
-void smart_slider_set_smart_slider_part(lv_obj_t * obj, void * smart_slider_part);
 
 /**
  * Set the value
@@ -57,32 +66,52 @@ void smart_slider_set_value(lv_obj_t * obj, int32_t value);
 void smart_slider_set_min_value(lv_obj_t * obj, int32_t min_value);
 
 /**
- * Set the text
+ * Add text to the smart_slider
  * @param obj   pointer to a smart_slider
- * @param text  text
+ * @param color  Color of the text
  */
-void smart_slider_set_text(lv_obj_t * obj, void * text);
+lv_obj_t * smart_slider_add_text(lv_obj_t * obj, lv_color_t color);
 
 /**
- * Set the item
+ * Add text to the smart_slider
  * @param obj   pointer to a smart_slider
- * @param item  item
+ * @param text  pointer to a smart_slider text
+ * @param font
  */
-void smart_slider_set_item(lv_obj_t * obj, void * item);
+void smart_slider_set_text_font(lv_obj_t * obj, lv_obj_t * text, lv_font_t * font);
 
 /**
- * Set the ticks
+ * Get the item of a smart_slider
  * @param obj   pointer to a smart_slider
- * @param ticks  ticks
+ * @param idx   The index of the item
+ * @return 		the item
  */
-void smart_slider_set_ticks(lv_obj_t * obj, void * ticks);
+lv_obj_t * smart_slider_get_item(lv_obj_t * obj, int32_t idx);
 
 /**
- * Set the value
- * @param obj   pointer to a smart_slider
- * @param value  value
+ * Set the size of a smart slider's item
+ * @param smart_slider   pointer to a smart_slider
+ * @param item   		 an item
+ * @param size   		 The index of the item
  */
-void smart_slider_set_value(lv_obj_t * obj, void * value);
+void smart_slider_set_item_size(lv_obj_t * smart_slider, lv_obj_t * item, int32_t size);
+
+/**
+ * Set the smart_slider's ticks
+ * @param smart_slider   pointer to a smart_slider
+ * @param part
+ * @param ticks
+ */
+void smart_slider_set_ticks(lv_obj_t * obj, smart_slider_part_t part, int32_t value);
+
+/**
+ * Bind value to the smart_slider
+ * @param obj   	pointer to a smart_slider
+ * @param subject
+ * @param state		Bind the value to this state
+ * @param fmt
+ */
+void smart_slider_bind_value(lv_obj_t * obj, lv_subject_t * subject, ui_state_t state, const char * fmt);
 
 /**********************
  *      MACROS

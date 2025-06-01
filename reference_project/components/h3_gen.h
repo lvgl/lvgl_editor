@@ -1,10 +1,9 @@
 /**
- * @file smart_slider.h
- *
+ * @file h3_gen.h
  */
 
-#ifndef SMART_SLIDER_H
-#define SMART_SLIDER_H
+#ifndef H3_H
+#define H3_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,6 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include "lvgl/lvgl.h"
-#include "smart_slider_gen.h"
 
 /*********************
  *      DEFINES
@@ -28,6 +26,8 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
+lv_obj_t * h3_create(lv_obj_t * parent);
+
 /**********************
  *      MACROS
  **********************/
@@ -36,4 +36,4 @@ extern "C" {
 } /*extern "C"*/
 #endif
 
-#endif /*SMART_SLIDER_H*/
+#endif /*H3_H*/

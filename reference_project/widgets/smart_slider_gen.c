@@ -14,6 +14,11 @@
  *      DEFINES
  *********************/
 
+/**
+ * Just a small value
+ */
+#define SMALL 4
+
 /**********************
  *      TYPEDEFS
  **********************/
@@ -75,7 +80,12 @@ static void smart_slider_constructor(const lv_obj_class_t * class_p, lv_obj_t * 
     
     static bool style_inited = false;
 
+    static lv_style_t style1;
+
     if(!style_inited) {
+    	lv_style_init(&style1);
+    	lv_style_set_bg_opa(&style1, 220);
+    	lv_style_set_border_width(&style1, SMALL);
         
         style_inited = true;
     }
@@ -83,9 +93,14 @@ static void smart_slider_constructor(const lv_obj_class_t * class_p, lv_obj_t * 
 
     lv_obj_t * title = lv_label_create(obj);
     lv_obj_set_name(title, "title");
+    lv_obj_set_style_pad_all(title, SMALL, 0);
     widget->title = title;
+
     lv_obj_t * lv_slider_1 = lv_slider_create(obj);
     lv_obj_set_y(lv_slider_1, 30);
+    lv_obj_add_style(lv_slider_1, &style1, LV_PART_KNOB | LV_STATE_PRESSED);
+    lv_obj_add_style(lv_slider_1, &global_style_1, LV_PART_INDICATOR);
+
     widget->lv_slider_1 = lv_slider_1;
 
     smart_slider_constructor_hook(obj);

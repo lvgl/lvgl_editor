@@ -30,6 +30,11 @@
             <smart_slider-ticks part="bottom" value="200"></smart_slider-ticks>
             <smart_slider-bind_value subject="subject1" state="warning" fmt="%04d"/>
             <smart_slider-bind_value subject="subject2" state="critical"/>
+
+            <!-- Test calling lv_obj and lv_label setters -->
+            <h3 />
+            <h3 width="100"/>
+            <h3 text="Hello"/>
         </smart_slider>
     </view>
 </screen>
