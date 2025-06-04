@@ -27,22 +27,44 @@
  *  STATIC VARIABLES
  **********************/
 
+/*----------------
+ * Translation
+ *----------------*/
+
+static const char * translation_languages[] = {"en", "de", "hu", NULL};
+static const char * translation_tags[] = {"dog", "cat", "snake", NULL};
+static const char * translation_texts[] = {
+		"The dog", "Der Hund", "A kutya", /*dog*/
+		"The cat", "Die Katze", "A cica", /*cat*/
+		"The snake", NULL, "A kígyó", /*snake*/
+};
+
 /**********************
  *  GLOBAL VARIABLES
  **********************/
 
-/* Global Styles */
-lv_style_t style_global_style_1;
+/*----------------
+ * Global styles
+ *----------------*/
+lv_style_t global_style_1;
 
-/* Fonts */
+/*----------------
+ * Fonts
+ *----------------*/
 lv_font_t * font_md;
 extern uint8_t Nunito_SemiBold_ttf_data[];
 extern size_t Nunito_SemiBold_ttf_data_size;
 
-/* Images */
+/*----------------
+ * Images
+ *----------------*/
+const void * img_bell;
 
-/*Subjects*/
-lv_subject_t subject_subject1;
+/*----------------
+ * Subjects
+ *----------------*/
+lv_subject_t subject1;
+lv_subject_t subject2;
 
 /**********************
  *      MACROS
@@ -56,55 +78,71 @@ void reference_project_init_gen(const char * asset_path)
 {
     char buf[256];
 
-    /* Global Styles */
-    static bool style_inited = false;
+    /*----------------
+     * Global styles
+     *----------------*/
+    lv_style_init(&global_style_1);
+    lv_style_set_bg_color(&global_style_1, PINK);
+    lv_style_set_border_color(&global_style_1, lv_color_hex(0xffff00));
+    lv_style_set_border_width(&global_style_1, 4);
 
-    if (!style_inited) {
-        
-        lv_style_init(&style_global_style_1);
-        lv_style_set_bg_color(&style_global_style_1, #pink);
-        lv_style_set_border_color(&style_global_style_1, lv_color_hex(0xffff00));
-        lv_style_set_border_width(&style_global_style_1, 4);
-
-        style_inited = true;
-    }
-
-    /* Subjects */
-    lv_subject_init_int(&subject_subject1, 20);
-
-    /* Fonts */
+    /*----------------
+     * Fonts
+     *----------------*/
     /* create tiny ttf font 'font_md' from C array */
     font_md = lv_tiny_ttf_create_data(Nunito_SemiBold_ttf_data, Nunito_SemiBold_ttf_data_size, 40);
 
-    /* Images */
+    /*----------------
+     * Images
+     *----------------*/
+     lv_snprintf(buf, 256, "%s%s", asset_path, "images/bell-solid.png");
+     img_bell = lv_strdup(buf);
 
-    #if LV_USE_XML
+     /*----------------
+      * Subjects
+      *----------------*/
+     lv_subject_init_int(&subject1, 10);
+     lv_subject_init_int(&subject2, 20);
+
+    /*----------------
+     * Translations
+     *----------------*/
+    lv_translation_add_static(translation_languages, translation_tags, translation_texts);
+
+    /*Register widgets*/
+#if LV_USE_XML
         smart_slider_register();
-
-        lv_xml_register_font(NULL, "font_md", font_md);
-
-
-        lv_xml_register_subject(NULL, "subject1", &subject_subject1);
-
-        lv_xml_register_event_cb(NULL, "my_cb1", my_cb1);
-        lv_xml_register_event_cb(NULL, "my_cb1", my_cb1);
-    #endif
-}
-
-/* callbacks */
-#if defined(LV_EDITOR_PREVIEW)
-void __attribute__((weak)) my_cb1(lv_event_t * e)
-{
-   LV_UNUSED(e);
-   LV_LOG("my_cb1 was called\n");
-}
-void __attribute__((weak)) my_cb1(lv_event_t * e)
-{
-   LV_UNUSED(e);
-   LV_LOG("my_cb1 was called\n");
-}
 #endif
 
+    /*Register all the global assets so that they won't be created again when globals.xml is parsed.
+     *While running in the editor skip this step to update the preview when the XML changes*/
+#if LV_USE_XML && !defined(LV_EDITOR_PREVIEW)
+
+	/*Register fonts*/
+	lv_xml_register_font(NULL, "font_md", font_md);
+
+	/*Register images*/
+	lv_xml_register_image(NULL, "img_bell", img_bell);
+
+	/*Register subjects*/
+	lv_xml_register_subject(NULL, "subject1", &subject1);
+	lv_xml_register_subject(NULL, "subject2", &subject2);
+#endif
+}
+
+/*----------------
+ * Event callbacks
+ *----------------*/
+
+#if defined(LV_EDITOR_PREVIEW)
+
+void __attribute__((weak)) my_cb1(lv_event_t * e)
+{
+   LV_UNUSED(e);
+   LV_LOG("my_cb1 was called\n");
+}
+
+#endif
 /**********************
  *   STATIC FUNCTIONS
  **********************/

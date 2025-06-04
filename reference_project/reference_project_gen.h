@@ -19,45 +19,77 @@ extern "C" {
 
 #include "lvgl/lvgl.h"
 
-/*Include all the widget and components of this library*/
-#include "widgets/smart_slider_gen.h"
-#include "components/mybutton_gen.h"
-#include "components/super_button_gen.h"
-#include "screens/main_screen_gen.h"
-
 /*********************
  *      DEFINES
  *********************/
 
-// TODO: should these definitions be prefixed with the project name?
+/**
+ * To make paddings unified.
+ */
 #define PAD_SM 8
-#define PINK lv_color_hex(0x0xff00ff)
+
+#define PINK lv_color_hex(0xff00ff)
 
 /**********************
  *      TYPEDEFS
  **********************/
 
+typedef enum {
+
+	/**
+	 * All good
+	 */
+	UI_STATE_NORMAL,
+
+	/**
+	 * There is a warning
+	 */
+	UI_STATE_WARNING = 0x20,
+	UI_STATE_ERROR,
+
+	/**
+	 * Big problem.
+	 */
+	UI_STATE_CRITICAL,
+}ui_state_t;
+
 /**********************
  * GLOBAL VARIABLES
  **********************/
 
-/* Global Styles */
-extern lv_style_t style_global_style_1;
+/*----------------
+ *  Global styles
+ *----------------*/
 
-/* Fonts */
+/**
+ * We will use it on some places
+ */
+extern lv_style_t global_style_1;
+
+/*----------------
+ * Fonts
+ *----------------*/
 extern lv_font_t * font_md;
 
-/* Images */
+/*----------------
+ * Images
+ *----------------*/
+extern const void * img_bell;
 
-/* Subjects */
-extern lv_subject_t subject_subject1;
+/*----------------
+ * Subjects
+ *----------------*/
+extern lv_subject_t subject1;
+extern lv_subject_t subject2;
 
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-/* callbacks */
-void my_cb1(lv_event_t * e);
+/*----------------
+ * Event callbacks
+ *----------------*/
+
 void my_cb1(lv_event_t * e);
 
 /**
@@ -69,6 +101,17 @@ void reference_project_init_gen(const char * asset_path);
 /**********************
  *      MACROS
  **********************/
+
+/**********************
+ *   POST INCLUDES
+ **********************/
+
+/*Include all the widget and components of this library*/
+#include "widgets/smart_slider_gen.h"
+#include "components/mybutton_gen.h"
+#include "components/super_button_gen.h"
+#include "components/h3_gen.h"
+#include "screens/main_screen_gen.h"
 
 #ifdef __cplusplus
 } /*extern "C"*/
