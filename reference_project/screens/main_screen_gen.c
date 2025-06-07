@@ -34,8 +34,10 @@ lv_obj_t * main_screen_create(void)
     LV_TRACE_OBJ_CREATE("begin");
 
     static bool style_inited = false;
-
+    static lv_style_t style1;
     if(!style_inited) {
+        lv_style_init(&style1);
+        lv_style_set_bg_color(&style1, lv_color_hex3(0xf00))
         
         style_inited = true;
     }
@@ -46,10 +48,17 @@ lv_obj_t * main_screen_create(void)
     lv_obj_set_flex_flow(lv_obj_1, LV_FLEX_FLOW_COLUMN);
 
     mybutton_create(lv_obj_1, lv_color_hex(0xff0000), (255 * 70 / 100), NULL, "My button 1", &subject1, "%d °C", 30);
+
     lv_obj_t * mybutton_2 = mybutton_create(lv_obj_1, lv_color_hex(0x000000), 200, img_bell, "My button 2", &subject1, "%d °C", 30);
     lv_obj_set_width(mybutton_2, 100);
     lv_obj_add_screen_load_event(mybutton_2, LV_EVENT_LONG_PRESSED, some_screen_1, LV_SCREEN_LOAD_ANIM_OVER_RIGHT, 300, 100);
     lv_obj_add_screen_create_event(mybutton_2, LV_EVENT_CLICKED, some_screen_2, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
+    lv_obj_add_style(mybutton_2, &style1, LV_PART_SCROLLBAR);
+    lv_obj_remove_style(mybutton_2, &style1, LV_PART_SCROLLBAR);
+    lv_obj_remove_style(mybutton_2, NULL, LV_STATE_PRESSED);
+    lv_obj_remove_style(mybutton_2, NULL, LV_PART_SCROLLBAR|LV_STATE_PRESSED);
+    lv_obj_remove_style(mybutton_2, NULL, 0);
+    lv_obj_remove_style_all(mybutton_2);
 
     super_button_create(lv_obj_1, BTN_TEXT, &subject1);
 
