@@ -37,7 +37,7 @@
         <!-- Almost like get, not return value, only args, but 
              uses the bind keyword. smart_slider_bind_value(subject, fmt); 
              If an arg is not set use the default value, otherwise it's mandatory.-->
-        <element name="value" access="bind">    
+        <element name="bind_value" access="custom">    
             <arg type="subject" name="subject"/>
             <arg type="enum:ui_state" name="state" help="Bind the value to this state"/>
             <arg type="string" name="fmt" default="%d %%"/>
