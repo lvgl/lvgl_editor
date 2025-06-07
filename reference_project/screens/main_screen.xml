@@ -10,7 +10,10 @@
         <mybutton button_color="0xff0000"  subject="subject1" text="My button 1"></mybutton>
 
         <!-- As width is also set create an lv_obj_t * varaible too -->
-        <mybutton button_opa="200" icon="bell" subject="subject1"  text="My button 2" width="100"></mybutton>
+        <mybutton button_opa="200" icon="bell" subject="subject1"  text="My button 2" width="100">
+            <lv_obj-screen_load_event screen="some_screen_1" trigger="long_pressed" duration="300" delay="100" anim_type="over_right"/>
+            <screen_create_event screen="some_screen_2"/>
+        </mybutton>
 
         <!-- Super_button has smaller API -->
         <super_button button_text="#btn_text" subject="subject1"></super_button>
