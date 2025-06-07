@@ -53,6 +53,9 @@ lv_obj_t * main_screen_create(void)
 
     super_button_create(lv_obj_1, BTN_TEXT, &subject1);
 
+    lv_obj_t * lv_slider_1 = lv_slider_create(lv_obj_1);
+    lv_slider_1 = lv_slider_bind_value(lv_slider_1, &subject1);
+    
     lv_obj_t * smart_slider_1 = smart_slider_create(lv_obj_1);
     smart_slider_set_value(smart_slider_1, 50);
     lv_obj_add_event_cb(smart_slider_1, my_cb1, LV_EVENT_CLICKED, "1");
@@ -91,6 +94,9 @@ lv_obj_t * main_screen_create(void)
 
     lv_obj_t * h3_5 = h3_create(lv_obj_1);
     lv_label_set_text(h3_5, lv_tr("dog"));
+
+    lv_obj_t * h3_6 = h3_create(lv_obj_1);
+    lv_label_set_bind_text(h3_6, &subject1);
 
     lv_obj_t * lv_chart_1 = lv_chart_create(lv_obj_1);
 

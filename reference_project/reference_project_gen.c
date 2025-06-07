@@ -43,6 +43,11 @@ static const char * translation_texts[] = {
  *  GLOBAL VARIABLES
  **********************/
 
+/*--------------------
+ *  Permanent screens
+ *-------------------*/
+ lv_obj_t * main_screen;
+
 /*----------------
  * Global styles
  *----------------*/
@@ -128,6 +133,12 @@ void reference_project_init_gen(const char * asset_path)
 	lv_xml_register_subject(NULL, "subject1", &subject1);
 	lv_xml_register_subject(NULL, "subject2", &subject2);
 #endif
+
+   /*-------------------
+   *  Permanent screen
+   *------------------*/
+   
+   main_screen = main_screen_create();
 }
 
 /*----------------

@@ -1,4 +1,4 @@
-<screen>
+<screen permanent="true">
     <consts>
         <!-- Constant shold be defined at the begiing of the generated C file 
              with upper case name -->    
@@ -11,13 +11,21 @@
 
         <!-- As width is also set create an lv_obj_t * varaible too -->
         <mybutton button_opa="200" icon="bell" subject="subject1"  text="My button 2" width="100">
+            <!-- some_screen_1 is export as the variable name. 
+                 Only <screen permanent="true"> screens can be loaded like this
+                 as we assume that these screens always exist.
+                 So also collect and create permanent screens in <project_name>_gen.c/h -->
             <lv_obj-screen_load_event screen="some_screen_1" trigger="long_pressed" duration="300" delay="100" anim_type="over_right"/>
+            <!-- some_screen_2 is exported some_screen_2_create_cb, for the rest use the default values -->
             <screen_create_event screen="some_screen_2"/>
         </mybutton>
 
         <!-- Super_button has smaller API -->
         <super_button button_text="#btn_text" subject="subject1"></super_button>
 
+        <!-- `bind_*` is special. Use the "bind" keyword instead of "set" -->  
+        <lv_slider bind_value="subject1"/>
+         
         <smart_slider value="50">
             <lv_obj-event_cb callback="my_cb1" trigger="clicked" user_data="1" />
             <event_cb callback="my_cb1" trigger="pressed"/>
@@ -40,6 +48,7 @@
             <h3 text="Hello"/>
             <h3 text="Hello&#xA;new line"/> <!--&#xA; should be converted to \n. -->
             <h3 text-translated="dog"/> <!-- Converts to lv_tr("dog") -->
+            <h3 bind_text="subject2" />
 
             <lv_chart >
                 <!-- chart values has int[count] type, so export an array and pass the 

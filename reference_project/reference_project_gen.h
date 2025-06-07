@@ -56,6 +56,10 @@ typedef enum {
 /**********************
  * GLOBAL VARIABLES
  **********************/
+/*--------------------
+ *  Permanent screens
+ *-------------------*/
+ extern lv_obj_t * main_screen;
 
 /*----------------
  *  Global styles
