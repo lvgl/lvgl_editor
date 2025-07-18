@@ -1,0 +1,516 @@
+{
+  "name": "examples",
+  "path": "project/examples/",
+  "type": "directory",
+  "xmlType": 0,
+  "children": [
+    {
+      "name": "components",
+      "path": "project/examples/components",
+      "type": "directory",
+      "xmlType": 0,
+      "children": [
+        {
+          "name": "checkbox",
+          "path": "project/examples/components/checkbox",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "checkbox_gen.c",
+              "path": "project/examples/components/checkbox/checkbox_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "checkbox_gen.h",
+              "path": "project/examples/components/checkbox/checkbox_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "checkbox.xml",
+              "path": "project/examples/components/checkbox/checkbox.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "column",
+          "path": "project/examples/components/column",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "column_gen.c",
+              "path": "project/examples/components/column/column_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "column_gen.h",
+              "path": "project/examples/components/column/column_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "column.xml",
+              "path": "project/examples/components/column/column.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "header",
+          "path": "project/examples/components/header",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "header_gen.c",
+              "path": "project/examples/components/header/header_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "header_gen.h",
+              "path": "project/examples/components/header/header_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "header.xml",
+              "path": "project/examples/components/header/header.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "path": "project/examples/components/icon",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "icon_gen.c",
+              "path": "project/examples/components/icon/icon_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "icon_gen.h",
+              "path": "project/examples/components/icon/icon_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "icon.xml",
+              "path": "project/examples/components/icon/icon.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "row",
+          "path": "project/examples/components/row",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "row_gen.c",
+              "path": "project/examples/components/row/row_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "row_gen.h",
+              "path": "project/examples/components/row/row_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "row.xml",
+              "path": "project/examples/components/row/row.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "setclock",
+          "path": "project/examples/components/setclock",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "setclock_gen.c",
+              "path": "project/examples/components/setclock/setclock_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "setclock_gen.h",
+              "path": "project/examples/components/setclock/setclock_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "setclock.xml",
+              "path": "project/examples/components/setclock/setclock.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "step_button",
+          "path": "project/examples/components/step_button",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "step_button_gen.c",
+              "path": "project/examples/components/step_button/step_button_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "step_button_gen.h",
+              "path": "project/examples/components/step_button/step_button_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "step_button.xml",
+              "path": "project/examples/components/step_button/step_button.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "subtitle",
+          "path": "project/examples/components/subtitle",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "subtitle_gen.c",
+              "path": "project/examples/components/subtitle/subtitle_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "subtitle_gen.h",
+              "path": "project/examples/components/subtitle/subtitle_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "subtitle.xml",
+              "path": "project/examples/components/subtitle/subtitle.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "path": "project/examples/components/title",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "title_gen.c",
+              "path": "project/examples/components/title/title_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "title_gen.h",
+              "path": "project/examples/components/title/title_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "title.xml",
+              "path": "project/examples/components/title/title.xml",
+              "type": "file",
+              "xmlType": "component"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fonts",
+      "path": "project/examples/fonts",
+      "type": "directory",
+      "xmlType": 0,
+      "children": [
+        {
+          "name": "Inter_SemiBold_ttf_data.c",
+          "path": "project/examples/fonts/Inter_SemiBold_ttf_data.c",
+          "type": "file",
+          "xmlType": 0
+        },
+        {
+          "name": "Inter-SemiBold.ttf",
+          "path": "project/examples/fonts/Inter-SemiBold.ttf",
+          "type": "file",
+          "xmlType": 0
+        }
+      ]
+    },
+    {
+      "name": "images",
+      "path": "project/examples/images",
+      "type": "directory",
+      "xmlType": 0,
+      "children": [
+        {
+          "name": "bell-solid.png",
+          "path": "project/examples/images/bell-solid.png",
+          "type": "file",
+          "xmlType": 0
+        },
+        {
+          "name": "bluetooth-brands.png",
+          "path": "project/examples/images/bluetooth-brands.png",
+          "type": "file",
+          "xmlType": 0
+        },
+        {
+          "name": "img_bell_data.c",
+          "path": "project/examples/images/img_bell_data.c",
+          "type": "file",
+          "xmlType": 0
+        },
+        {
+          "name": "img_bluetooth_data.c",
+          "path": "project/examples/images/img_bluetooth_data.c",
+          "type": "file",
+          "xmlType": 0
+        },
+        {
+          "name": "img_wifi_data.c",
+          "path": "project/examples/images/img_wifi_data.c",
+          "type": "file",
+          "xmlType": 0
+        },
+        {
+          "name": "wifi-solid.png",
+          "path": "project/examples/images/wifi-solid.png",
+          "type": "file",
+          "xmlType": 0
+        }
+      ]
+    },
+    {
+      "name": "screens",
+      "path": "project/examples/screens",
+      "type": "directory",
+      "xmlType": 0,
+      "children": [
+        {
+          "name": "about",
+          "path": "project/examples/screens/about",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "about_gen.c",
+              "path": "project/examples/screens/about/about_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "about_gen.h",
+              "path": "project/examples/screens/about/about_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "about.xml",
+              "path": "project/examples/screens/about/about.xml",
+              "type": "file",
+              "xmlType": "screen"
+            }
+          ]
+        },
+        {
+          "name": "settings",
+          "path": "project/examples/screens/settings",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "settings_gen.c",
+              "path": "project/examples/screens/settings/settings_gen.c",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "settings_gen.h",
+              "path": "project/examples/screens/settings/settings_gen.h",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "settings.xml",
+              "path": "project/examples/screens/settings/settings.xml",
+              "type": "file",
+              "xmlType": "screen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "path": "project/examples/tests",
+      "type": "directory",
+      "xmlType": 0,
+      "children": [
+        {
+          "name": "main_screen",
+          "path": "project/examples/tests/main_screen",
+          "type": "directory",
+          "xmlType": 0,
+          "children": [
+            {
+              "name": "about_page_full.png",
+              "path": "project/examples/tests/main_screen/about_page_full.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "about_page_half.png",
+              "path": "project/examples/tests/main_screen/about_page_half.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "age_down.png",
+              "path": "project/examples/tests/main_screen/age_down.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "age_up.png",
+              "path": "project/examples/tests/main_screen/age_up.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "bluetooth_on.png",
+              "path": "project/examples/tests/main_screen/bluetooth_on.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "hour_changes.png",
+              "path": "project/examples/tests/main_screen/hour_changes.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "min_changes_err.png",
+              "path": "project/examples/tests/main_screen/min_changes_err.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "min_changes.png",
+              "path": "project/examples/tests/main_screen/min_changes.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "notifications_on.png",
+              "path": "project/examples/tests/main_screen/notifications_on.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "start.png",
+              "path": "project/examples/tests/main_screen/start.png",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "test1.xml",
+              "path": "project/examples/tests/main_screen/test1.xml",
+              "type": "file",
+              "xmlType": 0
+            },
+            {
+              "name": "wifi_on.png",
+              "path": "project/examples/tests/main_screen/wifi_on.png",
+              "type": "file",
+              "xmlType": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "examples_gen.c",
+      "path": "project/examples/examples_gen.c",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "examples_gen.h",
+      "path": "project/examples/examples_gen.h",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "examples.c",
+      "path": "project/examples/examples.c",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "examples.h",
+      "path": "project/examples/examples.h",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "globals.xml",
+      "path": "project/examples/globals.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "project.xml",
+      "path": "project/examples/project.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "translations.xml",
+      "path": "project/examples/translations.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "ui.c",
+      "path": "project/examples/ui.c",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "ui.h",
+      "path": "project/examples/ui.h",
+      "type": "file",
+      "xmlType": 0
+    }
+  ]
+}
