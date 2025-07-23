@@ -1,0 +1,24 @@
+<globals>
+    
+    <images>
+        <data name="img_wifi" src_path="images/wifi-solid.png" color_format="argb8888"/>
+        <data name="img_bluetooth" src_path="images/bluetooth-brands.png"  color_format="argb8888"/>
+        <data name="img_bell" src_path="images/bell-solid.png"  color_format="argb8888"/>
+    </images>
+
+    <fonts>
+        <tiny_ttf name="font_title" size="20" src_path="fonts/Inter-SemiBold.ttf"/>
+        <tiny_ttf name="font_subtitle" size="14" src_path="fonts/Inter-SemiBold.ttf"/>
+    </fonts>
+
+    <subjects>
+        <int name="hours" value="17"/>
+        <int name="mins" value="45"/>
+        <int name="age" value="17"/>
+        <int name="bluetooth_on" value="0"/>
+        <int name="wifi_on" value="0"/>
+        <int name="notification_on" value="0"/>
+        <int name="hour_edited" value="0"/>
+        <int name="min_edited" value="0"/>
+    </subjects>
+</globals>

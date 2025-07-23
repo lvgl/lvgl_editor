@@ -1,0 +1,21 @@
+<component>
+    <api>
+        <prop name="subject" type="subject"/>
+        <prop name="step" type="int"/>
+        <prop name="min" type="int" default="-2000000"/>
+        <prop name="max" type="int" default="2000000"/>
+        <prop name="text" type="string"/>
+    </api>
+
+    <styles>
+        <style name="simple_pressed" transform_width="0" transform_height="0"/>
+    </styles>
+
+    
+    <view  extends="lv_button" >
+        <style name="simple_pressed" selector="pressed"/>
+        <subject_increment_event subject="$subject" step="$step" trigger="clicked" min="$min" max="$max"/>
+        <subject_increment_event subject="$subject" step="$step" trigger="long_pressed_repeat"  min="$min" max="$max"/>
+        <lv_label text="$text"/>
+    </view>
+</component>
