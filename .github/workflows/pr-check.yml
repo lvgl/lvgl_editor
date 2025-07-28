@@ -1,0 +1,36 @@
+name: Pull Request Check
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.13.0"
+
+      - name: Prepare example data
+        run: |
+          echo "Podman version: $(podman -v)"
+          mkdir -p ~/test
+          cp -r examples ~/test
+          # remove all generated files (one-time and otherwise)
+          # so any that fail to generate will be missed
+          find ~/test/examples -type f \( -name '*.c' -o -name '*.h' \) -delete
+
+      - name: Download CLI
+        run: curl -L https://github.com/lvgl/lvgl_editor/releases/latest/download/lvgl-cli-linux-x64.zip -o lvgl-cli.zip
+
+      - name: Unzip CLI
+        run: unzip lvgl-cli.zip -d lvgl-cli
+
+      - name: Generate Code
+        run: |
+          node lvgl-cli/lved-cli.js generate ~/test/examples -ss
+          node lvgl-cli/lved-cli.js compare examples ~/test/examples
