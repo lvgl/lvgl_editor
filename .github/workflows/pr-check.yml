@@ -32,11 +32,6 @@ jobs:
         run: |
           node ./lvgl-cli/lved-cli.js compile examples --target node
 
-      - name: Show Files in Tree
-        run: |
-          echo "File tree under examples/:"
-          find examples -print | sed 's|[^/]*/|  |g'
-
       - name: Run tests
         run: |
           node ./lvgl-cli/lved-cli.js run-tests examples tests/test1.xml
