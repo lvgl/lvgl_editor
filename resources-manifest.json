@@ -1,0 +1,140 @@
+{
+  "name": "xmls",
+  "path": "resources/lvgl/xmls/",
+  "type": "directory",
+  "xmlType": 0,
+  "children": [
+    {
+      "name": "globals.xml",
+      "path": "resources/lvgl/xmls/globals.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_animimg.xml",
+      "path": "resources/lvgl/xmls/lv_animimg.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_arc.xml",
+      "path": "resources/lvgl/xmls/lv_arc.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_bar.xml",
+      "path": "resources/lvgl/xmls/lv_bar.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_button.xml",
+      "path": "resources/lvgl/xmls/lv_button.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_buttonmatrix.xml",
+      "path": "resources/lvgl/xmls/lv_buttonmatrix.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_calendar.xml",
+      "path": "resources/lvgl/xmls/lv_calendar.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_canvas.xml",
+      "path": "resources/lvgl/xmls/lv_canvas.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_chart.xml",
+      "path": "resources/lvgl/xmls/lv_chart.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_checkbox.xml",
+      "path": "resources/lvgl/xmls/lv_checkbox.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_dropdown.xml",
+      "path": "resources/lvgl/xmls/lv_dropdown.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_image.xml",
+      "path": "resources/lvgl/xmls/lv_image.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_keyboard.xml",
+      "path": "resources/lvgl/xmls/lv_keyboard.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_label.xml",
+      "path": "resources/lvgl/xmls/lv_label.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_obj.xml",
+      "path": "resources/lvgl/xmls/lv_obj.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_roller.xml",
+      "path": "resources/lvgl/xmls/lv_roller.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_scale.xml",
+      "path": "resources/lvgl/xmls/lv_scale.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_slider.xml",
+      "path": "resources/lvgl/xmls/lv_slider.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_spangroup.xml",
+      "path": "resources/lvgl/xmls/lv_spangroup.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_table.xml",
+      "path": "resources/lvgl/xmls/lv_table.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_tabview.xml",
+      "path": "resources/lvgl/xmls/lv_tabview.xml",
+      "type": "file",
+      "xmlType": 0
+    },
+    {
+      "name": "lv_textarea.xml",
+      "path": "resources/lvgl/xmls/lv_textarea.xml",
+      "type": "file",
+      "xmlType": 0
+    }
+  ]
+}

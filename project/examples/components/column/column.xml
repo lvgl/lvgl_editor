@@ -1,0 +1,18 @@
+<component>
+    <consts>
+        <int name="space_md" value="5"/>
+    </consts>
+    <styles>
+        <style name="main" 
+            bg_opa="0" border_width="0"
+            pad_row="#space_md"
+            width="content" height="content"
+            layout="flex"
+            flex_flow="column"
+            radius="0"
+            />
+    </styles>
+    <view>
+        <style name="main" />
+    </view>
+</component>

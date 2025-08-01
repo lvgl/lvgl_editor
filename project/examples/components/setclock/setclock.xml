@@ -1,0 +1,32 @@
+<component>
+    <previews>
+        <preview name="setclock" style_bg_color="0xbbbbbb" width="200" height="200" 
+                 style_layout="flex" style_flex_flow="row" 
+                 style_flex_track_place="center" style_flex_main_place="center" />
+    </previews>
+
+    <consts>
+        <string name="hours_string" value="0&#xA;1&#xA;2&#xA;3&#xA;4&#xA;5&#xA;6&#xA;7&#xA;8&#xA;9&#xA;10&#xA;11&#xA;12&#xA;13&#xA;14&#xA;15&#xA;16&#xA;17&#xA;18&#xA;19&#xA;20&#xA;21&#xA;22&#xA;23"/>
+        <string name="mins_string" value="0&#xA;1&#xA;2&#xA;3&#xA;4&#xA;5&#xA;6&#xA;7&#xA;8&#xA;9&#xA;10&#xA;11&#xA;12&#xA;13&#xA;14&#xA;15&#xA;16&#xA;17&#xA;18&#xA;19&#xA;20&#xA;21&#xA;22&#xA;23&#xA;24&#xA;25&#xA;26&#xA;27&#xA;28&#xA;29&#xA;30&#xA;31&#xA;32&#xA;33&#xA;34&#xA;35&#xA;36&#xA;37&#xA;38&#xA;39&#xA;40&#xA;41&#xA;42&#xA;43&#xA;44&#xA;45&#xA;46&#xA;47&#xA;48&#xA;49&#xA;50&#xA;51&#xA;52&#xA;53&#xA;54&#xA;55&#xA;56&#xA;57&#xA;58&#xA;59"/>
+    </consts>
+
+    <view flex_flow="row" 
+          width="content" height="content"
+          style_pad_all="0" style_bg_opa="0" style_border_width="0">
+        <column style_flex_cross_place="center">
+            <subtitle text="Hour"></subtitle>
+            <lv_roller options="#hours_string" bind_value="hours">
+               <subject_set_int_event subject="hour_edited" trigger="pressed" value="1"/>
+               <subject_set_int_event subject="hour_edited" trigger="released" value="0"/>
+            </lv_roller>
+        </column>
+
+        <column style_flex_cross_place="center">
+            <subtitle text="Mins"></subtitle>
+            <lv_roller options="#mins_string" bind_value="mins">
+               <subject_set_int_event subject="min_edited" trigger="pressed" value="1"/>
+               <subject_set_int_event subject="min_edited" trigger="released" value="0"/>
+            </lv_roller>
+        </column>
+    </view>
+</component>
