@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: "22.13.0"
 
+      - name: Remove Generated Files
+        run: find ~/test/examples -path ~/test/examples/images -prune -o -type f \( -name '*.c' -o -name '*.h' -o -name '*.png' \) -delete
+
       - name: Download CLI
         run: curl -L https://github.com/lvgl/lvgl_editor/releases/download/v.0.3.0/LVGL_CLI-0.3.0-linux-mac.zip -o lvgl-cli.zip
 
