@@ -1,0 +1,22 @@
+list(
+  APPEND
+  PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/components/checkbox/checkbox_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/column/column_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/header/header_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/icon/icon_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/row/row_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/setclock/setclock_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/step_button/step_button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/subtitle/subtitle_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/title/title_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/about/about_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/settings/settings_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/examples_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/ui.c
+  ${CMAKE_CURRENT_LIST_DIR}/examples.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/Inter_SemiBold_ttf_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/Inter_SemiBold_ttf_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_wifi_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_bluetooth_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_bell_data.c)

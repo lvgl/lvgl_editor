@@ -1,0 +1,10 @@
+<project>
+    <targets>
+        <target name="large">
+            <display width="320" height="240" color_format="rgb565"/>
+        </target>
+        <target name="small">
+            <display width="240" height="240" color_format="rgb565"/>
+        </target>
+    </targets>
+</project>

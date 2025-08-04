@@ -1,0 +1,7 @@
+
+All files in components directory:
+/user_src/components/checkbox/checkbox_gen.c;/user_src/components/column/column_gen.c;/user_src/components/header/header_gen.c;/user_src/components/icon/icon_gen.c;/user_src/components/row/row_gen.c;/user_src/components/setclock/setclock_gen.c;/user_src/components/step_button/step_button_gen.c;/user_src/components/subtitle/subtitle_gen.c;/user_src/components/title/title_gen.c
+
+Exported functions:
+No additional exported functions provided
+All exported functions: ['_malloc', '_free',     '_lvrt_initialize', '_ui_init', '_lvrt_cleanup_runtime',     '_lvrt_process_data', '_lvrt_xml_load_component_data', '_lvrt_component_create',     '_lvrt_resize_canvas', '_lvrt_get_obj_area',     '_lvrt_xml_load_translations', '_lvrt_translation_set_language',     '_lvrt_xml_test_register_from_data', '_lvrt_xml_test_run_init', '_lvrt_xml_test_run_next', '_lvrt_xml_test_run_stop',     '_lvrt_set_subject_int', '_lvrt_set_subject_string', '_lvrt_set_subject_float', '_lvrt_subscribe_subject',     '_lvrt_get_view_type']

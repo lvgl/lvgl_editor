@@ -1,0 +1,7 @@
+<translations languages="en de">
+    <translation tag="settings" en="Settings" de="Einstellungen"/>
+    <translation tag="about" en="About" de="Über"/>
+    <translation tag="back" en="Back" de="Zurück"/>
+    <translation tag="info" en="This UI was created with LVGL's UI Editor" 
+                            de="Diese Benutzeroberfläche wurde mit dem UI-Editor von LVGL erstellt."/>
+</translations>

@@ -1,0 +1,48 @@
+<component>
+    <api>
+        <prop name="title" type="string" default="Screen name"></prop>
+    </api>
+ 
+    <styles>
+        <style name="main" bg_color="0x2d2d2d"
+            border_width="2" border_side="bottom" border_color="0xa2a2a2"
+            radius="0" width="100%" height="32"
+            pad_hor="8"
+            layout="flex"
+            flex_cross_place="center"
+            flex_track_place="center"
+            flex_flow="row"
+            text_color="0xffffff"
+        />
+        <style name="edited" text_color="0x0099ee"/>
+
+    </styles>
+    
+    <view scrollable="false">
+        <style name="main" />
+        <subtitle text-translated="$title" flex_grow="1"/>
+
+        <icon src="img_bell">
+            <bind_state_if_eq subject="notification_on" ref_value="0" state="disabled" />
+        </icon>
+        <icon src="img_bluetooth">
+            <bind_state_if_eq subject="bluetooth_on" ref_value="0" state="disabled" />
+        </icon>
+
+        <icon src="img_wifi">
+            <bind_state_if_eq subject="wifi_on" ref_value="0" state="disabled" />
+        </icon>
+
+        <row width="40" style_flex_main_place="end" style_text_color="0xffffff" style_pad_column="0" >
+            <subtitle bind_text="hours">
+                <bind_style name="edited" subject="hour_edited" ref_value="1"/>
+            </subtitle>
+            
+            <subtitle text=":"/>
+            
+            <subtitle bind_text="mins">
+                <bind_style name="edited" subject="min_edited" ref_value="1"/>
+            </subtitle>
+        </row>
+    </view>
+</component>

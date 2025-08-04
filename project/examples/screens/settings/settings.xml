@@ -1,0 +1,35 @@
+<screen permanent="true">
+    <styles>
+        <style name="main" pad_all="0" border_width="0" radius="0" layout="flex" flex_flow="column" pad_row="0" text_font="font_subtitle" />
+    </styles>
+
+    <view width="100%" height="100%">
+        <style name="main" />
+        <header title="settings"/>
+        <row flex_grow="1" style_bg_color="0xebebeb" style_bg_opa="255" style_pad_all="5"
+               width="100%" flex_flow="row_wrap">
+            <column>
+                <checkbox text="Bluetooth" subject="bluetooth_on"/>
+                <checkbox text="WiFi" subject="wifi_on"/> 
+                <checkbox text="Notifications" subject="notification_on" />
+                
+                <row style_flex_cross_place="center">
+                    <step_button step="-1" subject="age" text="-" min="0"/>
+                    <column style_pad_all="0" style_pad_row="-3" style_flex_cross_place="center">   
+                        <lv_label style_text_font="font_subtitle" text="Age"/>
+                        <lv_label style_text_font="font_title" bind_text="age"/>
+                    </column>   
+                    <step_button step="1" subject="age" text="+" max="99"/>
+                </row>
+                
+                <lv_button style_text_font="font_subtitle">
+                    <lv_label text-translated="about"/>
+                    <screen_create_event screen="about" anim_type="fade_on" duration="500"/>
+                    <event_cb callback="about_click_event_cb" trigger="clicked" />
+                </lv_button>
+            </column>  
+            <setclock />
+            
+        </row>
+    </view>
+</screen>
