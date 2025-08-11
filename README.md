@@ -43,7 +43,7 @@ This video provides a step-by-step guide to all supported features. A new video 
 5. **Prepare the project**:  
    - Click `Generate Code`  
    - Click `Compile Project` to rebuild the preview with new C code.  
-6. **Edit components**: Modify `screens/settings/settings.xml` to see the preiview is updated. Learn more about XML [here](https://docs.lvgl.io/master/details/xml/index.html).  
+6. **Edit components**: Modify `screens/settings/settings.xml` to see the preview is updated. Learn more about XML [here](https://docs.lvgl.io/master/details/xml/index.html).  
 7. **Fonts and images**: Check `globals.xml` for how these are handled.  
 8. **Figma**: Open the [Figma project](https://www.figma.com/design/itmQpC9m5HessaOZFbYTwK/Example?node-id=0-1&t=oWqPUdcRyVYtRgAY-0) and duplicate it.  
 9. **Use the Figma plugin**: Modify the design and update XMLs with new styles.  
