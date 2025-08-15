@@ -34,4 +34,4 @@ jobs:
 
       - name: Run tests
         run: |
-          node ./lvgl-cli/lved-cli.js run-tests examples main_screen/test1.xml
+          node ./lvgl-cli/lved-cli.js run-all-tests examples
