@@ -1,11 +1,18 @@
 /**
- * @file ui.c
+ * @file lib.h
  */
+
+#ifndef LIB_H
+#define LIB_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /*********************
  *      INCLUDES
  *********************/
-#include "ui.h"
+#include "lib_gen.h"
 
 /*********************
  *      DEFINES
@@ -15,28 +22,27 @@
  *      TYPEDEFS
  **********************/
 
+
+
 /**********************
- *  STATIC PROTOTYPES
+ * GLOBAL VARIABLES
  **********************/
 
 /**********************
- *  STATIC VARIABLES
+ * GLOBAL PROTOTYPES
  **********************/
+
+/**
+ * Initialize the component library
+ */
+void lib_init(const char * asset_path);
 
 /**********************
  *      MACROS
  **********************/
 
-/**********************
- *   GLOBAL FUNCTIONS
- **********************/
+#ifdef __cplusplus
+} /*extern "C"*/
+#endif
 
-void ui_init(const char * asset_path)
-{
-    LV_LOG_USER("ui_init()\n");
-    lib_init(asset_path);
-}
-
-/**********************
- *   STATIC FUNCTIONS
- **********************/
+#endif /*LIB_H*/

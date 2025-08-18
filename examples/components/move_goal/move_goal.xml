@@ -1,0 +1,47 @@
+<component>
+    <previews>
+        <preview width="320" height="320" />
+    </previews>
+    <styles>
+        <style name="panel_size" width="320" height="320" />
+        <style name="stats" width="100%" height="content" layout="flex" flex_main_place="space_between" />
+    </styles>
+   <view extends="panel" style_flex_main_place="space_between">
+        <style name="panel_size" />
+
+        <panel_header width="100%" style_flex_flow="column" style_flex_main_place="start" style_flex_cross_place="start">
+            <lv_label text="Move goal" style_text_font="geist_semibold_20" />
+            <lv_label text="Set your daily activity goal" style_text_font="geist_regular_14" style_text_opa="140" />
+        </panel_header>
+
+        <div name="stats_wrapper" width="100%">
+            <div>
+                <style name="stats" />
+                <stat_col day="Mon" move="8500" />
+                <stat_col day="Tue" move="4000" />
+                <stat_col day="Wed" move="6700" />
+                <stat_col day="Thu" move="4300" />
+                <stat_col day="Fri" move="1000" />
+                <stat_col day="Sat" move="0" />
+                <stat_col day="Sun" move="0" />
+            </div>
+            <div name="goal_current" width="100%" height="3" style_bg_color="#accent1_light" style_bg_opa="255" style_radius="50%" y="30"></div>
+            <div name="goal_set" width="100%" height="3" style_bg_color="#surface_primary_light" style_bg_opa="42" style_radius="50%" y="44"></div>
+        </div>
+        <div style_layout="flex" width="100%" style_flex_main_place="space_between">
+            <circle_button icon="icon_minus">
+                <subject_increment_event subject="move_goal_target" step="-100" min="0" max="2000" />
+            </circle_button>
+            <div style_layout="flex" flex_flow="column" style_flex_cross_place="center" style_pad_row="-4">
+                <lv_label bind_text="move_goal_target" style_text_font="geist_semibold_28"></lv_label>
+                <lv_label text="steps/day" style_text_font="geist_semibold_12"></lv_label>
+            </div>
+            <circle_button>
+                <subject_increment_event subject="move_goal_target" step="100" min="0" max="2000" />
+            </circle_button>
+        </div>
+    
+        
+        <button label="Set your goal" width="100%" />
+   </view>
+</component>

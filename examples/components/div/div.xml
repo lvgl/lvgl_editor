@@ -1,0 +1,9 @@
+<component>
+    <styles>
+        <style name="main" width="content" height="content" />
+    </styles>
+    <view>
+        <remove_style />
+        <style name="main" />
+    </view>
+</component>

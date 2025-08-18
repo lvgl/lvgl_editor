@@ -1,0 +1,29 @@
+<component>
+   <styles>
+       <style name="main" layout="flex" width="content" height="content" flex_flow="column" flex_cross_place="center" />
+       <style name="main_light" text_color="#surface_primary_light"/>
+       <style name="main_dark" text_color="#surface_primary_dark"/>
+       <style name="slider_main_light" bg_color="#bg_secondary_light" bg_opa="255" />
+       <style name="slider_main_dark" bg_color="#bg_secondary_dark" />
+       <style name="indicator_light" bg_color="#surface_primary_light" />
+       <style name="indicator_dark" bg_color="#surface_primary_dark" />
+   </styles>
+   <api>
+        <prop name="move" type="int" default="5000"></prop>
+        <prop name="day" type="string" default="Mon"></prop>
+   </api>
+   <view>
+        <style name="style_reset" />
+        <style name="main" />
+        <bind_style subject="theme" name="main_light" ref_value="0" />
+        <bind_style subject="theme" name="main_dark" ref_value="1" />
+
+        <lv_bar min_value="0" max_value="10000" value="$move" width="12" height="72">
+            <bind_style subject="theme" name="indicator_light" ref_value="0" selector="indicator" />
+            <bind_style subject="theme" name="indicator_dark" ref_value="1" selector="indicator" />
+            <bind_style subject="theme" name="slider_main_light" ref_value="0" selector="main"/>
+            <bind_style subject="theme" name="slider_main_dark" ref_value="1" selector="main"/>
+        </lv_bar>
+        <lv_label text="$day" style_text_font="geist_semibold_12" style_text_align="center" width="30" height="content" />
+   </view>
+</component>

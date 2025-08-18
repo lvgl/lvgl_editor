@@ -1,9 +1,9 @@
 /**
- * @file ui.h
+ * @file panel_gen.h
  */
 
-#ifndef UI_H
-#define UI_H
+#ifndef PANEL_H
+#define PANEL_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,9 +12,11 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-
-/* Include all the UI libraries */
-#include "lib.h"
+#ifdef LV_LVGL_H_INCLUDE_SIMPLE
+    #include "lvgl.h"
+#else
+    #include "lvgl/lvgl.h"
+#endif
 
 /*********************
  *      DEFINES
@@ -25,17 +27,11 @@ extern "C" {
  **********************/
 
 /**********************
- * GLOBAL VARIABLES
- **********************/
-
-/**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-/**
- * Initialize all the custom component libraries (not calling `lv_init()`)
- */
-void ui_init(const char * asset_path);
+
+lv_obj_t * panel_create(lv_obj_t * parent);
 
 /**********************
  *      MACROS
@@ -45,4 +41,4 @@ void ui_init(const char * asset_path);
 } /*extern "C"*/
 #endif
 
-#endif /*UI_H*/
+#endif /*PANEL_H*/

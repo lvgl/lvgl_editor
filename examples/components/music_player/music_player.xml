@@ -1,0 +1,73 @@
+<component>
+    <previews>
+        <preview width="320" height="240" />
+    </previews>
+    <params>
+        <param name="song_length" type="int" />
+    </params>
+    <styles>
+        <style name="panel_size" width="320" height="240" />
+        <style name="panel_light" bg_color="#accent1_50_light" />
+        <style name="panel_dark" bg_color="#accent1_50_dark" />
+        <style name="seekbar_knob" opa="0" />
+        <style name="seekbar" bg_color="#surface_primary_light" />
+        <style name="seekbar_dark" bg_color="#surface_primary_dark" />
+        <style name="button_control" bg_opa="0" />
+    </styles>
+   <view extends="panel" style_flex_main_place="space_between">
+        <style name="panel_size" />
+        <bind_style subject="theme" name="panel_light" ref_value="0" />
+        <bind_style subject="theme" name="panel_dark" ref_value="1" />
+
+        <panel_header width="100%">
+            <lv_label text="Music" style_text_font="geist_semibold_20" />
+        </panel_header>
+
+        <div style_layout="flex" style_flex_main_place="start" style_flex_cross_place="center" width="100%">
+            <lv_image src="song_cover_1"></lv_image>
+            <div style_layout="flex" style_flex_flow="column" style_flex_main_place="start" style_margin_left="12">
+                <lv_label text="Onward" style_text_font="geist_semibold_14"></lv_label>
+                <lv_label text="Jaguar Sun" style_text_font="geist_regular_12" style_text_opa="153"></lv_label>
+            </div>
+        </div>
+
+        <div width="100%" style_layout="flex" flex_flow="column" style_pad_row="4">
+            <lv_slider height="6" bind_value="song_played" width="100%" start_value="0" min_value="0" max_value="430" style_bg_opa="40">
+                <style name="seekbar_knob" selector="knob" />
+                <style name="seekbar" />
+                <style name="seekbar" selector="indicator" />
+                <bind_style subject="theme" ref_value="1" name="seekbar_dark" />
+                <bind_style subject="theme" ref_value="1" name="seekbar_dark" selector="indicator" />
+            </lv_slider>
+            <div width="100%" style_layout="flex" style_flex_main_place="space_between">
+                <lv_label bind_text="song_played" bind_text-fmt="%d"  style_text_font="geist_semibold_12"></lv_label>
+                <lv_label text="2:55" style_text_font="geist_semibold_12" ></lv_label>
+            </div>
+        </div>
+
+        <div style_layout="flex" style_flex_cross_place="center" style_flex_main_place="space_between" width="100%">
+            <icon_button icon="icon_heart" style_pad_all="8">
+                <bind_state_if_eq subject="song_liked" ref_value="0" state="checked" />
+                <subject_set_int_event subject="song_liked" value="1" trigger="clicked" />
+            </icon_button>
+
+            <div style_layout="flex" style_flex_cross_place="center">
+                <icon_button icon="icon_skip_back"></icon_button>
+                <icon_button icon="icon_play">
+                    <bind_flag_if_eq subject="song_playing" ref_value="1" flag="hidden" />
+                    <subject_set_int_event subject="song_playing" value="1" trigger="clicked" />
+                </icon_button>
+                <icon_button icon="icon_pause">
+                    <bind_flag_if_eq subject="song_playing" ref_value="0" flag="hidden" />
+                    <subject_set_int_event subject="song_playing" value="0" trigger="clicked" />
+                </icon_button>
+                <icon_button icon="icon_skip_forward"></icon_button>
+            </div>
+            <div style_layout="flex" style_flex_cross_place="center">
+                <icon_button icon="icon_volume_max" style_pad_all="8"></icon_button>
+            </div>
+
+            
+        </div>
+   </view>
+</component>

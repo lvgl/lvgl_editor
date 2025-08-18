@@ -1,11 +1,11 @@
 /**
- * @file ui.c
+ * @file lib.c
  */
 
 /*********************
  *      INCLUDES
  *********************/
-#include "ui.h"
+#include "lib.h"
 
 /*********************
  *      DEFINES
@@ -31,10 +31,9 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-void ui_init(const char * asset_path)
+void lib_init(const char * asset_path)
 {
-    LV_LOG_USER("ui_init()\n");
-    lib_init(asset_path);
+    lib_init_gen(asset_path);
 }
 
 /**********************

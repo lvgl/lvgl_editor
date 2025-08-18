@@ -1,0 +1,13 @@
+<component>
+    <styles>
+        <style name="main" layout="flex" flex_cross_place="center" pad_column="6" text_color="#surface_primary_light"/>
+    </styles>
+   <view extends="div">
+    
+        <style name="main" />
+    
+        <lv_switch bind_checked="theme" width="32">
+        </lv_switch>
+        <lv_label text="Switch theme" style_text_font="geist_semibold_14" align="center" />
+   </view>
+</component>

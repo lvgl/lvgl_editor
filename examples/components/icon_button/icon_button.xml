@@ -1,0 +1,27 @@
+<component>
+    <api>
+        <prop name="icon" type="image" default="icon_plus"></prop>
+    </api>
+    <styles>
+        <style name="button" radius="12" shadow_width="0" pad_all="8" bg_opa="0" />
+        <style name="button_pressed" recolor_opa="40" transform_width="0" transform_height="0" />
+        <style name="button_pressed_light" recolor="#surface_primary_dark" />
+        <style name="button_pressed_dark" recolor="#surface_primary_light" />
+        <style name="button_checked" bg_color="#accent1_light" />
+        <style name="icon_light" image_recolor="#surface_primary_light" image_recolor_opa="255" />
+        <style name="icon_dark" image_recolor="#surface_primary_dark" image_recolor_opa="255" />
+    </styles>
+   <view extends="lv_button" width="content" height="content" style_pad_all="4">
+        <style name="button" />
+        <style name="button_pressed" selector="pressed" />
+        <style name="button_pressed_light" selector="pressed" />
+        <style name="button_checked" selector="checked" />
+        <bind_style name="button_pressed_dark" subject="theme" ref_value="1" selector="pressed" />
+
+        <lv_image src="$icon" align="center">
+            <bind_style name="icon_light" subject="theme" ref_value="0" />
+            <bind_style name="icon_dark" subject="theme" ref_value="1" />
+        </lv_image>
+        
+   </view>
+</component>
