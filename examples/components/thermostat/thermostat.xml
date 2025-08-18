@@ -55,7 +55,7 @@
                 <style name="scale_items_light" selector="items" />
                 <style name="scale_items_light" selector="indicator" />
                 <style name="scale_main_bg" selector="main" />
-                <lv_scale-section min_value="16" max_value="#room_temp" style_items="scale_indicator_light" style_indicator="scale_indicator_light" />
+                <lv_scale-section min_value="16" bind_max_value="thermostat_temp"  style_items="scale_indicator_light" style_indicator="scale_indicator_light" />
             </lv_scale>
 
             <lv_scale name="thermostat_scale_dark" width="198" height="204" x="-10" y="-10" major_tick_every="10" mode="round_outer" angle_range="180" min_value="16" max_value="28" rotation="180">
@@ -65,7 +65,7 @@
                 <style name="scale_items_dark" selector="items" />
                 <style name="scale_items_dark" selector="indicator" />
                 <style name="scale_main_bg" selector="main" />
-                <lv_scale-section min_value="16" max_value="#room_temp" style_items="scale_indicator_dark" style_indicator="scale_indicator_dark" />
+                <lv_scale-section min_value="16" bind_max_value="thermostat_temp" style_items="scale_indicator_dark" style_indicator="scale_indicator_dark" />
             </lv_scale>
 
             <lv_arc width="184" height="184" bind_value="thermostat_temp" min_value="16" max_value="28" bg_start_angle="180" bg_end_angle="360" start_angle="180" style_pad_all="30">

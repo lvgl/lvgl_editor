@@ -1,13 +1,19 @@
 <component>
     <styles>
         <style name="main" layout="flex" flex_cross_place="center" pad_column="6" text_color="#surface_primary_light"/>
+        <style name="main_dark" text_color="#surface_primary_dark" />
+        <style name="checkbox_main" radius="0" text_font="geist_semibold_14" />
+        <style name="checkbox_indicator" pad_all="4" bg_image_src="icon_theme" bg_image_recolor_opa="255" bg_image_recolor="#dark" border_width="0" bg_opa="0" />
+        <style name="checkbox_checked" bg_image_src="icon_theme" bg_image_recolor_opa="255" bg_image_recolor="#light" bg_opa="0" />
     </styles>
    <view extends="div">
     
         <style name="main" />
-    
-        <lv_switch bind_checked="theme" width="32">
-        </lv_switch>
-        <lv_label text="Switch theme" style_text_font="geist_semibold_14" align="center" />
+        <bind_style name="main_dark" subject="theme" ref_value="1" />
+        <lv_checkbox bind_checked="theme" text="Switch theme">
+            <style name="checkbox_main" selector="main" />
+            <style name="checkbox_indicator" selector="indicator" />
+            <style name="checkbox_checked" selector="indicator|checked" />
+        </lv_checkbox>
    </view>
 </component>
