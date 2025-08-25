@@ -1,34 +1,34 @@
 <screen>
    <styles>
-       <style name="light" bg_color="#accent2_50_light" />
-       <style name="dark" bg_color="#accent2_50_dark" />
-       <style name="cols" layout="flex" flex_flow="row" pad_column="16" />
-       <style name="col" layout="flex" flex_flow="column" pad_row="16" />
+       <style name="style_light" bg_color="#accent2_50_light" />
+       <style name="style_dark" bg_color="#accent2_50_dark" />
+       <style name="style_cols" layout="flex" flex_flow="row" pad_column="16" />
+       <style name="style_col" layout="flex" flex_flow="column" pad_row="16" />
    </styles>
    <view style_pad_all="48">
-      <bind_style subject="theme" name="light" ref_value="0"  />
-      <bind_style subject="theme" name="dark" ref_value="1"  />
+      <bind_style subject="theme" name="style_light" ref_value="0"  />
+      <bind_style subject="theme" name="style_dark" ref_value="1"  />
 
       <theme_switcher style_translate_x="-24" style_translate_y="-24" />
       <lv_obj name="cols" align="center">
          <style name="style_reset" />
-         <style name="cols" />
-         <lv_obj name="col">
+         <style name="style_cols" />
+         <lv_obj name="col1">
             <style name="style_reset" />
-            <style name="col" />
+            <style name="style_col" />
             
             <thermostat />
             <move_goal />
          </lv_obj>
-         <lv_obj name="col">
+         <lv_obj name="col2">
             <style name="style_reset" />
-            <style name="col" />
+            <style name="style_col" />
             <weather />
             <alarm />
          </lv_obj>
-         <lv_obj name="col">
+         <lv_obj name="col3">
             <style name="style_reset" />
-            <style name="col" />
+            <style name="style_col" />
             <light_temperature />
             <music_player />
             <speaker_volume />

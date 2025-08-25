@@ -47,7 +47,7 @@
         <int name="thermostat" value="1" help="0:disabled 1:enabled" />
         <int name="thermostat_temp" value="16" />
 
-        <int name="alarm" value="1" help="0:disabled 1:enabled" />
+        <int name="alarm_on" value="1" help="0:disabled 1:enabled" />
         <int name="alarm_hour" value="06" />
         <int name="alarm_min" value="36" />
 
@@ -87,6 +87,7 @@
    <fonts>
         <tiny_ttf name="geist_semibold_12" size="12" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_semibold_14" size="14" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
+        <tiny_ttf name="geist_bold_16" size="16" as_file="true" src_path="fonts/Geist/Geist-Bold.ttf" />
         <tiny_ttf name="geist_semibold_20" size="20" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_semibold_28" size="28" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_regular_12" size="12" as_file="true" src_path="fonts/Geist/Geist-Regular.ttf" />

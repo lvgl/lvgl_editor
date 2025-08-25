@@ -34,7 +34,7 @@
 void ui_init(const char * asset_path)
 {
     LV_LOG_USER("ui_init()\n");
-    lib_init(asset_path);
+    examples_init(asset_path);
 }
 
 /**********************

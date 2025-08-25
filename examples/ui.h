@@ -14,7 +14,7 @@ extern "C" {
  *********************/
 
 /* Include all the UI libraries */
-#include "lib.h"
+#include "examples.h"
 
 /*********************
  *      DEFINES

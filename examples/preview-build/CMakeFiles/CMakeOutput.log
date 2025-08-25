@@ -1,0 +1,154 @@
+The target system is: Emscripten - 1 - x86
+The host system is: Linux - 6.8.0-62-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /emsdk/upstream/emscripten/emcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+cache:INFO: generating system asset: symbol_lists/50a2715c074f670e2edb8689b68beca43d40f892.json... (this will be cached in "/emsdk/upstream/emscripten/cache/symbol_lists/50a2715c074f670e2edb8689b68beca43d40f892.json" for subsequent builds)
+cache:INFO:  - ok
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out.js"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out.wasm"
+
+The C compiler identification is Clang, found in "/lved/project/preview-build/CMakeFiles/3.22.1/CompilerIdC/a.out.wasm"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /lved/project/preview-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1c844/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1c844.dir/build.make CMakeFiles/cmTC_1c844.dir/build
+gmake[1]: Entering directory '/lved/project/preview-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o
+/emsdk/upstream/emscripten/emcc   -v -MD -MT CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+ /emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --sysroot=/emsdk/upstream/emscripten/cache/sysroot -DEMSCRIPTEN -Xclang -iwithsysroot/include/fakesdl -Xclang -iwithsysroot/include/compat -v -MD -MT CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o.d -oCMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+clang version 21.0.0git (https:/github.com/llvm/llvm-project 4775e6d9099467df9363e1a3cd5950cc3d2fde05)
+Target: wasm32-unknown-emscripten
+Thread model: posix
+InstalledDir: /emsdk/upstream/bin
+ (in-process)
+ "/emsdk/upstream/bin/clang-21" -cc1 -triple wasm32-unknown-emscripten -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=none -ffp-contract=on -fno-rounding-math -mconstructor-aliases -target-cpu generic -fvisibility=hidden -debugger-tuning=gdb -fdebug-compilation-dir=/lved/project/preview-build/CMakeFiles/CMakeTmp -v -fcoverage-compilation-dir=/lved/project/preview-build/CMakeFiles/CMakeTmp -resource-dir /emsdk/upstream/lib/clang/21 -dependency-file CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -sys-header-deps -D EMSCRIPTEN -isysroot /emsdk/upstream/emscripten/cache/sysroot -internal-isystem /emsdk/upstream/lib/clang/21/include -internal-isystem /emsdk/upstream/emscripten/cache/sysroot/include/wasm32-emscripten -internal-isystem /emsdk/upstream/emscripten/cache/sysroot/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fignore-exceptions -iwithsysroot/include/fakesdl -iwithsysroot/include/compat -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -o CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+clang -cc1 version 21.0.0git based upon LLVM 21.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/emsdk/upstream/emscripten/cache/sysroot/include/wasm32-emscripten"
+#include "..." search starts here:
+#include <...> search starts here:
+ /emsdk/upstream/emscripten/cache/sysroot/include/fakesdl
+ /emsdk/upstream/emscripten/cache/sysroot/include/compat
+ /emsdk/upstream/lib/clang/21/include
+ /emsdk/upstream/emscripten/cache/sysroot/include
+End of search list.
+Linking C executable cmTC_1c844.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c844.dir/link.txt --verbose=1
+/emsdk/upstream/emscripten/emcc  -v @CMakeFiles/cmTC_1c844.dir/objects1.rsp -o cmTC_1c844.js 
+ /emsdk/upstream/bin/clang --version
+ /emsdk/upstream/bin/wasm-ld -o cmTC_1c844.wasm CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -L/emsdk/upstream/emscripten/src/lib -lGL-getprocaddr -lal -lhtml5 -lstubs-debug -lnoexit -lc-debug -ldlmalloc-debug -lcompiler_rt -lc++-noexcept -lc++abi-debug-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr /tmp/tmpzav8zye0libemscripten_js_symbols.so --strip-debug --export=emscripten_stack_get_end --export=emscripten_stack_get_free --export=emscripten_stack_get_base --export=emscripten_stack_get_current --export=emscripten_stack_init --export=_emscripten_stack_alloc --export=__wasm_call_ctors --export=_emscripten_stack_restore --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=main --export-if-defined=__main_argc_argv --export-if-defined=fflush --export-table -z stack-size=65536 --no-growable-memory --initial-heap=16777216 --no-entry --stack-first --table-base=1
+ /emsdk/upstream/bin/llvm-objcopy cmTC_1c844.wasm cmTC_1c844.wasm --remove-section=.debug* --remove-section=producers --remove-section=name
+ /emsdk/node/20.18.0_64bit/bin/node /emsdk/upstream/emscripten/tools/compiler.mjs -
+gmake[1]: Leaving directory '/lved/project/preview-build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/emsdk/upstream/emscripten/cache/sysroot/include/fakesdl]
+    add: [/emsdk/upstream/emscripten/cache/sysroot/include/compat]
+    add: [/emsdk/upstream/lib/clang/21/include]
+    add: [/emsdk/upstream/emscripten/cache/sysroot/include]
+  end of search list found
+  collapse include dir [/emsdk/upstream/emscripten/cache/sysroot/include/fakesdl] ==> [/emsdk/upstream/emscripten/cache/sysroot/include/fakesdl]
+  collapse include dir [/emsdk/upstream/emscripten/cache/sysroot/include/compat] ==> [/emsdk/upstream/emscripten/cache/sysroot/include/compat]
+  collapse include dir [/emsdk/upstream/lib/clang/21/include] ==> [/emsdk/upstream/lib/clang/21/include]
+  collapse include dir [/emsdk/upstream/emscripten/cache/sysroot/include] ==> [/emsdk/upstream/emscripten/cache/sysroot/include]
+  implicit include dirs: [/emsdk/upstream/emscripten/cache/sysroot/include/fakesdl;/emsdk/upstream/emscripten/cache/sysroot/include/compat;/emsdk/upstream/lib/clang/21/include;/emsdk/upstream/emscripten/cache/sysroot/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /lved/project/preview-build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1c844/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1c844.dir/build.make CMakeFiles/cmTC_1c844.dir/build]
+  ignore line: [gmake[1]: Entering directory '/lved/project/preview-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/emsdk/upstream/emscripten/emcc   -v -MD -MT CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [ /emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --sysroot=/emsdk/upstream/emscripten/cache/sysroot -DEMSCRIPTEN -Xclang -iwithsysroot/include/fakesdl -Xclang -iwithsysroot/include/compat -v -MD -MT CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o.d -oCMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang version 21.0.0git (https:/github.com/llvm/llvm-project 4775e6d9099467df9363e1a3cd5950cc3d2fde05)]
+  ignore line: [Target: wasm32-unknown-emscripten]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /emsdk/upstream/bin]
+  ignore line: [ (in-process)]
+  ignore line: [ "/emsdk/upstream/bin/clang-21" -cc1 -triple wasm32-unknown-emscripten -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=none -ffp-contract=on -fno-rounding-math -mconstructor-aliases -target-cpu generic -fvisibility=hidden -debugger-tuning=gdb -fdebug-compilation-dir=/lved/project/preview-build/CMakeFiles/CMakeTmp -v -fcoverage-compilation-dir=/lved/project/preview-build/CMakeFiles/CMakeTmp -resource-dir /emsdk/upstream/lib/clang/21 -dependency-file CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -sys-header-deps -D EMSCRIPTEN -isysroot /emsdk/upstream/emscripten/cache/sysroot -internal-isystem /emsdk/upstream/lib/clang/21/include -internal-isystem /emsdk/upstream/emscripten/cache/sysroot/include/wasm32-emscripten -internal-isystem /emsdk/upstream/emscripten/cache/sysroot/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fignore-exceptions -iwithsysroot/include/fakesdl -iwithsysroot/include/compat -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -o CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 21.0.0git based upon LLVM 21.0.0git default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/emsdk/upstream/emscripten/cache/sysroot/include/wasm32-emscripten"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /emsdk/upstream/emscripten/cache/sysroot/include/fakesdl]
+  ignore line: [ /emsdk/upstream/emscripten/cache/sysroot/include/compat]
+  ignore line: [ /emsdk/upstream/lib/clang/21/include]
+  ignore line: [ /emsdk/upstream/emscripten/cache/sysroot/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_1c844.js]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c844.dir/link.txt --verbose=1]
+  ignore line: [/emsdk/upstream/emscripten/emcc  -v @CMakeFiles/cmTC_1c844.dir/objects1.rsp -o cmTC_1c844.js ]
+  ignore line: [ /emsdk/upstream/bin/clang --version]
+  link line: [ /emsdk/upstream/bin/wasm-ld -o cmTC_1c844.wasm CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -L/emsdk/upstream/emscripten/src/lib -lGL-getprocaddr -lal -lhtml5 -lstubs-debug -lnoexit -lc-debug -ldlmalloc-debug -lcompiler_rt -lc++-noexcept -lc++abi-debug-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr /tmp/tmpzav8zye0libemscripten_js_symbols.so --strip-debug --export=emscripten_stack_get_end --export=emscripten_stack_get_free --export=emscripten_stack_get_base --export=emscripten_stack_get_current --export=emscripten_stack_init --export=_emscripten_stack_alloc --export=__wasm_call_ctors --export=_emscripten_stack_restore --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=main --export-if-defined=__main_argc_argv --export-if-defined=fflush --export-table -z stack-size=65536 --no-growable-memory --initial-heap=16777216 --no-entry --stack-first --table-base=1]
+    arg [/emsdk/upstream/bin/wasm-ld] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_1c844.wasm] ==> ignore
+    arg [CMakeFiles/cmTC_1c844.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten] ==> dir [/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten]
+    arg [-L/emsdk/upstream/emscripten/src/lib] ==> dir [/emsdk/upstream/emscripten/src/lib]
+    arg [-lGL-getprocaddr] ==> lib [GL-getprocaddr]
+    arg [-lal] ==> lib [al]
+    arg [-lhtml5] ==> lib [html5]
+    arg [-lstubs-debug] ==> lib [stubs-debug]
+    arg [-lnoexit] ==> lib [noexit]
+    arg [-lc-debug] ==> lib [c-debug]
+    arg [-ldlmalloc-debug] ==> lib [dlmalloc-debug]
+    arg [-lcompiler_rt] ==> lib [compiler_rt]
+    arg [-lc++-noexcept] ==> lib [c++-noexcept]
+    arg [-lc++abi-debug-noexcept] ==> lib [c++abi-debug-noexcept]
+    arg [-lsockets] ==> lib [sockets]
+    arg [-mllvm] ==> ignore
+    arg [-combiner-global-alias-analysis=false] ==> ignore
+    arg [-mllvm] ==> ignore
+    arg [-enable-emscripten-sjlj] ==> ignore
+    arg [-mllvm] ==> ignore
+    arg [-disable-lsr] ==> ignore
+    arg [/tmp/tmpzav8zye0libemscripten_js_symbols.so] ==> ignore
+    arg [--strip-debug] ==> ignore
+    arg [--export=emscripten_stack_get_end] ==> ignore
+    arg [--export=emscripten_stack_get_free] ==> ignore
+    arg [--export=emscripten_stack_get_base] ==> ignore
+    arg [--export=emscripten_stack_get_current] ==> ignore
+    arg [--export=emscripten_stack_init] ==> ignore
+    arg [--export=_emscripten_stack_alloc] ==> ignore
+    arg [--export=__wasm_call_ctors] ==> ignore
+    arg [--export=_emscripten_stack_restore] ==> ignore
+    arg [--export-if-defined=__start_em_asm] ==> ignore
+    arg [--export-if-defined=__stop_em_asm] ==> ignore
+    arg [--export-if-defined=__start_em_lib_deps] ==> ignore
+    arg [--export-if-defined=__stop_em_lib_deps] ==> ignore
+    arg [--export-if-defined=__start_em_js] ==> ignore
+    arg [--export-if-defined=__stop_em_js] ==> ignore
+    arg [--export-if-defined=main] ==> ignore
+    arg [--export-if-defined=__main_argc_argv] ==> ignore
+    arg [--export-if-defined=fflush] ==> ignore
+    arg [--export-table] ==> ignore
+    arg [-zstack-size=65536] ==> ignore
+    arg [--no-growable-memory] ==> ignore
+    arg [--initial-heap=16777216] ==> ignore
+    arg [--no-entry] ==> ignore
+    arg [--stack-first] ==> ignore
+    arg [--table-base=1] ==> ignore
+  collapse library dir [/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten] ==> [/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten]
+  collapse library dir [/emsdk/upstream/emscripten/src/lib] ==> [/emsdk/upstream/emscripten/src/lib]
+  implicit libs: [GL-getprocaddr;al;html5;stubs-debug;noexit;c-debug;dlmalloc-debug;compiler_rt;c++-noexcept;c++abi-debug-noexcept;sockets]
+  implicit objs: []
+  implicit dirs: [/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten;/emsdk/upstream/emscripten/src/lib]
+  implicit fwks: []
+
+
