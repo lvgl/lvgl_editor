@@ -594,22 +594,22 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
   /lved/project/ui.h \
   /lved/project/examples.h \
   /lved/project/examples_gen.h \
-  /lved/project/components/alarm/alarm_gen.h \
-  /lved/project/components/button/button_gen.h \
-  /lved/project/components/circle_button/circle_button_gen.h \
-  /lved/project/components/div/div_gen.h \
-  /lved/project/components/icon_button/icon_button_gen.h \
-  /lved/project/components/light_temperature/light_temperature_gen.h \
-  /lved/project/components/move_goal/move_goal_gen.h \
-  /lved/project/components/move_goal/stat_col_gen.h \
-  /lved/project/components/music_player/music_player_gen.h \
-  /lved/project/components/panel/panel_gen.h \
-  /lved/project/components/panel/panel_header_gen.h \
-  /lved/project/components/speaker_volume/speaker_volume_gen.h \
-  /lved/project/components/switch/switch_gen.h \
-  /lved/project/components/theme_swtcher/theme_switcher_gen.h \
-  /lved/project/components/thermostat/thermostat_gen.h \
-  /lved/project/components/weather/weather_gen.h \
+  /lved/project/components/basic/button/button_gen.h \
+  /lved/project/components/basic/circle_button/circle_button_gen.h \
+  /lved/project/components/basic/div/div_gen.h \
+  /lved/project/components/basic/icon_button/icon_button_gen.h \
+  /lved/project/components/basic/panel/panel_gen.h \
+  /lved/project/components/basic/panel/panel_header_gen.h \
+  /lved/project/components/basic/switch/switch_gen.h \
+  /lved/project/components/cards/alarm/alarm_gen.h \
+  /lved/project/components/cards/light_temperature/light_temperature_gen.h \
+  /lved/project/components/cards/move_goal/move_goal_gen.h \
+  /lved/project/components/cards/move_goal/stat_col_gen.h \
+  /lved/project/components/cards/music_player/music_player_gen.h \
+  /lved/project/components/cards/speaker_volume/speaker_volume_gen.h \
+  /lved/project/components/cards/theme_swtcher/theme_switcher_gen.h \
+  /lved/project/components/cards/thermostat/thermostat_gen.h \
+  /lved/project/components/cards/weather/weather_gen.h \
   /lved/project/screens/elements_gen.h \
   /emsdk/upstream/emscripten/cache/sysroot/include/dirent.h \
   /emsdk/upstream/emscripten/cache/sysroot/include/bits/dirent.h \
@@ -938,9 +938,9 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/resources/lvgl/src/widgets/table/lv_table_private.h:
 
-/lved/resources/lvgl/src/widgets/textarea/lv_textarea_private.h:
-
 /lved/resources/lvgl/src/widgets/calendar/lv_calendar_private.h:
+
+/lved/resources/lvgl/src/widgets/msgbox/lv_msgbox_private.h:
 
 /lved/resources/lvgl/src/misc/lv_color_op_private.h:
 
@@ -959,8 +959,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/core/lv_obj_draw_private.h:
 
 /lved/resources/lvgl/src/core/lv_refr_private.h:
-
-/lved/resources/lvgl/src/drivers/libinput/lv_xkb.h:
 
 /lved/resources/lvgl/src/draw/sw/blend/lv_draw_sw_blend_private.h:
 
@@ -983,6 +981,8 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/core/lv_obj_private.h:
 
 /lved/resources/lvgl/src/others/file_explorer/lv_file_explorer_private.h:
+
+/lved/resources/lvgl/src/stdlib/lv_mem_private.h:
 
 /lved/resources/lvgl/src/indev/lv_indev_scroll.h:
 
@@ -1026,23 +1026,21 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/project/screens/elements_gen.h:
 
-/lved/project/components/thermostat/thermostat_gen.h:
+/lved/resources/lvgl/src/drivers/libinput/lv_xkb.h:
 
-/lved/project/components/theme_swtcher/theme_switcher_gen.h:
+/lved/project/components/cards/weather/weather_gen.h:
 
-/lved/resources/lvgl/src/widgets/msgbox/lv_msgbox_private.h:
+/lved/resources/lvgl/src/widgets/textarea/lv_textarea_private.h:
 
-/lved/project/components/switch/switch_gen.h:
+/lved/project/components/cards/thermostat/thermostat_gen.h:
 
-/lved/project/components/panel/panel_gen.h:
+/lved/project/components/cards/move_goal/move_goal_gen.h:
 
-/lved/project/components/music_player/music_player_gen.h:
+/lved/project/components/cards/light_temperature/light_temperature_gen.h:
 
-/lved/project/components/move_goal/move_goal_gen.h:
+/lved/project/components/basic/switch/switch_gen.h:
 
-/lved/resources/lvgl/src/stdlib/lv_mem_private.h:
-
-/lved/project/components/button/button_gen.h:
+/lved/project/components/basic/icon_button/icon_button_gen.h:
 
 /lved/project/examples_gen.h:
 
@@ -1051,6 +1049,8 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/lv_api_map_v9_2.h:
 
 /lved/resources/lvgl/src/lv_api_map_v9_0.h:
+
+/lved/project/components/basic/panel/panel_gen.h:
 
 /lved/resources/lvgl/src/drivers/uefi/lv_uefi_display.h:
 
@@ -1104,9 +1104,13 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/resources/lvgl/src/drivers/sdl/lv_sdl_window.h:
 
+/lved/project/components/cards/music_player/music_player_gen.h:
+
 /lved/resources/lvgl/src/themes/simple/lv_theme_simple.h:
 
 /lved/resources/lvgl/src/widgets/keyboard/lv_keyboard_private.h:
+
+/lved/project/components/cards/alarm/alarm_gen.h:
 
 /lved/resources/lvgl/src/themes/mono/lv_theme_mono.h:
 
@@ -1126,11 +1130,13 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/resources/lvgl/src/widgets/canvas/lv_canvas_private.h:
 
-/lved/project/components/circle_button/circle_button_gen.h:
-
 /lved/resources/lvgl/src/libs/tjpgd/lv_tjpgd.h:
 
+/lved/project/components/basic/circle_button/circle_button_gen.h:
+
 /lved/resources/lvgl/src/libs/qrcode/lv_qrcode.h:
+
+/lved/project/components/basic/div/div_gen.h:
 
 /lved/resources/lvgl/src/libs/libpng/lv_libpng.h:
 
@@ -1162,6 +1168,8 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_sensor.h:
 
+/lved/project/components/cards/move_goal/stat_col_gen.h:
+
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_touch.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/unistd.h:
@@ -1175,8 +1183,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_quit.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_mouse.h:
-
-/lved/project/components/icon_button/icon_button_gen.h:
 
 /lved/resources/lvgl/src/draw/lv_image_decoder.h:
 
@@ -1195,8 +1201,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/libs/svg/lv_svg.h:
 
 /lved/resources/lvgl/src/widgets/arclabel/lv_arclabel.h:
-
-/lved/project/components/panel/panel_header_gen.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_cpuinfo.h:
 
@@ -1218,11 +1222,15 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/resources/lvgl/src/draw/sw/lv_draw_sw_mask.h:
 
+/lved/project/components/basic/button/button_gen.h:
+
 /emsdk/upstream/emscripten/cache/sysroot/include/wchar.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_loadso.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_gesture.h:
+
+/lved/project/components/cards/speaker_volume/speaker_volume_gen.h:
 
 /lved/resources/lvgl/src/drivers/sdl/lv_sdl_mousewheel.h:
 
@@ -1231,8 +1239,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/libs/gif/lv_gif.h:
 
 /lved/resources/lvgl/src/widgets/keyboard/lv_keyboard.h:
-
-/lved/project/components/speaker_volume/speaker_volume_gen.h:
 
 /lved/resources/lvgl/src/widgets/switch/lv_switch.h:
 
@@ -1278,6 +1284,8 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /emsdk/upstream/lib/clang/21/include/inttypes.h:
 
+/lved/project/components/basic/panel/panel_header_gen.h:
+
 /emsdk/upstream/emscripten/cache/sysroot/include/sys/types.h:
 
 /lved/resources/lvgl/src/widgets/dropdown/lv_dropdown_private.h:
@@ -1295,8 +1303,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_joystick.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/emscripten/eventloop.h:
-
-/lved/project/components/light_temperature/light_temperature_gen.h:
 
 /lved/resources/lvgl/src/core/lv_obj_scroll.h:
 
@@ -1373,8 +1379,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/src/getrandom_compat.c:
 
 /emsdk/upstream/lib/clang/21/include/__stddef_size_t.h:
-
-/lved/project/components/div/div_gen.h:
 
 /lved/resources/lvgl/src/libs/libjpeg_turbo/lv_libjpeg_turbo.h:
 
@@ -1608,8 +1612,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/resources/lvgl/src/core/lv_obj_style_gen.h:
 
-/lved/project/components/move_goal/stat_col_gen.h:
-
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_system.h:
 
 /lved/resources/lvgl/src/core/lv_obj_draw.h:
@@ -1647,8 +1649,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/misc/cache/class/lv_cache_lru_ll.h:
 
 /lved/resources/lvgl/src/others/xml/lv_xml_utils.h:
-
-/lved/project/components/weather/weather_gen.h:
 
 /lved/resources/lvgl/src/core/lv_obj_class.h:
 
@@ -1704,6 +1704,8 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 
 /lved/resources/lvgl/src/core/lv_global.h:
 
+/lved/project/components/cards/theme_swtcher/theme_switcher_gen.h:
+
 /emsdk/upstream/emscripten/cache/sysroot/include/SDL2/SDL_rect.h:
 
 /lved/resources/lvgl/src/misc/lv_circle_buf.h:
@@ -1719,8 +1721,6 @@ CMakeFiles/lved-runtime.dir/src/runtime.c.o: /lved/resources/src/runtime.c \
 /lved/resources/lvgl/src/misc/cache/class/lv_cache_lru_rb.h:
 
 /lved/resources/lvgl/src/osal/lv_os_none.h:
-
-/lved/project/components/alarm/alarm_gen.h:
 
 /emsdk/upstream/emscripten/cache/sysroot/include/emscripten.h:
 

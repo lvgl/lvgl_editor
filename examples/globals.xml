@@ -32,6 +32,7 @@
     </consts>
 
     <styles>
+        <style name="style_disabled" opa="20%" />
         <style name="style_reset" width="content" height="content" bg_opa="0" border_width="0" radius="0" pad_all="0" />
         <style name="figma_import_test" figma_node_id="24:32" width="24" height="24" />
     </styles>
@@ -87,7 +88,7 @@
    <fonts>
         <tiny_ttf name="geist_semibold_12" size="12" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_semibold_14" size="14" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
-        <tiny_ttf name="geist_bold_16" size="16" as_file="true" src_path="fonts/Geist/Geist-Bold.ttf" />
+        <tiny_ttf name="geist_bold_16" size="16" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_semibold_20" size="20" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_semibold_28" size="28" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
         <tiny_ttf name="geist_regular_12" size="12" as_file="true" src_path="fonts/Geist/Geist-Regular.ttf" />

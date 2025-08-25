@@ -1,24 +1,37 @@
 <component>
-    <api>
-        <prop name="label" type="string" default="Label"></prop>
-    </api>
-    <styles>
-        <style name="light" bg_color="#surface_primary_light" text_color="#text_on_surface_primary_light" />
-        <style name="dark" bg_color="#surface_primary_dark" text_color="#text_on_surface_primary_dark" />
-        <style name="button" pad_hor="16" pad_ver="12" radius="10" shadow_width="0" text_font="geist_bold_16" text_align="center"  />
-        <style name="button_pressed" text_opa="255" radius="10" recolor_opa="40" transform_width="0" transform_height="0" />
-        <style name="button_pressed_light" recolor="#surface_primary_dark" />
-        <style name="button_pressed_dark" recolor="#surface_primary_light" />
-    </styles>
-   <view extends="lv_button" width="100%">
-        <bind_style name="light" subject="theme" ref_value="0" />
-        <bind_style name="dark" subject="theme" ref_value="1" />
-        <style name="button" />
-        <style name="button_pressed" selector="pressed" />
-        <style name="button_pressed_light" selector="pressed" />
-        <bind_style name="button_pressed_dark" subject="theme" ref_value="1" selector="pressed" />
+    <previews>
+        <preview style_pad_all="4" />
+    </previews>
 
-        <lv_label text="$label" width="100%">
-        </lv_label>
+    <api>
+
+        <prop name="label" type="string" default="Label" help="The text to be displayed on the button"/>
+    </api>
+
+    <styles>
+        <!-- Styles added by default -->
+        <style name="style_base" 
+               radius="10"
+               bg_opa="100%"
+               width="100%"
+               pad_hor="16" pad_ver="12" 
+               text_font="geist_bold_16"
+               bg_color="#surface_primary_light" text_color="#text_on_surface_primary_light" />
+        <style name="style_pressed" recolor_opa="20%" recolor="#surface_primary_dark" />
+       
+       <!-- Styles bound when the theme subject is 1 -->
+        <style name="style_dark" bg_color="#surface_primary_dark" text_color="#text_on_surface_primary_dark" />
+        <style name="style_pressed_dark" recolor="#surface_primary_light" />
+    </styles>
+
+
+   <view extends="lv_button">
+        <remove_style_all  /> <!-- Remove the default LVGL styles -->
+        <style name="style_base"/>
+        <style name="style_pressed" selector="pressed" />
+        <bind_style name="style_dark" subject="theme" ref_value="1" />
+        <bind_style name="style_pressed_dark" subject="theme" ref_value="1" selector="pressed" />
+
+        <lv_label text="$label" align="center"/>
    </view>
 </component>

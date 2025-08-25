@@ -1,6 +1,10 @@
+<!-- Mimic the behaviour of a HTML <div>. 100% width, 
+     content height, fully transparent, flex colum layout -->
 <component>
     <styles>
-        <style name="main" width="content" height="content" />
+        <style name="main" 
+            width="100%" height="content" 
+            layout="flex" flex_flow="column"/>
     </styles>
     <view>
         <remove_style />

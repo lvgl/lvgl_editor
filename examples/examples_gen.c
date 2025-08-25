@@ -144,7 +144,7 @@ void examples_init_gen(const char * asset_path)
     lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-SemiBold.ttf");
     geist_semibold_14 = lv_tiny_ttf_create_file(buf, 14);
     /* create tiny ttf font "geist_bold_16" from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-Bold.ttf");
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-SemiBold.ttf");
     geist_bold_16 = lv_tiny_ttf_create_file(buf, 16);
     /* create tiny ttf font "geist_semibold_20" from file */
     lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-SemiBold.ttf");

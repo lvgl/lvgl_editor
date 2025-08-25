@@ -1,0 +1,25 @@
+<!-- This component is not visible as it has zero size by default -->
+<component>
+    <api>
+        <prop name="title" type="string" default="Title"/>
+        <prop name="subject_enable" type="subject" help="Bind this subject to a switch"/>
+   </api>
+    <styles>
+        <style name="main" 
+            width="100%" height="content"
+            text_font="geist_semibold_20"
+            layout="flex"
+            flex_flow="row"
+            flex_main_place="space_between"
+            flex_cross_place="center"
+            radius="0" />
+    </styles>
+
+    <view>
+        <remove_style_all  />
+        <style name="main" />
+
+        <lv_label text="$title"/>
+        <switch bind_checked="$subject_enable"/>
+    </view>
+</component>

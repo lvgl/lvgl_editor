@@ -1,0 +1,10 @@
+<!-- To bo finished -->
+<component>
+    <styles>
+        <style name="style_base" border_width="1" radius="12" border_color="#surface_primary_dark"/>
+    </styles>
+
+   <view extends="lv_table">
+        <style name="style_base" />    
+   </view>
+</component>
