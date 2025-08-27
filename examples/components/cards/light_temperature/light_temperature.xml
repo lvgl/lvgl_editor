@@ -11,7 +11,7 @@
         <style name="arc_knob_dark" border_color="#light" /> 
         <style name="disabled" opa_layered="60" />
     </styles>
-   <view extends="panel">
+   <view extends="card">
         <style name="panel_size" />
 
         <panel_header width="100%">

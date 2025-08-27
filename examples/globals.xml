@@ -32,21 +32,22 @@
     </consts>
 
     <styles>
-        <style name="style_disabled" opa="20%" />
+        <style name="style_disabled" opa_layered="60%" />
         <style name="style_reset" width="content" height="content" bg_opa="0" border_width="0" radius="0" pad_all="0" />
         <style name="figma_import_test" figma_node_id="24:32" width="24" height="24" />
     </styles>
 
     <subjects>
-        <int name="theme" value="0" help="0:light 1:dark"/>
+        <int name="dark_theme" value="0" help="0:light 1:dark"/>
 
         <int name="move_goal_target" value="800" />
         
         <int name="location1_temp" value="25" />
         <int name="location2_temp" value="34" />
 
-        <int name="thermostat" value="1" help="0:disabled 1:enabled" />
-        <int name="thermostat_temp" value="16" />
+        <int name="thermostat_on" value="1" help="0:disabled, 1:enabled" />
+        <int name="thermostat_temp" value="16" help="The target temperature set on the thermostat"/>
+        <int name="room_temp" value="24" help="The current temperature"/>
 
         <int name="alarm_on" value="1" help="0:disabled 1:enabled" />
         <int name="alarm_hour" value="06" />

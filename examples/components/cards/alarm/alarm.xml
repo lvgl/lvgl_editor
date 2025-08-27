@@ -12,7 +12,9 @@
         <style name="has_border_bottom" border_color="#surface_primary_light" border_width="1" border_side="bottom" border_opa="26" />
     </styles>
    <view extends="card" width="320" >
-        <card_header title="Alarm" subject_enable="alarm_on"/>
+        <card_header title="Alarm">    
+            <switch bind_checked="alarm_on"/>    
+        </card_header> 
 
         <div flex_flow="row" style_flex_main_place="space_between" style_flex_cross_place="center">
             <roller options="#hours_string" subject_enable="alarm_on" bind_value="alarm_hour"/>
@@ -24,10 +26,10 @@
 
         <div flex_flow="column">
             <style name="settings" />
-            <bind_style subject="theme" name="settings_dark" ref_value="1" />
+            <bind_style subject="dark_theme" name="settings_dark" ref_value="1" />
             <div flex_flow="row" style_flex_main_place="space_between" style_pad_hor="20" style_pad_ver="12">
                 <style name="has_border_bottom" />
-                <bind_style subject="theme" name="settings_dark" ref_value="1" />
+                <bind_style subject="dark_theme" name="settings_dark" ref_value="1" />
                 <lv_label text="Sound" style_text_font="geist_semibold_14"/>
                 <lv_label text="Seedling" style_text_font="geist_regular_14"/>
             </div>

@@ -13,8 +13,8 @@
             <style name="switch_knob_light" selector="knob" />
             <style name="switch_main_light" selector="main" />
             <style name="switch_indicator_light" selector="indicator|checked" />
-            <bind_style subject="theme" ref_value="1" name="switch_knob_dark" selector="knob" />
-            <bind_style subject="theme" ref_value="1" name="switch_main_dark" selector="main" />
-            <bind_style subject="theme" ref_value="1" name="switch_indicator_dark" selector="indicator|checked" />
+            <bind_style subject="dark_theme" ref_value="1" name="switch_knob_dark" selector="knob" />
+            <bind_style subject="dark_theme" ref_value="1" name="switch_main_dark" selector="main" />
+            <bind_style subject="dark_theme" ref_value="1" name="switch_indicator_dark" selector="indicator|checked" />
     </view>
 </component>

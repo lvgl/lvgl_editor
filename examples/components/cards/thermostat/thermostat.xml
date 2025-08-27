@@ -1,89 +1,68 @@
 <component>
     <previews>
-        <preview width="320" height="320" />
+        <preview width="320" height="370" />
     </previews>
+
     <styles>
-        <style name="panel_size" width="320" height="320" />
-        <style name="off" opa_layered="120" /> 
-        <style name="style_thermostat" bg_color="0xff0000" width="272" pad_left="40" pad_right="40" pad_top="24" margin_bottom="-4"/>
-        <style name="style_thermostat_bg" width="184" height="184" radius="50%" border_width="0" />
-        <style name="thermostat_bg_light" bg_color="#bg_secondary_light" />
-        <style name="thermostat_bg_dark" bg_color="#bg_secondary_dark" />
-        <style name="style_thermostat_knob" width="160" height="160" radius="50%" border_width="0" shadow_color="#dark" shadow_offset_y="16" shadow_opa="61"  shadow_spread="0" shadow_width="32" /> 
-        <style name="style_thermostat_knob_light" bg_color="#bg_primary_light" />
-        <style name="style_thermostat_knob_dark" bg_color="#bg_primary_dark" />
-        <style name="arc_bg" arc_width="0"/>
-        <style name="arc_knob" width="12" height="12" bg_color="#accent1_light" />
-        <style name="scale" pad_all="0" pad_bottom="0" />
-        <style name="scale_light" text_font="geist_semibold_12" text_color="#surface_primary_light" />
-        <style name="scale_dark" text_font="geist_semibold_12" text_color="#surface_primary_dark" />
-        <style name="scale_main_bg" arc_width="0" bg_opa="0" />
-        <style name="scale_items_light" line_color="#surface_primary_light" line_width="3" line_opa="60" />
-        <style name="scale_items_dark" line_color="#surface_primary_dark" line_width="3" line_opa="60"/>
-        <style name="scale_indicator_light" line_color="#surface_primary_light" line_width="3" line_opa="255"/>
-        <style name="scale_indicator_dark" line_color="#surface_primary_dark" line_width="3" line_opa="255"/>
+        <style name="style_center" width="160" height="160" radius="100" bg_color="#bg_primary_light"
+                    border_width="0" shadow_color="#dark" shadow_offset_y="16" shadow_opa="61"  shadow_spread="0" shadow_width="32"  />
+        <style name="style_center_dark" bg_color="#bg_tertiary_dark" text_color="#surface_primary_dark"/>
+
+        <style name="style_arc_no_line" arc_width="0"/>
+        <style name="style_arc_knob" pad_all="6" bg_color="#accent1_light" />
+
+        <!-- Main style for the scale, sets the text color  of 16 and 24  -->
+        <style name="style_scale_main" width="200" height="200" arc_width="0" text_font="geist_semibold_12" text_color="#surface_primary_light" />
+        <style name="style_scale_main_dark"  text_color="#surface_primary_dark" />
+      
+        <!-- Use the same style for minor and major ticks -->
+        <style name="style_scale_ticks" line_color="#surface_primary_light" line_width="4" line_opa="30%" length="5" />
+        <style name="style_scale_ticks_dark" line_color="#surface_primary_dark"/>
+        
+        <style name="style_scale_section_ticks" line_color="#accent1_dark" line_width="12" line_opa="100%"/>
     </styles>
-   <view extends="panel">
-        <style name="panel_size" />
+   <view extends="card">
+        <card_header title="Thermostat">
+            <switch bind_checked="thermostat_on"/>
+        </card_header>
 
-        <panel_header width="100%" style_margin_bottom="-12">
-            <lv_label text="Thermostat" style_text_font="geist_semibold_20" />
-            <switch bind_checked="thermostat"></switch>
-        </panel_header>
+        <div style_layout="none" style_pad_ver="12">
+            <bind_style subject="thermostat_on" name="style_disabled" ref_value="0" />
 
-        <lv_obj name="thermostat0">
-            <style name="style_reset" />
-            <style name="style_thermostat" />
-            <bind_style subject="thermostat" name="off" ref_value="0" />
+            <lv_obj name="center" align="center">
+                <style name="style_center" />
+                <bind_style subject="dark_theme" ref_value="1" name="style_center_dark" />
 
-            <lv_obj name="thermostat_bg">
-                <style name="style_thermostat_bg" />
-                <bind_style subject="theme" ref_value="0" name="thermostat_bg_light" />
-                <bind_style subject="theme" ref_value="1" name="thermostat_bg_dark" />
+                <lv_label bind_text="room_temp" bind_text-fmt="%d °C" style_text_font="geist_semibold_28" align="center"/>
             </lv_obj>
 
-            <lv_obj name="thermostat_knob" x="12" y="12">
-                <style name="style_thermostat_knob" />
-                <bind_style subject="theme" ref_value="0" name="style_thermostat_knob_light" />
-                <bind_style subject="theme" ref_value="1" name="style_thermostat_knob_dark" />
-            </lv_obj>
+            <lv_scale name="thermostat_scale_light" align="center" 
+                      major_tick_every="10" mode="round_outer" angle_range="180" 
+                      min_value="16" max_value="28" rotation="180" >
 
-            <lv_scale name="thermostat_scale_light" width="198" height="204" x="-8" y="-8" major_tick_every="10" mode="round_outer" angle_range="180" min_value="16" max_value="28" rotation="180" >
-                <bind_flag_if_not_eq subject="theme" flag="hidden" ref_value="0" />
-                <style name="scale" />
-                <style name="scale_light" />
-                <style name="scale_items_light" selector="items" />
-                <style name="scale_items_light" selector="indicator" />
-                <style name="scale_main_bg" selector="main" />
-                <lv_scale-section min_value="16" bind_max_value="thermostat_temp"  style_items="scale_indicator_light" style_indicator="scale_indicator_light" />
+                <style name="style_scale_main" />
+                <bind_style name="style_scale_main_dark" subject="dark_theme" ref_value="1"/>
+                <style name="style_scale_ticks" selector="items" />
+                <style name="style_scale_ticks" selector="indicator" />
+               
+                <bind_style name="style_scale_ticks_dark" subject="dark_theme" ref_value="1" selector="items"/>
+                <bind_style name="style_scale_ticks_dark" subject="dark_theme" ref_value="1" selector="indicator"/>
+               
+                <lv_scale-section min_value="16" bind_max_value="thermostat_temp" style_items="style_scale_section_ticks" style_indicator="style_scale_section_ticks" />
             </lv_scale>
 
-            <lv_scale name="thermostat_scale_dark" width="198" height="204" x="-10" y="-10" major_tick_every="10" mode="round_outer" angle_range="180" min_value="16" max_value="28" rotation="180">
-                <bind_flag_if_not_eq subject="theme" flag="hidden" ref_value="1" />
-                <style name="scale" />
-                <style name="scale_dark" />
-                <style name="scale_items_dark" selector="items" />
-                <style name="scale_items_dark" selector="indicator" />
-                <style name="scale_main_bg" selector="main" />
-                <lv_scale-section min_value="16" bind_max_value="thermostat_temp" style_items="scale_indicator_dark" style_indicator="scale_indicator_dark" />
-            </lv_scale>
-
-            <lv_arc width="184" height="184" bind_value="thermostat_temp" min_value="16" max_value="28" bg_start_angle="180" bg_end_angle="360" start_angle="180" style_pad_all="30">
-                <bind_state_if_eq subject="thermostat" state="disabled" ref_value="0" />
-                <style name="arc_bg" selector="main" />
-                <style name="arc_bg" selector="indicator" />
-                <style name="arc_knob" selector="knob" />
+            <lv_arc width="184" height="184" align="center" bind_value="thermostat_temp" min_value="16" max_value="28" bg_start_angle="180" bg_end_angle="360" start_angle="180" style_pad_all="30">
+                <bind_state_if_eq subject="thermostat_on" state="disabled" ref_value="0" />
+                <style name="style_arc_no_line" selector="main" />
+                <style name="style_arc_no_line" selector="indicator" />
+                <style name="style_arc_knob" selector="knob" />
             </lv_arc>
-        </lv_obj>
+        </div>
 
-        <lv_label bind_text="thermostat_temp" style_text_font="geist_regular_14" bind_text-fmt="Heating up to %d °C">
-            <bind_flag_if_le subject="thermostat_temp" flag="hidden" ref_value="#room_temp" />
-        </lv_label>
-        <lv_label bind_text="thermostat_temp" style_text_font="geist_regular_14" bind_text-fmt="Cooling down to %d °C">
-            <bind_flag_if_ge subject="thermostat_temp" flag="hidden" ref_value="#room_temp" />
-        </lv_label>
-        <lv_label bind_text="thermostat_temp" style_text_font="geist_regular_14" bind_text-fmt="Room temperature is %d °C">
-            <bind_flag_if_not_eq subject="thermostat_temp" flag="hidden" ref_value="#room_temp" />
-        </lv_label>
+        <!-- TODO create a thermostat_status string subject and set its value from code -->
+        <div style_flex_track_place="center" style_margin_top="-12">
+            <lv_label text="Heating up to 24 °C"/>
+        </div>
+
    </view>
 </component>

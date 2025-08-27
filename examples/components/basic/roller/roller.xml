@@ -19,8 +19,8 @@
         <style name="style_base" />
         <style name="style_selected" selector="selected" />
         
-        <bind_style name="style_dark" subject="theme" ref_value="1" />
-        <bind_style name="style_dark" subject="theme" ref_value="1" selector="selected" />
+        <bind_style name="style_dark" subject="dark_theme" ref_value="1" />
+        <bind_style name="style_dark" subject="dark_theme" ref_value="1" selector="selected" />
 
         <bind_style subject="$subject_enable" ref_value="0" name="style_disabled" />
    </view>

@@ -9,13 +9,13 @@
             width="100%" height="content" pad_all="#panel_pad" pad_row="24"
             bg_opa="100%" bg_color="#bg_primary_light" text_color="#surface_primary_light"
             radius="#panel_corner_radius" 
-            layout="flex" flex_flow="column" flex_cross_place="center"/>
+            layout="flex" flex_flow="column"/>
 
         <style name="style_dark" bg_color="#bg_primary_dark" text_color="#surface_primary_dark" />
     </styles>
    <view>
         <remove_style_all  />
         <style name="style_base" />
-        <bind_style subject="theme" ref_value="1" name="style_dark"  />
+        <bind_style subject="dark_theme" ref_value="1" name="style_dark"  />
    </view>
 </component>
