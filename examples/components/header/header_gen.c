@@ -42,7 +42,7 @@ lv_obj_t * header_create(lv_obj_t * parent, const char * title)
 
     if (!style_inited) {
         lv_style_init(&main);
-        lv_style_set_bg_color(&main, lv_color_hex(0x2d2d2d));
+        lv_style_set_bg_color(&main, lv_color_hex(0x353535));
         lv_style_set_border_width(&main, 2);
         lv_style_set_border_side(&main, LV_BORDER_SIDE_BOTTOM);
         lv_style_set_border_color(&main, lv_color_hex(0xa2a2a2));

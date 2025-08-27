@@ -7,7 +7,7 @@
  *********************/
 #include "examples_gen.h"
 
-#if LV_USE_XML  
+#if LV_USE_XML
 #endif
 
 /*********************
