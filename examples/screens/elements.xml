@@ -4,20 +4,23 @@
        <style name="style_dark" bg_color="#accent2_50_dark" />
    </styles>
    <view flex_flow="column" >
+      <play_timeline_event trigger="screen_loaded" target="div_1/alarm_0" timeline="open" delay="400"/>
+
+
       <bind_style subject="dark_theme" name="style_light" ref_value="0"  />
       <bind_style subject="dark_theme" name="style_dark" ref_value="1"  />
 
-      <div >      
-         <bind_style subject="dark_theme" name="style_light" ref_value="0"  />
-         <bind_style subject="dark_theme" name="style_dark" ref_value="1"  />
+      <div >       
+         <bind_style subject="dark_theme" name="style_light" ref_value="0"  /> 
+         <bind_style subject="dark_theme" name="style_dark" ref_value="1" />
          <theme_switcher />
       </div>
             
       <div flex_grow="1" scroll_snap_y="center" scroll_one="true" style_flex_track_place="center" style_pad_row="#unit_xl">      
+         <alarm />
          <thermostat />
          <move_goal />
          <weather />
-         <alarm />
          <light_temperature />
          <music_player />
          <speaker_volume />
