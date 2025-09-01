@@ -5,11 +5,11 @@
 
     <styles>
         <style name="style_center" width="160" height="160" radius="100" bg_color="#bg_primary_light"
-                    border_width="0" shadow_color="#dark" shadow_offset_y="16" shadow_opa="61"  shadow_spread="0" shadow_width="32"  />
+                    border_width="0" shadow_color="#dark" shadow_offset_y="6" shadow_opa="61"  shadow_spread="0" shadow_width="32"  />
         <style name="style_center_dark" bg_color="#bg_tertiary_dark" text_color="#surface_primary_dark"/>
 
         <style name="style_arc_no_line" arc_width="0"/>
-        <style name="style_arc_knob" pad_all="6" bg_color="#accent1_light" />
+        <style name="style_arc_knob" pad_all="4" bg_color="#accent1_light" />
 
         <!-- Main style for the scale, sets the text color  of 16 and 24  -->
         <style name="style_scale_main" width="200" height="200" arc_width="0" text_font="geist_semibold_12" text_color="#surface_primary_light" />
@@ -19,6 +19,7 @@
         <style name="style_scale_ticks" line_color="#surface_primary_light" line_width="4" line_opa="30%" length="5" />
         <style name="style_scale_ticks_dark" line_color="#surface_primary_dark"/>
         
+        <!-- Color of the section. Its max value is bound to a subject -->
         <style name="style_scale_section_ticks" line_color="#accent1_dark" line_width="12" line_opa="100%"/>
     </styles>
    <view extends="card">
@@ -51,7 +52,7 @@
                 <lv_scale-section min_value="16" bind_max_value="thermostat_temp" style_items="style_scale_section_ticks" style_indicator="style_scale_section_ticks" />
             </lv_scale>
 
-            <lv_arc width="184" height="184" align="center" bind_value="thermostat_temp" min_value="16" max_value="28" bg_start_angle="180" bg_end_angle="360" start_angle="180" style_pad_all="30">
+            <lv_arc width="120" height="120" ext_click_area="60" align="center" bind_value="thermostat_temp" min_value="16" max_value="28" bg_start_angle="180" bg_end_angle="360" start_angle="180">
                 <bind_state_if_eq subject="thermostat_on" state="disabled" ref_value="0" />
                 <style name="style_arc_no_line" selector="main" />
                 <style name="style_arc_no_line" selector="indicator" />

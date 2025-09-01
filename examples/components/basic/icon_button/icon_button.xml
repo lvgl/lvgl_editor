@@ -6,7 +6,7 @@
         <prop name="icon" type="image" default="icon_plus"></prop>
     </api>
     <styles>
-        <style name="style_base" radius="12"  pad_all="4" bg_opa="0%"  bg_color="0xfff" width="content" height="content"/>
+        <style name="style_base" radius="#unit_md"  pad_all="#unit_sm" bg_opa="0%"  bg_color="0xfff" width="content" height="content"/>
         <style name="style_pressed" bg_opa="100%" bg_color="#surface_primary_dark" />
         <style name="style_pressed_dark" bg_color="#surface_primary_light" />
         <style name="style_checked" bg_opa="100%" bg_color="#accent1_light" />

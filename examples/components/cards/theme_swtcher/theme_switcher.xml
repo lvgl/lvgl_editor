@@ -9,8 +9,8 @@
    <view extends="div">
     
         <style name="main" />
-        <bind_style name="main_dark" subject="theme" ref_value="1" />
-        <lv_checkbox bind_checked="theme" text="Switch theme">
+        <bind_style name="main_dark" subject="dark_theme" ref_value="1" />
+        <lv_checkbox bind_checked="dark_theme" text="Switch theme">
             <style name="checkbox_main" selector="main" />
             <style name="checkbox_indicator" selector="indicator" />
             <style name="checkbox_checked" selector="indicator|checked" />

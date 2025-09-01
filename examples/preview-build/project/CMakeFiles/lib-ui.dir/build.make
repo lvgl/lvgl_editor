@@ -72,11 +72,26 @@ include project/CMakeFiles/lib-ui.dir/progress.make
 # Include the compile flags for this target's objects.
 include project/CMakeFiles/lib-ui.dir/flags.make
 
+project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o: ../components/basic/bar/bar_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o -c /lved/project/components/basic/bar/bar_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/bar/bar_gen.c > CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/bar/bar_gen.c -o CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.s
+
 project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o: ../components/basic/button/button_gen.c
 project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o -c /lved/project/components/basic/button/button_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.i: cmake_force
@@ -87,11 +102,41 @@ project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/button/button_gen.c -o CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.s
 
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o: ../components/basic/card/card_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o -c /lved/project/components/basic/card/card_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/card/card_gen.c > CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/card/card_gen.c -o CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.s
+
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o: ../components/basic/card/card_header_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o -c /lved/project/components/basic/card/card_header_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/card/card_header_gen.c > CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/card/card_header_gen.c -o CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.s
+
 project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o: ../components/basic/circle_button/circle_button_gen.c
 project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o -c /lved/project/components/basic/circle_button/circle_button_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.i: cmake_force
@@ -102,11 +147,26 @@ project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/circle_button/circle_button_gen.c -o CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.s
 
+project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o: ../components/basic/column/column_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o -c /lved/project/components/basic/column/column_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/column/column_gen.c > CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/column/column_gen.c -o CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.s
+
 project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o: ../components/basic/div/div_gen.c
 project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o -c /lved/project/components/basic/div/div_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.i: cmake_force
@@ -121,7 +181,7 @@ project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o: 
 project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o: ../components/basic/icon_button/icon_button_gen.c
 project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o -c /lved/project/components/basic/icon_button/icon_button_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.i: cmake_force
@@ -132,41 +192,56 @@ project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/icon_button/icon_button_gen.c -o CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.s
 
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o: ../components/basic/panel/panel_gen.c
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o -c /lved/project/components/basic/panel/panel_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o: ../components/basic/roller/roller_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o -c /lved/project/components/basic/roller/roller_gen.c
 
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.i"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/panel/panel_gen.c > CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.i
+project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/roller/roller_gen.c > CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.i
 
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.s"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/panel/panel_gen.c -o CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.s
+project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/roller/roller_gen.c -o CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.s
 
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o: ../components/basic/panel/panel_header_gen.c
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o -c /lved/project/components/basic/panel/panel_header_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o: ../components/basic/row/row_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o -c /lved/project/components/basic/row/row_gen.c
 
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.i"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/panel/panel_header_gen.c > CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.i
+project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/row/row_gen.c > CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.i
 
-project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.s"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/panel/panel_header_gen.c -o CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.s
+project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/row/row_gen.c -o CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.s
+
+project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o: ../components/basic/slider/slider_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o -c /lved/project/components/basic/slider/slider_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/slider/slider_gen.c > CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/slider/slider_gen.c -o CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.s
 
 project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o: ../components/basic/switch/switch_gen.c
 project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o -c /lved/project/components/basic/switch/switch_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.i: cmake_force
@@ -177,11 +252,26 @@ project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/switch/switch_gen.c -o CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.s
 
+project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o: ../components/basic/table/table_gen.c
+project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o -MF CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o -c /lved/project/components/basic/table/table_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/basic/table/table_gen.c > CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/basic/table/table_gen.c -o CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.s
+
 project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o: ../components/cards/alarm/alarm_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o -c /lved/project/components/cards/alarm/alarm_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.i: cmake_force
@@ -196,7 +286,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperatu
 project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o: ../components/cards/light_temperature/light_temperature_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o -c /lved/project/components/cards/light_temperature/light_temperature_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.i: cmake_force
@@ -211,7 +301,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o: proj
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o: ../components/cards/move_goal/move_goal_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o -c /lved/project/components/cards/move_goal/move_goal_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.i: cmake_force
@@ -226,7 +316,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o: proje
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o: ../components/cards/move_goal/stat_col_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o -c /lved/project/components/cards/move_goal/stat_col_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.i: cmake_force
@@ -241,7 +331,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o
 project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o: ../components/cards/music_player/music_player_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o -c /lved/project/components/cards/music_player/music_player_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.i: cmake_force
@@ -256,7 +346,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen
 project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o: ../components/cards/speaker_volume/speaker_volume_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o -c /lved/project/components/cards/speaker_volume/speaker_volume_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.i: cmake_force
@@ -271,7 +361,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.
 project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: ../components/cards/theme_swtcher/theme_switcher_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o -c /lved/project/components/cards/theme_swtcher/theme_switcher_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.i: cmake_force
@@ -286,7 +376,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: pr
 project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: ../components/cards/thermostat/thermostat_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o -c /lved/project/components/cards/thermostat/thermostat_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.i: cmake_force
@@ -297,11 +387,26 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.s: cm
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/cards/thermostat/thermostat_gen.c -o CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.s
 
+project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o: ../components/cards/weather/location_gen.c
+project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o -c /lved/project/components/cards/weather/location_gen.c
+
+project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/cards/weather/location_gen.c > CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/cards/weather/location_gen.c -o CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.s
+
 project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o: ../components/cards/weather/weather_gen.c
 project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o -c /lved/project/components/cards/weather/weather_gen.c
 
 project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.i: cmake_force
@@ -316,7 +421,7 @@ project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o: project/CMakeFiles/lib-u
 project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o: ../screens/elements_gen.c
 project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o -MF CMakeFiles/lib-ui.dir/screens/elements_gen.c.o.d -o CMakeFiles/lib-ui.dir/screens/elements_gen.c.o -c /lved/project/screens/elements_gen.c
 
 project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.i: cmake_force
@@ -331,7 +436,7 @@ project/CMakeFiles/lib-ui.dir/examples_gen.c.o: project/CMakeFiles/lib-ui.dir/fl
 project/CMakeFiles/lib-ui.dir/examples_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/examples_gen.c.o: ../examples_gen.c
 project/CMakeFiles/lib-ui.dir/examples_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object project/CMakeFiles/lib-ui.dir/examples_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object project/CMakeFiles/lib-ui.dir/examples_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/examples_gen.c.o -MF CMakeFiles/lib-ui.dir/examples_gen.c.o.d -o CMakeFiles/lib-ui.dir/examples_gen.c.o -c /lved/project/examples_gen.c
 
 project/CMakeFiles/lib-ui.dir/examples_gen.c.i: cmake_force
@@ -346,7 +451,7 @@ project/CMakeFiles/lib-ui.dir/ui.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/ui.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/ui.c.o: ../ui.c
 project/CMakeFiles/lib-ui.dir/ui.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object project/CMakeFiles/lib-ui.dir/ui.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object project/CMakeFiles/lib-ui.dir/ui.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/ui.c.o -MF CMakeFiles/lib-ui.dir/ui.c.o.d -o CMakeFiles/lib-ui.dir/ui.c.o -c /lved/project/ui.c
 
 project/CMakeFiles/lib-ui.dir/ui.c.i: cmake_force
@@ -361,7 +466,7 @@ project/CMakeFiles/lib-ui.dir/examples.c.o: project/CMakeFiles/lib-ui.dir/flags.
 project/CMakeFiles/lib-ui.dir/examples.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/examples.c.o: ../examples.c
 project/CMakeFiles/lib-ui.dir/examples.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object project/CMakeFiles/lib-ui.dir/examples.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object project/CMakeFiles/lib-ui.dir/examples.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/examples.c.o -MF CMakeFiles/lib-ui.dir/examples.c.o.d -o CMakeFiles/lib-ui.dir/examples.c.o -c /lved/project/examples.c
 
 project/CMakeFiles/lib-ui.dir/examples.c.i: cmake_force
@@ -374,13 +479,19 @@ project/CMakeFiles/lib-ui.dir/examples.c.s: cmake_force
 
 # Object files for target lib-ui
 lib__ui_OBJECTS = \
+"CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o" \
-"CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o" \
-"CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o" \
@@ -389,6 +500,7 @@ lib__ui_OBJECTS = \
 "CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o" \
 "CMakeFiles/lib-ui.dir/screens/elements_gen.c.o" \
 "CMakeFiles/lib-ui.dir/examples_gen.c.o" \
@@ -398,13 +510,19 @@ lib__ui_OBJECTS = \
 # External object files for target lib-ui
 lib__ui_EXTERNAL_OBJECTS =
 
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/div/div_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.o
-project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o
-project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/alarm/alarm_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/light_temperature/light_temperature_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/move_goal/move_goal_gen.c.o
@@ -413,6 +531,7 @@ project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/music_player
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/screens/elements_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/examples_gen.c.o
@@ -420,7 +539,7 @@ project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/ui.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/examples.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/build.make
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C static library liblib-ui.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking C static library liblib-ui.a"
 	cd /lved/project/preview-build/project && $(CMAKE_COMMAND) -P CMakeFiles/lib-ui.dir/cmake_clean_target.cmake
 	cd /lved/project/preview-build/project && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib-ui.dir/link.txt --verbose=$(VERBOSE)
 

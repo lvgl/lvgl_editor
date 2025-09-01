@@ -4,6 +4,12 @@
     </api>
 
     <consts>
+        <int name="unit_sm" value="6" />
+        <int name="unit_md" value="12" />
+        <int name="unit_lg" value="18" />
+        <int name="unit_xl" value="24" />
+        <percentage name="opa_muted" value="20%" />
+
         <color name="light" value="0xffffff" />
         <color name="dark" value="0x0e0e0e" />
         <color name="surface_primary_light" value="0x0e0e0e" />
@@ -24,11 +30,6 @@
         <color name="accent2_dark" value="0x887A3D" />
         <color name="accent2_50_light" value="0xf3f0e7" />
         <color name="accent2_50_dark" value="0x4A473E" />
-
-        <int name="room_temp" value="24" />
-
-        <int name="panel_pad" value="24" />
-        <int name="panel_corner_radius" value="32" />
     </consts>
 
     <styles>

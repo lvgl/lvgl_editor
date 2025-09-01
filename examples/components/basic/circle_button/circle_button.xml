@@ -7,7 +7,7 @@
         <style name="style_base" width="44" height="44" 
                 bg_color="#bg_secondary_light"
                 bg_opa="100%"
-                radius="50%" 
+                radius="200" 
                 pad_all="0"/>
         <style name="style_pressed" recolor_opa="20%"  recolor="#surface_primary_dark"/>
         <style name="style_icon" image_recolor="#surface_primary_dark" image_recolor_opa="255" />

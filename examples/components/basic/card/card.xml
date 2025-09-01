@@ -6,9 +6,9 @@
 
     <styles>
         <style name="style_base" 
-            width="100%" height="content" pad_all="#panel_pad" pad_row="24"
+            width="300" height="content" pad_all="#unit_lg" pad_row="#unit_xl"
             bg_opa="100%" bg_color="#bg_primary_light" text_color="#surface_primary_light"
-            radius="#panel_corner_radius" 
+            radius="#unit_xl"  
             layout="flex" flex_flow="column"/>
 
         <style name="style_dark" bg_color="#bg_primary_dark" text_color="#surface_primary_dark" />

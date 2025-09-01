@@ -11,13 +11,13 @@
     <styles>
         <!-- Styles added by default -->
         <style name="style_base" 
-               radius="10"
+               radius="#unit_md"
                bg_opa="100%"
                width="100%"
-               pad_hor="16" pad_ver="12" 
+               pad_hor="#unit_lg" pad_ver="#unit_md" 
                text_font="geist_bold_16"
                bg_color="#surface_primary_light" text_color="#text_on_surface_primary_light" />
-        <style name="style_pressed" recolor_opa="20%" recolor="#surface_primary_dark" />
+        <style name="style_pressed" recolor_opa="#opa_muted" recolor="#surface_primary_dark" />
        
        <!-- Styles bound when the theme subject is 1 -->
         <style name="style_dark" bg_color="#surface_primary_dark" text_color="#text_on_surface_primary_dark" />

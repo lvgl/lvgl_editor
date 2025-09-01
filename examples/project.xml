@@ -1,7 +1,7 @@
 <project>
    <targets>
        <target name="full_view">
-            <display width="1280" height="800" radius="10" />
+            <display width="480" height="480" />
        </target>
    </targets>
 </project>

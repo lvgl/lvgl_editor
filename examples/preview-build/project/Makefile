@@ -133,6 +133,30 @@ lib-ui/fast:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/build
 .PHONY : lib-ui/fast
 
+components/basic/bar/bar_gen.o: components/basic/bar/bar_gen.c.o
+.PHONY : components/basic/bar/bar_gen.o
+
+# target to build an object file
+components/basic/bar/bar_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.o
+.PHONY : components/basic/bar/bar_gen.c.o
+
+components/basic/bar/bar_gen.i: components/basic/bar/bar_gen.c.i
+.PHONY : components/basic/bar/bar_gen.i
+
+# target to preprocess a source file
+components/basic/bar/bar_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.i
+.PHONY : components/basic/bar/bar_gen.c.i
+
+components/basic/bar/bar_gen.s: components/basic/bar/bar_gen.c.s
+.PHONY : components/basic/bar/bar_gen.s
+
+# target to generate assembly for a file
+components/basic/bar/bar_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/bar/bar_gen.c.s
+.PHONY : components/basic/bar/bar_gen.c.s
+
 components/basic/button/button_gen.o: components/basic/button/button_gen.c.o
 .PHONY : components/basic/button/button_gen.o
 
@@ -157,6 +181,54 @@ components/basic/button/button_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/button/button_gen.c.s
 .PHONY : components/basic/button/button_gen.c.s
 
+components/basic/card/card_gen.o: components/basic/card/card_gen.c.o
+.PHONY : components/basic/card/card_gen.o
+
+# target to build an object file
+components/basic/card/card_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.o
+.PHONY : components/basic/card/card_gen.c.o
+
+components/basic/card/card_gen.i: components/basic/card/card_gen.c.i
+.PHONY : components/basic/card/card_gen.i
+
+# target to preprocess a source file
+components/basic/card/card_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.i
+.PHONY : components/basic/card/card_gen.c.i
+
+components/basic/card/card_gen.s: components/basic/card/card_gen.c.s
+.PHONY : components/basic/card/card_gen.s
+
+# target to generate assembly for a file
+components/basic/card/card_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/card/card_gen.c.s
+.PHONY : components/basic/card/card_gen.c.s
+
+components/basic/card/card_header_gen.o: components/basic/card/card_header_gen.c.o
+.PHONY : components/basic/card/card_header_gen.o
+
+# target to build an object file
+components/basic/card/card_header_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.o
+.PHONY : components/basic/card/card_header_gen.c.o
+
+components/basic/card/card_header_gen.i: components/basic/card/card_header_gen.c.i
+.PHONY : components/basic/card/card_header_gen.i
+
+# target to preprocess a source file
+components/basic/card/card_header_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.i
+.PHONY : components/basic/card/card_header_gen.c.i
+
+components/basic/card/card_header_gen.s: components/basic/card/card_header_gen.c.s
+.PHONY : components/basic/card/card_header_gen.s
+
+# target to generate assembly for a file
+components/basic/card/card_header_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/card/card_header_gen.c.s
+.PHONY : components/basic/card/card_header_gen.c.s
+
 components/basic/circle_button/circle_button_gen.o: components/basic/circle_button/circle_button_gen.c.o
 .PHONY : components/basic/circle_button/circle_button_gen.o
 
@@ -180,6 +252,30 @@ components/basic/circle_button/circle_button_gen.s: components/basic/circle_butt
 components/basic/circle_button/circle_button_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/circle_button/circle_button_gen.c.s
 .PHONY : components/basic/circle_button/circle_button_gen.c.s
+
+components/basic/column/column_gen.o: components/basic/column/column_gen.c.o
+.PHONY : components/basic/column/column_gen.o
+
+# target to build an object file
+components/basic/column/column_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.o
+.PHONY : components/basic/column/column_gen.c.o
+
+components/basic/column/column_gen.i: components/basic/column/column_gen.c.i
+.PHONY : components/basic/column/column_gen.i
+
+# target to preprocess a source file
+components/basic/column/column_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.i
+.PHONY : components/basic/column/column_gen.c.i
+
+components/basic/column/column_gen.s: components/basic/column/column_gen.c.s
+.PHONY : components/basic/column/column_gen.s
+
+# target to generate assembly for a file
+components/basic/column/column_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/column/column_gen.c.s
+.PHONY : components/basic/column/column_gen.c.s
 
 components/basic/div/div_gen.o: components/basic/div/div_gen.c.o
 .PHONY : components/basic/div/div_gen.o
@@ -229,53 +325,77 @@ components/basic/icon_button/icon_button_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/icon_button/icon_button_gen.c.s
 .PHONY : components/basic/icon_button/icon_button_gen.c.s
 
-components/basic/panel/panel_gen.o: components/basic/panel/panel_gen.c.o
-.PHONY : components/basic/panel/panel_gen.o
+components/basic/roller/roller_gen.o: components/basic/roller/roller_gen.c.o
+.PHONY : components/basic/roller/roller_gen.o
 
 # target to build an object file
-components/basic/panel/panel_gen.c.o:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.o
-.PHONY : components/basic/panel/panel_gen.c.o
+components/basic/roller/roller_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.o
+.PHONY : components/basic/roller/roller_gen.c.o
 
-components/basic/panel/panel_gen.i: components/basic/panel/panel_gen.c.i
-.PHONY : components/basic/panel/panel_gen.i
+components/basic/roller/roller_gen.i: components/basic/roller/roller_gen.c.i
+.PHONY : components/basic/roller/roller_gen.i
 
 # target to preprocess a source file
-components/basic/panel/panel_gen.c.i:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.i
-.PHONY : components/basic/panel/panel_gen.c.i
+components/basic/roller/roller_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.i
+.PHONY : components/basic/roller/roller_gen.c.i
 
-components/basic/panel/panel_gen.s: components/basic/panel/panel_gen.c.s
-.PHONY : components/basic/panel/panel_gen.s
+components/basic/roller/roller_gen.s: components/basic/roller/roller_gen.c.s
+.PHONY : components/basic/roller/roller_gen.s
 
 # target to generate assembly for a file
-components/basic/panel/panel_gen.c.s:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_gen.c.s
-.PHONY : components/basic/panel/panel_gen.c.s
+components/basic/roller/roller_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/roller/roller_gen.c.s
+.PHONY : components/basic/roller/roller_gen.c.s
 
-components/basic/panel/panel_header_gen.o: components/basic/panel/panel_header_gen.c.o
-.PHONY : components/basic/panel/panel_header_gen.o
+components/basic/row/row_gen.o: components/basic/row/row_gen.c.o
+.PHONY : components/basic/row/row_gen.o
 
 # target to build an object file
-components/basic/panel/panel_header_gen.c.o:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.o
-.PHONY : components/basic/panel/panel_header_gen.c.o
+components/basic/row/row_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.o
+.PHONY : components/basic/row/row_gen.c.o
 
-components/basic/panel/panel_header_gen.i: components/basic/panel/panel_header_gen.c.i
-.PHONY : components/basic/panel/panel_header_gen.i
+components/basic/row/row_gen.i: components/basic/row/row_gen.c.i
+.PHONY : components/basic/row/row_gen.i
 
 # target to preprocess a source file
-components/basic/panel/panel_header_gen.c.i:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.i
-.PHONY : components/basic/panel/panel_header_gen.c.i
+components/basic/row/row_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.i
+.PHONY : components/basic/row/row_gen.c.i
 
-components/basic/panel/panel_header_gen.s: components/basic/panel/panel_header_gen.c.s
-.PHONY : components/basic/panel/panel_header_gen.s
+components/basic/row/row_gen.s: components/basic/row/row_gen.c.s
+.PHONY : components/basic/row/row_gen.s
 
 # target to generate assembly for a file
-components/basic/panel/panel_header_gen.c.s:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/panel/panel_header_gen.c.s
-.PHONY : components/basic/panel/panel_header_gen.c.s
+components/basic/row/row_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/row/row_gen.c.s
+.PHONY : components/basic/row/row_gen.c.s
+
+components/basic/slider/slider_gen.o: components/basic/slider/slider_gen.c.o
+.PHONY : components/basic/slider/slider_gen.o
+
+# target to build an object file
+components/basic/slider/slider_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.o
+.PHONY : components/basic/slider/slider_gen.c.o
+
+components/basic/slider/slider_gen.i: components/basic/slider/slider_gen.c.i
+.PHONY : components/basic/slider/slider_gen.i
+
+# target to preprocess a source file
+components/basic/slider/slider_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.i
+.PHONY : components/basic/slider/slider_gen.c.i
+
+components/basic/slider/slider_gen.s: components/basic/slider/slider_gen.c.s
+.PHONY : components/basic/slider/slider_gen.s
+
+# target to generate assembly for a file
+components/basic/slider/slider_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/slider/slider_gen.c.s
+.PHONY : components/basic/slider/slider_gen.c.s
 
 components/basic/switch/switch_gen.o: components/basic/switch/switch_gen.c.o
 .PHONY : components/basic/switch/switch_gen.o
@@ -300,6 +420,30 @@ components/basic/switch/switch_gen.s: components/basic/switch/switch_gen.c.s
 components/basic/switch/switch_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/switch/switch_gen.c.s
 .PHONY : components/basic/switch/switch_gen.c.s
+
+components/basic/table/table_gen.o: components/basic/table/table_gen.c.o
+.PHONY : components/basic/table/table_gen.o
+
+# target to build an object file
+components/basic/table/table_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.o
+.PHONY : components/basic/table/table_gen.c.o
+
+components/basic/table/table_gen.i: components/basic/table/table_gen.c.i
+.PHONY : components/basic/table/table_gen.i
+
+# target to preprocess a source file
+components/basic/table/table_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.i
+.PHONY : components/basic/table/table_gen.c.i
+
+components/basic/table/table_gen.s: components/basic/table/table_gen.c.s
+.PHONY : components/basic/table/table_gen.s
+
+# target to generate assembly for a file
+components/basic/table/table_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/basic/table/table_gen.c.s
+.PHONY : components/basic/table/table_gen.c.s
 
 components/cards/alarm/alarm_gen.o: components/cards/alarm/alarm_gen.c.o
 .PHONY : components/cards/alarm/alarm_gen.o
@@ -493,6 +637,30 @@ components/cards/thermostat/thermostat_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.s
 .PHONY : components/cards/thermostat/thermostat_gen.c.s
 
+components/cards/weather/location_gen.o: components/cards/weather/location_gen.c.o
+.PHONY : components/cards/weather/location_gen.o
+
+# target to build an object file
+components/cards/weather/location_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o
+.PHONY : components/cards/weather/location_gen.c.o
+
+components/cards/weather/location_gen.i: components/cards/weather/location_gen.c.i
+.PHONY : components/cards/weather/location_gen.i
+
+# target to preprocess a source file
+components/cards/weather/location_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.i
+.PHONY : components/cards/weather/location_gen.c.i
+
+components/cards/weather/location_gen.s: components/cards/weather/location_gen.c.s
+.PHONY : components/cards/weather/location_gen.s
+
+# target to generate assembly for a file
+components/cards/weather/location_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.s
+.PHONY : components/cards/weather/location_gen.c.s
+
 components/cards/weather/weather_gen.o: components/cards/weather/weather_gen.c.o
 .PHONY : components/cards/weather/weather_gen.o
 
@@ -622,27 +790,45 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lib-ui"
+	@echo "... components/basic/bar/bar_gen.o"
+	@echo "... components/basic/bar/bar_gen.i"
+	@echo "... components/basic/bar/bar_gen.s"
 	@echo "... components/basic/button/button_gen.o"
 	@echo "... components/basic/button/button_gen.i"
 	@echo "... components/basic/button/button_gen.s"
+	@echo "... components/basic/card/card_gen.o"
+	@echo "... components/basic/card/card_gen.i"
+	@echo "... components/basic/card/card_gen.s"
+	@echo "... components/basic/card/card_header_gen.o"
+	@echo "... components/basic/card/card_header_gen.i"
+	@echo "... components/basic/card/card_header_gen.s"
 	@echo "... components/basic/circle_button/circle_button_gen.o"
 	@echo "... components/basic/circle_button/circle_button_gen.i"
 	@echo "... components/basic/circle_button/circle_button_gen.s"
+	@echo "... components/basic/column/column_gen.o"
+	@echo "... components/basic/column/column_gen.i"
+	@echo "... components/basic/column/column_gen.s"
 	@echo "... components/basic/div/div_gen.o"
 	@echo "... components/basic/div/div_gen.i"
 	@echo "... components/basic/div/div_gen.s"
 	@echo "... components/basic/icon_button/icon_button_gen.o"
 	@echo "... components/basic/icon_button/icon_button_gen.i"
 	@echo "... components/basic/icon_button/icon_button_gen.s"
-	@echo "... components/basic/panel/panel_gen.o"
-	@echo "... components/basic/panel/panel_gen.i"
-	@echo "... components/basic/panel/panel_gen.s"
-	@echo "... components/basic/panel/panel_header_gen.o"
-	@echo "... components/basic/panel/panel_header_gen.i"
-	@echo "... components/basic/panel/panel_header_gen.s"
+	@echo "... components/basic/roller/roller_gen.o"
+	@echo "... components/basic/roller/roller_gen.i"
+	@echo "... components/basic/roller/roller_gen.s"
+	@echo "... components/basic/row/row_gen.o"
+	@echo "... components/basic/row/row_gen.i"
+	@echo "... components/basic/row/row_gen.s"
+	@echo "... components/basic/slider/slider_gen.o"
+	@echo "... components/basic/slider/slider_gen.i"
+	@echo "... components/basic/slider/slider_gen.s"
 	@echo "... components/basic/switch/switch_gen.o"
 	@echo "... components/basic/switch/switch_gen.i"
 	@echo "... components/basic/switch/switch_gen.s"
+	@echo "... components/basic/table/table_gen.o"
+	@echo "... components/basic/table/table_gen.i"
+	@echo "... components/basic/table/table_gen.s"
 	@echo "... components/cards/alarm/alarm_gen.o"
 	@echo "... components/cards/alarm/alarm_gen.i"
 	@echo "... components/cards/alarm/alarm_gen.s"
@@ -667,6 +853,9 @@ help:
 	@echo "... components/cards/thermostat/thermostat_gen.o"
 	@echo "... components/cards/thermostat/thermostat_gen.i"
 	@echo "... components/cards/thermostat/thermostat_gen.s"
+	@echo "... components/cards/weather/location_gen.o"
+	@echo "... components/cards/weather/location_gen.i"
+	@echo "... components/cards/weather/location_gen.s"
 	@echo "... components/cards/weather/weather_gen.o"
 	@echo "... components/cards/weather/weather_gen.i"
 	@echo "... components/cards/weather/weather_gen.s"

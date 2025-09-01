@@ -531,13 +531,19 @@ project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.
   /lved/resources/lvgl/src/lv_api_map_v9_2.h \
   /lved/resources/lvgl/src/lv_api_map_v9_3.h /lved/project/ui.h \
   /lved/project/examples.h /lved/project/examples_gen.h \
+  /lved/project/components/basic/bar/bar_gen.h \
   /lved/project/components/basic/button/button_gen.h \
+  /lved/project/components/basic/card/card_gen.h \
+  /lved/project/components/basic/card/card_header_gen.h \
   /lved/project/components/basic/circle_button/circle_button_gen.h \
+  /lved/project/components/basic/column/column_gen.h \
   /lved/project/components/basic/div/div_gen.h \
   /lved/project/components/basic/icon_button/icon_button_gen.h \
-  /lved/project/components/basic/panel/panel_gen.h \
-  /lved/project/components/basic/panel/panel_header_gen.h \
+  /lved/project/components/basic/roller/roller_gen.h \
+  /lved/project/components/basic/row/row_gen.h \
+  /lved/project/components/basic/slider/slider_gen.h \
   /lved/project/components/basic/switch/switch_gen.h \
+  /lved/project/components/basic/table/table_gen.h \
   /lved/project/components/cards/alarm/alarm_gen.h \
   /lved/project/components/cards/light_temperature/light_temperature_gen.h \
   /lved/project/components/cards/move_goal/move_goal_gen.h \
@@ -545,5 +551,6 @@ project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.
   /lved/project/components/cards/music_player/music_player_gen.h \
   /lved/project/components/cards/speaker_volume/speaker_volume_gen.h \
   /lved/project/components/cards/thermostat/thermostat_gen.h \
+  /lved/project/components/cards/weather/location_gen.h \
   /lved/project/components/cards/weather/weather_gen.h \
   /lved/project/screens/elements_gen.h
