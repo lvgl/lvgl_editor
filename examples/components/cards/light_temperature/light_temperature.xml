@@ -28,7 +28,7 @@
                 <bind_style subject="light_temperature" ref_value="0" name="disabled" />
                 <lv_label bind_text="light_temperature_temp" style_text_font="geist_semibold_28" style_text_letter_space="-1" bind_text-fmt="%dK"></lv_label>
                 <lv_label text="Dining room" style_text_font="geist_semibold_12" style_text_letter_space="0" style_translate_y="-4"></lv_label>
-            </column >
+            </column>
         </lv_arc>
 
    </view>

@@ -78,6 +78,7 @@ lv_obj_t * switch_create(lv_obj_t * parent)
     lv_obj_t * lv_switch_0 = lv_switch_create(parent);
     lv_obj_set_width(lv_switch_0, 48);
     lv_obj_set_height(lv_switch_0, 32);
+
     lv_obj_add_style(lv_switch_0, &switch_knob, LV_PART_KNOB);
     lv_obj_add_style(lv_switch_0, &switch_knob_light, LV_PART_KNOB);
     lv_obj_add_style(lv_switch_0, &switch_main_light, LV_PART_MAIN);

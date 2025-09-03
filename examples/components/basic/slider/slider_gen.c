@@ -70,6 +70,7 @@ lv_obj_t * slider_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_slider_0 = lv_slider_create(parent);
+
     lv_obj_remove_style_all(lv_slider_0);
     lv_obj_add_style(lv_slider_0, &style_main, 0);
     lv_obj_add_style(lv_slider_0, &style_knob, LV_PART_KNOB);

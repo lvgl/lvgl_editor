@@ -56,9 +56,9 @@ lv_obj_t * card_header_create(lv_obj_t * parent, const char * title)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+
     lv_obj_remove_style_all(lv_obj_0);
     lv_obj_add_style(lv_obj_0, &main, 0);
-
     lv_obj_t * lv_label_0 = lv_label_create(lv_obj_0);
     lv_label_set_text(lv_label_0, title);
 

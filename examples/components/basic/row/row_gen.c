@@ -52,6 +52,7 @@ lv_obj_t * row_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+
     lv_obj_remove_style_all(lv_obj_0);
     lv_obj_add_style(lv_obj_0, &style_base, 0);
 

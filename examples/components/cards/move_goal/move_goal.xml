@@ -5,10 +5,10 @@
    
     <view extends="card">
 
-        <column >
+        <column>
         <lv_label text="Move goal" style_text_font="geist_semibold_20"/>
         <lv_label text="Set your daily activity goal" style_text_font="geist_regular_14" style_text_opa="50%" />
-        </column >
+        </column>
         
         <row height="90" width="100%" style_flex_main_place="space_between">
                 <stat_col day="Mon" move="8500" />

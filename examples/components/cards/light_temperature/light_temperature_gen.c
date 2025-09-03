@@ -77,10 +77,8 @@ lv_obj_t * light_temperature_create(lv_obj_t * parent)
     lv_obj_set_style_flex_cross_place(card_0, LV_FLEX_ALIGN_CENTER, 0);
 
     lv_obj_t * card_header_0 = card_header_create(card_0, "Light temperature");
-
     lv_obj_t * switch_0 = switch_create(card_header_0);
     lv_obj_bind_checked(switch_0, &light_temperature);
-
 
 
     lv_obj_t * lv_arc_0 = lv_arc_create(card_0);
@@ -96,17 +94,15 @@ lv_obj_t * light_temperature_create(lv_obj_t * parent)
     lv_obj_add_style(lv_arc_0, &disabled, LV_STATE_DISABLED);
     lv_obj_bind_style(lv_arc_0, &arc_knob_dark, LV_PART_KNOB, &dark_theme, 1);
     lv_obj_bind_state_if_eq(lv_arc_0, &light_temperature, LV_STATE_DISABLED, 0);
-
     lv_obj_t * column_0 = column_create(lv_arc_0);
     lv_obj_set_style_flex_cross_place(column_0, LV_FLEX_ALIGN_CENTER, 0);
     lv_obj_set_align(column_0, LV_ALIGN_CENTER);
     lv_obj_set_y(column_0, -10);
     lv_obj_bind_style(column_0, &disabled, 0, &light_temperature, 0);
-
     lv_obj_t * lv_label_0 = lv_label_create(column_0);
-    lv_label_bind_text(lv_label_0, &light_temperature_temp, "%dK");lv_obj_set_style_text_font(lv_label_0, geist_semibold_28, 0);
+    lv_label_bind_text(lv_label_0, &light_temperature_temp, "%dK");
+    lv_obj_set_style_text_font(lv_label_0, geist_semibold_28, 0);
     lv_obj_set_style_text_letter_space(lv_label_0, -1, 0);
-
 
     lv_obj_t * lv_label_1 = lv_label_create(column_0);
     lv_label_set_text(lv_label_1, "Dining room");

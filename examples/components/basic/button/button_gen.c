@@ -70,12 +70,12 @@ lv_obj_t * button_create(lv_obj_t * parent, const char * label)
     }
 
     lv_obj_t * lv_button_0 = lv_button_create(parent);
+
     lv_obj_remove_style_all(lv_button_0);
     lv_obj_add_style(lv_button_0, &style_base, 0);
     lv_obj_add_style(lv_button_0, &style_pressed, LV_STATE_PRESSED);
     lv_obj_bind_style(lv_button_0, &style_dark, 0, &dark_theme, 1);
     lv_obj_bind_style(lv_button_0, &style_pressed_dark, LV_STATE_PRESSED, &dark_theme, 1);
-
     lv_obj_t * lv_label_0 = lv_label_create(lv_button_0);
     lv_label_set_text(lv_label_0, label);
     lv_obj_set_align(lv_label_0, LV_ALIGN_CENTER);

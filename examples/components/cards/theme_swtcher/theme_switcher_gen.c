@@ -77,9 +77,9 @@ lv_obj_t * theme_switcher_create(lv_obj_t * parent)
     }
 
     lv_obj_t * div_0 = div_create(parent);
+
     lv_obj_add_style(div_0, &main, 0);
     lv_obj_bind_style(div_0, &main_dark, 0, &dark_theme, 1);
-
     lv_obj_t * lv_checkbox_0 = lv_checkbox_create(div_0);
     lv_obj_bind_checked(lv_checkbox_0, &dark_theme);
     lv_checkbox_set_text(lv_checkbox_0, "Switch theme");

@@ -62,6 +62,7 @@ lv_obj_t * bar_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_bar_0 = lv_bar_create(parent);
+
     lv_obj_remove_style_all(lv_bar_0);
     lv_obj_add_style(lv_bar_0, &style_main, 0);
     lv_obj_add_style(lv_bar_0, &style_indicator, LV_PART_INDICATOR);

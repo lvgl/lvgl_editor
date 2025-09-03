@@ -77,12 +77,12 @@ lv_obj_t * circle_button_create(lv_obj_t * parent, const void * icon)
     }
 
     lv_obj_t * lv_button_0 = lv_button_create(parent);
+
     lv_obj_remove_style_all(lv_button_0);
     lv_obj_add_style(lv_button_0, &style_base, 0);
     lv_obj_add_style(lv_button_0, &style_pressed, LV_STATE_PRESSED);
     lv_obj_bind_style(lv_button_0, &style_dark, 0, &dark_theme, 0);
     lv_obj_bind_style(lv_button_0, &style_pressed_dark, LV_STATE_PRESSED, &dark_theme, 1);
-
     lv_obj_t * lv_image_0 = lv_image_create(lv_button_0);
     lv_image_set_src(lv_image_0, icon);
     lv_obj_set_align(lv_image_0, LV_ALIGN_CENTER);

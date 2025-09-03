@@ -64,6 +64,7 @@ lv_obj_t * roller_create(lv_obj_t * parent, lv_subject_t * subject_enable)
     }
 
     lv_obj_t * lv_roller_0 = lv_roller_create(parent);
+
     lv_obj_remove_style_all(lv_roller_0);
     lv_obj_bind_state_if_eq(lv_roller_0, subject_enable, LV_STATE_DISABLED, 0);
     lv_obj_add_style(lv_roller_0, &style_base, 0);

@@ -63,6 +63,7 @@ lv_obj_t * card_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+
     lv_obj_remove_style_all(lv_obj_0);
     lv_obj_add_style(lv_obj_0, &style_base, 0);
     lv_obj_bind_style(lv_obj_0, &style_dark, 0, &dark_theme, 1);
