@@ -7,7 +7,7 @@
         <subject_set subject="notification_on" value="0"/>
         <subject_set subject="hours" value="3"/>
         <subject_set subject="mins" value="45"/>
-        <subject_set subject="age" value="17"/>
+        <subject_set subject="age" value="7"/>
 
         <screenshot_compare path="start.png" />
         <wait ms="500" />
