@@ -1,1 +1,1 @@
-Place PNG images here
+Place PNG images here.

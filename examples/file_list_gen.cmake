@@ -20,7 +20,7 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/move_goal/stat_col_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/music_player/music_player_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/speaker_volume/speaker_volume_gen.c
-  ${CMAKE_CURRENT_LIST_DIR}/components/cards/theme_swtcher/theme_switcher_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/cards/theme_switcher/theme_switcher_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/thermostat/thermostat_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/weather/location_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/weather/weather_gen.c

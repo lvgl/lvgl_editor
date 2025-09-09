@@ -709,7 +709,7 @@ function createExportWrapper(name, nargs) {
 var wasmBinaryFile;
 
 function findWasmBinary() {
-    return locateFile('cmTC_1c844.wasm');
+    return locateFile('cmTC_621de.wasm');
 }
 
 function getBinarySync(file) {

@@ -589,29 +589,29 @@ components/cards/speaker_volume/speaker_volume_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.s
 .PHONY : components/cards/speaker_volume/speaker_volume_gen.c.s
 
-components/cards/theme_swtcher/theme_switcher_gen.o: components/cards/theme_swtcher/theme_switcher_gen.c.o
-.PHONY : components/cards/theme_swtcher/theme_switcher_gen.o
+components/cards/theme_switcher/theme_switcher_gen.o: components/cards/theme_switcher/theme_switcher_gen.c.o
+.PHONY : components/cards/theme_switcher/theme_switcher_gen.o
 
 # target to build an object file
-components/cards/theme_swtcher/theme_switcher_gen.c.o:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o
-.PHONY : components/cards/theme_swtcher/theme_switcher_gen.c.o
+components/cards/theme_switcher/theme_switcher_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o
+.PHONY : components/cards/theme_switcher/theme_switcher_gen.c.o
 
-components/cards/theme_swtcher/theme_switcher_gen.i: components/cards/theme_swtcher/theme_switcher_gen.c.i
-.PHONY : components/cards/theme_swtcher/theme_switcher_gen.i
+components/cards/theme_switcher/theme_switcher_gen.i: components/cards/theme_switcher/theme_switcher_gen.c.i
+.PHONY : components/cards/theme_switcher/theme_switcher_gen.i
 
 # target to preprocess a source file
-components/cards/theme_swtcher/theme_switcher_gen.c.i:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.i
-.PHONY : components/cards/theme_swtcher/theme_switcher_gen.c.i
+components/cards/theme_switcher/theme_switcher_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.i
+.PHONY : components/cards/theme_switcher/theme_switcher_gen.c.i
 
-components/cards/theme_swtcher/theme_switcher_gen.s: components/cards/theme_swtcher/theme_switcher_gen.c.s
-.PHONY : components/cards/theme_swtcher/theme_switcher_gen.s
+components/cards/theme_switcher/theme_switcher_gen.s: components/cards/theme_switcher/theme_switcher_gen.c.s
+.PHONY : components/cards/theme_switcher/theme_switcher_gen.s
 
 # target to generate assembly for a file
-components/cards/theme_swtcher/theme_switcher_gen.c.s:
-	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.s
-.PHONY : components/cards/theme_swtcher/theme_switcher_gen.c.s
+components/cards/theme_switcher/theme_switcher_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.s
+.PHONY : components/cards/theme_switcher/theme_switcher_gen.c.s
 
 components/cards/thermostat/thermostat_gen.o: components/cards/thermostat/thermostat_gen.c.o
 .PHONY : components/cards/thermostat/thermostat_gen.o
@@ -847,9 +847,9 @@ help:
 	@echo "... components/cards/speaker_volume/speaker_volume_gen.o"
 	@echo "... components/cards/speaker_volume/speaker_volume_gen.i"
 	@echo "... components/cards/speaker_volume/speaker_volume_gen.s"
-	@echo "... components/cards/theme_swtcher/theme_switcher_gen.o"
-	@echo "... components/cards/theme_swtcher/theme_switcher_gen.i"
-	@echo "... components/cards/theme_swtcher/theme_switcher_gen.s"
+	@echo "... components/cards/theme_switcher/theme_switcher_gen.o"
+	@echo "... components/cards/theme_switcher/theme_switcher_gen.i"
+	@echo "... components/cards/theme_switcher/theme_switcher_gen.s"
 	@echo "... components/cards/thermostat/thermostat_gen.o"
 	@echo "... components/cards/thermostat/thermostat_gen.i"
 	@echo "... components/cards/thermostat/thermostat_gen.s"

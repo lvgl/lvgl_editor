@@ -1,1 +1,1 @@
-Create XML files here that start with a `<screen>` tag
+Create XML files here that start with a `<screen>` tag.

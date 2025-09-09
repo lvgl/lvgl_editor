@@ -140,23 +140,6 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/misc/lv_iter.h \
   /lved/resources/lvgl/src/misc/lv_circle_buf.h \
   /lved/resources/lvgl/src/misc/lv_tree.h \
-  /lved/resources/lvgl/src/misc/cache/lv_cache.h \
-  /lved/resources/lvgl/src/misc/cache/../lv_types.h \
-  /lved/resources/lvgl/src/misc/cache/lv_cache_entry.h \
-  /lved/resources/lvgl/src/misc/cache/class/lv_cache_class.h \
-  /lved/resources/lvgl/src/misc/cache/class/lv_cache_lru_rb.h \
-  /lved/resources/lvgl/src/misc/cache/class/../lv_cache_private.h \
-  /lved/resources/lvgl/src/misc/cache/class/../../lv_types.h \
-  /lved/resources/lvgl/src/misc/cache/class/../../../osal/lv_os.h \
-  /lved/resources/lvgl/src/misc/cache/class/../../../osal/../lv_conf_internal.h \
-  /lved/resources/lvgl/src/misc/cache/class/../../../osal/../misc/lv_types.h \
-  /lved/resources/lvgl/src/misc/cache/class/../../../osal/lv_os_none.h \
-  /lved/resources/lvgl/src/misc/cache/class/lv_cache_lru_ll.h \
-  /lved/resources/lvgl/src/misc/cache/class/lv_cache_sc_da.h \
-  /lved/resources/lvgl/src/misc/cache/instance/lv_cache_instance.h \
-  /lved/resources/lvgl/src/misc/cache/instance/lv_image_header_cache.h \
-  /lved/resources/lvgl/src/misc/cache/instance/../../lv_types.h \
-  /lved/resources/lvgl/src/misc/cache/instance/lv_image_cache.h \
   /lved/resources/lvgl/src/tick/lv_tick.h \
   /lved/resources/lvgl/src/core/lv_obj.h \
   /lved/resources/lvgl/src/core/../lv_conf_internal.h \
@@ -250,10 +233,13 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/widgets/animimage/../image/../../core/lv_obj.h \
   /lved/resources/lvgl/src/widgets/animimage/../image/../../misc/lv_fs.h \
   /lved/resources/lvgl/src/widgets/animimage/../image/../../draw/lv_draw.h \
+  /lved/resources/lvgl/src/widgets/animimage/../image/../../others/observer/lv_observer.h \
+  /lved/resources/lvgl/src/widgets/animimage/../image/../../others/observer/../../core/lv_obj.h \
   /lved/resources/lvgl/src/widgets/animimage/../../misc/lv_types.h \
   /lved/resources/lvgl/src/widgets/arc/lv_arc.h \
   /lved/resources/lvgl/src/widgets/arc/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/widgets/arc/../../core/lv_obj.h \
+  /lved/resources/lvgl/src/widgets/arc/../../others/observer/lv_observer.h \
   /lved/resources/lvgl/src/widgets/arclabel/lv_arclabel.h \
   /lved/resources/lvgl/src/widgets/arclabel/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/widgets/bar/lv_bar.h \
@@ -268,6 +254,8 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/widgets/bar/../label/../../font/lv_symbol_def.h \
   /lved/resources/lvgl/src/widgets/bar/../label/../../misc/lv_text.h \
   /lved/resources/lvgl/src/widgets/bar/../label/../../draw/lv_draw.h \
+  /lved/resources/lvgl/src/widgets/bar/../label/../../others/observer/lv_observer.h \
+  /lved/resources/lvgl/src/widgets/bar/../../others/observer/lv_observer.h \
   /lved/resources/lvgl/src/widgets/button/lv_button.h \
   /lved/resources/lvgl/src/widgets/button/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/widgets/button/../../core/lv_obj.h \
@@ -319,11 +307,13 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/widgets/scale/../../core/lv_obj.h \
   /lved/resources/lvgl/src/widgets/scale/../line/lv_line.h \
   /lved/resources/lvgl/src/widgets/scale/../image/lv_image.h \
+  /lved/resources/lvgl/src/widgets/scale/../../others/observer/lv_observer.h \
   /lved/resources/lvgl/src/widgets/slider/lv_slider.h \
   /lved/resources/lvgl/src/widgets/slider/../bar/lv_bar.h \
   /lved/resources/lvgl/src/widgets/span/lv_span.h \
   /lved/resources/lvgl/src/widgets/span/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/widgets/span/../../core/lv_obj.h \
+  /lved/resources/lvgl/src/widgets/span/../../others/observer/lv_observer.h \
   /lved/resources/lvgl/src/widgets/spinbox/lv_spinbox.h \
   /lved/resources/lvgl/src/widgets/spinbox/../textarea/lv_textarea.h \
   /lved/resources/lvgl/src/widgets/spinbox/../textarea/../label/lv_label.h \
@@ -350,7 +340,6 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/others/sysmon/lv_sysmon.h \
   /lved/resources/lvgl/src/others/sysmon/../../misc/lv_timer.h \
   /lved/resources/lvgl/src/others/sysmon/../../others/observer/lv_observer.h \
-  /lved/resources/lvgl/src/others/sysmon/../../others/observer/../../core/lv_obj.h \
   /lved/resources/lvgl/src/others/monkey/lv_monkey.h \
   /lved/resources/lvgl/src/others/monkey/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/others/monkey/../../indev/lv_indev.h \
@@ -411,6 +400,10 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/libs/lodepng/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/libs/libpng/lv_libpng.h \
   /lved/resources/lvgl/src/libs/libpng/../../lv_conf_internal.h \
+  /lved/resources/lvgl/src/libs/gltf/gltf_data/lv_gltf_model.h \
+  /lved/resources/lvgl/src/libs/gltf/gltf_data/../../../lv_conf_internal.h \
+  /lved/resources/lvgl/src/libs/gltf/gltf_view/lv_gltf.h \
+  /lved/resources/lvgl/src/libs/gltf/gltf_view/../../../lv_conf_internal.h \
   /lved/resources/lvgl/src/libs/gif/lv_gif.h \
   /lved/resources/lvgl/src/libs/gif/../../lv_conf_internal.h \
   /lved/resources/lvgl/src/libs/gif/../../misc/lv_types.h \
@@ -475,6 +468,9 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/drivers/display/fb/../../../display/lv_display.h \
   /lved/resources/lvgl/src/drivers/display/tft_espi/lv_tft_espi.h \
   /lved/resources/lvgl/src/drivers/display/tft_espi/../../../display/lv_display.h \
+  /lved/resources/lvgl/src/drivers/display/lovyan_gfx/lv_lovyan_gfx.h \
+  /lved/resources/lvgl/src/drivers/display/lovyan_gfx/../../../display/lv_display.h \
+  /lved/resources/lvgl/src/drivers/display/lovyan_gfx/../../../indev/lv_indev.h \
   /lved/resources/lvgl/src/drivers/display/lcd/lv_lcd_generic_mipi.h \
   /lved/resources/lvgl/src/drivers/display/lcd/../../../display/lv_display.h \
   /lved/resources/lvgl/src/drivers/display/ili9341/lv_ili9341.h \
@@ -510,10 +506,12 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/resources/lvgl/src/drivers/windows/../../display/lv_display.h \
   /lved/resources/lvgl/src/drivers/windows/../../indev/lv_indev.h \
   /lved/resources/lvgl/src/drivers/windows/lv_windows_display.h \
-  /lved/resources/lvgl/src/drivers/glfw/lv_glfw_window.h \
-  /lved/resources/lvgl/src/drivers/glfw/../../lv_conf_internal.h \
-  /lved/resources/lvgl/src/drivers/glfw/lv_opengles_texture.h \
-  /lved/resources/lvgl/src/drivers/glfw/lv_opengles_driver.h \
+  /lved/resources/lvgl/src/drivers/opengles/lv_opengles_window.h \
+  /lved/resources/lvgl/src/drivers/opengles/../../lv_conf_internal.h \
+  /lved/resources/lvgl/src/drivers/opengles/lv_opengles_texture.h \
+  /lved/resources/lvgl/src/drivers/opengles/lv_opengles_driver.h \
+  /lved/resources/lvgl/src/drivers/opengles/lv_opengles_glfw.h \
+  /lved/resources/lvgl/src/drivers/opengles/lv_opengles_egl.h \
   /lved/resources/lvgl/src/drivers/qnx/lv_qnx.h \
   /lved/resources/lvgl/src/drivers/qnx/../../display/lv_display.h \
   /lved/resources/lvgl/src/drivers/qnx/../../indev/lv_indev.h \
@@ -550,7 +548,7 @@ project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: \
   /lved/project/components/cards/move_goal/stat_col_gen.h \
   /lved/project/components/cards/music_player/music_player_gen.h \
   /lved/project/components/cards/speaker_volume/speaker_volume_gen.h \
-  /lved/project/components/cards/theme_swtcher/theme_switcher_gen.h \
+  /lved/project/components/cards/theme_switcher/theme_switcher_gen.h \
   /lved/project/components/cards/weather/location_gen.h \
   /lved/project/components/cards/weather/weather_gen.h \
   /lved/project/screens/elements_gen.h

@@ -357,20 +357,20 @@ project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/cards/speaker_volume/speaker_volume_gen.c -o CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.s
 
-project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
-project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
-project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: ../components/cards/theme_swtcher/theme_switcher_gen.c
-project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o -c /lved/project/components/cards/theme_swtcher/theme_switcher_gen.c
+project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o: ../components/cards/theme_switcher/theme_switcher_gen.c
+project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o -MF CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o.d -o CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o -c /lved/project/components/cards/theme_switcher/theme_switcher_gen.c
 
-project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.i"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/cards/theme_swtcher/theme_switcher_gen.c > CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.i
+project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/components/cards/theme_switcher/theme_switcher_gen.c > CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.i
 
-project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.s"
-	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/cards/theme_swtcher/theme_switcher_gen.c -o CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.s
+project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/components/cards/theme_switcher/theme_switcher_gen.c -o CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.s
 
 project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
@@ -498,7 +498,7 @@ lib__ui_OBJECTS = \
 "CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o" \
-"CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o" \
+"CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o" \
 "CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o" \
@@ -529,7 +529,7 @@ project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/move_goal/mo
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/move_goal/stat_col_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/music_player/music_player_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/speaker_volume/speaker_volume_gen.c.o
-project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/theme_swtcher/theme_switcher_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/theme_switcher/theme_switcher_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/thermostat/thermostat_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/weather/location_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/components/cards/weather/weather_gen.c.o

@@ -1,1 +1,1 @@
-Place ttf or woff files here
+Place TTF or WOFF files here.
