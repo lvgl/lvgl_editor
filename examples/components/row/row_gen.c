@@ -27,6 +27,8 @@
  *  STATIC PROTOTYPES
  **********************/
 
+
+
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -35,26 +37,27 @@ lv_obj_t * row_create(lv_obj_t * parent)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
-    static lv_style_t main;
+    static lv_style_t main_style;
 
     static bool style_inited = false;
 
     if (!style_inited) {
-        lv_style_init(&main);
-        lv_style_set_bg_opa(&main, 0);
-        lv_style_set_border_width(&main, 0);
-        lv_style_set_pad_all(&main, 0);
-        lv_style_set_width(&main, LV_SIZE_CONTENT);
-        lv_style_set_height(&main, LV_SIZE_CONTENT);
-        lv_style_set_layout(&main, LV_LAYOUT_FLEX);
-        lv_style_set_flex_flow(&main, LV_FLEX_FLOW_ROW);
-        lv_style_set_radius(&main, 0);
+        lv_style_init(&main_style);
+        lv_style_set_bg_opa(&main_style, 0);
+        lv_style_set_border_width(&main_style, 0);
+        lv_style_set_pad_all(&main_style, 0);
+        lv_style_set_width(&main_style, LV_SIZE_CONTENT);
+        lv_style_set_height(&main_style, LV_SIZE_CONTENT);
+        lv_style_set_layout(&main_style, LV_LAYOUT_FLEX);
+        lv_style_set_flex_flow(&main_style, LV_FLEX_FLOW_ROW);
+        lv_style_set_radius(&main_style, 0);
 
         style_inited = true;
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
-    lv_obj_add_style(lv_obj_0, &main, 0);
+
+    lv_obj_add_style(lv_obj_0, &main_style, 0);
 
 
     LV_TRACE_OBJ_CREATE("finished");
@@ -64,6 +67,9 @@ lv_obj_t * row_create(lv_obj_t * parent)
     return lv_obj_0;
 }
 
+
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+

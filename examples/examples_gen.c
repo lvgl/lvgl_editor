@@ -7,8 +7,8 @@
  *********************/
 #include "examples_gen.h"
 
-#if LV_USE_XML  
-#endif
+#if LV_USE_XML
+#endif /* LV_USE_XML */
 
 /*********************
  *      DEFINES
@@ -29,14 +29,16 @@
 /*----------------
  * Translations
  *----------------*/
-static const char * translation_languages[] = {"en", "de", NULL};
-static const char * translation_tags[] = {"settings", "about", "back", "info", NULL};
-static const char * translation_texts[] = {
-    "Settings", "Einstellungen", /* settings */
-    "About", "Über", /* about */
-    "Back", "Zurück", /* back */
-    "This UI was created with LVGL's UI Editor", "Diese Benutzeroberfläche wurde mit dem UI-Editor von LVGL erstellt.", /* info */
-};
+#ifndef LV_EDITOR_PREVIEW
+    static const char * translation_languages[] = {"en", "de", NULL};
+    static const char * translation_tags[] = {"settings", "about", "back", "info", NULL};
+    static const char * translation_texts[] = {
+        "Settings", "Einstellungen", /* settings */
+        "About", "Über", /* about */
+        "Back", "Zurück", /* back */
+        "This UI was created with LVGL's UI Editor", "Diese Benutzeroberfläche wurde mit dem UI-Editor von LVGL erstellt.", /* info */
+    };
+#endif
 
 /**********************
  *  GLOBAL VARIABLES
@@ -128,7 +130,9 @@ void examples_init_gen(const char * asset_path)
     /*----------------
      * Translations
      *----------------*/
-    lv_translation_add_static(translation_languages, translation_tags, translation_texts);
+    #ifndef LV_EDITOR_PREVIEW
+        lv_translation_add_static(translation_languages, translation_tags, translation_texts);
+    #endif
 
 
 #if LV_USE_XML
@@ -164,11 +168,11 @@ void examples_init_gen(const char * asset_path)
 
 #if LV_USE_XML == 0
     /*--------------------
-    *  Permanent screens
-    *-------------------*/
+     *  Permanent screens
+     *-------------------*/
 
-    /*If XML is enabled it's assumed that the permanent screens are created
-     *manaully from XML using lv_xml_create()*/
+    /* If XML is enabled it's assumed that the permanent screens are created
+     *manaully from XML using lv_xml_create() */
 
     settings = settings_create();
 #endif
@@ -178,8 +182,8 @@ void examples_init_gen(const char * asset_path)
 #if defined(LV_EDITOR_PREVIEW)
 void __attribute__((weak)) about_click_event_cb(lv_event_t * e)
 {
-   LV_UNUSED(e);
-   LV_LOG("about_click_event_cb was called\n");
+    LV_UNUSED(e);
+    LV_LOG("about_click_event_cb was called\n");
 }
 #endif
 

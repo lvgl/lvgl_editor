@@ -27,6 +27,8 @@
  *  STATIC PROTOTYPES
  **********************/
 
+
+
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -48,10 +50,10 @@ lv_obj_t * step_button_create(lv_obj_t * parent, lv_subject_t * subject, int32_t
     }
 
     lv_obj_t * lv_button_0 = lv_button_create(parent);
+
     lv_obj_add_style(lv_button_0, &simple_pressed, LV_STATE_PRESSED);
     lv_obj_add_subject_increment_event(lv_button_0, subject, LV_EVENT_CLICKED, step, min, max);
     lv_obj_add_subject_increment_event(lv_button_0, subject, LV_EVENT_LONG_PRESSED_REPEAT, step, min, max);
-
     lv_obj_t * lv_label_0 = lv_label_create(lv_button_0);
     lv_label_set_text(lv_label_0, text);
 
@@ -64,6 +66,9 @@ lv_obj_t * step_button_create(lv_obj_t * parent, lv_subject_t * subject, int32_t
     return lv_button_0;
 }
 
+
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+

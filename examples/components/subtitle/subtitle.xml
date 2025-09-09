@@ -1,11 +1,11 @@
 <component>
-    <api>
-        <prop name="text" type="string" default="settings"></prop>
-    </api>
-    <styles>
-        <style name="main" text_font="font_subtitle"/>
-    </styles>
-    <view extends="lv_label" text="$text">
-        <style name="main" />
-    </view>
+	<api>
+		<prop name="text" type="string" default="settings" />
+	</api>
+	<styles>
+		<style name="main_style" text_font="font_subtitle" />
+	</styles>
+	<view extends="lv_label" text="$text">
+		<style name="main_style" />
+	</view>
 </component>

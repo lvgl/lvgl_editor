@@ -31,7 +31,9 @@ extern "C" {
  **********************/
 
 
-lv_obj_t * column_create(lv_obj_t * parent);
+lv_obj_t * column_create(lv_obj_t * parent, const char * title);
+
+
 
 /**********************
  *      MACROS

@@ -27,6 +27,8 @@
  *  STATIC PROTOTYPES
  **********************/
 
+
+
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -50,6 +52,7 @@ lv_obj_t * checkbox_create(lv_obj_t * parent, const char * text, lv_subject_t * 
     lv_obj_t * lv_checkbox_0 = lv_checkbox_create(parent);
     lv_obj_bind_checked(lv_checkbox_0, subject);
     lv_checkbox_set_text(lv_checkbox_0, text);
+
     lv_obj_add_style(lv_checkbox_0, &box, LV_PART_INDICATOR | LV_STATE_PRESSED);
 
 
@@ -60,6 +63,9 @@ lv_obj_t * checkbox_create(lv_obj_t * parent, const char * text, lv_subject_t * 
     return lv_checkbox_0;
 }
 
+
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+

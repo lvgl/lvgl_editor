@@ -33,6 +33,8 @@ extern "C" {
 
 lv_obj_t * title_create(lv_obj_t * parent, const char * text);
 
+
+
 /**********************
  *      MACROS
  **********************/

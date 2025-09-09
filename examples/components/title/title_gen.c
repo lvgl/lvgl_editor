@@ -27,6 +27,8 @@
  *  STATIC PROTOTYPES
  **********************/
 
+
+
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -35,20 +37,21 @@ lv_obj_t * title_create(lv_obj_t * parent, const char * text)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
-    static lv_style_t main;
+    static lv_style_t main_style;
 
     static bool style_inited = false;
 
     if (!style_inited) {
-        lv_style_init(&main);
-        lv_style_set_text_font(&main, font_title);
+        lv_style_init(&main_style);
+        lv_style_set_text_font(&main_style, font_title);
 
         style_inited = true;
     }
 
     lv_obj_t * lv_label_0 = lv_label_create(parent);
     lv_label_set_text(lv_label_0, text);
-    lv_obj_add_style(lv_label_0, &main, 0);
+
+    lv_obj_add_style(lv_label_0, &main_style, 0);
 
 
     LV_TRACE_OBJ_CREATE("finished");
@@ -58,6 +61,9 @@ lv_obj_t * title_create(lv_obj_t * parent, const char * text)
     return lv_label_0;
 }
 
+
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+

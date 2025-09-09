@@ -29,6 +29,8 @@
  *  STATIC PROTOTYPES
  **********************/
 
+
+
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -46,27 +48,24 @@ lv_obj_t * setclock_create(lv_obj_t * parent)
     lv_obj_set_style_bg_opa(lv_obj_0, 0, 0);
     lv_obj_set_style_border_width(lv_obj_0, 0, 0);
 
-    lv_obj_t * column_0 = column_create(lv_obj_0);
+    lv_obj_t * column_0 = column_create(lv_obj_0, "Screen name");
     lv_obj_set_style_flex_cross_place(column_0, LV_FLEX_ALIGN_CENTER, 0);
-
     lv_obj_t * subtitle_0 = subtitle_create(column_0, "Hour");
 
-
     lv_obj_t * lv_roller_0 = lv_roller_create(column_0);
-    lv_roller_set_options(lv_roller_0, HOURS_STRING, LV_ROLLER_MODE_NORMAL);lv_roller_bind_value(lv_roller_0, &hours);
+    lv_roller_set_options(lv_roller_0, HOURS_STRING, LV_ROLLER_MODE_NORMAL);
+    lv_roller_bind_value(lv_roller_0, &hours);
     lv_obj_add_subject_set_int_event(lv_roller_0, &hour_edited, LV_EVENT_PRESSED, 1);
     lv_obj_add_subject_set_int_event(lv_roller_0, &hour_edited, LV_EVENT_RELEASED, 0);
 
 
-
-    lv_obj_t * column_1 = column_create(lv_obj_0);
+    lv_obj_t * column_1 = column_create(lv_obj_0, "Screen name");
     lv_obj_set_style_flex_cross_place(column_1, LV_FLEX_ALIGN_CENTER, 0);
-
     lv_obj_t * subtitle_1 = subtitle_create(column_1, "Mins");
 
-
     lv_obj_t * lv_roller_1 = lv_roller_create(column_1);
-    lv_roller_set_options(lv_roller_1, MINS_STRING, LV_ROLLER_MODE_NORMAL);lv_roller_bind_value(lv_roller_1, &mins);
+    lv_roller_set_options(lv_roller_1, MINS_STRING, LV_ROLLER_MODE_NORMAL);
+    lv_roller_bind_value(lv_roller_1, &mins);
     lv_obj_add_subject_set_int_event(lv_roller_1, &min_edited, LV_EVENT_PRESSED, 1);
     lv_obj_add_subject_set_int_event(lv_roller_1, &min_edited, LV_EVENT_RELEASED, 0);
 
@@ -80,6 +79,9 @@ lv_obj_t * setclock_create(lv_obj_t * parent)
     return lv_obj_0;
 }
 
+
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+

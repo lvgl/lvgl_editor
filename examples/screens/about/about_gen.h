@@ -35,6 +35,8 @@ extern "C" {
 
 lv_obj_t * about_create(void);
 
+
+
 /**********************
  *      MACROS
  **********************/
