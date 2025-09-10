@@ -1,0 +1,16 @@
+<component>
+    <styles>
+        <style name="light" bg_color="0x9bd67f" text_color="0x003ab5" />
+        <style name="dark" bg_color="0x0f0c78" text_color="0x899bc1" />
+    </styles>
+   <view flex_flow="column" width="300">
+    <lv_checkbox bind_checked="bluetooth_on"></lv_checkbox>
+    <lv_button >
+        <style name="light" />
+        <bind_style name="dark" subject="bluetooth_on" ref_value="1" />
+        
+        <bind_flag_if_eq  subject="notification_on" flag="clickable" ref_value="1"/>
+        <lv_label text="hello"></lv_label>
+    </lv_button>
+   </view>
+</component>

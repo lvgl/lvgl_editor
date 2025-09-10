@@ -100,6 +100,7 @@ void examples_init_gen(const char * asset_path);
 /*Include all the widget and components of this library*/
 #include "components/checkbox/checkbox_gen.h"
 #include "components/column/column_gen.h"
+#include "components/comp1/comp1_gen.h"
 #include "components/header/header_gen.h"
 #include "components/icon/icon_gen.h"
 #include "components/row/row_gen.h"
