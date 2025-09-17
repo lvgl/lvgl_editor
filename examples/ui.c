@@ -33,10 +33,8 @@
 
 void ui_init(const char * asset_path)
 {
-    lv_translation_set_language("en");
     LV_LOG_USER("ui_init()\n");
     examples_init(asset_path);
-    
 }
 
 /**********************
