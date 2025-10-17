@@ -70,6 +70,7 @@ lv_obj_t * light_temperature_create(lv_obj_t * parent)
     }
 
     lv_obj_t * card_0 = card_create(parent);
+    lv_obj_set_name_static(card_0, "light_temperature_#");
     lv_obj_set_style_flex_track_place(card_0, LV_FLEX_ALIGN_CENTER, 0);
     lv_obj_set_style_flex_cross_place(card_0, LV_FLEX_ALIGN_CENTER, 0);
 
@@ -107,8 +108,6 @@ lv_obj_t * light_temperature_create(lv_obj_t * parent)
     lv_obj_set_style_translate_y(lv_label_1, -4, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(card_0, "light_temperature_#");
 
     return card_0;
 }

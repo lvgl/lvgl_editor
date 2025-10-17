@@ -74,6 +74,7 @@ lv_obj_t * theme_switcher_create(lv_obj_t * parent)
     }
 
     lv_obj_t * div_0 = div_create(parent);
+    lv_obj_set_name_static(div_0, "theme_switcher_#");
     lv_obj_set_width(div_0, LV_SIZE_CONTENT);
 
     lv_obj_add_style(div_0, &style_main, 0);
@@ -86,8 +87,6 @@ lv_obj_t * theme_switcher_create(lv_obj_t * parent)
     lv_obj_add_style(lv_checkbox_0, &checkbox_checked, LV_PART_INDICATOR | LV_STATE_CHECKED);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(div_0, "theme_switcher_#");
 
     return div_0;
 }

@@ -59,6 +59,7 @@ lv_obj_t * location_create(lv_obj_t * parent, const char * city_text, lv_subject
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+    lv_obj_set_name_static(lv_obj_0, "location_#");
 
     lv_obj_remove_style_all(lv_obj_0);
     lv_obj_add_style(lv_obj_0, &style_main, 0);
@@ -94,8 +95,6 @@ lv_obj_t * location_create(lv_obj_t * parent, const char * city_text, lv_subject
     lv_spangroup_set_span_text(lv_spangroup_0, lv_spangroup_span_1, "°C");
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_obj_0, "location_#");
 
     return lv_obj_0;
 }

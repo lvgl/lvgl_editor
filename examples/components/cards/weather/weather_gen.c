@@ -80,6 +80,7 @@ lv_obj_t * weather_create(lv_obj_t * parent)
     }
 
     lv_obj_t * card_0 = card_create(parent);
+    lv_obj_set_name_static(card_0, "weather_#");
 
     lv_obj_add_style(card_0, &style_main, 0);
     lv_obj_t * lv_tabview_0 = lv_tabview_create(card_0);
@@ -118,8 +119,6 @@ lv_obj_t * weather_create(lv_obj_t * parent)
     lv_obj_set_style_text_opa(lv_label_1, (255 * 80 / 100), 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(card_0, "weather_#");
 
     return card_0;
 }

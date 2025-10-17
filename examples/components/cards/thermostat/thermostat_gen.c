@@ -98,6 +98,7 @@ lv_obj_t * thermostat_create(lv_obj_t * parent)
     }
 
     lv_obj_t * card_0 = card_create(parent);
+    lv_obj_set_name_static(card_0, "thermostat_#");
 
     lv_obj_t * card_header_0 = card_header_create(card_0, "Thermostat");
     lv_obj_t * switch_0 = switch_create(card_header_0);
@@ -161,8 +162,6 @@ lv_obj_t * thermostat_create(lv_obj_t * parent)
     lv_label_set_text(lv_label_1, "Heating up to 24 °C");
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(card_0, "thermostat_#");
 
     return card_0;
 }

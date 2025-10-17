@@ -73,6 +73,7 @@ lv_obj_t * switch_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_switch_0 = lv_switch_create(parent);
+    lv_obj_set_name_static(lv_switch_0, "switch_#");
     lv_obj_set_width(lv_switch_0, 48);
     lv_obj_set_height(lv_switch_0, 32);
 
@@ -85,8 +86,6 @@ lv_obj_t * switch_create(lv_obj_t * parent)
     lv_obj_bind_style(lv_switch_0, &switch_indicator_dark, LV_PART_INDICATOR | LV_STATE_CHECKED, &dark_theme, 1);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_switch_0, "switch_#");
 
     return lv_switch_0;
 }

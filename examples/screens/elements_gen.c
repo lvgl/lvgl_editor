@@ -50,6 +50,7 @@ lv_obj_t * elements_create(void)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
+    lv_obj_set_name_static(lv_obj_0, "elements_#");
     lv_obj_set_flex_flow(lv_obj_0, LV_FLEX_FLOW_COLUMN);
 
     lv_obj_bind_style(lv_obj_0, &style_light, 0, &dark_theme, 0);
@@ -85,12 +86,10 @@ lv_obj_t * elements_create(void)
     lv_obj_t * music_player_0 = music_player_create(div_0);
     
     lv_obj_t * speaker_volume_0 = speaker_volume_create(div_0);
-    
+
     lv_obj_add_play_timeline_event(button_0, LV_EVENT_CLICKED, alarm_get_timeline(alarm_0, ALARM_TIMELINE_OPEN), 0, false);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_obj_0, "elements");
 
     return lv_obj_0;
 }

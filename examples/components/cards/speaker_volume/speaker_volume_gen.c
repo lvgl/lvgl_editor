@@ -69,6 +69,7 @@ lv_obj_t * speaker_volume_create(lv_obj_t * parent)
     }
 
     lv_obj_t * card_0 = card_create(parent);
+    lv_obj_set_name_static(card_0, "speaker_volume_#");
 
     lv_obj_add_style(card_0, &style_panel_light, 0);
     lv_obj_bind_style(card_0, &style_panel_dark, 0, &dark_theme, 1);
@@ -93,8 +94,6 @@ lv_obj_t * speaker_volume_create(lv_obj_t * parent)
     lv_obj_bind_state_if_eq(slider_0, &speaker, LV_STATE_DISABLED, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(card_0, "speaker_volume_#");
 
     return card_0;
 }

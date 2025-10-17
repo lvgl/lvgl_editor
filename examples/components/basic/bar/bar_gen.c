@@ -59,6 +59,7 @@ lv_obj_t * bar_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_bar_0 = lv_bar_create(parent);
+    lv_obj_set_name_static(lv_bar_0, "bar_#");
 
     lv_obj_remove_style_all(lv_bar_0);
     lv_obj_add_style(lv_bar_0, &style_main, 0);
@@ -67,8 +68,6 @@ lv_obj_t * bar_create(lv_obj_t * parent)
     lv_obj_bind_style(lv_bar_0, &style_dark, LV_PART_INDICATOR, &dark_theme, 1);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_bar_0, "bar_#");
 
     return lv_bar_0;
 }

@@ -67,6 +67,7 @@ lv_obj_t * slider_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_slider_0 = lv_slider_create(parent);
+    lv_obj_set_name_static(lv_slider_0, "slider_#");
 
     lv_obj_remove_style_all(lv_slider_0);
     lv_obj_add_style(lv_slider_0, &style_main, 0);
@@ -76,8 +77,6 @@ lv_obj_t * slider_create(lv_obj_t * parent)
     lv_obj_bind_style(lv_slider_0, &style_dark, LV_PART_INDICATOR, &dark_theme, 1);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_slider_0, "slider_#");
 
     return lv_slider_0;
 }

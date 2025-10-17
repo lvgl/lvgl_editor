@@ -49,13 +49,12 @@ lv_obj_t * div_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+    lv_obj_set_name_static(lv_obj_0, "div_#");
 
     lv_obj_remove_style(lv_obj_0, NULL, 0);
     lv_obj_add_style(lv_obj_0, &style_main, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_obj_0, "div_#");
 
     return lv_obj_0;
 }

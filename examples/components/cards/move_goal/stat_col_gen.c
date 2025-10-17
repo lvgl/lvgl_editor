@@ -57,6 +57,7 @@ lv_obj_t * stat_col_create(lv_obj_t * parent, int32_t move, const char * day)
     }
 
     lv_obj_t * column_0 = column_create(parent);
+    lv_obj_set_name_static(column_0, "stat_col_#");
 
     lv_obj_add_style(column_0, &style_main, 0);
     lv_obj_bind_style(column_0, &style_main_dark, 0, &dark_theme, 1);
@@ -71,8 +72,6 @@ lv_obj_t * stat_col_create(lv_obj_t * parent, int32_t move, const char * day)
     lv_obj_set_style_text_font(lv_label_0, geist_semibold_12, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(column_0, "stat_col_#");
 
     return column_0;
 }

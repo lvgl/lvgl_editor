@@ -35,6 +35,7 @@ lv_obj_t * move_goal_create(lv_obj_t * parent)
     LV_TRACE_OBJ_CREATE("begin");
 
     lv_obj_t * card_0 = card_create(parent);
+    lv_obj_set_name_static(card_0, "move_goal_#");
 
     lv_obj_t * column_0 = column_create(card_0);
     lv_obj_t * lv_label_0 = lv_label_create(column_0);
@@ -86,7 +87,7 @@ lv_obj_t * move_goal_create(lv_obj_t * parent)
     lv_obj_set_style_flex_main_place(row_1, LV_FLEX_ALIGN_SPACE_BETWEEN, 0);
     lv_obj_set_width(row_1, lv_pct(100));
     lv_obj_t * circle_button_0 = circle_button_create(row_1, icon_minus);
-    lv_obj_add_subject_increment_event(circle_button_0, &move_goal_target, LV_EVENT_CLICKED, -100, false);
+    lv_obj_add_subject_increment_event(circle_button_0, &move_goal_target, LV_EVENT_CLICKED, -100);
     
     lv_obj_t * column_1 = column_create(row_1);
     lv_obj_set_style_flex_cross_place(column_1, LV_FLEX_ALIGN_CENTER, 0);
@@ -100,14 +101,12 @@ lv_obj_t * move_goal_create(lv_obj_t * parent)
     lv_obj_set_style_text_font(lv_label_3, geist_semibold_12, 0);
     
     lv_obj_t * circle_button_1 = circle_button_create(row_1, icon_plus);
-    lv_obj_add_subject_increment_event(circle_button_1, &move_goal_target, LV_EVENT_CLICKED, 100, false);
+    lv_obj_add_subject_increment_event(circle_button_1, &move_goal_target, LV_EVENT_CLICKED, 100);
     
     lv_obj_t * button_0 = button_create(card_0, "Set your goal");
     lv_obj_set_width(button_0, lv_pct(100));
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(card_0, "move_goal_#");
 
     return card_0;
 }

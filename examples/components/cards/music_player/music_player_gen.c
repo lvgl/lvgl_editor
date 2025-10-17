@@ -54,6 +54,7 @@ lv_obj_t * music_player_create(lv_obj_t * parent)
     }
 
     lv_obj_t * card_0 = card_create(parent);
+    lv_obj_set_name_static(card_0, "music_player_#");
     lv_obj_set_style_pad_row(card_0, 4, 0);
 
     lv_obj_add_style(card_0, &style_panel_light, 0);
@@ -124,8 +125,6 @@ lv_obj_t * music_player_create(lv_obj_t * parent)
     lv_obj_set_style_pad_all(icon_button_5, 8, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(card_0, "music_player_#");
 
     return card_0;
 }

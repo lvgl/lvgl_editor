@@ -53,6 +53,7 @@ lv_obj_t * card_header_create(lv_obj_t * parent, const char * title)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+    lv_obj_set_name_static(lv_obj_0, "card_header_#");
 
     lv_obj_remove_style_all(lv_obj_0);
     lv_obj_add_style(lv_obj_0, &style_main, 0);
@@ -60,8 +61,6 @@ lv_obj_t * card_header_create(lv_obj_t * parent, const char * title)
     lv_label_set_text(lv_label_0, title);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name(lv_obj_0, "card_header_#");
 
     return lv_obj_0;
 }
