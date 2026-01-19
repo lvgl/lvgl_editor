@@ -1,0 +1,116 @@
+---
+title: Using Exported C Code
+description: Learn how to export and integrate C code from LVGL Pro Editor into your embedded firmware.
+---
+
+When C code is exported from LVGL's UI Editor, no XML is needed at all (`LV_USE_XML` can be `0`), and the exported code follows the same patterns as hand-written C code. Simply drop the exported files into your project and compile them with your application.
+
+## Initialization and Setup
+
+### Project Initialization
+
+The main entry point is a `project_name_init("asset_path")` function located in `project_name.c`, where `project_name` defaults to the parent folder name. This can be customized in `project.xml` using `<project name="my_project">`.
+
+The function requires a single parameter: the path where file-based assets (fonts and images) are located. For example, if PNG and TTF files are in `"A:my_ui/v2.3/assets"`, pass this path to the init function so all asset paths are properly prefixed. If your UI Editor project uses `images/logo.png`, the full resolved path will be `"A:my_ui/v2.3/assets/images/logo.png"`.
+
+### Screen Creation and Loading
+
+The initialization function creates permanent screens but doesn't load them automatically. To display a screen:
+
+1. Use `lv_screen_load(screen_name)` to load a pre-created permanent screen
+2. Use `main_screen_create()` to create screens from their generated functions
+
+This gives you flexibility to control when screens are created and displayed.
+
+## Structure of the Exported Code
+
+### File Naming Conventions
+
+The code export follows specific naming conventions:
+
+- **Generated files** end with `_gen.c` or `_gen.h` and are regenerated on export. Never modify these files as changes will be lost.
+- **User files** are skeleton files created only once (if they don't exist). Add your custom code here.
+
+### Create Functions from XML
+
+From XML definitions, the exporter generates "create" functions using the filename:
+
+- `lv_obj_t * main_screen_create(void)` from `main_screen.xml`
+- `lv_obj_t * my_button_create(lv_obj_t * parent, const char * button_text)` from `my_button.xml`
+
+For Components, all parameters are passed to the create function instead of using individual setters.
+
+### Global Assets from globals.xml
+
+Four files are generated from `globals.xml`:
+
+- **Generated files** containing all subjects, fonts, images, styles, and other initializations
+- **User files** as wrappers around generated code where custom initialization can be added
+
+The default filename is the folder name containing `globals.xml`. Override this with `<globals name="my_lib">` in the XML.
+
+## Adding Custom Code
+
+### Extending Generated Code
+
+You can extend generated code by adding custom styles, timers, subjects, animations, and observers in the non-generated files (e.g., `ui.c` or the user wrapper created from `globals.xml`).
+
+**Example: Adding Style Properties**
+
+```c
+void ui_init(const char * asset_path)
+{
+    LV_LOG_USER("ui_init()\n");
+    ui_lib_init(asset_path);
+
+    lv_style_set_bg_color(&style_1, get_special_color());
+}
+```
+
+**Example: Creating a Custom Subject with Observer**
+
+This example creates a subject that formats an integer temperature value with decimal precision:
+
+```c
+/* Assume subject_temperature_int stores value with 0.1 degree resolution */
+/* E.g. 345 means 34.5 */
+
+void temperature_to_string_observer_cb(lv_observer_t * observer,
+                                        lv_subject_t * subject)
+{
+    int32_t upscaled_value = lv_subject_get_int(&subject_temperature_int);
+
+    int32_t int_part = upscaled_value / 10;
+    int32_t fract_part = upscaled_value % 10;
+
+    char buf[64];
+    lv_snprintf(buf, sizeof(buf), "%d.%d", int_part, fract_part);
+    lv_subject_copy_string(&subject_temperature_string, buf);
+}
+
+lv_subject_add_observer(&subject_temperature_int,
+                         temperature_to_string_observer_cb, NULL);
+```
+
+### Creating Component Wrappers
+
+If a component needs features or APIs not supported by the Editor, create a wrapper component. This approach keeps the generated code untouched while adding custom functionality.
+
+**Example: Wrapper Component**
+
+```c
+lv_obj_t * super_button_create(lv_obj_t * parent, ...some_arguments...)
+{
+    lv_obj_t * my_button = my_button_create(parent, ...);
+
+    /* Add custom functionality to the created button */
+
+    return my_button;
+}
+```
+
+This pattern lets you compose generated components with additional features, event handlers, or custom logic without modifying the generated files.
+
+## CMake Integration
+
+When you export C code, a skeleton `CMakeLists.txt` file is generated for easy integration into your build system. Additionally, a `file_list_gen.cmake` file is created to manage which files are included during compilation. This ensures that only the appropriate source files and headers are built into your project.

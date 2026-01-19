@@ -1,0 +1,190 @@
+---
+title: Arduino IDE Integration
+description: Learn how to integrate LVGL Pro Editor exported projects into Arduino IDE with proper folder structure and compiler configuration.
+---
+
+Integrating LVGL Pro Editor's exported C code into Arduino IDE requires proper folder structure and compiler settings. Arduino's build system has specific rules about where source files must be located to ensure everything compiles together correctly.
+
+## Understanding Arduino's Build System
+
+Arduino IDE automatically compiles:
+
+- The main sketch file (`.ino`)
+- All `.c`, `.cpp`, and `.h` files in the sketch directory or `src` subfolder
+
+**Important:** Files placed elsewhere are ignored and won't be compiled.
+
+### Why Exported Projects Need the `src/` Folder
+
+LVGL Editor exports projects with nested folders:
+
+```
+screens/
+widgets/
+components/
+```
+
+If you place these folders directly in your sketch directory, Arduino ignores them. Placing the entire exported project inside the `src/` subfolder ensures all files are discovered and compiled.
+
+**Folder Structure:**
+
+```
+YourSketch/
+├── YourSketch.ino
+└── src/
+    └── editor_project/
+        ├── editor_project.h
+        ├── editor_project.c
+        ├── screens/
+        ├── widgets/
+        └── components/
+```
+
+## Configuring LVGL Include Paths
+
+LVGL source files use conditional includes:
+
+```c
+#ifdef LV_LVGL_H_INCLUDE_SIMPLE
+    #include "lvgl.h"
+#else
+    #include "lvgl/lvgl.h"
+#endif
+```
+
+The `LV_LVGL_H_INCLUDE_SIMPLE` define controls which include pattern is used. Arduino IDE doesn't provide UI options to set compiler flags, so you must modify the board core's configuration file directly.
+
+### Setting the LV_LVGL_H_INCLUDE_SIMPLE Flag
+
+**Step 1: Locate `platform.txt`**
+
+Find the platform configuration for your board core:
+
+- **ESP32:** `hardware/esp32/esp32/`
+- **AVR (Uno, Mega):** `hardware/arduino/avr/`
+- **Other boards:** Check your Arduino installation's `hardware/` folder
+
+**Step 2: Edit the File**
+
+Open `platform.txt` in a text editor.
+
+**Step 3: Find and Modify build.extra_flags**
+
+Locate the line: `build.extra_flags=`
+
+Add this flag to the end: `-DLV_LVGL_H_INCLUDE_SIMPLE`
+
+**Step 4: Example Modified Line**
+
+```text
+build.extra_flags=-DARDUINO_HOST_OS="\{runtime.os\}" -DARDUINO_FQBN="\{build.fqbn\}" -DESP32=ESP32 -DCORE_DEBUG_LEVEL=\{build.code_debug\} \{build.loop_core\} \{build.event_core\} \{build.defines\} \{build.extra_flags.\{build.mcu\}\} \{build.zigbee_mode\} -DLV_LVGL_H_INCLUDE_SIMPLE
+```
+
+## Fixing Nested File Include Paths
+
+LVGL Editor exports files in nested directories (screens/, widgets/, components/). Files in these subdirectories need relative paths to access the main project header.
+
+**Change this:**
+
+```c
+#include "editor_project.h"
+```
+
+**To this:**
+
+```c
+#include "../editor_project.h"
+```
+
+Adjust the number of `../` based on the file's nesting depth. Without correct relative paths, Arduino throws "No such file or directory" compilation errors.
+
+## Step-by-Step Setup Guide
+
+Follow these steps to set up your Arduino sketch with LVGL Editor exports:
+
+**Step 1: Create the `src` Folder**
+
+```
+YourSketch/
+├── YourSketch.ino
+└── src/
+```
+
+**Step 2: Place Exported Project in `src/`**
+
+Copy your entire LVGL Editor exported project into the `src/` folder:
+
+```
+src/
+└── editor_project/
+    ├── editor_project.h
+    ├── editor_project.c
+    ├── screens/
+    ├── widgets/
+    └── components/
+```
+
+**Step 3: Update Include Paths**
+
+In all source files within the nested folders, ensure they include LVGL correctly:
+
+```c
+#include "lvgl.h"
+```
+
+And reference the main project header with relative paths:
+
+```c
+#include "../editor_project.h"
+```
+
+**Step 4: Handle Re-exports**
+
+Each time you re-export from LVGL Editor, regenerated files overwrite your changes. You must repeat Step 3 after every export to maintain correct include paths.
+
+## Complete Arduino Sketch Example
+
+Here's a working example of an Arduino sketch using LVGL Editor exports:
+
+```cpp
+#include <lvgl.h>
+#include "src/editor_project/editor_project.h" // Adjust project name as needed
+
+void my_disp_init();
+void my_touch_init();
+
+void setup() {
+    Serial.begin(115200);
+    lv_init(); // Initialize LVGL library
+    my_disp_init(); // Setup display driver
+    my_touch_init(); // Setup input/touch driver
+
+    // Initialize the LVGL Editor project
+    // The parameter is the asset path (fonts and images location)
+    //
+    // If you're not loading assets from a filesystem, pass an empty string:
+    editor_project_init("");
+
+    // Alternatively, if assets are in a filesystem:
+    // editor_project_init("C:/editor_project/");
+    //
+    // Asset folder structure example:
+    // /editor_project/fonts/font.ttf
+    // /editor_project/images/image.bin
+
+    // Load the main screen
+    lv_screen_load(main_create());
+}
+
+void loop() {
+    lv_timer_handler(); // Process LVGL timers and input
+    delay(5); // Small delay to prevent CPU overload
+}
+```
+
+### Key Points
+
+- **Include path:** Adjust `src/editor_project/editor_project.h` to match your actual project structure
+- **Asset path:** Pass the correct path to `editor_project_init()` based on where your fonts and images are stored
+- **lv_timer_handler():** Must be called periodically in your loop to keep LVGL responsive
+- **Display & Input drivers:** Implement `my_disp_init()` and `my_touch_init()` for your specific hardware

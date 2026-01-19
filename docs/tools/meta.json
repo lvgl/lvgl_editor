@@ -1,0 +1,9 @@
+{
+  "title": "Tools",
+  "pages": [
+    "index",
+    { "slug": "cli", "title": "CLI" },
+    "online-share",
+    "figma-integration"
+  ]
+}

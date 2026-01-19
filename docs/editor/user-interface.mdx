@@ -1,0 +1,90 @@
+---
+title: User Interface
+description: Explore the LVGL Pro Editor interface, including the project files pane, XML editor, live preview, and inspector tools for building embedded UIs.
+---
+
+Get familiar with the Editor's workspace layout and discover how each panel works together to streamline your UI development workflow.
+
+## First Run
+
+When you launch LVGL Pro for the first time, you'll see a message: **"Pulling Container image for LVGL, this may take a few minutes"**.
+
+The Editor automatically downloads a pre-configured container image containing all necessary tools and dependencies for building LVGL projects. This process happens once and may take a few minutes depending on your internet speed.
+
+After the initial setup, the container is reused for all future sessions. The Editor automatically checks for and downloads newer container versions in the background, ensuring you always have the latest toolchains and build logic without any manual intervention.
+
+## Login
+
+1. Enter your email address
+2. Receive an email with a one-time password (OTP)
+3. A user account is automatically created (no password required)
+
+## License Selection
+
+After logging in, select a license from the available options.
+
+## Launch Screen
+
+After logging in, the Launch Screen appears each time you start the Editor. From here you can:
+
+- Create a new project
+- Open an existing project
+- Access recent projects for quick navigation
+
+## Working on a Project
+
+The main Editor workspace consists of four key areas, each serving a specific purpose in your UI development workflow.
+
+### Menu
+
+The standard application menu provides access to File, Edit, View, and other options for managing your projects and Editor settings.
+
+### Project Files Pane
+
+Located on the left, the Project Files pane displays your project structure in a tree view. Use it to:
+
+- Create, open, and rename files
+- Organize your project by type (Screens, Widgets, Components, Fonts, and Images)
+- Navigate between different files in your project
+
+### Editor Pane
+
+The central Editor pane is where you build your UI. It's optimized for editing XML files that define UI components, screens, and widgets. Key features include:
+
+- **Auto-completion** - Intelligent suggestions as you type XML
+- **Real-time validation** - Immediate feedback on XML syntax and structure
+- **Quick learning curve** - Context-sensitive assistance guides you through component definition
+
+### Right Panel
+
+#### Preview Pane
+
+The Preview pane displays a live, pixel-perfect preview of your UI components and screens as you edit the XML. Because it uses real LVGL rendering, what you see matches exactly what will appear in your final firmware.
+
+You can also interact with the preview to see how your UI behaves at runtime, helping you validate user interactions and visual appearance before deployment.
+
+**How it Works:**
+
+The Editor sends your XML files to LVGL's runtime, which parses them and creates UI instances. When you make changes, the preview updates automatically, showing the real rendered result with actual LVGL rendering.
+
+#### Inspector Mode
+
+Hold **Ctrl** while hovering over the Preview pane to switch to Inspector mode. This allows you to:
+
+- Visualize bounding boxes, padding, margins, and click areas
+- Check element sizes and positions by dragging
+- Perform measurements on your UI
+- Double-click to jump directly to the corresponding XML code
+- Single-click to highlight the matching element in the editor
+
+#### Output Pane
+
+The Output pane below the Preview contains multiple tabs for managing project data and debugging:
+
+**Console Tab** - View log output of Editor actions and their results for troubleshooting and development insights.
+
+**Subjects Tab** - See a list of Observer-Pattern Subjects in your XML files. Each Subject represents data that UI elements can observe and reflect visually in your application.
+
+**Test Tab** - Access testing tools and utilities (coming soon).
+
+**Additional Tabs** - Translations and Animation management tabs are coming in future updates.

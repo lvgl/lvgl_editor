@@ -1,0 +1,59 @@
+---
+title: Preview
+description: Configure preview settings for components, widgets, and screens to visualize different contexts and resolutions.
+---
+
+The preview feature lets you define how components and widgets appear in the Editor's preview pane without affecting the generated code.
+
+## Overview
+
+In `component` and `widget` elements, you can define `preview` tags to customize how the Editor displays your UI. These previews are **not** exported to code and are **not** loaded from XML.
+
+Previews are useful for:
+
+- Changing the preview background to dark or light colors
+- Centering components within the preview area
+- Setting margins and padding
+- Adjusting the preview size and dimensions
+- Making preview corners rounded with `style_radius`
+
+## Usage
+
+Think of a `preview` tag as an `lv_obj` container with the following configurable properties:
+
+- `width`, `height` - Set the preview dimensions
+- Style properties - Use properties like `style_bg_color="0x333"` to customize appearance
+- Layout properties - Use `flex` and `flex_flow` for flexible layouts
+
+You can define multiple previews for a single component or widget. In the Editor, you can switch between different preview configurations to see how your component appears in various contexts.
+
+### For Screens
+
+Screens use a different preview approach than components and widgets. Instead of preview tags, screens leverage multiple `display` elements defined in your `project.xml` file.
+
+When developing screens in the Editor, you can select from all defined displays in the Preview panel. This allows you to:
+
+- View the screen at different resolutions
+- Test with different color depths
+- Verify responsive design behavior across multiple target hardware configurations
+
+## Example
+
+```xml
+<component>
+  <previews>
+    <preview name="small_dark_round"
+      width="240" height="240"
+      style_bg_color="0x333" style_pad_all="32"
+      style_radius="32"/>
+
+    <preview name="large_light"
+      width="1980" height="1080"
+      style_bg_color="0xeeeeee"/>
+  </previews>
+
+  <view>
+    <!-- Component content here -->
+  </view>
+</component>
+```

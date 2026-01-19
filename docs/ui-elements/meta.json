@@ -1,0 +1,16 @@
+{
+  "title": "UI Elements",
+  "pages": [
+    "index",
+    "components",
+    "widgets",
+    "screens",
+    "animations",
+    { "slug": "api", "title": "API" },
+    "constants",
+    { "slug": "events-in-xml", "title": "Events in XML" },
+    "preview",
+    "styles",
+    "view"
+  ]
+}

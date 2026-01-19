@@ -1,0 +1,9 @@
+{
+  "title": "XML Overview",
+  "pages": [
+    "index",
+    "overview",
+    "syntax",
+    { "slug": "xml-license", "title": "XML License" }
+  ]
+}

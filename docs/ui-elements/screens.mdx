@@ -1,0 +1,100 @@
+---
+title: Screens
+description: Learn how to create and manage screens in LVGL Pro Editor.
+---
+
+Create organized, self-contained screens that serve as the main containers for your UI layout and handle screen transitions and state management.
+
+## Overview
+
+Screens work very similarly to Components. Both can be loaded from XML and contain Widgets and Components as children. Screens are wrapped in the `screen` XML root element and organize the content of your UI.
+
+Screens can only have the following child XML tags:
+
+- `consts` - Define constants for reuse within the screen
+- `styles` - Define styles and their properties
+- `view` - The main content area containing widgets and components
+
+Screens **cannot** have:
+
+- `api` - Screens are always created as-is, with no parameters
+- `preview` - In LVGL's UI Editor, preview options for screens are defined in `project.xml`
+
+## Usage
+
+Each XML file describes a Screen. The name of the XML file becomes the Screen's name.
+
+This example illustrates a screen in XML using `my_header` and `my_main_cont` components to keep the structure organized:
+
+```xml
+<screen>
+ <consts>
+  <string name="title" value="Main menu"/>
+ </consts>
+
+ <styles>
+  <style name="dark" bg_color="0x333"/>
+ </styles>
+
+ <view>
+  <my_header label="#title"/>
+  <my_main_cont>
+   <style name="dark"/>
+   <button text="Weather" icon="cloudy"/>
+   <button text="Messages" icon="envelope"/>
+   <button text="Settings" icon="cogwheel"/>
+   <button text="About" icon="questionmark"/>
+  </my_main_cont>
+ </view>
+</screen>
+```
+
+## Code Export
+
+LVGL's UI Editor can export C code for Screens. It generates `screen_name_gen.c/h` files containing a single create function:
+
+```c
+lv_obj_t * screen_name_create(void)
+```
+
+Using this function, you can create any number of screen instances and load them as needed.
+
+## Permanent Screens
+
+The `screen` tag supports a `permanent` property that can be `true` or `false` (default). This property affects how screens are managed when transitioning between them.
+
+If a screen is permanent, it remains in memory when a new screen is loaded, preserving its state. Non-permanent screens are automatically deleted and recreated when opened and closed.
+
+Permanent screens are assumed to be created when the UI initializes. When exporting code from the UI Editor, permanent screens are created and stored in global pointers.
+
+**Usage:**
+- Permanent screens should be **loaded** using: `<screen_load_event screen="my_permanent_screen"/>`
+- Non-permanent screens should be **created** using: `<screen_create_event screen="my_non_permanent_screen"/>`
+
+## Preview
+
+Screens don't support the `preview` tag because it doesn't make sense to preview each screen in different resolutions.
+
+Screens are related to the target hardware defined in the `project.xml` file, where multiple `display` elements can be configured. In the UI Editor, when developing a Screen, you can select from all defined displays in the Preview panel, and the Screen will be shown with the corresponding resolution and color depth.
+
+This is useful for verifying responsive designs across different target devices.
+
+## Events
+
+A common pattern is to load or create Screens in response to user interactions like button clicks. Use special XML tags as children of Components or Widgets:
+
+```xml
+<view>
+ <lv_button>
+  <lv_label text="Click or Long press me"/>
+
+  <!-- Load an instance of "first" screen with fade animation. -->
+  <screen_load_event screen="first" trigger="clicked" anim_type="fade"/>
+
+  <!-- Create an instance of "about" screen on long press. -->
+  <screen_create_event screen="about" trigger="long_pressed"/>
+ </lv_button>
+</view>
+```
+
+For more details on all available event types, see the Events in XML guide.

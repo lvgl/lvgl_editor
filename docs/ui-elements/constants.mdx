@@ -1,0 +1,52 @@
+---
+title: Constants
+description: Learn how to define and use constants in LVGL Pro Editor for colors, padding, and other reusable property values.
+---
+
+Constants allow you to define reusable values that can be referenced throughout your components and styles, making your code more maintainable and consistent.
+
+## Overview
+
+Constants can be defined to replace any value with a selected type or to be used as special values. The supported types are:
+
+- `color` - Color values (e.g., `0xff0000`)
+- `px` - Pixel measurements
+- `percentage` - Percentage values
+- `string` - Text strings
+- `opa` - Opacity values
+- `bool` - Boolean true/false values
+
+## Defining Constants
+
+Constants are defined within the `<consts>` tag:
+
+```xml
+<consts>
+  <color name="color1" value="0xff0000" help="Primary color"/>
+  <px name="pad_xs" value="8" help="Small padding"/>
+</consts>
+```
+
+Each constant has:
+- `name` - The identifier to reference this constant
+- `value` - The actual value
+- `type` - The value type (determined by the tag name)
+- `help` - Optional description for documentation
+
+## Using Constants
+
+Constants can be used in:
+
+- Style properties
+- Widget properties
+- Component properties
+
+Constant values are referenced using the `#` symbol followed by the constant name. For example:
+
+```xml
+<styles>
+  <style name="style1" bg_color="#color1"/>
+</styles>
+```
+
+This references the `color1` constant defined above, making your styles more maintainable and easier to update globally.

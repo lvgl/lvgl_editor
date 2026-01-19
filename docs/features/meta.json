@@ -1,0 +1,9 @@
+{
+  "title": "Features",
+  "pages": [
+    "index",
+    "data-binding",
+    { "slug": "ui-testing", "title": "UI Testing" },
+    "language-translations"
+  ]
+}

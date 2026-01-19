@@ -1,0 +1,13 @@
+{
+  "pages": [
+    { "slug": "index", "title": "Introduction" },
+    "learn-by-examples",
+    "editor",
+    "xml-overview",
+    "integration",
+    { "slug": "ui-elements", "title": "UI Elements" },
+    "assets",
+    "features",
+    "tools"
+  ]
+}
