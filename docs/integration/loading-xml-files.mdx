@@ -1,6 +1,27 @@
 ---
 title: Loading XML Files
 description: Guide to loading and using XML files in your embedded applications.
+howTo:
+  name: "Load XML UI Files at Runtime in LVGL"
+  description: "Complete step-by-step guide to loading and using XML files at runtime in your embedded LVGL applications, including registration and screen creation."
+  totalTime: "PT20M"
+  estimatedCost: "$0 (free)"
+  steps:
+    - name: "Register custom widgets"
+      text: "First, register any custom widgets your application uses by calling lv_xml_register_widget() with the widget name and callback functions. This must be done before registering XML files that reference these widgets. Built-in LVGL widgets are pre-registered automatically and don't need registration."
+      url: "#registering-widgets"
+    - name: "Register external data"
+      text: "Register application-level data that your XML files will reference, including event callbacks using lv_xml_register_event_cb(), images with lv_xml_register_image(), fonts with lv_xml_register_font(), and any constants or subjects. Use scope=NULL for global registration or component-specific scopes for local assets."
+      url: "#registering-external-data"
+    - name: "Register XML definitions"
+      text: "Register your globals.xml, component XMLs, and screen XMLs using lv_xml_register_component_from_file() for individual files, or use lv_xml_load_all_from_path() to batch-register an entire directory. For blob files, use lv_xml_load_all_from_data() or lv_xml_load_all_from_file(). This tells LVGL how to parse and instantiate your UI structure."
+      url: "#registering-xml-files"
+    - name: "Create screen instances"
+      text: "Instantiate the screens you need by calling lv_xml_create_screen() with the screen name (XML filename without extension or the name you registered). This creates the screen object but doesn't display it yet. Store the returned lv_obj_t pointer for loading."
+      url: "#creating-screens"
+    - name: "Load and display the screen"
+      text: "Make your screen visible by calling lv_screen_load() with the screen object pointer you created in the previous step. This displays the screen to the user. You can switch between screens at any time by creating and loading different screen instances."
+      url: "#creating-screens"
 ---
 
 LVGL supports loading XML files at runtime without recompiling your application. XML files can be delivered to devices via Bluetooth, WiFi, Serial port, SD card, or downloaded from a server.

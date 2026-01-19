@@ -1,6 +1,63 @@
 ---
 title: Installation
 description: Install LVGL Pro Editor on Windows, macOS, and Linux with platform-specific setup instructions and troubleshooting.
+howTos:
+  - name: "Install LVGL Pro Editor on Windows"
+    description: "Complete step-by-step guide to installing LVGL Pro Editor on Windows, including WSL setup and editor installation."
+    totalTime: "PT15M"
+    estimatedCost: "$0 (free)"
+    steps:
+      - name: "Check if WSL is installed"
+        text: "Open Windows Terminal or Command Prompt and run 'wsl.exe --list --verbose' to check if Windows Subsystem for Linux is already installed on your system."
+        url: "#install-wsl"
+      - name: "Install WSL if needed"
+        text: "If WSL is not installed, run 'wsl --install' in Terminal and press Enter. Wait for the installation to complete. WSL is required for the editor to compile and run C code on Windows."
+        url: "#install-wsl"
+      - name: "Download the editor installer"
+        text: "Visit pro.lvgl.io/#download in your web browser and click the Download button. Save the installer file to your Downloads folder or preferred location."
+        url: "#install-the-editor"
+      - name: "Run the installer"
+        text: "Locate the downloaded installer file and double-click it to launch the installation wizard. Follow the on-screen prompts to complete the installation."
+        url: "#install-the-editor"
+      - name: "Launch LVGL Pro Editor"
+        text: "After installation completes, find LVGL Pro Editor in your Start menu or desktop and launch it. The editor is now ready to use for creating LVGL user interfaces."
+        url: "#install-the-editor"
+
+  - name: "Install LVGL Pro Editor on macOS"
+    description: "Step-by-step guide to installing LVGL Pro Editor on macOS with Podman setup for both Apple Silicon and Intel Macs."
+    totalTime: "PT10M"
+    estimatedCost: "$0 (free)"
+    steps:
+      - name: "Install Podman using Homebrew"
+        text: "Open Terminal and run 'brew install podman' to install Podman. Podman is required for the editor to compile and run C code in containers. If you don't have Homebrew, visit brew.sh to install it first."
+        url: "#install-podman"
+      - name: "Download LVGL Pro Editor"
+        text: "Visit pro.lvgl.io/#download and download the appropriate version for your Mac. Choose ARM for Apple Silicon Macs (M1/M2/M3/M4) or AMD for Intel-based Macs."
+        url: "#install-the-editor"
+      - name: "Install the application"
+        text: "Open the downloaded file and drag the LVGL Pro Editor application to your Applications folder in Finder. This installs the editor on your system."
+        url: "#install-the-editor"
+      - name: "Launch the editor"
+        text: "Open your Applications folder or use Spotlight search (Cmd+Space) to find and launch LVGL Pro Editor. The editor is now ready for creating LVGL user interfaces."
+        url: "#install-the-editor"
+
+  - name: "Install LVGL Pro Editor on Linux"
+    description: "Complete guide to installing LVGL Pro Editor on Linux distributions using AppImage and Podman."
+    totalTime: "PT10M"
+    estimatedCost: "$0 (free)"
+    steps:
+      - name: "Install Podman for your distribution"
+        text: "Install Podman using your package manager. For Debian/Ubuntu/Mint run 'sudo apt-get install podman'. For Fedora run 'sudo dnf -y install podman'. For Arch/Manjaro run 'sudo pacman -S podman'. Podman is required to compile and run C code."
+        url: "#install-podman"
+      - name: "Download the AppImage"
+        text: "Visit pro.lvgl.io/#download and download the LVGL_Pro_Editor.AppImage file. Save it to a location like your Downloads or home directory."
+        url: "#install-the-editor"
+      - name: "Make the AppImage executable"
+        text: "Open Terminal, navigate to where you saved the file, and run 'chmod +x LVGL_Pro_Editor.AppImage' to make it executable. This allows you to run the application."
+        url: "#install-the-editor"
+      - name: "Run the editor"
+        text: "Launch the editor by running './LVGL_Pro_Editor.AppImage' in Terminal. If you encounter a GTK error, use './LVGL_Pro_Editor.AppImage --gtk-version=3' instead."
+        url: "#install-the-editor"
 ---
 
 Get LVGL Pro Editor running on your system with installation steps tailored to your operating system.

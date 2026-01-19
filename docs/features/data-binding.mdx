@@ -1,6 +1,17 @@
 ---
 title: Data Binding
 description: Learn how to use subjects for data binding to create dynamic, responsive UIs that update automatically.
+faqs:
+  - question: "What data types are supported for subjects?"
+    answer: "Currently, only integer and string types are supported for subjects. You define them in globals.xml using <int> or <string> tags with a name and initial value."
+  - question: "How do I update a subject value from my C code?"
+    answer: "Use the generated setter functions in your application code. For a subject named 'battery_power', call set_battery_power(value) to update it. All widgets bound to that subject will automatically update."
+  - question: "What's the difference between simple and complex binding?"
+    answer: "Simple binding directly binds a subject to a widget property using attributes like bind_text or bind_value. Complex binding uses child elements to add conditional logic with multiple subjects and parameters, like bind_flag_if_eq or bind_state_if_gt."
+  - question: "Can multiple widgets bind to the same subject?"
+    answer: "Yes! Multiple widgets can bind to the same subject. When the subject's value changes (either from code or user interaction), all bound widgets automatically update to reflect the new value."
+  - question: "How do I use data binding to show or hide a widget?"
+    answer: "Use complex binding with the 'hidden' flag. For example: <lv_obj-bind_flag_if_eq subject=\"some_value\" flag=\"hidden\" ref_value=\"0\"/> will hide the widget when some_value equals 0."
 ---
 
 ## Overview
