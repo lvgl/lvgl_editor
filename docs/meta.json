@@ -3,7 +3,7 @@
     { "slug": "index", "title": "Introduction" },
     "learn-by-examples",
     "editor",
-    "xml-overview",
+    { "slug": "xml-overview", "title": "UI Elements" },
     "integration",
     { "slug": "ui-elements", "title": "UI Elements" },
     "assets",
