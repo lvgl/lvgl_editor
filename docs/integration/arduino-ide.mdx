@@ -130,7 +130,7 @@ Add this flag to the end: `-DLV_LVGL_H_INCLUDE_SIMPLE`
 **Step 4: Example Modified Line**
 
 ```text
-build.extra_flags=-DARDUINO_HOST_OS="\{runtime.os\}" -DARDUINO_FQBN="\{build.fqbn\}" -DESP32=ESP32 -DCORE_DEBUG_LEVEL=\{build.code_debug\} \{build.loop_core\} \{build.event_core\} \{build.defines\} \{build.extra_flags.\{build.mcu\}\} \{build.zigbee_mode\} -DLV_LVGL_H_INCLUDE_SIMPLE
+build.extra_flags=-DARDUINO_HOST_OS="{runtime.os}" -DARDUINO_FQBN="{build.fqbn}" -DESP32=ESP32 -DCORE_DEBUG_LEVEL={build.code_debug} {build.loop_core} {build.event_core} {build.defines} {build.extra_flags.{build.mcu}} {build.zigbee_mode} -DLV_LVGL_H_INCLUDE_SIMPLE
 ```
 
 ## Fixing Nested File Include Paths
