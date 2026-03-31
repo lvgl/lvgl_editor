@@ -128,6 +128,7 @@ static void value_observer_cb(lv_observer_t * observer, lv_subject_t * subject)
 {
     wd_segment_t * widget = (wd_segment_t *)lv_observer_get_user_data(observer);
     int32_t index = lv_subject_get_int(subject);
+    widget->selected = index;
     set_selected_item(widget, index);
 }
 
