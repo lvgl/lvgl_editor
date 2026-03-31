@@ -1,0 +1,13 @@
+<screen>
+	<view extends="lv_obj">
+		<!-- Add your code here -->
+
+		<wd_segment width="300" bind_value="subject_segment" style_pad_column="1">
+			<wd_segment-button text="1" />
+			<wd_segment-button text="2" />
+			<wd_segment-button text="3" />
+			<wd_segment-button text="4" />
+			<wd_segment-button text="5" />
+		</wd_segment>
+	</view>
+</screen>
