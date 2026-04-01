@@ -1,12 +1,12 @@
 /**
- * @file new_widget.c
+ * @file ui_new_widget.c
  */
 
 /*********************
  *      INCLUDES
  *********************/
 
-#include "new_widget.h"
+#include "ui_new_widget.h"
 
 /*********************
  *      DEFINES
@@ -32,9 +32,9 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-void new_widget_init(const char * asset_path)
+void ui_new_widget_init(const char * asset_path)
 {
-    new_widget_init_gen(asset_path);
+    ui_new_widget_init_gen(asset_path);
 
     /* Add your own custom code here if needed */
 }

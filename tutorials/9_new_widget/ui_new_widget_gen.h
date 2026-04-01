@@ -1,9 +1,9 @@
 /**
- * @file new_widget_gen.h
+ * @file ui_new_widget_gen.h
  */
 
-#ifndef NEW_WIDGET_GEN_H
-#define NEW_WIDGET_GEN_H
+#ifndef UI_NEW_WIDGET_GEN_H
+#define UI_NEW_WIDGET_GEN_H
 
 #ifndef UI_SUBJECT_STRING_LENGTH
 #define UI_SUBJECT_STRING_LENGTH 256
@@ -73,7 +73,7 @@ extern lv_subject_t subject_segment;
  * Initialize the component library
  */
 
-void new_widget_init_gen(const char * asset_path);
+void ui_new_widget_init_gen(const char * asset_path);
 
 /**********************
  *      MACROS
@@ -92,4 +92,4 @@ void new_widget_init_gen(const char * asset_path);
 } /*extern "C"*/
 #endif
 
-#endif /*NEW_WIDGET_GEN_H*/
+#endif /*UI_NEW_WIDGET_GEN_H*/

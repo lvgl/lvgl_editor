@@ -1,9 +1,9 @@
 /**
- * @file new_widget.h
+ * @file ui_new_widget.h
  */
 
-#ifndef NEW_WIDGET_H
-#define NEW_WIDGET_H
+#ifndef UI_NEW_WIDGET_H
+#define UI_NEW_WIDGET_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,7 +13,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 
-#include "new_widget_gen.h"
+#include "ui_new_widget_gen.h"
 
 /*********************
  *      DEFINES
@@ -34,7 +34,7 @@ extern "C" {
 /**
  * Initialize the component library
  */
-void new_widget_init(const char * asset_path);
+void ui_new_widget_init(const char * asset_path);
 
 /**********************
  *      MACROS
@@ -44,4 +44,4 @@ void new_widget_init(const char * asset_path);
 } /*extern "C"*/
 #endif
 
-#endif /*NEW_WIDGET_H*/
+#endif /*UI_NEW_WIDGET_H*/

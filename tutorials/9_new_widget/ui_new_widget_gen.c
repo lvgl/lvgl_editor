@@ -1,12 +1,12 @@
 /**
- * @file new_widget_gen.c
+ * @file ui_new_widget_gen.c
  */
 
 /*********************
  *      INCLUDES
  *********************/
 
-#include "new_widget_gen.h"
+#include "ui_new_widget_gen.h"
 
 #if LV_USE_XML
 #include "widgets/wd_segment/wd_segment_private_gen.h"
@@ -66,7 +66,7 @@ lv_subject_t subject_segment;
  *   GLOBAL FUNCTIONS
  **********************/
 
-void new_widget_init_gen(const char * asset_path)
+void ui_new_widget_init_gen(const char * asset_path)
 {
     char buf[256];
 

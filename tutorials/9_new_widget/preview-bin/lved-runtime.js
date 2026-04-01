@@ -9272,7 +9272,7 @@ var _lvrt_xml_test_run_stop = Module["_lvrt_xml_test_run_stop"] = wasmExports["l
 
 var _lvrt_health_check = Module["_lvrt_health_check"] = wasmExports["lvrt_health_check"];
 
-var _new_widget_init = Module["_new_widget_init"] = wasmExports["new_widget_init"];
+var _ui_new_widget_init = Module["_ui_new_widget_init"] = wasmExports["ui_new_widget_init"];
 
 var _free = Module["_free"] = wasmExports["free"];
 

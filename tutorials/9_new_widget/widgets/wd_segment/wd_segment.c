@@ -8,7 +8,7 @@
  *********************/
 
 #include "wd_segment_private_gen.h"
-#include "../../new_widget.h"
+#include "../../ui_new_widget.h"
 
 /*********************
  *      DEFINES

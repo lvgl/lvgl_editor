@@ -2,9 +2,9 @@ list(
   APPEND
   LV_EDITOR_PROJECT_SOURCES
   ${CMAKE_CURRENT_LIST_DIR}/components/segment_item/segment_item_gen.c
-  ${CMAKE_CURRENT_LIST_DIR}/new_widget_gen.c
-  ${CMAKE_CURRENT_LIST_DIR}/new_widget.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/screen_widgets/screen_widgets_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/ui_new_widget_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/ui_new_widget.c
   ${CMAKE_CURRENT_LIST_DIR}/widgets/wd_segment/wd_segment_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/widgets/wd_segment/wd_segment_xml_parser.c
   ${CMAKE_CURRENT_LIST_DIR}/widgets/wd_segment/wd_segment.c)

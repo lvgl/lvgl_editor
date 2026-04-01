@@ -8,7 +8,7 @@
  *********************/
 
 #include "segment_item_gen.h"
-#include "../../new_widget.h"
+#include "../../ui_new_widget.h"
 
 /*********************
  *      DEFINES

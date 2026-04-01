@@ -15,7 +15,7 @@
     #include "lvgl/lvgl.h"
     #include "lvgl/src/core/lv_obj_class_private.h"
 #endif
-#include "../../new_widget.h"
+#include "../../ui_new_widget.h"
 
 /*********************
  *      DEFINES
