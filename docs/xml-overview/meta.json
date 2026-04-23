@@ -4,6 +4,6 @@
     "index",
     "overview",
     "syntax",
-    { "slug": "xml-license", "title": "XML License" }
+    "xml-license"
   ]
 }

@@ -3,9 +3,9 @@
   "pages": [
     "index",
     "using-exported-c-code",
-    { "slug": "loading-xml-files", "title": "Loading XML Files" },
+    "loading-xml-files",
     "renesas",
-    { "slug": "arduino-ide", "title": "Arduino IDE" },
-    { "slug": "zephyr-rtos", "title": "Zephyr RTOS" }
+    "arduino-ide",
+    "zephyr-rtos"
   ]
 }

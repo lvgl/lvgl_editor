@@ -6,9 +6,9 @@
     "widgets",
     "screens",
     "animations",
-    { "slug": "api", "title": "API" },
+    "api",
     "constants",
-    { "slug": "events-in-xml", "title": "Events in XML" },
+    "events-in-xml",
     "preview",
     "styles",
     "view"
