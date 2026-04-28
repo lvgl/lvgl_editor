@@ -2,12 +2,11 @@
   "pages": [
     "introduction",
     "learn-by-examples",
-    "editor",
-    "xml-overview",
+    "syntax",
     "integration",
-    "ui-elements",
-    "assets",
-    "features",
-    "tools"
+    "editor",
+    "online_viewer",
+    "figma",
+    "cli"
   ]
 }

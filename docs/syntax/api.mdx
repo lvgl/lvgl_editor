@@ -3,9 +3,9 @@ title: API
 description: Learn how to define custom APIs for widgets and components in LVGL Pro Editor with properties, parameters, and elements.
 ---
 
-The `api` tag can be a child of `widget` and `component` tags. Screens don't support custom APIs.
+The `<api>` tag can be a child of `<widget>` and `<component>` tags. Screens don't support custom APIs.
 
-Both Widgets and Components support having `prop` (properties) in the `api` tag to describe their interface. However, since Widgets and Components work very differently—Widgets have C code while Components are pure XML—properties are interpreted differently in each context.
+Both Widgets and Components support having `<prop>` (properties) in the `<api>` tag to describe their interface. However, since Widgets and Components work very differently — Widgets have C code while Components are pure XM L— properties are interpreted differently in each context.
 
 ## Components
 
@@ -95,37 +95,6 @@ Component APIs support only simple properties that are forwarded. The following 
 - `param` - Parameters
 - `enumdef` - Enum definitions
 - `element` - Sub-widgets or internal structures
-
-### Example Component with Slots and Properties
-
-```xml
-<!-- my_button.xml -->
-<component>
-  <api>
-    <prop name="button_icon" type="image" default="NULL"/>
-    <prop name="button_label" type="string" default="Label"/>
-  </api>
-
-  <view extends="lv_button" flex_flow="row" width="100%">
-    <lv_image src="$button_icon" inner_align="stretch" width="16" height="16"/>
-    <lv_label text="$button_label"/>
-  </view>
-</component>
-
-<!-- my_list.xml -->
-<component>
-  <api>
-    <slot name="header"/>
-  </api>
-
-  <view flex_flow="column">
-    <lv_obj name="header" width="100%"/>
-    <my_button button_label="First"/>
-    <my_button button_label="Wifi" button_icon="img_wifi"/>
-    <my_button button_label="Third"/>
-  </view>
-</component>
-```
 
 ## Widgets
 
@@ -261,9 +230,11 @@ Elements are created via an `add` function:
 Used in a view:
 
 ```xml
-<my_widget width="100px">
-  <my_widget-indicator name="indic1" color="0xff0000" max_value="120" value="30"/>
-</my_widget>
+<view>
+  <my_widget width="100px">
+    <my_widget-indicator name="indic1" color="0xff0000" max_value="120" value="30"/>
+  </my_widget>
+</view>  
 ```
 
 LVGL's UI Editor generates:
@@ -289,9 +260,11 @@ Used for internal or implicit elements:
 Used in a view:
 
 ```xml
-<my_widget width="100px">
-  <my_widget-control_button name="btn1" index="3" title="Hello"/>
-</my_widget>
+<view>  
+  <my_widget width="100px">
+    <my_widget-control_button name="btn1" index="3" title="Hello"/>
+  </my_widget>
+</view>  
 ```
 
 LVGL's UI Editor generates:
@@ -318,9 +291,11 @@ Used for indexed access, like setting values in a table:
 Used in a view:
 
 ```xml
-<my_widget width="100px">
-  <my_widget-item index="3" icon="image1" color="0xff0000"/>
-</my_widget>
+<view>  
+  <my_widget width="100px">
+    <my_widget-item index="3" icon="image1" color="0xff0000"/>
+  </my_widget>
+</view>  
 ```
 
 LVGL's UI Editor generates:
@@ -345,9 +320,11 @@ Used to describe custom API functions with a custom name. Custom elements can ha
 Used in a view:
 
 ```xml
-<my_widget width="100px">
-  <my_widget-bind_color subject="subject_1" new_color="0xff0000" ref_value="15"/>
-</my_widget>
+<view>  
+  <my_widget width="100px">
+    <my_widget-bind_color subject="subject_1" new_color="0xff0000" ref_value="15"/>
+  </my_widget>
+</view>  
 ```
 
 LVGL's UI Editor generates:
