@@ -1,16 +1,27 @@
 {
   "title": "UI Elements",
   "pages": [
-    
+    "introduction",
+    "overview",
+
     "components",
     "widgets",
     "screens",
-    "animations",
-    "api",
-    "constants",
-    "events-in-xml",
-    "preview",
+    
+    "view",
     "styles",
-    "view"
+    "constants",
+    "animations",
+
+    "images",
+    "fonts",
+
+    "api",
+    "events",
+    "data-bindings",
+    "translations",
+
+    "testing",
+    "preview"
   ]
 }
