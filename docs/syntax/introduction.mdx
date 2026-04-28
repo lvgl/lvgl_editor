@@ -1,0 +1,115 @@
+---
+title: XML Format Overview
+description: Learn how LVGL's XML format enables declarative UI development with version control, reusability, and runtime flexibility for embedded applications.
+---
+
+Describe your embedded UIs in XML instead of code, combining the best of both worlds: the clarity of markup with the power of modern development tools. LVGL's XML Module brings declarative UI programming to embedded systems.
+
+## Why Use XML?
+
+XML offers powerful advantages over traditional drag-and-drop or pure code-based approaches:
+
+- **HTML-like syntax** - Familiar to web developers, easy to learn and read
+- **Version control friendly** - Plain text with readable diffs, no binary files
+- **Share and collaborate** - Copy, paste, and send XML snippets effortlessly
+- **Reusable components** - Build libraries of UI patterns for consistency
+- **Automation ready** - Scripts and CI/CD pipelines can process XML automatically
+- **AI-powered workflows** - AI tools can read, generate, and refactor your UIs
+- **Runtime flexibility** - Parse and load XML at runtime without recompiling
+- **Cross-platform** - The same XML works across all LVGL targets
+- **Fast iteration** - Quicker to type than drag-and-drop editing
+
+---
+
+## Working with XML
+
+You can write XML by hand, but we recommend using LVGL Pro's Editor for a better experience.
+
+<Callout type="info">
+**Recommended: Use LVGL Pro's Editor**
+
+The Editor provides live preview, inspector tools, code generation, auto-completion, syntax highlighting, validation, online preview and sharing for team feedback, and Figma integration to convert designs directly to XML.
+
+[Learn more about the Editor](./editor/overview)
+</Callout>
+
+---
+
+## Core Concepts
+
+XML UIs are built from three fundamental elements: **Widgets**, **Components**, and **Screens**. Understanding the differences is key to effective UI design.
+
+<ConceptCards>
+  <ConceptCard
+    icon={<Terminal className="w-6 h-6" />}
+    title="Widgets"
+    description="Fundamental building blocks that compile into C code."
+    tag="<widget>"
+    characteristics={[
+      "Similar to LVGL's built-in widgets",
+      "Support custom and complex logic",
+      <>Have a large, customizable API with <code>set/get/add</code> functions</>,
+      "Compound widgets can contain other widgets (e.g., Tabview, Dropdown)",
+      "Cannot be loaded from XML at runtime (custom code isn't loadable)",
+      "Use a custom XML parser to map properties to API functions"
+    ]}
+    whenToUse="Building reusable custom UI elements that need advanced logic or compiled performance."
+  />
+
+  <ConceptCard
+    icon={<Layout className="w-6 h-6" />}
+    title="Components"
+    description="Lightweight, XML-only UI elements that load at runtime."
+    tag="<component>"
+    characteristics={[
+      "Built from Widgets and/or other Components",
+      "Pure XML—no custom C code (but can call C functions as callbacks)",
+      "Support data bindings, animations, and styling",
+      "Load from XML at runtime",
+      <>Can have a simple API to pass properties to children (e.g., <code>btn_text</code>)</>,
+      "Can contain Widgets and/or other Components"
+    ]}
+    note="LVGL reads Component XML files, learns their structure, and creates instances as needed within Screens and other Components."
+    whenToUse="Building reusable UI patterns, styled configurations, and dynamic UI elements."
+  />
+
+  <ConceptCard
+    icon={<FileCode className="w-6 h-6" />}
+    title="Screens"
+    description="Top-level containers for complete UI views."
+    tag="<screen>"
+    characteristics={[
+      "Built from Widgets and/or Components",
+      "Define complete visual layouts",
+      "Load at runtime (visual only, no custom code)",
+      "No complex API—properties are for visual styling",
+      "Can be referenced in screen load events and navigation"
+    ]}
+    whenToUse="Defining application screens, pages, and full-screen views."
+  />
+</ConceptCards>
+
+---
+
+## Shared Resources with globals.xml
+
+The `globals.xml` file defines project-wide resources accessible throughout your UI:
+
+- **Styles** - Reusable styling definitions
+- **Constants** - Project-wide values and settings
+- **Images** - Image assets and sprites
+- **Fonts** - Font definitions and configurations
+- **Subjects** - Data binding sources for reactive updates
+
+You can load multiple `globals.xml` files if needed. They merge into the same global scope, preventing duplicate items.
+
+---
+
+## Using XML Files
+
+XML files serve two primary purposes:
+
+1. **Runtime loading** - LVGL parses and loads XML directly at runtime
+2. **Code generation** - Convert XML to optimized C code using the Editor or CLI
+
+Both workflows are detailed in the Integration section.

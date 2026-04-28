@@ -1,0 +1,102 @@
+---
+title: Data Binding
+description: Learn how to use subjects for data binding to create dynamic, responsive UIs that update automatically.
+faqs:
+  - question: "What data types are supported for subjects?"
+    answer: "Currently, only integer and string types are supported for subjects. You define them in globals.xml using <int> or <string> tags with a name and initial value."
+  - question: "How do I update a subject value from my C code?"
+    answer: "Use the generated setter functions in your application code. For a subject named 'battery_power', call set_battery_power(value) to update it. All widgets bound to that subject will automatically update."
+  - question: "What's the difference between simple and complex binding?"
+    answer: "Simple binding directly binds a subject to a widget property using attributes like bind_text or bind_value. Complex binding uses child elements to add conditional logic with multiple subjects and parameters, like bind_flag_if_eq or bind_state_if_gt."
+  - question: "Can multiple widgets bind to the same subject?"
+    answer: "Yes! Multiple widgets can bind to the same subject. When the subject's value changes (either from code or user interaction), all bound widgets automatically update to reflect the new value."
+  - question: "How do I use data binding to show or hide a widget?"
+    answer: "Use complex binding with the 'hidden' flag. For example: <lv_obj-bind_flag_if_eq subject=\"some_value\" flag=\"hidden\" ref_value=\"0\"/> will hide the widget when some_value equals 0."
+---
+
+## Overview
+
+With the help of `Subjects observer_subject`, the interface of the UI can be created.
+
+A subject is a global data item whose value can be set either from the
+application or the UI, and whose value can be bound to widget
+properties.
+
+For example, a `room1_temperature` subject's value can be set in the
+application when the temperature is measured, and can be bound to a
+label like this:
+
+```xml
+<lv_label bind_text="room1_temperature"/>
+```
+
+## Defining subjects
+
+Subjects can be created in `globals.xml` like this:
+
+```xml
+<globals>
+  <subjects>
+    <int name="battery_power" value="32"/>
+    <string name="user_name" value="John"/>
+  </subjects>
+</globals>
+```
+
+As the example shows, a subject consists of a type, name, and initial
+value. Currently, only integer and string types are supported.
+
+## Simple binding
+
+Some widgets (e.g., label, slider) support binding the subject's value
+directly to the widget. These bindings use attributes that start with
+`bind_*` and reference a subject.
+
+```xml
+<lv_slider bind_value="some_subject"/>
+<lv_label bind_text="some_subject"/>
+```
+
+Once a binding is created, if the subject's value changes (e.g., by
+adjusting the slider), all bound widgets will be updated automatically.
+
+## Complex binding
+
+In more complex cases---when a binding requires multiple
+parameters---the binding can be added as a child element of a widget.
+This allows binding multiple subjects with different parameters. For
+example:
+
+```xml
+<lv_label text="Hello world">
+  <lv_obj-bind_flag_if_eq subject="subject1" flag="hidden" ref_value="10"/>
+  <lv_obj-bind_flag_if_gt subject="subject1" flag="clickable" ref_value="20"/>
+</lv_label>
+```
+
+Explanation of complex bindings:
+
+| Binding Type | Condition | Description |
+| --- | --- | --- |
+| `bind_flag_if_eq` | Equals | Set a flag if the subject's value equals the reference value |
+| `bind_flag_if_not_eq` | Not equals | Set a flag if the subject's value does not equal the reference value |
+| `bind_flag_if_gt` | Greater than | Set a flag if the subject's value is greater than the reference value |
+| `bind_flag_if_ge` | Greater or equal | Set a flag if the subject's value is greater than or equal to the reference value |
+| `bind_flag_if_lt` | Less than | Set a flag if the subject's value is less than the reference value |
+| `bind_flag_if_le` | Less or equal | Set a flag if the subject's value is less than or equal to the reference value |
+| `bind_state_if_eq` | Equals | Set a state if the subject's value equals the reference value |
+| `bind_state_if_not_eq` | Not equals | Set a state if the subject's value does not equal the reference value |
+| `bind_state_if_gt` | Greater than | Set a state if the subject's value is greater than the reference value |
+| `bind_state_if_ge` | Greater or equal | Set a state if the subject's value is greater than or equal to the reference value |
+| `bind_state_if_lt` | Less than | Set a state if the subject's value is less than the reference value |
+| `bind_state_if_le` | Less or equal | Set a state if the subject's value is less than or equal to the reference value |
+
+Note: The `lv_obj-` prefix can be omitted. For example, you can simply
+write `bind_state_if_gt` instead.
+
+## Subject Related Events
+
+Besides binding properties to subjects, it's also possible to add
+events that change the value of a subject on pressed, release, etc.
+
+Learn more about these in the [events documentation](../ui-elements/events-in-xml).

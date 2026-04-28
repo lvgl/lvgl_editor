@@ -1,0 +1,134 @@
+---
+title: XML Syntax
+description: Master XML syntax rules, naming conventions, and property types used in LVGL Pro Editor for defining UI components.
+---
+
+LVGL Pro Editor uses standard XML syntax with special conventions for property names, values, and type definitions that follow LVGL API patterns.
+
+## Naming Conventions
+
+- **Attribute names** use lowercase letters with `_` separation (e.g., `bg_color`, `font_size`)
+- **Tag names** must start with a letter or `_` and can contain letters, `_`, and digits
+- **Compound names** use `-` as separator (e.g., `lv_chart-series`)
+- **Color values** support multiple formats like CSS:
+  - Hex with prefix: `0x112233` or `#112233`
+  - Hex without prefix: `112233`
+  - Short hex: `0x123`, `#123`, or `123` (all equivalent to `#112233`)
+- **LVGL API alignment**: Follow LVGL naming conventions (e.g., `align="center"`, `bg_color="0xff0000"`)
+- **Parameter references**: Use `$` prefix (e.g., `$param_name`)
+- **Constant references**: Use `#` prefix (e.g., `#const_name`)
+
+## Property Names
+
+Most XML properties use standard syntax without special formatting:
+
+```xml
+<some_tag prop="value" other_prop="other value"/>
+```
+
+**Style selectors** can be added to property names for advanced styling:
+
+```xml
+<lv_checkbox style_bg_color-indicator-checked-disabled="0xff0000"/>
+```
+
+## Types
+
+All types can be used as API property types. Some types are also supported for constants and observer subjects.
+
+### Simple Types
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **bool** | Boolean value | `true` or `false` |
+| **int** | Integer (-2B to 2B, equivalent to `int32_t`) | `42`, `-100` |
+| **px** | Pixel units (unit can be omitted) | `10`, `10px` |
+| **%** | Percentage (must include `%` unit) | `50%`, `100%` |
+| **content** | Auto-sizing constant (`LV_SIZE_CONTENT`) | `content` |
+| **string** | Null-terminated string | `"hello"`, `"'a' 'b'"` (multiple) |
+| **color** | 24-bit RGB color value | `0xff0000`, `#ff0000` |
+| **opa** | Opacity (0-255 or 0-100%) | `128`, `50%` |
+| **lv_obj** | Widget object pointer | Reference to widget |
+| **screen** | Screen object pointer | Reference to screen |
+| **time_ms** | Time in milliseconds | `500`, `1000` |
+| **deg_0.1** | Degrees with 0.1 resolution | `45.5`, `180` |
+| **scale_1/256** | Scale/Zoom (256=100%, 128=50%) | `256`, `512` |
+| **style_prop** | Style property name | `bg_opa`, `text_color` |
+
+### Name-Based Types
+
+In XML files, fonts, images, styles, and other assets are referenced by name, not by pointer:
+
+```xml
+<style name="red" bg_color="0xff0000"/>
+```
+
+**Automatic binding** occurs for:
+- Styles, fonts, images, animations
+- Gradients and other visual components
+- Components and globals registered in `globals.xml`
+
+**Manual binding** is required for:
+- Event callbacks (only available in code)
+- Custom fonts or images stored in memory
+
+To register name-data pairs, see the [Editor Integration](/docs/pro/editor-integration) guide.
+
+### Arrays
+
+Arrays can be defined in three ways:
+
+| Syntax | Description |
+|--------|-------------|
+| `int[count]` | Integer array with count parameter |
+| `string[NULL]` | Array terminated with `NULL` element |
+| `string[]` | No termination or count parameter |
+
+### Enums
+
+Custom enums for **Widgets** can be created using `enumdef` (not supported for Components):
+
+```xml
+<api>
+  <enumdef name="my_widget_mode" help="Possible modes">
+    <enum name="normal" value="0x10" help="Normal mode"/>
+    <enum name="inverted" help="Inverted mode"/>
+  </enumdef>
+
+  <prop name="mode" type="enum:my_widget_mode" help="Select mode"/>
+</api>
+```
+
+**Multiple enum values** with `+` suffix allow OR'ing values:
+
+```xml
+type="axis+"  <!-- Allows selecting multiple axis values -->
+axis="primary_x|secondary_y"  <!-- Separate with | -->
+```
+
+### Compound Types
+
+Types can be combined to allow multiple options. For example:
+
+```xml
+type="px|%|content"  <!-- Accepts pixels, percentage, or auto-size -->
+```
+
+## Limiting Accepted Values
+
+<Callout type="info">
+This feature is planned but not yet supported. The examples below show the intended syntax.
+</Callout>
+
+You can restrict possible values for enums, colors, and strings:
+
+```xml
+<!-- Enum with limited options -->
+type="dir(top bottom)"
+
+<!-- Color with color palette -->
+type="color(0xff0000 0x00ff00 0x0000ff)"
+
+<!-- String with fixed options -->
+type="string('Ok' 'Cancel')"
+```

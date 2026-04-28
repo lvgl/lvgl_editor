@@ -1,0 +1,15 @@
+{
+  "title": "UI Elements",
+  "pages": [
+    "components",
+    "widgets",
+    "screens",
+    "animations",
+    "api",
+    "constants",
+    "events-in-xml",
+    "preview",
+    "styles",
+    "view"
+  ]
+}

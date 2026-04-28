@@ -1,0 +1,59 @@
+---
+title: View
+description: Learn how to define the visual structure and layout of components, widgets, screens, and tests using the view tag.
+---
+
+The `view` tag defines the visual structure and layout for components, widgets, screens, and tests.
+
+## Overview
+
+The `view` tag is used to describe the appearance and structure of:
+
+- `component` elements
+- `widget` elements
+- `screen` elements
+- `test` elements
+
+Within a `view`, you can nest child elements using already-defined widgets and components, creating a hierarchical structure.
+
+### Example: Basic View Structure
+
+```xml
+<view>
+  <lv_button width="200">
+    <my_icon src="image1"/>
+    <lv_label text="Click me"/>
+  </lv_button>
+</view>
+```
+
+## Extending Base Elements
+
+### Using the Extends Attribute
+
+The `view` tag itself acts as a container that becomes the parent of all children. You can specify what type of widget or component to use as the base using the `extends` attribute.
+
+For example, `extends="lv_slider"` creates an `lv_slider` first, then adds your child elements to it.
+
+### Example: Extended View
+
+```xml
+<view extends="lv_slider" width="100%" style_bg_color="0xff8800" flex_flow="row">
+  <style name="my_style" selector="pressed|knob"/>
+  <lv_label text="Current value: "/>
+  <lv_label bind_text="subject_1"/>
+</view>
+```
+
+Properties added to the `view` tag customize the extended element's behavior and appearance.
+
+### Extension Rules by Element Type
+
+The `extends` attribute has specific rules depending on which element contains the view:
+
+| Element | Can Extend | Examples |
+|---------|-----------|----------|
+| `component` | Widgets and Components | `extends="lv_button"` or `extends="my_component"` |
+| `widget` | Widgets only | `extends="lv_slider"` |
+| `screen` | Nothing | (no extends allowed) |
+| `test` | Widgets, Components, or Screens | Any of the above |
