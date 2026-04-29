@@ -18,7 +18,7 @@ In order to use images in the Editor add your PNG images in the `images` folder 
 
 ### As Data
 
-The Editor convert PNG image files to C array that can be compiled into the editor:
+The Editor converts PNG image files to a C array that can be compiled into the project:
 
 ```xml
 <images>
@@ -29,7 +29,7 @@ The Editor convert PNG image files to C array that can be compiled into the edit
 All typical color formats are supported, like `i1-i8`,
 `a1-a8`, `rgb565`, `rgb888`, `argb8888`, etc. and even `rgb565a8`.
 
-As these kind of images are basically C code, you need to recompile the project int the editor to see them with the final color format. To show something on the screen before recompiling the Editor uses the PNG files as fallback which always has ARGB888 color format.
+As these kind of images are basically C code, you need to recompile the project in the editor to see them with the final color format. To show something on the screen before recompiling the Editor uses the PNG files as fallback which always has ARGB888 color format.
 
 ### As File
 
@@ -56,7 +56,7 @@ In a style property:
 ```xml
 <styles>
   <style name="style_bg" bg_image_src="wallpaper"/>
-<styles>  
+</styles>  
 ```
 
 In custom properties:

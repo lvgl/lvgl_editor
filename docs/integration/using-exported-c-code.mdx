@@ -18,7 +18,7 @@ The generated code is fully platform independent and doesn't contain any drivers
 3. Add `#include "<project_name>.h"`.
 3. Call `lv_init()`, create an `lv_display` and input devices if needed
 3. Call `<project_name>_init("")` or pass the path to the image and font files if you have used them as files
-4. Create and load screen by `lv_screen_load(main_screen_creat());`
+4. Create and load screen by `lv_screen_load(main_screen_create());`
 5. Call `lv_timer_handler()` periodically as usual for LVGL applications
 
 `<project_name>` refers to the name set in `project.xml`, or if it's not set it's the name of the project folder.
