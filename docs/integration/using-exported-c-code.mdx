@@ -80,7 +80,7 @@ You can extend generated code by adding custom styles, timers, subjects, animati
 ```c
 void my_ui_init(const char * asset_path)
 {
-    my_ui_init(asset_path);
+    my_ui_init_gen(asset_path);
 
     lv_style_set_bg_color(&style_1, get_special_color());
 }
@@ -108,7 +108,7 @@ void temperature_to_string_observer_cb(lv_observer_t * observer,
 }
 void my_ui_init(const char * asset_path)
 {
-    my_ui_init(asset_path);
+    my_ui_init_gen(asset_path);
 
     lv_subject_add_observer(&subject_temperature_int,
                          temperature_to_string_observer_cb, NULL);
