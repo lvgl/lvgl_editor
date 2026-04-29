@@ -86,7 +86,7 @@ To register name-data pairs, see the [Editor Integration](/docs/pro/editor-integ
 
 ### Arrays
 
-Arrays can be defined in three ways depending on how the :
+Arrays can be defined in three ways:
 
 | Syntax | Description |
 |--------|-------------|
@@ -102,7 +102,7 @@ The items in the array are separated by spaces and the termination is not includ
 
 If there is an [`<api>`](./syntax/api) property like `<prop name="values" type="int[3]"/>` it can be used as `<my_widget values="10 33 55"/>` 
 
-String items needs to wrapped into `'` because and item can be composed of multiple words to "space" alone can't be used as separation. For example `<prop name="list" type="string[NULL]"/>` it can be used as: `<my_widget values="'This is the first' 'The second' '3rd'"/>` 
+String items need to be wrapped in `'` because an item can be composed of multiple words, so a space alone can't be used as a separator. For example `<prop name="list" type="string[NULL]"/>` it can be used as: `<my_widget values="'This is the first' 'The second' '3rd'"/>` 
 
 ### Enums
 
