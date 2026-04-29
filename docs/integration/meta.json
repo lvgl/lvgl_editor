@@ -1,10 +1,13 @@
 {
   "title": "Integration",
   "pages": [
+    "---General---",
     "using-exported-c-code",
     "loading-xml-files",
-    "renesas",
+    "---Ecosystems---",
+    "cmake",
+    "zephyr",
     "arduino-ide",
-    "zephyr-rtos"
+    "renesas"
   ]
 }

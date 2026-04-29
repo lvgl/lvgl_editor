@@ -1,26 +1,32 @@
 {
   "title": "XML Syntax",
   "pages": [
+    "---Understanding XML---",
     "introduction",
     "overview",
  
+    "---UI Elements---",
     "components",
     "widgets",
     "screens",
-    
+
+    "---Visuals & Styling---",
     "view",
     "styles",
     "constants",
     "animations",
 
+    "---Assets---",
     "images",
     "fonts",
 
+    "---Interaction & Configuration---",
     "api",
     "events",
     "data-bindings",
     "translations",
 
+    "---Test & Preview---",
     "testing",
     "preview"
   ]
