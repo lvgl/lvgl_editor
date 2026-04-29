@@ -64,8 +64,8 @@ Use the `screen_load_event` and `screen_create_event` tags as children of a widg
 
 The key difference between load and create is:
 
-- **load** - Loads an already existing screen. After leaving the screen, it remains in memory, so all states are preserved. The screen to load must have [`<screen permanent="true"/>`](./syntax/screens) 
-- **create** - Creates the screen dynamically, and when leaving the screen, it is deleted, so all changes are lost (unless saved in subjects).   The screen to load must have [`<screen permanent="false"/>`](./syntax/screens) (`false` is the default).
+- **load** - Loads an already existing screen. After leaving the screen, it remains in memory, so all states are preserved. The screen to load must have [`<screen permanent="true"/>`](./screens) 
+- **create** - Creates the screen dynamically, and when leaving the screen, it is deleted, so all changes are lost (unless saved in subjects).   The screen to load must have [`<screen permanent="false"/>`](./screens) (`false` is the default).
 
 Both tags support these optional attributes:
 
@@ -144,8 +144,8 @@ The `rollover` property is optional. If `false` (default), the value stops at th
 
 ## Play Animation
 
-Playing [Timelines](./syntax/animation) can be triggered by events (such as clicks) using the `<play_timeline_event>` element as a child of any widget.
-Playing [Timelines](./syntax/animations) can be triggered by events (such as clicks) using the `<play_timeline_event>` element as a child of any widget.
+Playing [Timelines](./animation) can be triggered by events (such as clicks) using the `<play_timeline_event>` element as a child of any widget.
+
 Specify a `target` UI element and select one of its `timeline`s to play. If `target="self"`, the timeline is looked up in the current Component, or Screen (in the current XML file).
 
 

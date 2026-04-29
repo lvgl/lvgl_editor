@@ -9,26 +9,26 @@ Components are powerful XML-based building blocks that let you create reusable, 
 
 Components are one of the main building blocks for creating new UI elements. They are wrapped into a `<component>` root element and can have the following child XML tags:
 
-- [`animations`](./syntax/animations) - Define timeline based animations
-- [`consts`](./syntax/constants) - Local constants
-- [`api`](./syntax/api) - Custom properties and slots (without `<enumdef>`s)
-- [`styles`](./syntax/styles) - Local styles
-- [`view`](./syntax/view) - Component structure
-- [`previews`](./syntax/preview) - Preview configurations
+- [`animations`](./animations) - Define timeline based animations
+- [`consts`](./constants) - Local constants
+- [`api`](./api) - Custom properties and slots (without `<enumdef>`s)
+- [`styles`](./styles) - Local styles
+- [`view`](./view) - Component structure
+- [`previews`](./preview) - Preview configurations
 
 Although components cannot contain C code, they are very powerful:
 
 - They can extend another Component or Widget (that is the base can be defined)
 - Components can be built from Widgets and other Components
-- A custom [API](./syntax/api) can be defined
-- Local [styles](./syntax/styles) can be defined, and global styles can be used
-- Local [constants](./syntax/constants) can be defined, and global constants can be used
+- A custom [API](./api) can be defined
+- Local [styles](./styles) can be defined, and global styles can be used
+- Local [constants](./constants) can be defined, and global constants can be used
 - Function calls, subject (variable) changes, or screen load/create events can be added
 - Previews can be defined to preview components in various settings in the UI Editor
 
 ### Extending Components and Widgets
 
-When a Component is created, it can extend another Component or Widget like [`<view extends="lv_slider">`](./syntax/view). If a Widget is extended, the component can use the Widget's API, for example:
+When a Component is created, it can extend another Component or Widget like [`<view extends="lv_slider">`](./view). If a Widget is extended, the component can use the Widget's API, for example:
 
 ```xml
 <component>
@@ -53,7 +53,7 @@ Unlike Widgets (which are always compiled into the application), Components can 
 
 ### Basic XML Usage
 
-Using Components in XML is very intuitive. The name of the Component can be used as an XML tag in the [`view`](./syntax/view) of other Components, [Screens](./syntax/screens), and [Widgets](./syntax/widgets). Component properties are simply XML attributes.
+Using Components in XML is very intuitive. The name of the Component can be used as an XML tag in the [`view`](./view) of other Components, [Screens](./screens), and [Widgets](./widgets). Component properties are simply XML attributes.
 
 ```xml
 <!-- my_button.xml -->
@@ -79,7 +79,7 @@ where `component_name` is the name of the  Component's XML file name.
 
 When a Component is used in another Component's XML code and the code is exported, this `create` function will be called. This means Components do not have a detailed set/get API but are created with a fixed set of parameters.
 
-If you need to access or modify values dynamically, it is recommended to use [data bindings via Subject](./syntax/data-bindings). You can also call these `..._create()` functions at any time from application code to create new Components on demand.
+If you need to access or modify values dynamically, it is recommended to use [data bindings via Subject](./data-bindings). You can also call these `..._create()` functions at any time from application code to create new Components on demand.
 
 ## Defining Custom Properties
 
@@ -89,7 +89,7 @@ The properties of child elements can be adjusted directly:
 <my_button x="10" width="200"/>
 ```
 
-However, you can also define custom properties in the [`api` tag](./syntax/api). These properties can then be passed to any properties of the children by referencing them using `$`. For example:
+However, you can also define custom properties in the [`api` tag](./api). These properties can then be passed to any properties of the children by referencing them using `$`. For example:
 
 ```xml
 <!-- my_button.xml -->
@@ -125,7 +125,7 @@ In this setup, the `btn_text` property is mandatory. However, you can make it op
 <prop name="btn_text" type="string" default="Title"/>
 ```
 
-See the [API documentation](./syntax/api) for more details and XML syntax reference for all the supported types.
+See the [API documentation](./api) for more details and XML syntax reference for all the supported types.
 
 ## Complete Examples
 
