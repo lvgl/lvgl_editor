@@ -64,8 +64,8 @@ Use the `screen_load_event` and `screen_create_event` tags as children of a widg
 
 The key difference between load and create is:
 
-- **load** - Loads an already existing screen. After leaving the screen, it remains in memory, so all states are preserved. The screen to load must have `<screen permanent="true"/>` 
-- **create** - Creates the screen dynamically, and when leaving the screen, it is deleted, so all changes are lost (unless saved in subjects).   The screen to load must have `<screen permanent="false"/>` (`false` is the default).
+- **load** - Loads an already existing screen. After leaving the screen, it remains in memory, so all states are preserved. The screen to load must have [`<screen permanent="true"/>`](./syntax/screens) 
+- **create** - Creates the screen dynamically, and when leaving the screen, it is deleted, so all changes are lost (unless saved in subjects).   The screen to load must have [`<screen permanent="false"/>`](./syntax/screens) (`false` is the default).
 
 Both tags support these optional attributes:
 
