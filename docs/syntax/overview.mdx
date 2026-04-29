@@ -1,5 +1,5 @@
 ---
-title: XML Syntax
+title: Overview
 description: Master XML syntax rules, naming conventions, and property types used in LVGL Pro Editor for defining UI components.
 ---
 
@@ -55,6 +55,16 @@ All types can be used as API property types. Some types are also supported for c
 | **scale_1/256** | Scale/Zoom (256=100%, 128=50%) | `256`, `512` |
 | **style_prop** | Style property name | `bg_opa`, `text_color` |
 
+<Callout>
+The XML standard doesn't allow using some reserved characters in values. For example
+`"`, `'`, `<`, `>`, and new line. 
+This is it's invalid `value="I'm here"` as `'` needs to escaped as `"I&apos;m here"`.
+
+The Editor show a little popup when you click on a string property, where you can write text in the normal way, and the editor will handle escaping.
+
+![Text editor popup in the Editor to automatically escape reserved XML characters](../_static/images/editor_text_editor_popup.png) 
+</Callout>
+
 ### Name-Based Types
 
 In XML files, fonts, images, styles, and other assets are referenced by name, not by pointer:
@@ -76,13 +86,23 @@ To register name-data pairs, see the [Editor Integration](/docs/pro/editor-integ
 
 ### Arrays
 
-Arrays can be defined in three ways:
+Arrays can be defined in three ways depending on how the :
 
 | Syntax | Description |
 |--------|-------------|
-| `int[count]` | Integer array with count parameter |
-| `string[NULL]` | Array terminated with `NULL` element |
+| `int[5]` | Array with a fixed set of elements.  |
+| `string[NULL]` | Array terminated with a `NULL` element. `NULL` can be any other string too. |
 | `string[]` | No termination or count parameter |
+
+The termination of the array is important only to
+1. Validate the correctness of the XML files
+2. Generate correct code
+
+The items in the array are separated by spaces and the termination is not included. For example
+
+If there is an [`<api>`](./syntax/api) property like `<prop name="values" type="int[3]"/>` it can be used as `<my_widget values="10 33 55"/>` 
+
+String items needs to wrapped into `'` because and item can be composed of multiple words to "space" alone can't be used as separation. For example `<prop name="list" type="string[NULL]"/>` it can be used as: `<my_widget values="'This is the first' 'The second' '3rd'"/>` 
 
 ### Enums
 

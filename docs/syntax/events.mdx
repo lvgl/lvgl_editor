@@ -1,5 +1,5 @@
 ---
-title: Events in XML
+title: Events
 description: Learn how to handle and trigger events in LVGL Pro Editor using XML.
 ---
 
@@ -13,10 +13,10 @@ There are several ways to define events for user interactions. These events can 
 
 In all event types, the `trigger` attribute defines what kind of user action should trigger the event. All LVGL event types are supported with straightforward mapping:
 
-- `"all"` - LV_EVENT_ALL
-- `"clicked"` - LV_EVENT_CLICKED
-- `"pressed"` - LV_EVENT_PRESSED
-- (and more LVGL event types as needed)
+- `"all"` - `LV_EVENT_ALL`
+- `"clicked"` - `LV_EVENT_CLICKED`
+- `"pressed"` - `LV_EVENT_PRESSED`
+- etc
 
 ## Call Function
 
@@ -31,21 +31,30 @@ User-defined functions can be called in response to events like this:
 </view>
 ```
 
-When the XML is loaded at runtime, the callback name must be mapped to a function using `lv_xml_register_event_cb("my_callback_1", an_event_handler)`.
-
 The callback must follow the standard LVGL event callback signature:
 
 ```c
 void an_event_handler(lv_event_t * e);
 ```
 
-In exported C code, a function with the exact name is assumed to exist. For example, `callback="my_callback_1"` will be exported as:
+In exported C code, a function with the exact name is assumed to defined by the user. 
+For example, `callback="my_callback_1"` will be exported as:
 
 ```c
 void my_callback_1(lv_event_t * e); /* At the beginning of the exported file */
 
 lv_obj_add_event_cb(obj, my_callback_1, LV_EVENT_CLICKED, "some_text");
 ```
+
+And it's the developer's responsibility to implement the `my_callback_1`. 
+
+
+### Recommendations
+
+It's a good idea to add event function in the `<project_name>.c` file, created by the editor to keep all the related functions in one place. If there are a lot of event functions it's recommended to create multiple files for them.
+
+To distinguish simulator builds from builds for an embedded device add defines like
+`#define BUILD_SIMULATOR` and wrap the event callbacks to `#if BUILD_SIMULATOR`.
 
 The `user_data` attribute is optional. If omitted, `NULL` will be passed.
 
@@ -55,8 +64,8 @@ Use the `screen_load_event` and `screen_create_event` tags as children of a widg
 
 The key difference between load and create is:
 
-- **load** - Loads an already existing screen. After leaving the screen, it remains in memory, so all states are preserved.
-- **create** - Creates the screen dynamically, and when leaving the screen, it is deleted, so all changes are lost (unless saved in subjects).
+- **load** - Loads an already existing screen. After leaving the screen, it remains in memory, so all states are preserved. The screen to load mush have `<screen permanent="true"/>` 
+- **create** - Creates the screen dynamically, and when leaving the screen, it is deleted, so all changes are lost (unless saved in subjects).   The screen to load mush have `<screen permanent="false"/>` (`false` is the default).
 
 Both tags support these optional attributes:
 
@@ -69,7 +78,7 @@ Here is an example of both load and create events:
 
 ```xml
 <!-- screen1.xml -->
-<screen>
+<screen permanent="true">
  <view style_bg_color="0xff7788">
   <lv_button>
    <lv_label text="Create"/>
@@ -91,14 +100,6 @@ Here is an example of both load and create events:
 </screen>
 ```
 
-```c
-lv_xml_register_component_from_data("screen1", screen1_xml);
-lv_xml_register_component_from_data("screen2", screen2_xml);
-
-/* Create an instance of screen1 so that it can be loaded from screen2. */
-lv_obj_t * screen1 = lv_xml_create(NULL, "screen1", NULL);
-lv_screen_load(screen1);
-```
 
 ## Set Subject Value
 
@@ -140,3 +141,35 @@ If `step` is negative, the subject's value will be decremented. Currently, only 
 Optionally, use `min_value` and/or `max_value` to limit the subject's value. The default min/max values are `INT32_MIN` (-2,147,483,648) and `INT32_MAX` (+2,147,483,647) respectively.
 
 The `rollover` property is optional. If `false` (default), the value stops at the min/max boundary; if `true`, it wraps to the other end.
+
+## Play Animation
+
+Playing [Timelines](./syntax/animation) can be triggered by events (such as clicks) using the `<play_timeline_event>` element as a child of any widget.
+
+Specify a `target` UI element and select one of its `timeline`s to play. If `target="self"`, the timeline is looked up in the current Component, or Screen (in the current XML file).
+
+
+This example defines a timeline, and plays it on itself.
+
+```xml
+<component>
+	<animations>
+		<timeline name="timeline_1">
+			<animation target="self" duration="1000" prop="translate_x" start="100" end="0" />
+			<animation target="main_button" duration="1000" prop="opa" start="0" end="255" />
+		</timeline>
+	</animations>
+
+	<view>
+		<lv_button name="main_button">
+			<play_timeline_event trigger="clicked" timeline="timeline_1" target="self" />
+			<lv_label text="Play" />
+		</lv_button>
+	</view>
+</component>
+```
+
+Optionally a `delay` property can be set as well (in milliseconds), and the timeline can be played in reversed too:
+```xml
+<play_timeline_event trigger="clicked" timeline="timeline_1" target="self" reverse="true" delay="500"/>
+``` 

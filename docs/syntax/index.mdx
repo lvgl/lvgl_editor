@@ -12,7 +12,7 @@ This section covers everything from basic building blocks to advanced styling an
 <Cards>
   <Card
     icon={<Info />}
-    href="./introduction"
+    href="./syntax/introduction"
     title="Introduction LVGL's XML"
   >
     Learn the fundamentals of XML format and how it powers LVGL Pro Editor's UI definition system.
@@ -20,7 +20,7 @@ This section covers everything from basic building blocks to advanced styling an
 
   <Card
     icon={<Code />}
-    href="./overview"
+    href="./syntax/overview"
     title="XML Syntax Overview"
   >
     Explore XML syntax rules, element structure, attributes, and best practices for writing clean UI definitions.
@@ -30,19 +30,19 @@ This section covers everything from basic building blocks to advanced styling an
 ## UI Elements
 
 <Cards>
-  <Card href="./components" icon={<Box />}>
+  <Card href="./syntax/components" icon={<Box />}>
     **Components**
 
     Create reusable UI modules with custom properties, styles, and API definitions. The foundation for building complex interfaces.
   </Card>
 
-  <Card href="./widgets" icon={<Blocks />}>
+  <Card href="./syntax/widgets" icon={<Blocks />}>
     **Widgets**
 
     Reference guide for all available widgets and UI controls. Learn how to create custom widgets with XML parsers.
   </Card>
 
-  <Card href="./screens" icon={<Layout />}>
+  <Card href="./syntax/screens" icon={<Layout />}>
     **Screens**
 
     Organize your UI content with screens. Manage navigation, permanent screens, and screen lifecycle.
@@ -54,26 +54,26 @@ This section covers everything from basic building blocks to advanced styling an
 
 <Cards>
 
-  <Card href="./view" icon={<Eye />}>
+  <Card href="./syntax/view" icon={<Eye />}>
     **View**
 
     Define the visual structure and layout of components, widgets, and screens using the view tag.
   </Card>
 
-  <Card href="./styles" icon={<Palette />}>
+  <Card href="./syntax/styles" icon={<Palette />}>
     **Styles**
 
     Master style sheets, local styles, gradients, and conditional style binding with subjects for dynamic theming.
   </Card>
 
 
-  <Card href="./constants" icon={<Hash />}>
+  <Card href="./syntax/constants" icon={<Hash />}>
     **Constants**
 
     Define reusable constants for colors, spacing, strings, and other values to maintain consistency.
   </Card>
 
-  <Card href="./animations" icon={<Sparkles />}>
+  <Card href="./syntax/animations" icon={<Sparkles />}>
     **Animations**
 
     Create timeline-based animations with multiple steps. Include timelines from other components for complex effects.
@@ -85,13 +85,13 @@ This section covers everything from basic building blocks to advanced styling an
 
 <Cards>
 
-  <Card href="./images" icon={<Image />}>
+  <Card href="./syntax/images" icon={<Image />}>
     **Images**
 
     Register and reference images as named external resources in your XML files. Map images from files or compiled data arrays.
   </Card>
 
-  <Card href="./fonts" icon={<Type />}>
+  <Card href="./syntax/fonts" icon={<FileText />}>
     **Fonts**
 
     Register and configure fonts as external resources. Select font engines and name them for reference in XML files.
@@ -108,20 +108,20 @@ This section covers everything from basic building blocks to advanced styling an
     Define custom APIs for widgets and components with properties, parameters, enums, and elements.
   </Card>
 
-  <Card href="./events" icon={<Zap />}>
+  <Card href="./syntax/events" icon={<Zap />}>
     **Events in XML**
 
     Handle user interactions with event callbacks, screen navigation, and subject value updates on triggers.
   </Card>
 
 
-  <Card href="./data-bindings" icon={<Link />}>
+  <Card href="./syntax/data-binding" icon={<Link />}>
     **Data Binding**
 
     Use subjects to bind data to widget properties, creating dynamic UIs that automatically update when values change.
   </Card>
 
-  <Card href="./translations" icon={<Globe />}>
+  <Card href="./syntax/translations" icon={<Globe />}>
     **Language Translations**
 
     Implement multi-language support using the XML translation module to define and manage translated strings efficiently.
@@ -133,15 +133,16 @@ This section covers everything from basic building blocks to advanced styling an
 ## Test & Preview
 
 <Cards>
-  <Card href="./testing" icon={<FlaskConical />}>
+  <Card href="./syntax/testing" icon={<TestTube />}>
     **UI Testing**
 
     Write comprehensive UI tests using XML to verify functionality and visual consistency of your LVGL interfaces.
   </Card>
 
 
-  <Card href="./preview" icon={<Monitor />}>
+  <Card href="./syntax/preview" icon={<Monitor />}>
     **Preview**
 
     Configure preview settings for components and widgets in the UI Editor with multiple preview contexts.
-</Card>
+  </Card>
+</Cards>

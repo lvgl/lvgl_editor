@@ -72,23 +72,10 @@ To include a timeline, use the following properties:
 
 ## Playing Timelines
 
-Timelines can be triggered by events (such as clicks) using the `play_timeline_event` element as a child of any widget.
+Timelines can be triggered by events (such as clicks) using the `<play_timeline_event>` element as a child of any widget.
 
-Specify a `target` UI element and select one of its `timeline`s to play. If `target="self"`, the timeline is looked up in the current Component, or Screen (in the current XML file).
+Learn more about it in [Events](./syntax/events) section.
 
-You can also set a `delay` and use `reverse="true"` to play a timeline in reverse.
-
-Example:
-
-```xml
-<view>
- <lv_label name="title" text="Hello world!"/>
- <my_button name="button" y="20">
-  <play_timeline_event trigger="clicked" target="button" timeline="shake" reverse="true" delay="1000"/>
-  <lv_label text="Click me"/>
- </my_button>
-</view>
-```
 ## Under the Hood
 
 Understanding how timelines work internally helps you use them more effectively.

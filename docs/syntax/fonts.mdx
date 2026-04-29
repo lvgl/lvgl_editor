@@ -13,12 +13,12 @@ later.
 
 ## Registering Fonts
 
-
 In order to use fonts in the Editor add your TTF files in the `fonts` folder of your project, and list specific fonts you need in an `<fonts>` block in `globals.xml`. 
 
-Right now the two ont engines are supported:
+Right now the 3 Font engines are supported:
 1. `<bin>` - Convert the glyphs (characters) to bitmaps in requested size. Each font with a different size will take space. A `range` and a list of `symbols` can be also specified
-2. `<tiny_ttf>` - Parse the TTF files and render the bitmaps at runtime in the required size
+2. `<tiny_ttf>` - Parse the TTF files and render the bitmaps at runtime in the required size. Works on MCUs too.
+3. `<freetype>` - Also renders from TTF files but it's design for MPUs
 
 ### As Data
 
@@ -81,6 +81,8 @@ even `api` properties:
 
 ## Font Engines
 
+Learn more about the features and config option of each Font engine.
+
 ### `bin`
 
 Binary fonts can either reference:
@@ -111,8 +113,7 @@ Binary fonts also support selecting a subset of characters:
 
 ### `tiny_ttf`
 
-TinyTTF fonts use the tiny_ttf engine to
-load TTF files directly or from data.
+TinyTTF fonts use the [tiny_ttf](https://lvgl.io/docs/open/libs/font_support/tiny_ttf) engine to load TTF files directly or from data.
 
 Required properties:
 
@@ -121,26 +122,16 @@ Required properties:
 - **`size`** — Font size in px (e.g., "12")
 - **`as_file`** — `true` or `false`
 
-LVGL's UI Editor generates a call to
-lv_xml_register_font using the set
-`name`. If `as_file` is:
+If `as_file` is:
+- `false`: A C file with raw TTF file data is also generated.
+- `true`: Nothing else is generated, as the TTF file will be used directly.
 
-- `false`: A C file with raw file data is also generated.
-- `true`: Nothing else is generated, as the TTF file will be used
- directly.
+### `<freetype>`
 
-### `freetype`
-
-FreeType fonts use the freetype engine
-to load TTF files directly. Loading from data is not supported, so
-`as_file` is always considered `true`.
+FreeType fonts use the [freetype](https://lvgl.io/docs/open/libs/font_support/freetype) engine to load TTF files directly. Loading from data is not supported, so `as_file` is always considered `true`.
 
 Required properties:
 
 - **`name`** — The name to reference the font later
 - **`src_path`** — Path to the font file
 - **`size`** — Font size in px (e.g., "12")
-
-LVGL's UI Editor generates a call to
-lv_xml_register_font using the set
-`name`.
