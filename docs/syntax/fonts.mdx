@@ -13,13 +13,33 @@ later.
 
 ## Registering Fonts
 
-### From File
+
+In order to use fonts in the Editor add your TTF files in the `fonts` folder of your project, and list specific fonts you need in an `<fonts>` block in `globals.xml`. 
+
+Right now the two ont engines are supported:
+1. `<bin>` - Convert the glyphs (characters) to bitmaps in requested size. Each font with a different size will take space. A `range` and a list of `symbols` can be also specified
+2. `<tiny_ttf>` - Parse the TTF files and render the bitmaps at runtime in the required size
+
+### As Data
+
+The Editor can convert the TTF files to C array that can be compiled into the firmware. To use the fonts as C array set `as_file="false"`.
+
+For example:
+
+```xml
+<globals>
+ <fonts>
+   <bin as_file="false" name="medium" src="path/to/file.ttf" range="0x20-0x7f" symbols="°" size="24"/>
+
+   <tiny_ttf as_file="false" name="big" src_path="path/to/file.ttf" size="48"/>
+ </fonts>
+</globals>
+```
+
+### As File
 
 Fonts used directly from a TTF file can be listed in the `fonts`
 section of `globals.xml`.
-
-Each child of `fonts` starts with the desired font engine's name, a
-`name` property, and other properties depending on the selected engine.
 
 `as_file` must be set to `true` to indicate that the font is treated as
 a file.
@@ -29,37 +49,12 @@ For example:
 ```xml
 <globals>
  <fonts>
- <bin as_file="true" name="medium" src="path/to/file.ttf" range="0x20-0x7f" symbols="°" size="24"/>
- <tiny_ttf as_file="true" name="big" src_path="path/to/file.ttf" range="0x20-0x7f" size="48"/>
+   <bin as_file="true" name="medium" src="path/to/file.ttf" range="0x20-0x7f" symbols="°" size="24"/>
+
+   <tiny_ttf as_file="true" name="big" src_path="path/to/file.ttf" range="0x20-0x7f" size="48"/>
  </fonts>
 </globals>
 ```
-
-When registering `globals.xml` with
-`lv_xml_register_component_from_file("A:path/to/globals.xml")`, fonts are automatically created with the selected font
-engine and mapped to the given names.
-
-The fonts can have relative paths in `globals.xml`. Before registering
-`globals.xml`,
-`lv_xml_set_default_asset_path("path/prefix/")` can be called to set the parent folder. The font paths
-will then be appended to this base path.
-
-### From Data
-
-If a font is used from C data (arrays) compiled into the firmware, the
-font's pointer can be registered to XML like this:
-
-```c
-lv_xml_register_font(scope, "font_name", &my_font);
-```
-
-Fonts must be registered before any XML files referencing them are
-registered, so that the font data is already known.
-
-In LVGL's UI Editor, when using fonts as data, it's also necessary to
-add the fonts to `globals.xml` with `as_file=false`, so the Editor can
-generate the required C files and also perform validation when
-referencing data fonts.
 
 ## Usage in XML
 
@@ -67,20 +62,20 @@ Once a font is registered, it can be referenced by its name in styles or
 even `api` properties:
 
 ```xml
-component
- api
- <prop name="title_font" type="font" default="my_font_32"/>
+<component>
+ <api>
+    <prop name="title_font" type="font" default="my_font_32"/>
  </api>
 
- styles
- <style name="subtitle" text_font="my_font_24"/>
+ <styles>
+    <style name="subtitle" text_font="my_font_24"/>
  </styles>
 
  <view flex_flow="column">
- <lv_label style_text_font="$title_font" text="Title"/>
- <lv_label text="I'm the subtitle">
- <style name="subtitle"/>
- </lv_label>
+    <lv_label style_text_font="$title_font" text="Title"/>
+    <lv_label text="I'm the subtitle">
+       <style name="subtitle"/>
+    </lv_label>
  </view>
 ```
 
@@ -92,10 +87,9 @@ Binary fonts can either reference:
 
 1. A ".bin" font file created by LVGL's Font converter from a TTF
  file (when `as_file="true"`). The font will be loaded by
- lv_binfont_create.
-2. An lv_font_t pointer compiled
- into the firmware (`as_file="false"`). No loading is needed as
- lv_font_t can be used directly.
+ `lv_binfont_create`.
+2. An `lv_font_t` pointer compiled
+ into the firmware (`as_file="false"`). 
 
 `bin` fonts require these properties:
 
@@ -105,9 +99,7 @@ Binary fonts can either reference:
 - **`bpp`** — Bits-per-pixel: 1, 2, 4, or 8
 - **`as_file`** — `true` if the font is a ".bin" file, `false` if it is an lv_font_t in C
 
-LVGL's UI Editor always generates a call to
-lv_xml_register_font using the set
-`name`. If `as_file` is:
+ If `as_file` is:
 
 - `false`: It generates a C file with the `lv_font_t` structs.
 - `true`: It generates a ".bin" file.

@@ -13,7 +13,25 @@ names.
 
 ## Registering Images
 
-### From File
+
+In order to use images in the Editor add your PNG images in the `images` folder of your project, and list them in an `<images>` block in `globals.xml`. Note that only PNG files are supported at this moment. 
+
+### As Data
+
+The Editor convert PNG image files to C array that can be compiled into the editor:
+
+```xml
+<images>
+    <data name="logo" color_format="rgb565" src_path="images/logo.png"/>
+    <data name="icon_sun" color_format="argb8888" src_path="images/sun.png"/>
+</images>
+```
+All typical color formats are supported, like `i1-i8`,
+`a1-a8`, `rgb565`, `rgb888`, `argb8888`, etc. and even `rgb565a8`.
+
+As these kind of images are basically C code, you need to recompile the project int the editor to see them with the final color format. To show something on the screen before recompiling the Editor uses the PNG files as fallback which always has ARGB888 color format.
+
+### As File
 
 If the images are used as files (e.g., PNG images loaded from a file
 system), they can be simply added to `globals.xml`:
@@ -25,48 +43,33 @@ system), they can be simply added to `globals.xml`:
 </images>
 ```
 
-When registering `globals.xml` with
-`lv_xml_register_component_from_file("A:path/to/globals.xml")`, names are automatically mapped to the path.
+## Using the Images
 
-The images can have relative paths in `globals.xml`. Before registering
-`globals.xml`,
-`lv_xml_set_default_asset_path("path/prefix/")` can be called to set the parent folder. The path of the
-image files will be appended to the path set here.
+When the images are adding `globals.xml` they can be used like this on all places where
+where a property has `image` type.
 
-### From Data
-
-If the images are converted to arrays and compiled into the firmware,
-they need to be registered explicitly using:
-
-```cpp
-lv_xml_register_image(NULL, "image_name", &my_image);
-```
-
-where `my_image` is an `lv_image_dsc_t`.
-
-After that, it can be used identically to image files:
-
-```xml
-<lv_image src="image_name" align="center"/>
-```
-
-## Usage in XML
-
-After registration, the images can be referenced by their name:
-
+In an image widget:
 ```xml
 <lv_image src="avatar" align="center"/>
 ```
 
-## Notes for the UI Editor
+In a style property:
+```xml
+<styles>
+  <style name="style_bg" bg_image_src="wallpaper"/>
+<styles>  
+```
 
-When using LVGL's UI Editor, images can be added to `globals.xml` using
-the `data` tag instead of `file`.
+In custom properties:
+```xml
+<component>
+  <api>
+    <prop name="icon_src" type="image" default="arrow_left"/>
+  </api> 
 
-In this case, the Editor will generate the C array
-(lv_image_dsc_t) and also generate
-code to register the images.
+  <view>
+    <lv_image src="$icon_src"/>
+  </view>
+</component>
+```
 
-It's also possible to set the target `color_format="..."` of the
-images. All typical color formats are supported, like i1\...i8,
-a1\...a8, rgb565, rgb888, argb8888, etc.

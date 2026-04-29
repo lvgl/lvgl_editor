@@ -1,9 +1,9 @@
 {
-  "title": "UI Elements",
+  "title": "XML Syntax",
   "pages": [
     "introduction",
     "overview",
-
+ 
     "components",
     "widgets",
     "screens",
