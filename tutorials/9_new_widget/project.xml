@@ -1,0 +1,7 @@
+<project name="ui_new_widget">
+	<targets>
+		<target name="target1">
+			<display width="320" height="240" />
+		</target>
+	</targets>
+</project>

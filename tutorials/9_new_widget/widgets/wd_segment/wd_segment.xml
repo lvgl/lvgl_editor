@@ -1,0 +1,31 @@
+<widget>
+	<previews>
+		<preview width="320" height="240" style_bg_color="0xeee" />
+	</previews>
+
+	<api>
+		<prop name="selected" type="int" help="The current selected item, -1 for none" />
+		<prop name="bind_value" type="subject" help="The subject to bind the selected item" />
+		<element name="button" access="add" type="lv_obj" help="Add buttons to the segment">
+			<arg name="text" type="string" />
+		</element>
+	</api>
+
+	<styles>
+		<style
+			name="style_base"
+			width="200"
+			height="40"
+			bg_opa="100%"
+			bg_color="0xa2a2a2"
+			radius="10"
+			layout="flex"
+			flex_flow="row"
+			clip_corner="true"
+		/>
+	</styles>
+
+	<view extends="lv_obj">
+		<style name="style_base" />
+	</view>
+</widget>
