@@ -1,11 +1,11 @@
 {
   "pages": [
-    "introduction",
+    "index",
     "learn-by-examples",
     "syntax",
     "integration",
     "editor",
-    "online_viewer",
+    "online-viewer",
     "figma",
     "cli"
   ]

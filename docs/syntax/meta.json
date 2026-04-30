@@ -28,6 +28,9 @@
 
     "---Test & Preview---",
     "testing",
-    "preview"
+    "preview",
+
+    "---Legal---",
+    "xml-license"
   ]
 }
