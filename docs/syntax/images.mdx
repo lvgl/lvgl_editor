@@ -14,7 +14,21 @@ names.
 ## Registering Images
 
 
-In order to use images in the Editor add your PNG images in the `images` folder of your project, and list them in an `<images>` block in `globals.xml`. Note that only PNG files are supported at this moment. 
+In order to use images in the Editor add your PNG images in the `images` folder of your project, and list them in an `<images>` block in `globals.xml`. Note that only PNG files are supported at this moment.
+
+### Path Resolution
+
+All `src_path` values are **relative to the project root** — the folder that contains `project.xml` and `globals.xml`. So `src_path="images/logo.png"` refers to `<project_root>/images/logo.png` on disk.
+
+When you export C code and load images as files (`<file>` entries), the runtime needs to know where those files actually live on the target. This is handled by the path you pass to the project's init function:
+
+```c
+my_ui_init("A:my_ui/v2.3/assets");
+```
+
+The init function concatenates this base with each `src_path`, so `src_path="images/logo.png"` resolves at runtime to `"A:my_ui/v2.3/assets/images/logo.png"`. Images registered as **data** (`<data>` entries) are compiled into the firmware and ignore this path entirely.
+
+See [Using Exported C Code](../integration/using-exported-c-code#initialization-and-setup) for the full init flow.
 
 ### As Data
 

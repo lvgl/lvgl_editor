@@ -20,6 +20,20 @@ Right now the 3 Font engines are supported:
 2. `<tiny_ttf>` - Parse the TTF files and render the bitmaps at runtime in the required size. Works on MCUs too.
 3. `<freetype>` - Also renders from TTF files but it's design for MPUs
 
+### Path Resolution
+
+All `src_path` values are **relative to the project root** — the folder that contains `project.xml` and `globals.xml`. So `src_path="fonts/Montserrat-Regular.ttf"` refers to `<project_root>/fonts/Montserrat-Regular.ttf` on disk.
+
+When you export C code and load fonts as files (`as_file="true"`), the runtime needs to know where those files actually live on the target. This is handled by the path you pass to the project's init function:
+
+```c
+my_ui_init("A:my_ui/v2.3/assets");
+```
+
+The init function concatenates this base with each `src_path`, so `src_path="fonts/Montserrat-Regular.ttf"` resolves at runtime to `"A:my_ui/v2.3/assets/fonts/Montserrat-Regular.ttf"`. Fonts compiled as **data** (`as_file="false"`) are embedded in the firmware and ignore this path entirely.
+
+See [Using Exported C Code](../integration/using-exported-c-code#initialization-and-setup) for the full init flow.
+
 ### As Data
 
 The Editor can convert the TTF files to C array that can be compiled into the firmware. To use the fonts as C array set `as_file="false"`.
@@ -49,7 +63,7 @@ For example:
 ```xml
 <globals>
  <fonts>
-   <bin as_file="true" name="medium" src="path/to/file.ttf" range="0x20-0x7f" symbols="°" size="24"/>
+   <bin as_file="true" name="medium" src_path="path/to/file.ttf" range="0x20-0x7f" symbols="°" size="24"/>
 
    <tiny_ttf as_file="true" name="big" src_path="path/to/file.ttf" range="0x20-0x7f" size="48"/>
  </fonts>
