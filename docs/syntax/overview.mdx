@@ -74,6 +74,17 @@ In XML files, fonts, images, styles, and other assets are referenced by name, no
 <style name="red" bg_color="0xff0000"/>
 ```
 
+The same names can also be used as `<prop>` types so a Component can accept an asset as a parameter. The values are resolved against items registered in `globals.xml`:
+
+| Type | Looks up | Example |
+|---|---|---|
+| **image** | An image registered under `<images>` | `<prop name="src" type="image" default="img_power"/>` |
+| **font** | A font registered under `<fonts>` | `<prop name="title_font" type="font" default="montserrat_22"/>` |
+| **subject** | A subject registered under `<subjects>` | `<prop name="subject" type="subject" default="subject_dimmer1"/>` |
+| **style** | A style defined in `<styles>` or `globals.xml` | `<prop name="extra_style" type="style"/>` |
+
+These props are typically forwarded into a child element with the `$` prefix, e.g. `<lv_image src="$src"/>` or `<lv_slider bind_value="$subject"/>`.
+
 **Automatic binding** occurs for:
 - Styles, fonts, images, animations
 - Gradients and other visual components
