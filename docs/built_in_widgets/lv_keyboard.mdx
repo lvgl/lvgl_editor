@@ -1,0 +1,40 @@
+---
+title: "Keyboard (lv_keyboard)"
+description: "An on-screen virtual keyboard, a specialized Button Matrix."
+---
+
+## Overview
+
+The Keyboard is a specialized [Button Matrix](./lv_buttonmatrix) with predefined keymaps that provides an on-screen virtual keyboard. It can be attached to a [Text Area](./lv_textarea) so key presses edit its text.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/keyboard).
+
+<LvglXmlExample name="lv_example_keyboard" path="examples/screens/lv_example_keyboard" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_keyboard.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_keyboard_mode`** — Keyboard layout modes
+
+| Value | Description |
+| --- | --- |
+| `text_upper` | Show uppercase letters |
+| `text_lower` | Show lowercase letters |
+| `text_arabic` | Show Arabic characters |
+| `special` | Show special characters and symbols |
+| `number` | Show numeric keys |
+| `user_1` | User-defined layout 1 |
+| `user_2` | User-defined layout 2 |
+| `user_3` | User-defined layout 3 |
+| `user_4` | User-defined layout 4 |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `mode` | `enum:lv_keyboard_mode` | Set the keyboard layout |
+| `popovers` | `bool` | Show enlarged key previews on press |
+| `textarea` | `lv_obj` | Connect a textare to the keyboard |

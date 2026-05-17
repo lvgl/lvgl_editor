@@ -1,0 +1,48 @@
+---
+title: "Slider (lv_slider)"
+description: "A Bar with a draggable knob; supports range and symmetrical modes."
+---
+
+## Overview
+
+The Slider is a [Bar](./lv_bar) with a draggable knob. It can be horizontal or vertical and supports normal, symmetrical and two-knob range modes.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/slider).
+
+<LvglXmlExample name="lv_example_slider" path="examples/screens/lv_example_slider" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_slider.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_slider_mode`** — How the slider behaves
+
+| Value | Description |
+| --- | --- |
+| `normal` | One knob, grows left to right |
+| `range` | Two knobs, select a range |
+| `symmetrical` | Indicator grows from zero |
+
+**`lv_slider_orientation`** — How the slider oriented
+
+| Value | Description |
+| --- | --- |
+| `auto` | Decide based on width an height |
+| `horizontal` | Always horizontally |
+| `vertical` | Always vertical |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `min_value` | `int` | Set minimum value |
+| `max_value` | `int` | Set maximum value |
+| `value` | `int` | Set current value |
+| `value-anim` | `bool` | Animate update (reference as `value-anim`) (default: `false`) |
+| `start_value` | `int` | Set start value in range mode |
+| `start_value-anim` | `bool` | Animate update (reference as `start_value-anim`) (default: `false`) |
+| `mode` | `enum:lv_slider_mode` | Set slider mode |
+| `bind_value` | `subject` | Bind value to subject |
+| `orientation` | `enum:lv_slider_orientation` | Set the orientation to horizontal, vertical or auto |

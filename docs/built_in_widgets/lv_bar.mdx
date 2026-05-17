@@ -1,0 +1,48 @@
+---
+title: "Bar (lv_bar)"
+description: "A background with an indicator whose length represents a value within a range."
+---
+
+## Overview
+
+The Bar has a background and an indicator whose length represents the current value within a range. Both the start and end values can be set, so the indicator can grow from any point, and it animates between values.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/bar).
+
+<LvglXmlExample name="lv_example_bar" path="examples/screens/lv_example_bar" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_bar.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_bar_mode`** — How the bar grows with values
+
+| Value | Description |
+| --- | --- |
+| `normal` | Make the bar grow from minimum toward maximum |
+| `symmetrical` | Make the bar grow symmetrically from the midpoint |
+| `range` | Make the bar show values between start and end points |
+
+**`lv_bar_orientation`** — How the bar is oriented
+
+| Value | Description |
+| --- | --- |
+| `auto` | Choose orientation automatically based on widget size |
+| `horizontal` | Make the bar fill left to right |
+| `vertical` | Make the bar fill bottom to top |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `min_value` | `int` | Set the minimum value of the bar |
+| `max_value` | `int` | Set the maximum value of the bar |
+| `value` | `int` | Set the current value of the bar |
+| `value-animated` | `bool` | Animate the bar when changing its value. Reference as `value-animated` (default: `false`) |
+| `start_value` | `int` | Set the start value in range mode |
+| `start_value-animated` | `bool` | Animate the bar when changing its start value. Reference as `start_value-animated` (default: `false`) |
+| `mode` | `enum:lv_bar_mode` | Select how the bar grows |
+| `orientation` | `enum:lv_bar_orientation` | Select the bar’s orientation |
+| `bind_value` | `subject` | Bind the bar’s value to a subject |

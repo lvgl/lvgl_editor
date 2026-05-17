@@ -1,0 +1,29 @@
+---
+title: "Built-in Widgets"
+description: "XML API reference for every built-in LVGL widget — properties, parameters, elements, shared enums and style properties."
+---
+
+LVGL ships a set of widgets that can be used directly as XML tags (for
+example `<lv_button>`, `<lv_slider>` or `<lv_chart>`). This section
+documents the XML API of each one: its properties, parameters and elements,
+plus the [enums](./enums) and [style properties](./style_props) that are
+shared by every widget.
+
+Every widget builds on the [Base Widget (`lv_obj`)](./lv_obj), so its
+properties, flags, events and style bindings are available everywhere. To
+learn how the `<api>` itself works — properties, parameters and elements —
+see the [API](../syntax/api) page.
+
+## Reference
+
+<Cards>
+  <Card icon={<Code />} href="./lv_obj" title="Base Widget (lv_obj)">
+    The foundation every widget inherits: size, layout, flags, events, styles.
+  </Card>
+  <Card icon={<FileText />} href="./style_props" title="Style Properties">
+    All style_* properties usable on any widget or in a &lt;style&gt; sheet.
+  </Card>
+  <Card icon={<Info />} href="./enums" title="Enums">
+    Shared enumerations used as attribute values across widgets.
+  </Card>
+</Cards>

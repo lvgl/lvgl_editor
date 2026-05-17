@@ -1,0 +1,46 @@
+---
+title: "Span Group (lv_spangroup)"
+description: "Rich text built from spans, each with its own font, color and size."
+---
+
+## Overview
+
+The Span Group displays rich text built from multiple spans, each with its own text, font, color and size. Spans can be added or removed at runtime.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/spangroup).
+
+<LvglXmlExample name="lv_example_spangroup" path="examples/screens/lv_example_spangroup" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_spangroup.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_span_overflow`** — How to handle overflowing text
+
+| Value | Description |
+| --- | --- |
+| `clip` | Clip at boundary |
+| `ellipsis` | Replace overflowing words with ... |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `overflow` | `enum:lv_span_overflow` | Set overflow mode |
+| `max_lines` | `int` | Set max lines |
+| `indent` | `int` | Set first line indent (px) |
+
+### `<lv_spangroup-span>`
+
+Add a styled text span
+
+_access `add` · returns `lv_span`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `text` | prop | `string` | Set span text |
+| `style` | prop | `style` | Set span style |
+| `bind_text` | prop | `subject` | Bind text to a subject |
+| `bind_text-fmt` | prop | `string` | Format string (printf style) (default: `NULL`) |

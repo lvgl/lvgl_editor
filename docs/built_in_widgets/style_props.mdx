@@ -1,0 +1,210 @@
+---
+title: "Style Properties"
+description: "Every style property usable as a style_* attribute or in a <style> sheet on any widget."
+---
+
+## Overview
+
+Every widget supports the style properties below. Use them as local
+`style_<name>` attributes (optionally with a `-<part>` or `-<state>`
+selector) or inside a named [`<style>`](../syntax/styles) sheet. See the
+[Styles](../syntax/styles) page for selectors, parts and states.
+
+{/* @generated from lv_xml/xmls/widgets/globals.xml <styledef> — do not edit
+     below this line; re-run the API doc generator instead. */}
+
+### Position and size
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `x` | `coords` | Set X position (px, or %) |
+| `y` | `coords` | Set Y position (px, or %) |
+| `height` | `coords` | Set height (px, %, or content) |
+| `min_height` | `coords` | Set min height (px, %, or content) |
+| `max_height` | `coords` | Set max height (px, %, or content) |
+| `width` | `coords` | Set width (px, %, or content) |
+| `min_width` | `coords` | Set min width (px, %, or content) |
+| `max_width` | `coords` | Set max width (px, %, or content) |
+| `length` | `coords` | Set length (used by some widgets) |
+
+### Padding and margin
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `pad_top` | `int` | Keep this distance on the top from the content inside |
+| `pad_bottom` | `int` | Keep this distance on the bottom from the content inside |
+| `pad_left` | `int` | Keep this distance on the left from the content inside |
+| `pad_right` | `int` | Keep this distance on the right from the content inside |
+| `pad_hor` | `int` | Set both left and right padding |
+| `pad_ver` | `int` | Set both top and bottom padding |
+| `pad_all` | `int` | Set padding in all 4 directions |
+| `pad_row` | `int` | Set padding between rows of layouts |
+| `pad_column` | `int` | Set padding between columns of layouts |
+| `pad_radial` | `int` | Set radial padding |
+| `margin_top` | `int` | Keep distance above the widget when used in a layout |
+| `margin_bottom` | `int` | Keep distance below the widget when used in a layout |
+| `margin_left` | `int` | Keep distance to the left of the widget when used in a layout |
+| `margin_right` | `int` | Keep distance to the right of the widget when used in a layout |
+| `margin_hor` | `int` | Set both left and right margin |
+| `margin_ver` | `int` | Set both top and bottom margin |
+| `margin_all` | `int` | Set margins in all 4 directions |
+
+### Geometry
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `radius` | `int` | Set corner radius |
+| `radial_offset` | `int` | Set radial offset (e.g. on ticks of circular scales) |
+| `align` | `enum:lv_align` | Set alignment on the parent |
+| `clip_corner` | `bool` | Enable corner clipping |
+| `base_dir` | `enum:lv_base_dir` | Set base text dir |
+
+### Background
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `bg_color` | `color` | Set bg color |
+| `bg_opa` | `opa` | Set background opacity |
+| `bg_grad_dir` | `enum:lv_grad_dir` | Set background gradient type |
+| `bg_main_stop` | `int` | Set gradient main stop |
+| `bg_grad_stop` | `int` | Set gradient second stop |
+| `bg_grad_color` | `color` | Set gradient color |
+
+### Background image
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `bg_image_src` | `image` | Set background image |
+| `bg_image_tiled` | `bool` | Tile background image |
+| `bg_image_recolor` | `color` | Recolor the background image |
+| `bg_image_recolor_opa` | `opa` | Set the recolor intensity |
+
+### Border
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `border_color` | `color` | Set border color |
+| `border_width` | `int` | Set border width |
+| `border_opa` | `opa` | Set border opacity |
+| `border_side` | `enum:lv_border_side` | Set border sides |
+| `border_post` | `bool` | Draw border after content |
+
+### Outline
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `outline_color` | `color` | Set outline color |
+| `outline_width` | `int` | Set outline width |
+| `outline_opa` | `opa` | Set outline opacity |
+| `outline_pad` | `int` | Set outline spacing |
+
+### Shadow
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `shadow_width` | `int` | Set shadow size |
+| `shadow_color` | `color` | Set shadow color |
+| `shadow_opa` | `opa` | Set shadow opacity |
+| `shadow_offset_x` | `int` | Set shadow X offset |
+| `shadow_offset_y` | `int` | Set shadow Y offset |
+| `shadow_spread` | `int` | Assume that the base rectangle is larger by this |
+
+### Text
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `text_color` | `color` | Set text color |
+| `text_opa` | `opa` | Set text opacity |
+| `text_font` | `font` | Set font |
+| `text_align` | `enum:lv_text_align` | Set text align |
+| `text_letter_space` | `int` | Set letter spacing |
+| `text_line_space` | `int` | Set line spacing |
+| `text_decor` | `enum:lv_text_decor` | Set text decor |
+
+### Image
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `image_opa` | `opa` | Set image opacity |
+| `image_recolor` | `color` | Recolor image |
+| `image_recolor_opa` | `opa` | Set recolor opacity |
+
+### Line
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `line_width` | `int` | Set line width |
+| `line_color` | `color` | Set line color |
+| `line_opa` | `opa` | Set line opacity |
+| `line_dash_width` | `int` | Set dash width |
+| `line_dash_gap` | `int` | Set dash gap |
+| `line_rounded` | `bool` | Round line ends |
+
+### Arc
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `arc_width` | `int` | Set arc width |
+| `arc_color` | `color` | Set arc color |
+| `arc_opa` | `opa` | Set arc opacity |
+| `arc_rounded` | `bool` | Round arc ends |
+| `arc_image_src` | `image` | Set arc image |
+
+### Layout
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `layout` | `enum:lv_layout` | Set layout type |
+
+### Flex
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `flex_flow` | `enum:lv_flex_flow` | Set how flex should flow the children (row, column, etc) |
+| `flex_main_place` | `enum:lv_flex_align` | Set main axis align (horizontal with flex_flow=row) |
+| `flex_cross_place` | `enum:lv_flex_align` | Set cross axis align (vertical with flex_flow=row) |
+| `flex_track_place` | `enum:lv_flex_align` | Set track align |
+| `flex_grow` | `int` | Set flex grow to fill the available space in the track |
+
+### Grid
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `grid_column_dsc_array` | `grid_dsc[LV_GRID_TEMPLATE_LAST]` | Set column descriptor array |
+| `grid_row_dsc_array` | `grid_dsc[LV_GRID_TEMPLATE_LAST]` | Set row descriptor array |
+| `grid_column_align` | `enum:lv_grid_align` | Where to align the columns |
+| `grid_row_align` | `enum:lv_grid_align` | Where to align the rows |
+| `grid_cell_column_pos` | `int` | Set cell's column |
+| `grid_cell_column_span` | `int` | How many columns the cell should span |
+| `grid_cell_x_align` | `enum:lv_grid_align` | How to align the cell horizontally |
+| `grid_cell_row_pos` | `int` | Set cell's row |
+| `grid_cell_row_span` | `int` | How many rows the cell should span |
+| `grid_cell_y_align` | `enum:lv_grid_align` | How to align the cell vertically |
+
+### Misc
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `opa` | `opa` | Scale down the opacity of the widget and all its children |
+| `opa_layered` | `opa` | Create a snapshot from the widget and blend it with opacity |
+| `anim_duration` | `int` | Set animation duration in ms (e.g. for label scroll) |
+| `blend_mode` | `enum:lv_blend_mode` | Set how to blend colors |
+| `transform_width` | `int` | Change the width without affecting the layouts |
+| `transform_height` | `int` | Change the height without affecting the layouts |
+| `translate_x` | `int` | Offset in X after the layouts are calculated |
+| `translate_y` | `int` | Offset in Y after the layouts are calculated |
+| `translate_radial` | `int` | Translate radial |
+| `transform_scale_x` | `int` | Scale X (256=100%) |
+| `transform_scale_y` | `int` | Scale Y (256=100%) |
+| `transform_rotation` | `int` | Rotate (0.1° units) |
+| `transform_pivot_x` | `int` | Set pivot X |
+| `transform_pivot_y` | `int` | Set pivot Y |
+| `transform_skew_x` | `int` | Skew X (no SW render) |
+| `transform_skew_y` | `int` | Skew Y (no SW render) |
+| `bitmap_mask_src` | `image` | Set bitmap mask (A8 or L8) |
+| `rotary_sensitivity` | `int` | Set rotary sensitivity for Crown input devices |
+| `recolor` | `color` | Mix this color to the widget and all its children |
+| `recolor_opa` | `opa` | The intensity of recoloring |
+| `blur_radius` | `int` | The radius of the blurring |
+| `blur_quality` | `enum:lv_blur_quality` | Set whether to prefer speed or precision |
+| `blur_backdrop` | `bool` | true: blur the background first, false: blur the widget |

@@ -1,0 +1,23 @@
+---
+title: "GIF (lv_gif)"
+description: "Plays animated GIF images using LVGL's built-in decoder."
+---
+
+## Overview
+
+The GIF widget plays animated GIF images using LVGL's built-in AnimatedGIF decoder. The source can be an embedded array or a file.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/gif).
+
+<LvglXmlExample name="lv_example_gif" path="examples/screens/lv_example_gif" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_gif.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `src` | `image` | The source for the gif (raw data or a file) |
+| `loop_count` | `int` | Number of repeats. If not set the information form the gif will be used |

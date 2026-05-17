@@ -1,0 +1,43 @@
+---
+title: "Calendar (lv_calendar)"
+description: "A month calendar that highlights today and user-defined dates."
+---
+
+## Overview
+
+The Calendar shows the days of a month in a 7×7 grid with weekday names, highlights today, and can mark user-defined dates. The displayed month and the highlighted/selected dates are all configurable.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/calendar).
+
+<LvglXmlExample name="lv_example_calendar" path="examples/screens/lv_example_calendar" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_calendar.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `today_year` | `int` | Mark today’s year in the calendar |
+| `today_month` | `int` | Mark today’s month in the calendar |
+| `today_day` | `int` | Mark today’s day in the calendar |
+| `shown_year` | `int` | Show this year in the calendar |
+| `shown_month` | `int` | Show this month in the calendar |
+| `chinese_mode` | `bool` | Show a Chinese calendar |
+
+### `<lv_calendar-header_arrow>`
+
+Add arrow buttons for navigating months
+
+_access `add`_
+
+_No attributes — created as an empty child._
+
+### `<lv_calendar-header_dropdown>`
+
+Add a dropdown for selecting months or years
+
+_access `add`_
+
+_No attributes — created as an empty child._

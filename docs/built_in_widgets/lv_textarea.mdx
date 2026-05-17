@@ -1,0 +1,28 @@
+---
+title: "Text Area (lv_textarea)"
+description: "An editable text input with a cursor; supports one-line and password modes."
+---
+
+## Overview
+
+The Text Area is an editable text input with a cursor. It wraps long lines, can scroll, and supports one-line and password modes plus character and accepted-list filtering.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/textarea).
+
+<LvglXmlExample name="lv_example_textarea" path="examples/screens/lv_example_textarea" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_textarea.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | Set textarea text |
+| `placeholder_text` | `string` | Set placeholder text |
+| `one_line` | `bool` | Enable single-line mode |
+| `password_mode` | `bool` | Enable password masking |
+| `password_show_time` | `int` | Set delay to show typed chars (ms) |
+| `text_selection` | `bool` | Enable text selection |
+| `cursor_pos` | `int` | Set cursor position (0-based) |

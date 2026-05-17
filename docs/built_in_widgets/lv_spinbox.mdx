@@ -1,0 +1,29 @@
+---
+title: "Spinbox (lv_spinbox)"
+description: "A numeric editor built on a Text Area with fixed decimals and step."
+---
+
+## Overview
+
+The Spinbox is a numeric editor built on a [Text Area](./lv_textarea). It shows an integer with an optional fixed decimal point and digit count, and the value can be stepped within a range.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/spinbox).
+
+<LvglXmlExample name="lv_example_spinbox" path="examples/screens/lv_example_spinbox" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_spinbox.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `value` | `int` | — |
+| `rollover` | `bool` | — |
+| `digit_count` | `int` | — |
+| `dec_point_pos` | `int` | — |
+| `min_value` | `int` | — |
+| `max_value` | `int` | — |
+| `step` | `int` | — |
+| `bind_value` | `subject` | Connect a subject to the spinbox's value |

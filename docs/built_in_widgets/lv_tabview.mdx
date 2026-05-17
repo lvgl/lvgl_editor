@@ -1,0 +1,52 @@
+---
+title: "Tab View (lv_tabview)"
+description: "Organizes content into tabs with a configurable tab bar."
+---
+
+## Overview
+
+The Tab View organizes content into tabs with a tab bar. Each tab is a container you can fill with any widgets; the tab bar's position and size are configurable.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/tabview).
+
+<LvglXmlExample name="lv_example_tabview" path="examples/screens/lv_example_tabview" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_tabview.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `active` | `int` | Set active tab index (0-based) |
+| `active-anim` | `bool` | Animate update (reference as `active-anim`) (default: `false`) |
+| `tab_bar_position` | `enum:lv_dir` | Set tab bar position (top, bottom, left, right) |
+
+### `<lv_tabview-tab_bar>`
+
+Get the tab bar object
+
+_access `get` · returns `lv_obj`_
+
+_No attributes — created as an empty child._
+
+### `<lv_tabview-tab>`
+
+Add a tab with content
+
+_access `add` · returns `lv_obj`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `text` | arg | `string` | Set tab button text |
+
+### `<lv_tabview-tab_button>`
+
+Get a specific tab button
+
+_access `get` · returns `lv_obj`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `index` | arg | `int` | Tab index (0-based) |

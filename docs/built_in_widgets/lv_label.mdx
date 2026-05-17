@@ -1,0 +1,39 @@
+---
+title: "Label (lv_label)"
+description: "The widget used to display text, with wrapping and long-text modes."
+---
+
+## Overview
+
+The Label is the widget used to display text. It supports line wrapping, several long-text modes (scroll, dots, clip), per-word recoloring, and binding its text to a subject with printf-style formatting.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/label).
+
+<LvglXmlExample name="lv_example_label" path="examples/screens/lv_example_label" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_label.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_label_long_mode`** — How to handle text that doesn’t fit
+
+| Value | Description |
+| --- | --- |
+| `wrap` | Wrap to next line |
+| `scroll` | Scroll horizontally |
+| `scroll_circular` | Scroll continuously in a loop |
+| `clip` | Clip at the boundary |
+| `dots` | Show dots (…) at the end |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | Set label text |
+| `translation_tag` | `string` | Set translation tag |
+| `long_mode` | `enum:lv_label_long_mode` | Choose overflow mode |
+| `recolor` | `bool` | Allow recoloring words like: A #ff0000 red# word. |
+| `bind_text` | `subject` | Bind text to a subject |
+| `bind_text-fmt` | `string` | Format string for bound text (printf style) (default: `NULL`) |

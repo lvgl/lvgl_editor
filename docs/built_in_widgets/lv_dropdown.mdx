@@ -1,0 +1,35 @@
+---
+title: "Drop-down List (lv_dropdown)"
+description: "Shows a selected value and opens a list to pick one option."
+---
+
+## Overview
+
+The Drop-down List shows a single selected value and, when activated, opens a list of options for the user to pick from. The list closes automatically once a new option is selected.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/dropdown).
+
+<LvglXmlExample name="lv_example_dropdown" path="examples/screens/lv_example_dropdown" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_dropdown.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | Set text displayed instead of the selected option label |
+| `options` | `string` | Set options as a newline (`\n`) separated string |
+| `selected` | `int` | Select an option by index (0-based) |
+| `symbol` | `image` | Set a symbol shown next to the dropdown |
+| `bind_value` | `subject` | Bind the selected option index to a subject |
+| `dir` | `enum:lv_dir` | Tells in which direction the dropdown should be opened |
+
+### `<lv_dropdown-list>`
+
+The dropdown list object for styling or customization
+
+_access `get` · returns `lv_obj`_
+
+_No attributes — created as an empty child._

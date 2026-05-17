@@ -1,0 +1,42 @@
+---
+title: "Arc (lv_arc)"
+description: "A background ring with a touch-adjustable foreground indicator arc."
+---
+
+## Overview
+
+The Arc draws a background ring and a foreground indicator arc. The indicator can be set programmatically or dragged by touch, and its value is interpreted within a configurable min/max range and start/end angles.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/arc).
+
+<LvglXmlExample name="lv_example_arc" path="examples/screens/lv_example_arc" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_arc.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_arc_mode`** — How the arc’s indicator grows
+
+| Value | Description |
+| --- | --- |
+| `normal` | Make the indicator grow clockwise |
+| `symmetrical` | Make the indicator grow symmetrically left and right from the midpoint |
+| `reverse` | Make the indicator grow counterclockwise |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `start_angle` | `int` | Set the start angle of the indicator |
+| `end_angle` | `int` | Set the end angle of the indicator |
+| `bg_start_angle` | `int` | Set the start angle of the background arc |
+| `bg_end_angle` | `int` | Set the end angle of the background arc |
+| `rotation` | `int` | Rotate the whole arc by a given angle |
+| `min_value` | `int` | Set the minimum value of the arc |
+| `max_value` | `int` | Set the maximum value of the arc |
+| `value` | `int` | Set the current value of the arc (between minimum and maximum) |
+| `mode` | `enum:lv_arc_mode` | Select how the indicator grows |
+| `change_rate` | `int` | How fast the arc should jump to the clicked value (deg/sec) |
+| `bind_value` | `subject` | Bind the arc’s value to a subject |

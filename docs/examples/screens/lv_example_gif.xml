@@ -1,0 +1,18 @@
+<!--
+ @title GIF
+ @brief An animated GIF played from a registered file source.
+
+ `src` points at the GIF registered in globals.xml (as a `<file>`).
+ `loop_count` sets how many times it repeats; leave it unset to use the
+ count stored in the GIF itself.
+-->
+<screen>
+	<view style_flex_cross_place="center" style_pad_all="16"
+		flex_flow="column" style_pad_row="14">
+
+		<!-- 💡 The animation runs on its own; loop_count limits the repeats. -->
+		<lv_label width="100%" style_text_align="center" text="GIF: animated image" />
+
+		<lv_gif src="img_bulb" loop_count="3" />
+	</view>
+</screen>

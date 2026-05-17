@@ -1,0 +1,36 @@
+---
+title: "Roller (lv_roller)"
+description: "A wheel-like list where the centered item is the selection."
+---
+
+## Overview
+
+The Roller lets the user pick one item from a list by scrolling it like a wheel. The centered item is the selected one and is usually styled to stand out from the rest.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/roller).
+
+<LvglXmlExample name="lv_example_roller" path="examples/screens/lv_example_roller" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_roller.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_roller_mode`** — How the roller scrolls
+
+| Value | Description |
+| --- | --- |
+| `normal` | Stop at first and last option |
+| `infinite` | Scroll endlessly in a loop |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `options` | `string` | Set the roller options |
+| `options-mode` | `enum:lv_roller_mode` | Set the roller mode (reference as `options-mode`) (default: `normal`) |
+| `selected` | `int` | Set the selected option |
+| `selected-animated` | `bool` | Animate the selection (reference as `selected-animated`) (default: `false`) |
+| `visible_row_count` | `int` | Show this many rows at once |
+| `bind_value` | `subject` | Bind the selected option to a subject |

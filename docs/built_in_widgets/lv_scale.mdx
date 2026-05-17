@@ -1,0 +1,61 @@
+---
+title: "Scale (lv_scale)"
+description: "A linear or circular scale with ticks, labels, ranges and sections."
+---
+
+## Overview
+
+The Scale draws a linear or circular scale with a configurable range, tick counts and placement, optional labels, and styled sections for highlighting sub-ranges.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/scale).
+
+<LvglXmlExample name="lv_example_scale" path="examples/screens/lv_example_scale" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_scale.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_scale_mode`** — How the scale is drawn
+
+| Value | Description |
+| --- | --- |
+| `horizontal_top` | Ticks on top |
+| `horizontal_bottom` | Ticks on bottom |
+| `vertical_left` | Ticks on left |
+| `vertical_right` | Ticks on right |
+| `round_inner` | Circular, ticks inside |
+| `round_outer` | Circular, ticks outside |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `mode` | `enum:lv_scale_mode` | Set the scale mode |
+| `total_tick_count` | `int` | Set number of ticks |
+| `major_tick_every` | `int` | Set frequency of major ticks |
+| `label_show` | `bool` | Show or hide labels |
+| `min_value` | `int` | Set minimum value |
+| `max_value` | `int` | Set maximum value |
+| `angle_range` | `deg` | Set angular range (degrees) |
+| `rotation` | `deg` | Rotate the scale (degrees) |
+| `text_src` | `string[NULL]` | Set custom labels from text |
+| `post_draw` | `bool` | Enable post-draw events |
+| `draw_ticks_on_top` | `bool` | Draw ticks above other content |
+
+### `<lv_scale-section>`
+
+Add a styled section
+
+_access `add` · returns `lv_scale_section`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `min_value` | prop | `int` | Set section min |
+| `max_value` | prop | `int` | Set section max |
+| `style_main` | prop | `style` | Set main line style |
+| `style_indicator` | prop | `style` | Set major line and text style |
+| `style_items` | prop | `style` | Set minor ticks' style |
+| `bind_min_value` | prop | `subject` | Bind section min to subject |
+| `bind_max_value` | prop | `subject` | Bind section max to subject |

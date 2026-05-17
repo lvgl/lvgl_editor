@@ -1,0 +1,60 @@
+---
+title: "Button Matrix (lv_buttonmatrix)"
+description: "Many buttons in rows and columns drawn virtually from a single text map."
+---
+
+## Overview
+
+The Button Matrix displays many buttons arranged in rows and columns from a single text map. The buttons are drawn virtually rather than created as individual widgets, making it a very memory-efficient way to show a grid of buttons.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/buttonmatrix).
+
+<LvglXmlExample name="lv_example_buttonmatrix" path="examples/screens/lv_example_buttonmatrix" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_buttonmatrix.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_buttonmatrix_ctrl`** — Control flags you can apply to individual buttons _(values can be combined)_
+
+| Value | Description |
+| --- | --- |
+| `none` | Make the button use the default state with no special control |
+| `width_1` | Make the button take 1 unit of relative width in its row |
+| `width_2` | Make the button take 2 units of relative width in its row |
+| `width_3` | Make the button take 3 units of relative width in its row |
+| `width_4` | Make the button take 4 units of relative width in its row |
+| `width_5` | Make the button take 5 units of relative width in its row |
+| `width_6` | Make the button take 6 units of relative width in its row |
+| `width_7` | Make the button take 7 units of relative width in its row |
+| `width_8` | Make the button take 8 units of relative width in its row |
+| `width_9` | Make the button take 9 units of relative width in its row |
+| `width_10` | Make the button take 10 units of relative width in its row |
+| `width_11` | Make the button take 11 units of relative width in its row |
+| `width_12` | Make the button take 12 units of relative width in its row |
+| `width_13` | Make the button take 13 units of relative width in its row |
+| `width_14` | Make the button take 14 units of relative width in its row |
+| `width_15` | Make the button take 15 units of relative width in its row |
+| `hidden` | Make the button hidden |
+| `no_repeat` | Disable long-press repeat on the button |
+| `disabled` | Make the button disabled (not clickable) |
+| `checkable` | Make the button toggleable when clicked |
+| `checked` | Keep the button in the toggled (checked) state |
+| `click_trig` | Trigger LV_EVENT_VALUE_CHANGED on CLICK instead of PRESS |
+| `popover` | Show a popover when pressing the button |
+| `recolor` | Enable text recoloring with inline #color codes |
+| `reserved_1` | Reserved flag for future use |
+| `reserved_2` | Reserved flag for future use |
+| `custom_1` | Custom flag free to use by the user |
+| `custom_2` | Custom flag free to use by the user |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `map` | `string[NULL]` | Set the layout map of the button matrix using text strings and `\n` for line breaks (e.g. 'a' 'b' 'c') |
+| `ctrl_map` | `enum:lv_buttonmatrix_ctrl[]+` | Set the control flags for each button in the map |
+| `one_checked` | `bool` | Force exactly one button to stay checked at all times |
+| `selected_button` | `int` | Select a button by index (new lines do not count) |

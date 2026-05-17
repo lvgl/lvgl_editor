@@ -1,0 +1,317 @@
+---
+title: "Enums"
+description: "Enumerations shared by all built-in widgets in XML — states, parts, alignments, layouts and more."
+---
+
+## Overview
+
+These enumerations are declared in LVGL's global `<api>` and can be used as
+attribute values on any widget in XML (for example `align="center"` or
+`scrollbar_mode="active"`). Enums that belong to a single widget are listed
+on that widget's own page.
+
+{/* @generated from lv_xml/xmls/widgets/globals.xml <enumdef>s — do not edit
+     below this line; re-run the API doc generator instead. */}
+
+### `lv_state`
+
+Widget states
+
+| Value | Description |
+| --- | --- |
+| `default` | Normal state |
+| `pressed` | Being pressed |
+| `checked` | Toggled or checked |
+| `hovered` | Pointer over widget |
+| `scrolled` | Being scrolled |
+| `disabled` | Disabled, no interaction |
+| `focused` | Has input focus |
+| `focus_key` | Focused by keyboard |
+| `edited` | Being edited |
+| `user_1` | User state 1 |
+| `user_2` | User state 2 |
+| `user_3` | User state 3 |
+| `user_4` | User state 4 |
+
+### `lv_part`
+
+Widget parts
+
+| Value | Description |
+| --- | --- |
+| `main` | Main body |
+| `scrollbar` | Scrollbar |
+| `indicator` | Indicator (e.g. bar fill) |
+| `knob` | Knob or handle |
+| `selected` | Selected item or region |
+| `cursor` | Cursor (e.g. in text area) |
+| `items` | Items (e.g. chart series or table cells) |
+| `textarea_placeholder` | Placeholder text in text area |
+
+### `lv_event`
+
+Widget events
+
+| Value | Description |
+| --- | --- |
+| `all` | Match all events |
+| `pressed` | Pressed |
+| `pressing` | Being pressed |
+| `press_lost` | Press lost (pointer moved) |
+| `short_clicked` | Short click + release |
+| `single_clicked` | First short click |
+| `double_clicked` | Second short click |
+| `triple_clicked` | Third short click |
+| `long_pressed` | Long pressed |
+| `long_pressed_repeat` | Repeat while long pressed |
+| `clicked` | Released without scroll |
+| `released` | Released in all cases |
+| `scroll_begin` | Scroll begins |
+| `scroll_throw_begin` | Scroll continues after throw |
+| `scroll_end` | Scroll ends |
+| `scroll` | Scrolling |
+| `gesture` | Gesture detected |
+| `key` | Key sent to widget |
+| `rotary` | Rotary encoder turned |
+| `focused` | Got focus |
+| `defocused` | Lost focus |
+| `leave` | Focus/pointer left |
+| `hit_test` | Hit testing |
+| `indev_reset` | Input device reset |
+| `hover_over` | Pointer hovers |
+| `hover_leave` | Pointer stops hovering |
+| `cover_check` | Check full cover |
+| `refr_ext_draw_size` | Get extra draw size |
+| `draw_main_begin` | Start main draw |
+| `draw_main` | Main draw |
+| `draw_main_end` | End main draw |
+| `draw_post_begin` | Start post draw |
+| `draw_post` | Post draw |
+| `draw_post_end` | End post draw |
+| `draw_task_added` | Draw task added |
+| `value_changed` | Value changed |
+| `insert` | Text inserted |
+| `refresh` | Refresh requested |
+| `ready` | Process finished |
+| `cancel` | Process cancelled |
+| `create` | Object created |
+| `delete` | Object deleted |
+| `child_changed` | Child changed |
+| `child_created` | Child created |
+| `child_deleted` | Child deleted |
+| `screen_unload_start` | Screen unload start |
+| `screen_load_start` | Screen load start |
+| `screen_loaded` | Screen loaded |
+| `screen_unloaded` | Screen unloaded |
+| `size_changed` | Size changed |
+| `style_changed` | Style changed |
+| `layout_changed` | Layout changed |
+| `get_self_size` | Request widget size |
+| `invalidate_area` | Area invalidated |
+| `resolution_changed` | Resolution changed |
+| `color_format_changed` | Color format changed |
+| `refr_request` | Refresh requested |
+| `refr_start` | Refresh start |
+| `refr_ready` | Refresh done |
+| `render_start` | Render start |
+| `render_ready` | Render done |
+| `flush_start` | Flush start |
+| `flush_finish` | Flush done |
+| `flush_wait_start` | Flush wait start |
+| `flush_wait_finish` | Flush wait done |
+| `vsync` | Vertical sync |
+
+### `lv_align`
+
+Object alignment
+
+| Value | Description |
+| --- | --- |
+| `default` | Top-left |
+| `top_left` | Top-left |
+| `top_mid` | Top-center |
+| `top_right` | Top-right |
+| `bottom_left` | Bottom-left |
+| `bottom_mid` | Bottom-center |
+| `bottom_right` | Bottom-right |
+| `left_mid` | Left-center |
+| `right_mid` | Right-center |
+| `center` | Center |
+
+### `lv_dir`
+
+Direction flags
+
+| Value | Description |
+| --- | --- |
+| `none` | No direction |
+| `top` | Top |
+| `bottom` | Bottom |
+| `left` | Left |
+| `right` | Right |
+| `hor` | Horizontal (L+R) |
+| `ver` | Vertical (T+B) |
+| `all` | All directions |
+
+### `lv_layout`
+
+Layout modes
+
+| Value | Description |
+| --- | --- |
+| `none` | No layout |
+| `flex` | Flexbox layout |
+| `grid` | Grid layout |
+
+### `lv_flex_flow`
+
+Flex flow
+
+| Value | Description |
+| --- | --- |
+| `row` | Row |
+| `row_wrap` | Row wrap |
+| `row_reverse` | Row reverse |
+| `row_wrap_reverse` | Row wrap reverse |
+| `column` | Column |
+| `column_wrap` | Column wrap |
+| `column_reverse` | Column reverse |
+| `column_wrap_reverse` | Column wrap reverse |
+
+### `lv_flex_align`
+
+Flex alignment
+
+| Value | Description |
+| --- | --- |
+| `center` | Center |
+| `start` | Start |
+| `end` | End |
+| `space_around` | Space around |
+| `space_between` | Space between |
+| `space_evenly` | Space evenly |
+
+### `lv_grid_align`
+
+Grid alignment
+
+| Value | Description |
+| --- | --- |
+| `center` | Center of cell |
+| `start` | Start of cell |
+| `end` | End of cell |
+| `stretch` | Stretch to fill |
+| `space_around` | Space around |
+| `space_between` | Space between |
+| `space_evenly` | Space evenly |
+
+### `lv_text_align`
+
+Text alignment
+
+| Value | Description |
+| --- | --- |
+| `center` | Center |
+| `left` | Left |
+| `right` | Right |
+| `auto` | Auto (based on dir) |
+
+### `lv_text_decor`
+
+Text decoration
+
+| Value | Description |
+| --- | --- |
+| `none` | None |
+| `underline` | Underline |
+| `strikethrough` | Strikethrough |
+
+### `lv_blend_mode`
+
+Blend modes
+
+| Value | Description |
+| --- | --- |
+| `normal` | Normal overwrite |
+| `additive` | Add colors |
+| `subtractive` | Subtract colors |
+| `multiply` | Multiply colors |
+| `difference` | Color difference |
+
+### `lv_base_dir`
+
+Base text direction
+
+| Value | Description |
+| --- | --- |
+| `ltr` | Left-to-right |
+| `rtl` | Right-to-left |
+| `auto` | Auto detect |
+
+### `lv_grad_dir`
+
+Gradient direction
+
+| Value | Description |
+| --- | --- |
+| `none` | No gradient |
+| `hor` | Horizontal |
+| `ver` | Vertical |
+
+### `lv_border_side`
+
+Border sides
+
+| Value | Description |
+| --- | --- |
+| `none` | No border |
+| `left` | Left side |
+| `right` | Right side |
+| `top` | Top side |
+| `bottom` | Bottom side |
+| `full` | All sides |
+
+### `lv_scroll_snap`
+
+Scroll snapping
+
+| Value | Description |
+| --- | --- |
+| `none` | No snap |
+| `start` | Align to start of the parent |
+| `end` | Align to end of the parent |
+| `center` | Align to center of the parent |
+
+### `lv_scrollbar_mode`
+
+How to display scrollbars
+
+| Value | Description |
+| --- | --- |
+| `off` | Never show the scrollbars |
+| `on` | Always show the scrollbars |
+| `active` | Show scrollbars while the widget is being scrolled |
+| `auto` | Show scrollbars when the content is large enough to be scrolled |
+
+### `lv_screen_load_anim`
+
+Screen load animations
+
+| Value | Description |
+| --- | --- |
+| `none` | No animation |
+| `over_left` | Slide in from left |
+| `over_right` | Slide in from right |
+| `over_top` | Slide in from top |
+| `over_bottom` | Slide in from bottom |
+| `move_left` | Move out left, new enters |
+| `move_right` | Move out right, new enters |
+| `move_top` | Move out up, new enters |
+| `move_bottom` | Move out down, new enters |
+| `fade_in` | Fade in new |
+| `fade_on` | Fade on top |
+| `fade_out` | Fade out old |
+| `out_left` | Slide out left |
+| `out_right` | Slide out right |
+| `out_top` | Slide out top |
+| `out_bottom` | Slide out bottom |

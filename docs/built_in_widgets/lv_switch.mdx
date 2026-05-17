@@ -1,0 +1,32 @@
+---
+title: "Switch (lv_switch)"
+description: "A small slider that displays and toggles an on/off value."
+---
+
+## Overview
+
+The Switch looks like a small slider and displays — and optionally toggles — an on/off value. It is horizontal by default and becomes vertical when its width is smaller than its height.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/switch).
+
+<LvglXmlExample name="lv_example_switch" path="examples/screens/lv_example_switch" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_switch.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_switch_orientation`** — Switch orientation
+
+| Value | Description |
+| --- | --- |
+| `auto` | Choose based on widget size |
+| `horizontal` | Horizontal switch |
+| `vertical` | Vertical switch |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `orientation` | `enum:lv_switch_orientation` | Set switch orientation |

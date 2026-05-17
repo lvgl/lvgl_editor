@@ -1,0 +1,306 @@
+---
+title: "Base Widget (lv_obj)"
+description: "The Base Widget every other widget inherits from, and the generic container used to compose layouts in XML."
+---
+
+## Overview
+
+`lv_obj` is the Base Widget every other widget is built on. On its own it is a simple, stylable rectangle, but it carries the full common feature set — position and size, layouts, scrolling, styles, parts and states, flags, events and data bindings — so everything documented on this page is also available on every other widget.
+
+In XML it doubles as the generic container you reach for when composing layouts and grouping children.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/base_widget).
+
+<LvglXmlExample name="lv_example_obj" path="examples/screens/lv_example_obj" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_obj.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | Object name (for lv_obj_find_by_name or debugging) |
+| `x` | `coords` | Set X position (px or %) |
+| `y` | `coords` | Set Y position (px or %) |
+| `height` | `coords` | Set height (px, % or content) |
+| `width` | `coords` | Set width (px, % or content) |
+| `align` | `enum:lv_align` | Align on parent |
+| `ext_click_area` | `int` | Extra clickable area around object in px |
+| `scroll_snap_x` | `enum:lv_scroll_snap` | Snap children horizontally |
+| `scroll_snap_y` | `enum:lv_scroll_snap` | Snap children vertically |
+| `scrollbar_mode` | `enum:lv_scrollbar_mode` | Set the scrollbar mode |
+| `flex_grow` | `int` | Set flex grow to fill the available space in the track |
+| `flex_flow` | `enum:lv_flex_flow` | Set flex flow direction (row, column, etc.) |
+
+### Flags
+
+Boolean object flags — set as `flag="true"` / `"false"`.
+
+| Flag | Description |
+| --- | --- |
+| `hidden` | Make the object hidden. (Like it wasn't there at all) |
+| `clickable` | Make the object clickable by the input devices |
+| `click_focusable` | Add focused state to the object when clicked |
+| `checkable` | Toggle checked state when the object is clicked |
+| `scrollable` | Make the object scrollable |
+| `scroll_elastic` | Allow scrolling inside but with slower speed |
+| `scroll_momentum` | Make the object scroll further when 'thrown' |
+| `scroll_one` | Allow scrolling only one snappable children |
+| `scroll_chain_hor` | Allow propagating the horizontal scroll to a parent |
+| `scroll_chain_ver` | Allow propagating the vertical scroll to a parent |
+| `scroll_chain` | SCROLL_CHAIN_HOR and SCROLL_CHAIN_VER |
+| `scroll_on_focus` | Automatically scroll object to make it visible when focused |
+| `scroll_with_arrow` | Allow scrolling the focused object with arrow keys |
+| `snappable` | If scroll snap is enabled on the parent it can snap to this object |
+| `press_lock` | Keep the object pressed even if the press slid from the object |
+| `event_bubble` | Propagate the events to the parent too |
+| `event_trickle` | Send events to children first |
+| `state_trickle` | Propagate state changes to children |
+| `gesture_bubble` | Propagate the gestures to the parent |
+| `adv_hittest` | Allow performing more accurate hit (click) test. E.g. consider rounded corners. |
+| `ignore_layout` | Make the object not positioned by the layouts |
+| `floating` | Do not scroll the object when the parent scrolls and ignore layout |
+| `send_draw_task_events` | Send `LV_EVENT_DRAW_TASK_ADDED` events |
+| `overflow_visible` | Do not clip the children to the parent's ext draw size |
+| `radio_button` | Allow only one radio_button sibling to be checked |
+| `flex_in_new_track` | Start a new flex track on this item |
+
+### State flags
+
+Force a widget state on or off — set as `state="true"` / `"false"`.
+
+| State | Description |
+| --- | --- |
+| `checked` | Mark widget as checked (e.g. switch or checkbox) |
+| `focused` | Mark widget as focused |
+| `focus_key` | Mark widget as focused via key navigation |
+| `edited` | Mark widget as being edited (e.g. text input) |
+| `hovered` | Mark widget as hovered by a pointer |
+| `pressed` | Mark widget as pressed |
+| `scrolled` | Mark widget as being scrolled |
+| `disabled` | Disable widget interaction |
+
+### Styling
+
+#### `<lv_obj-style>`
+
+Add a style to the widget
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `name` | arg | `style` | Style name |
+| `selector` | arg | `selector+` | Target part and state, can be ORed, e.g. pressed\|knob (default: `0`) |
+
+#### `<lv_obj-remove_style>`
+
+Remove a style from the widget
+
+_access `custom`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `name` | arg | `style` | Style name (NULL means all) (default: `NULL`) |
+| `selector` | arg | `selector+` | Target part and state, can be ORed, e.g. pressed\|knob (default: `0`) |
+
+#### `<lv_obj-remove_style_all>`
+
+Remove all styles
+
+_access `custom`_
+
+_No attributes — created as an empty child._
+
+### Local style properties
+
+Any style property can be set directly on a widget as a `style_<property>`
+attribute. These are *local styles* — they affect only that one instance.
+Add a `-<part>` and/or `-<state>` selector to target a part or state:
+
+```xml
+<lv_obj
+  style_bg_color="0x1f2937"
+  style_bg_color-pressed="0x111827"
+  style_radius="8" />
+```
+
+`lv_obj` exposes the **full** style catalogue (`style_bg_color`,
+`style_pad_all`, `style_text_font`, …) — too many to list here. See
+[Style Properties](./style_props) for the complete list, and
+[Styles](../syntax/styles) for selectors, parts, states and reusable
+named `<style>` sheets.
+### Events
+
+Attach behaviour that runs on an `lv_event` trigger.
+
+#### `<lv_obj-event_cb>`
+
+Attach an event callback
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `callback` | arg | `event_cb` | Callback function |
+| `trigger` | arg | `lv_event` | Event to trigger callback (default: `clicked`) |
+| `user_data` | arg | `string` | Optional user data as a string (default: `NULL`) |
+
+#### `<lv_obj-screen_load_event>`
+
+Load another screen on event
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+| `screen` | arg | `screen` | Target screen |
+| `anim_type` | arg | `enum:lv_screen_load_anim` | Load animation (default: `none`) |
+| `duration` | arg | `int` | Animation duration (ms) (default: `0`) |
+| `delay` | arg | `int` | Start delay (ms) (default: `0`) |
+
+#### `<lv_obj-screen_create_event>`
+
+Create + load a new screen on event
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+| `screen` | arg | `screen_create_cb` | Screen create callback |
+| `anim_type` | arg | `enum:lv_screen_load_anim` | Load animation (default: `none`) |
+| `duration` | arg | `int` | Animation duration (ms) (default: `0`) |
+| `delay` | arg | `int` | Start delay (ms) (default: `0`) |
+
+#### `<lv_obj-play_timeline_event>`
+
+Play a timeline on event
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+| `target` | arg | `lv_obj` | Timeline target |
+| `timeline` | arg | `timeline` | Timeline to play |
+| `delay` | arg | `int` | Start delay (ms) (default: `0`) |
+| `reverse` | arg | `bool` | Play in reverse (default: `false`) |
+
+#### `<lv_obj-subject_toggle_event>`
+
+Toggle an int subject's value on an a trigger
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `subject` | arg | `subject` | Target subject |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+
+#### `<lv_obj-subject_set_int_event>`
+
+Set a subject (int) on event
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `subject` | arg | `subject` | Target subject |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+| `value` | arg | `int` | Value to assign |
+
+#### `<lv_obj-subject_set_float_event>`
+
+Set subject (float) on event
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `subject` | arg | `subject` | Target subject |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+| `value` | arg | `float` | Value to assign |
+
+#### `<lv_obj-subject_set_string_event>`
+
+Set subject (string) on event
+
+_access `add`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `subject` | arg | `subject` | Target subject |
+| `trigger` | arg | `lv_event` | Trigger event (default: `clicked`) |
+| `value` | arg | `string` | Value to assign |
+
+#### `<lv_obj-subject_increment_event>`
+
+_access `add` · returns `lv_subject_increment_dsc`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `subject` | arg | `subject` | — |
+| `trigger` | arg | `lv_event` | (default: `clicked`) |
+| `step` | arg | `int` | (default: `1`) |
+| `rollover` | prop | `bool` | — |
+| `min_value` | prop | `int` | — |
+| `max_value` | prop | `int` | — |
+
+### Data bindings
+
+Drive widget state, flags or styles from an observer [subject](../syntax/data-binding).
+
+#### `<lv_obj-bind_style>`
+
+Bind a style to a subject value
+
+_access `custom`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `name` | arg | `style` | Style name |
+| `selector` | arg | `selector+` | Selector (part+state) (default: `0`) |
+| `subject` | arg | `subject` | Subject to monitor |
+| `ref_value` | arg | `int` | Value that activates the style |
+
+#### `<lv_obj-bind_style_prop>`
+
+Bind a style to a subject value
+
+_access `custom`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `prop` | arg | `style_prop` | Name of a style property |
+| `selector` | arg | `selector+` | Selector (part and/or state) (default: `0`) |
+| `subject` | arg | `subject` | Subject to bind |
+
+#### Bound properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `bind_checked` | `subject` | Bind widget’s checked state to a subject |
+
+#### `<lv_obj-bind_flag_if_*>`
+
+Set or clear an object flag from a subject. One element per comparison — operators: `eq`, `not_eq`, `gt`, `ge`, `lt`, `le` (e.g. `<lv_obj-bind_flag_if_eq>`).
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `subject` | `subject` | Subject to monitor |
+| `flag` | `enum:lv_obj_flag` | Flag to set/clear |
+| `ref_value` | `int` | Reference value |
+
+#### `<lv_obj-bind_state_if_*>`
+
+Apply a widget state from a subject. One element per comparison — operators: `eq`, `not_eq`, `gt`, `ge`, `lt`, `le` (e.g. `<lv_obj-bind_state_if_eq>`).
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `subject` | `subject` | — |
+| `state` | `enum:lv_state` | — |
+| `ref_value` | `int` | — |

@@ -1,0 +1,43 @@
+<!--
+ @title Tab view
+ @brief Three tabs with their own content and a bottom tab bar.
+
+ Each `<lv_tabview-tab>` element adds a tab; its `text` argument is the tab
+ button caption and any children become that tab's content.
+ `tab_bar_position="bottom"` moves the bar below the pages and `active="0"`
+ opens the first tab.
+-->
+<screen>
+	<styles>
+		<style name="style_tv" bg_color="0x0f172a" bg_opa="100%" />
+		<style name="style_card"
+			bg_color="0x1e293b" bg_opa="100%" radius="8" pad_all="12"
+			text_color="0xe2e8f0" />
+	</styles>
+
+	<view>
+		<!-- 💡 Switch tabs from the bar at the bottom. -->
+		<lv_tabview width="300" height="210"
+			tab_bar_position="bottom" active="0">
+			<style name="style_tv" />
+
+			<lv_tabview-tab text="Home">
+				<lv_label text="Welcome to the Home tab.">
+					<style name="style_card" />
+				</lv_label>
+			</lv_tabview-tab>
+
+			<lv_tabview-tab text="Stats">
+				<lv_bar width="200" height="18" value="65">
+					<style name="style_card" />
+				</lv_bar>
+			</lv_tabview-tab>
+
+			<lv_tabview-tab text="About">
+				<lv_label text="Tab view organizes content into pages.">
+					<style name="style_card" />
+				</lv_label>
+			</lv_tabview-tab>
+		</lv_tabview>
+	</view>
+</screen>

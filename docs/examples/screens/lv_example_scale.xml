@@ -1,0 +1,41 @@
+<!--
+ @title Scale
+ @brief A round scale with labels and a coloured danger section.
+
+ `mode="round_inner"` draws a circular scale; `total_tick_count`,
+ `major_tick_every` and `angle_range` shape the ticks, and `label_show`
+ prints values. A `<lv_scale-section>` restyles the 80–100 range via named
+ styles to mark a danger zone.
+-->
+<screen>
+	<styles>
+		<style name="style_scale"
+			bg_color="0x0f172a" bg_opa="100%" radius="120" pad_all="14"
+			line_color="0x64748b" text_color="0xcbd5e1" />
+		<!-- Danger section styling -->
+		<style name="style_danger_line" line_color="0xef4444" line_width="4" />
+		<style name="style_danger_ind"
+			line_color="0xef4444" line_width="5" text_color="0xef4444" />
+		<style name="style_danger_items" line_color="0xf87171" line_width="3" />
+	</styles>
+
+	<view style_flex_cross_place="center">
+
+		<!-- 💡 The 80–100 arc turns red because of the styled section. -->
+		<lv_label width="100%" style_text_align="center" text="Scale: ticks, labels, section" />
+
+		<lv_scale width="170" height="170"
+			mode="round_inner"
+			min_value="0" max_value="100"
+			total_tick_count="21" major_tick_every="5"
+			angle_range="270" rotation="135"
+			label_show="true">
+			<style name="style_scale" />
+
+			<lv_scale-section min_value="80" max_value="100"
+				style_main="style_danger_line"
+				style_indicator="style_danger_ind"
+				style_items="style_danger_items" />
+		</lv_scale>
+	</view>
+</screen>

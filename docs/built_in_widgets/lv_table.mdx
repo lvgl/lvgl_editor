@@ -1,0 +1,60 @@
+---
+title: "Table (lv_table)"
+description: "Lightweight rows, columns and cells of text drawn on the fly."
+---
+
+## Overview
+
+The Table displays text in rows, columns and cells. Only the cell text is stored and cells are drawn on the fly, so large tables stay lightweight. Cell selection via keyboard or encoder is supported.
+
+Learn more in the [LVGL Open documentation](https://lvgl.io/docs/open/widgets/table).
+
+<LvglXmlExample name="lv_example_table" path="examples/screens/lv_example_table" />
+
+{/* @generated from lv_xml/xmls/widgets/lv_table.xml — do not edit below this line; re-run docs/scripts/gen_widget_api.ts instead. */}
+
+## Enumerations
+
+**`lv_table_cell_ctrl`** — Cell control flags
+
+| Value | Description |
+| --- | --- |
+| `merge_right` | Merge with right cell |
+| `text_crop` | Crop text if too long |
+| `custom_1` | User flag 1 |
+| `custom_2` | User flag 2 |
+| `custom_3` | User flag 3 |
+| `custom_4` | User flag 4 |
+
+## Properties
+
+Properties below are the widget's XML [`<api>`](../syntax/api); see [API](../syntax/api) for how properties, parameters and elements work.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `row_count` | `int` | Set row count |
+| `column_count` | `int` | Set column count |
+
+### `<lv_table-column>`
+
+Configure a table column
+
+_access `set`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `column` | arg | `int` | Column index (0-based) |
+| `width` | prop | `px` | Set column width |
+
+### `<lv_table-cell>`
+
+Configure a table cell
+
+_access `set`_
+
+| Name | Kind | Type | Description |
+| --- | --- | --- | --- |
+| `row` | arg | `int` | Row index (0-based) |
+| `column` | arg | `int` | Column index (0-based) |
+| `value` | prop | `string` | Set cell text |
+| `ctrl` | prop | `enum:lv_table_cell_ctrl+` | Set cell flags |

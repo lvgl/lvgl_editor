@@ -1,0 +1,47 @@
+<!--
+ @title Slider
+ @brief Normal, range and vertical sliders, one bound to a subject.
+
+ The first slider is bound to `subject_value` with `bind_value`, so the
+ label above it updates as you drag. The second uses `mode="range"` with a
+ `start_value` and `value` for a two-knob span. The third sets
+ `orientation="vertical"` to grow bottom-to-top.
+-->
+<screen>
+	<styles>
+		<style name="style_track" bg_color="0xcbd5e1" bg_opa="100%" radius="10" />
+		<style name="style_ind" bg_color="0x3b82f6" radius="10" />
+		<style name="style_knob" bg_color="0x1d4ed8" pad_all="4" />
+	</styles>
+
+	<view flex_flow="column" style_pad_row="16" style_pad_all="16"
+		style_flex_cross_place="center">
+
+		<!-- 💡 Drag the first slider; the % readout above it follows subject_value. -->
+		<lv_label width="100%" style_text_align="center" text="Slider: modes and binding" />
+
+		<lv_label bind_text="subject_value" bind_text-fmt="%d %%"
+			style_text_color="#color_text_on_fill" />
+
+		<!-- Bound, normal mode -->
+		<lv_slider width="240" bind_value="subject_value">
+			<style name="style_track" />
+			<style name="style_ind" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_slider>
+
+		<!-- Range mode: two knobs select a span -->
+		<lv_slider width="240" mode="range" start_value="20" value="70">
+			<style name="style_track" />
+			<style name="style_ind" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_slider>
+
+		<!-- Vertical orientation -->
+		<lv_slider width="16" height="90" orientation="vertical" value="40">
+			<style name="style_track" />
+			<style name="style_ind" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_slider>
+	</view>
+</screen>

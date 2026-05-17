@@ -1,0 +1,41 @@
+<!--
+ @title Spinner
+ @brief Two spinners with different speeds, sweeps and arc styling.
+
+ `anim_duration` is the time for one full turn and `arc_sweep` is the
+ length of the moving arc (180–360 works best). The two spinners use
+ different values and style the MAIN ring and INDICATOR arc independently.
+-->
+<screen>
+	<styles>
+		<style name="style_track" arc_color="0x334155" arc_width="8" />
+		<style name="style_ind" arc_color="0x3b82f6" arc_width="8" />
+		<style name="style_ind2" arc_color="0xf59e0b" arc_width="6" />
+	</styles>
+
+	<view flex_flow="column" style_pad_row="18" style_pad_all="16"
+		style_flex_cross_place="center">
+
+		<!-- 💡 The faster spinner has a shorter duration and a longer arc sweep. -->
+		<lv_label width="100%" style_text_align="center" text="Spinner: speed and sweep" />
+
+		<lv_obj width="240" height="110" style_bg_opa="0" style_pad_all="0"
+			flex_flow="row" style_flex_main_place="space_evenly"
+			style_flex_cross_place="center">
+
+			<!-- Slow, long sweep -->
+			<lv_spinner width="80" height="80"
+				anim_duration="2000" arc_sweep="270">
+				<style name="style_track" />
+				<style name="style_ind" selector="indicator" />
+			</lv_spinner>
+
+			<!-- Fast, short sweep -->
+			<lv_spinner width="60" height="60"
+				anim_duration="700" arc_sweep="120">
+				<style name="style_track" />
+				<style name="style_ind2" selector="indicator" />
+			</lv_spinner>
+		</lv_obj>
+	</view>
+</screen>
