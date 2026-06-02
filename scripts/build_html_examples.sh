@@ -46,8 +46,8 @@ echo LVGL_PATH: $LVGL_PATH
 
 # Grab the path to emscripten's port examplelist.c before changing to LVGL's directory
 EXAMPLE_LIST_C=$(pwd)/examplelist.c
-cd $LVGL_PATH
-scripts/genexamplelist.sh > $EXAMPLE_LIST_C
+cd $STARTER_PATH
+./lvgl_editor/scripts/genexamplelist.sh > $EXAMPLE_LIST_C
 cd ..
 
 # Generate lv_conf

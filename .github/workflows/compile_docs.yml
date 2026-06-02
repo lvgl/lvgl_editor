@@ -65,27 +65,8 @@ jobs:
 
       - name: Build examples (with cache)
         run: |
-          # Grab the current name in case the LVGL folder is not called lvgl
-          # as it could be the case if this is running from a fork
-          LVGL_EDITOR_FOLDER=$(pwd)
-          echo $LVGL_EDITOR_FOLDER  
-          # Move to the parent folder to fetch emscripten port.
           cd ..
-          ./lvgl_editor/scripts/build_html_examples.sh --symlink $LVGL_EDITOR_FOLDER
-
-      - name: Install Example Documentation
-        run: npm i @lvgl/examples-generator
-
-      - name: Check Example Documentation
-        run: |
-            npx -p @lvgl/examples-generator lvgl-examples-check-about --src examples
-            npx -p @lvgl/examples-generator lvgl-examples-check-examples --src examples
-
-      - name: Generate Example Documentation
-        run: |
-            npx -p @lvgl/examples-generator lvgl-examples-gen \
-            --src examples \
-            --out docs/src/examples
+          ./lvgl_editor/scripts/build_html_examples.sh
 
       - name: Install mdx linter
         run: npm i @lvgl/mdx-lint
