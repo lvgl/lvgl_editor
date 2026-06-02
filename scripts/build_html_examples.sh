@@ -9,13 +9,15 @@ ARG_1="${1:-}"
 ARG_2="${2:-}"
 
 export PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
-rm -rf emscripten_builder
+#rm -rf emscripten_builder
+
+if false; then
 git clone https://github.com/lvgl/lv_sim_emscripten.git emscripten_builder
 cd emscripten_builder
 if [ "$ARG_1" != "--symlink" ]; then
   REPO_URL="$ARG_1"
   COMMIT_REF="$ARG_2"
-  git submodule update --init -- lvgl
+  git submodule update --init --single-branch -- lvgl
   if [ -n "$REPO_URL" ] && [ -n "$COMMIT_REF" ]; then
     cd lvgl
     echo "Using provided repo URL: $REPO_URL and commit ref: $COMMIT_REF for lvgl submodule"
@@ -23,6 +25,10 @@ if [ "$ARG_1" != "--symlink" ]; then
     git fetch origin
     git checkout "$COMMIT_REF"
     cd ..
+  else
+    echo "Using the latest LVGL commit from master"
+    cd lvgl
+    git pull origin master
   fi
 else
   SYMLINK_TARGET="$ARG_2"
@@ -30,20 +36,23 @@ else
   rmdir lvgl # remove the uninitialized submodule empty dir
   ln -s -T "$SYMLINK_TARGET" lvgl
 fi
+fi
+
+LVGL_PATH=`pwd`/emscripten_builder/lvgl
+echo LVGL_PATH: $LVGL_PATH
 
 # Grab the path to emscripten's port examplelist.c before changing to LVGL's directory
 EXAMPLE_LIST_C=$(pwd)/examplelist.c
-cd lvgl
+cd $LVGL_PATH
 scripts/genexamplelist.sh > $EXAMPLE_LIST_C
 cd ..
 
 # Generate lv_conf
-LV_CONF_PATH=`pwd`/lvgl/configs/ci/docs/lv_conf_docs.h
-
-python ./lvgl/scripts/generate_lv_conf.py \
-  --template lvgl/lv_conf_template.h \
+LV_CONF_PATH=$LVGL_PATH/configs/ci/docs/lv_conf_docs.h
+python $LVGL_PATH/scripts/generate_lv_conf.py \
+  --template $LVGL_PATH/lv_conf_template.h \
   --config $LV_CONF_PATH \
-  --defaults lvgl/configs/ci/docs/lv_conf_docs.defaults
+  --defaults $LVGL_PATH/configs/ci/docs/lv_conf_docs.defaults
 
 
 emcmake cmake -B cmbuild -GNinja -DLV_BUILD_CONF_PATH=$LV_CONF_PATH -DLVGL_CHOSEN_DEMO=lv_example_noop -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
