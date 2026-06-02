@@ -29,6 +29,7 @@ if [ "$ARG_1" != "--symlink" ]; then
     echo "Using the latest LVGL commit from master"
     cd lvgl
     git pull origin master
+    cd ..
   fi
 else
   SYMLINK_TARGET="$ARG_2"
