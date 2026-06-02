@@ -9,9 +9,9 @@ ARG_1="${1:-}"
 ARG_2="${2:-}"
 
 export PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
-#rm -rf emscripten_builder
+rm -rf emscripten_builder
 
-if false; then
+if true; then
 git clone https://github.com/lvgl/lv_sim_emscripten.git emscripten_builder
 cd emscripten_builder
 if [ "$ARG_1" != "--symlink" ]; then
