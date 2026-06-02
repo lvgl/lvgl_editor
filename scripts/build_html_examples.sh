@@ -8,6 +8,8 @@ set -e
 ARG_1="${1:-}"
 ARG_2="${2:-}"
 
+STARTER_PATH=`pwd`
+
 export PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
 rm -rf emscripten_builder
 
@@ -24,12 +26,10 @@ if [ "$ARG_1" != "--symlink" ]; then
     git remote set-url origin "$REPO_URL"
     git fetch origin
     git checkout "$COMMIT_REF"
-    cd ..
   else
     echo "Using the latest LVGL commit from master"
     cd lvgl
     git pull origin master
-    cd ..
   fi
 else
   SYMLINK_TARGET="$ARG_2"
@@ -39,7 +39,9 @@ else
 fi
 fi
 
-LVGL_PATH=`pwd`/emscripten_builder/lvgl
+cd $STARTER_PATH #Back to where lvgl_editor and emscripten_builder is
+
+LVGL_PATH=$STARTER_PATH/emscripten_builder/lvgl
 echo LVGL_PATH: $LVGL_PATH
 
 # Grab the path to emscripten's port examplelist.c before changing to LVGL's directory
