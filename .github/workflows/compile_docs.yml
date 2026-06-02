@@ -1,0 +1,124 @@
+name: Build Docs 
+
+on:
+  workflow_dispatch: # allow manual triggering
+    inputs:
+      deploy:
+        description: 'Deploy after build'
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'examples/**'
+      - 'scripts/build_html_examples.sh'
+      - '.github/workflows/compile_docs.yml'
+  push:
+    branches:
+      - master
+      - 'release/*'
+    paths:
+      - 'docs/**'
+      - 'src/**'
+      - 'examples/**'
+      - 'demos/**'
+      - 'scripts/build_html_examples.sh'
+      - '.github/workflows/compile_docs.yml'
+
+# https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#concurrency
+# Ensure that only one commit will be running tests at a time on each PR
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  EM_VERSION: 2.0.4
+  EM_CACHE_FOLDER: 'emsdk-cache'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Setup Emscripten cache
+        id: cache-system-libraries
+        uses: actions/cache@v5
+        with:
+          path: ${{env.EM_CACHE_FOLDER}}
+          key: ${{env.EM_VERSION}}-${{ runner.os }}
+
+      - uses: mymindstorm/setup-emsdk@v16
+        with:
+          version: ${{env.EM_VERSION}}
+          actions-cache-folder: ${{env.EM_CACHE_FOLDER}}
+
+      - name: ccache
+        uses: hendrikmuhs/ccache-action@v1
+
+      - name: Build examples (with cache)
+        run: |
+          # Grab the current name in case the LVGL folder is not called lvgl
+          # as it could be the case if this is running from a fork
+          LVGL_EDITOR_FOLDER=$(pwd)
+          # Move to the parent folder to fetch emscripten port.
+          cd ..
+          ./lvgl_editor/scripts/build_html_examples.sh --symlink $LVGL_EDITOR_FOLDER
+
+      - name: Install Example Documentation
+        run: npm i @lvgl/examples-generator
+
+      - name: Check Example Documentation
+        run: |
+            npx -p @lvgl/examples-generator lvgl-examples-check-about --src examples
+            npx -p @lvgl/examples-generator lvgl-examples-check-examples --src examples
+
+      - name: Generate Example Documentation
+        run: |
+            npx -p @lvgl/examples-generator lvgl-examples-gen \
+            --src examples \
+            --out docs/src/examples
+
+      - name: Install mdx linter
+        run: npm i @lvgl/mdx-lint
+
+      - name: Run mdx linter
+        run: |
+          npx @lvgl/mdx-lint "docs/**/*.{md,mdx}" \
+          --fail-on-warning \
+          --reporter github
+
+      - name: Convert xml files to md
+        run: |
+            mkdir -p /tmp/xml
+            python3 docs/xml_to_md.py examples /tmp/xml --source-base https://github.com/lvgl/lvgl/blob/${{ github.sha }}/examples
+     
+      - name: Deploy Latest
+        if: >
+          github.ref == 'refs/heads/master' &&
+          (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy == 'true'))
+        run: |
+          git clone https://lvgl-bot:${{ secrets.LVGL_BOT_TOKEN }}@github.com/lvgl/pro-docs.git /tmp/pro-docs-latest
+
+          rm -rf /tmp/pro-docs-latest/latest
+          rm -rf /tmp/pro-docs-latest/xml/latest
+
+          mkdir -p /tmp/pro-docs-latest/latest
+          mkdir -p /tmp/pro-docs-latest/xml/latest
+
+          cp -r docs/. /tmp/pro-docs-latest/latest/
+          cp -r /tmp/xml/. /tmp/open-docs-latest/xml/latest
+
+          cd /tmp/open-docs-latest
+          git config user.name lvgl-bot
+          git config user.email lvgl-bot@users.noreply.github.com
+          git add .
+          git diff --cached --quiet || git commit -m "Deploy latest from commit ${{ github.sha }}"
+          git push
