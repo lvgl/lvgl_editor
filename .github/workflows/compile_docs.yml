@@ -68,6 +68,11 @@ jobs:
           cd ..
           ./lvgl_editor/scripts/build_html_examples.sh
 
+      - name: Setup Node        
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+
       - name: Install mdx linter
         run: npm i @lvgl/mdx-lint
 
@@ -96,9 +101,9 @@ jobs:
           mkdir -p /tmp/pro-docs-latest/xml/latest
 
           cp -r docs/. /tmp/pro-docs-latest/latest/
-          cp -r /tmp/xml/. /tmp/open-docs-latest/xml/latest
+          cp -r /tmp/xml/. /tmp/pro-docs-latest/xml/latest
 
-          cd /tmp/open-docs-latest
+          cd /tmp/pro-docs-latest
           git config user.name lvgl-bot
           git config user.email lvgl-bot@users.noreply.github.com
           git add .
