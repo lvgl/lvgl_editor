@@ -8,23 +8,25 @@
  reliably.
 -->
 <screen>
-	<view flex_flow="column" style_pad_row="14" style_pad_all="14"
-		style_flex_cross_place="center">
+	<view>
+		<lv_qrcode
+			size="120"
+			align="center"
+			x="-100"
+			dark_color="0x1f2937"
+			light_color="0xffffff"
+			quiet_zone="true"
+			data="https://lvgl.io"
+		/>
 
-		<!-- 💡 Both encode the same URL; only size and colours differ. -->
-		<lv_label width="100%" style_text_align="center" text="QR code: colours and size" />
-
-		<lv_obj width="290" height="150" style_bg_opa="0" style_pad_all="0"
-			flex_flow="row" style_flex_main_place="space_evenly"
-			style_flex_cross_place="center">
-
-			<lv_qrcode size="120"
-				dark_color="0x1f2937" light_color="0xffffff"
-				quiet_zone="true" data="https://lvgl.io" />
-
-			<lv_qrcode size="100"
-				dark_color="0x2563eb" light_color="0xeff6ff"
-				quiet_zone="true" data="https://lvgl.io" />
-		</lv_obj>
+		<lv_qrcode
+			size="100"
+			align="center"
+			x="100"
+			dark_color="0x2563eb"
+			light_color="0xeff6ff"
+			quiet_zone="true"
+			data="https://lvgl.io"
+		/>
 	</view>
 </screen>

@@ -9,30 +9,35 @@
 -->
 <screen>
 	<styles>
-		<style name="style_dd"
-			bg_color="0x1f2937" bg_opa="100%" text_color="0xf3f4f6"
-			radius="8" pad_all="10" />
+		<style name="style_dd" bg_color="0x1f2937" bg_opa="100%" text_color="0xf3f4f6" radius="8" pad_all="10" />
 		<!-- The opened list popup -->
-		<style name="style_dd_list"
-			bg_color="0x111827" text_color="0xe5e7eb"
-			border_color="0x3b82f6" border_width="1" />
+		<style
+			name="style_dd_list"
+			bg_color="0x111827"
+			text_color="0xe5e7eb"
+			border_color="0x3b82f6"
+			border_width="1"
+		/>
+		<style name="style_dd_list_selected" bg_color="0xa93bf5" text_color="0xffffff" />
+		<style name="style_dd_list_pressed" bg_color="0xcc98f1" text_color="0xffffff" />
 	</styles>
 
-	<view flex_flow="column" style_pad_row="14" style_pad_all="16"
-		style_flex_cross_place="center">
-
-		<!-- 💡 Pick an item — the label below tracks subject_index. -->
-		<lv_label width="100%" style_text_align="center" text="Drop-down: options and binding" />
-
-		<lv_dropdown width="200"
-			options="Celsius\nFahrenheit\nKelvin"
-			selected="1" bind_value="subject_index">
+	<view>
+		<lv_dropdown
+			width="200"
+			align="center"
+			options="Celsius&#10;Fahrenheit&#10;Kelvin"
+			selected="1"
+			bind_value="subject_index"
+		>
 			<style name="style_dd" />
 			<lv_dropdown-list>
 				<style name="style_dd_list" />
+				<style name="style_dd_list_selected" selector="selected|checked" />
+				<style name="style_dd_list_pressed" selector="selected|pressed" />
 			</lv_dropdown-list>
 		</lv_dropdown>
 
-		<lv_label bind_text="subject_index" bind_text-fmt="Selected index: %d" />
+		<lv_label bind_text="subject_index" bind_text-fmt="Selected index: %d" align="center" y="-40" />
 	</view>
 </screen>

@@ -16,12 +16,12 @@
 	<subjects>
 		<!-- Generic subjects reused by every data-binding example so each
 		     screen doesn't have to invent its own subject names. -->
-		<int    name="subject_value"   value="50"  min_value="0" max_value="100" help="Generic 0..100 value" />
-		<int    name="subject_value2"  value="20"  min_value="0" max_value="100" help="Second generic 0..100 value" />
-		<int    name="subject_opa"     value="128" min_value="0" max_value="255" help="Generic opacity 0..255" />
-		<int    name="subject_index"   value="0"   help="Generic selected index" />
-		<int    name="subject_checked" value="0"   help="Generic on/off (0 or 1) for switches and checkboxes" />
-		<string name="subject_text"    value="Hello" help="Generic string value" />
+		<int name="subject_value" value="50" min_value="0" max_value="100" help="Generic 0..100 value" />
+		<int name="subject_value2" value="20" min_value="0" max_value="100" help="Second generic 0..100 value" />
+		<int name="subject_opa" value="128" min_value="0" max_value="255" help="Generic opacity 0..255" />
+		<int name="subject_index" value="0" help="Generic selected index" />
+		<int name="subject_checked" value="0" help="Generic on/off (0 or 1) for switches and checkboxes" />
+		<string name="subject_text" value="Hello" help="Generic string value" />
 	</subjects>
 
 	<images>
@@ -29,6 +29,9 @@
 		<data name="img_logo" src_path="images/img_logo.png" color_format="argb8888" />
 		<!-- Animated GIF used by the lv_gif example, loaded as a file. -->
 		<file name="img_bulb" src_path="images/bulb.gif" />
+		<file name="imgbtn_left" src_path="images/imgbtn_left.png" />
+		<file name="imgbtn_mid" src_path="images/imgbtn_mid.png" />
+		<file name="imgbtn_right" src_path="images/imgbtn_right.png" />
 	</images>
 
 	<fonts>

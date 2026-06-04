@@ -14,36 +14,26 @@
 		<!-- Active sweep -->
 		<style name="style_arc_ind" arc_color="0x3b82f6" arc_width="10" />
 		<!-- Knob -->
-		<style name="style_arc_knob" bg_color="0x3b82f6" pad_all="6" />
+		<style
+			name="style_arc_knob"
+			bg_color="0x3b82f6"
+			pad_all="6"
+			border_width="2"
+			border_color="0xfff"
+			shadow_offset_y="2"
+			shadow_opa="50%"
+			shadow_width="10"
+		/>
 	</styles>
 
-	<view flex_flow="column" style_pad_row="10" style_pad_all="12"
-		style_flex_cross_place="center">
-
+	<view>
 		<!-- 💡 Drag the right arc — the label tracks subject_value live. -->
-		<lv_label width="100%" style_text_align="center" text="Arc: range, styling, binding" />
 
-		<lv_obj width="300" height="130" style_bg_opa="0"
-			style_pad_all="0" flex_flow="row" style_flex_main_place="space_evenly">
-
-			<!-- Custom range + custom background angles -->
-			<lv_arc width="120" height="120"
-				min_value="0" max_value="50" value="35"
-				bg_start_angle="135" bg_end_angle="45">
-				<style name="style_arc_main" />
-				<style name="style_arc_ind" selector="indicator" />
-				<style name="style_arc_knob" selector="knob" />
-				<lv_label align="center" text="35 / 50" />
-			</lv_arc>
-
-			<!-- Two-way bound to subject_value -->
-			<lv_arc width="120" height="120" bind_value="subject_value">
-				<style name="style_arc_main" />
-				<style name="style_arc_ind" selector="indicator" />
-				<style name="style_arc_knob" selector="knob" />
-			</lv_arc>
-		</lv_obj>
-
-		<lv_label bind_text="subject_value" bind_text-fmt="subject_value = %d" />
+		<lv_arc width="120" height="120" align="center" bind_value="subject_value">
+			<style name="style_arc_main" />
+			<style name="style_arc_ind" selector="indicator" />
+			<style name="style_arc_knob" selector="knob" />
+			<lv_label bind_text="subject_value" bind_text-fmt="value: %d" align="center" />
+		</lv_arc>
 	</view>
 </screen>

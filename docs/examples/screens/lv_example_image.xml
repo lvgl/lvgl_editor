@@ -8,29 +8,22 @@
 -->
 <screen>
 	<styles>
-		<style name="style_tint"
-			image_recolor="0x3b82f6" image_recolor_opa="80%" />
+		<style name="style_tint" image_recolor="0x3b82f6" image_recolor_opa="80%" />
 	</styles>
 
-	<view flex_flow="column" style_pad_row="14" style_pad_all="16"
-		style_flex_cross_place="center">
+	<view
+		style_pad_all="0"
+		flex_flow="row"
+		style_flex_main_place="space_evenly"
+		style_flex_cross_place="center"
+		style_flex_track_place="center"
+	>
+		<lv_image src="img_logo" />
 
-		<!-- 💡 Same image three ways: original, transformed, recoloured. -->
-		<lv_label width="100%" style_text_align="center" text="Image: transform and recolor" />
+		<lv_image src="img_logo" rotation="300" scale_x="580" scale_y="180" />
 
-		<lv_obj width="280" height="120" style_bg_opa="0" style_pad_all="0"
-			flex_flow="row" style_flex_main_place="space_evenly"
-			style_flex_cross_place="center">
-
-			<lv_image src="img_logo" />
-
-			<lv_image src="img_logo"
-				rotation="300" scale_x="180" scale_y="180"
-				pivot_x="24" pivot_y="24" />
-
-			<lv_image src="img_logo">
-				<style name="style_tint" />
-			</lv_image>
-		</lv_obj>
+		<lv_image src="img_logo">
+			<style name="style_tint" />
+		</lv_image>
 	</view>
 </screen>

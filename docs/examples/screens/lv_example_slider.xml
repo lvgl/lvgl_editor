@@ -1,47 +1,125 @@
 <!--
- @title Slider
- @brief Normal, range and vertical sliders, one bound to a subject.
+ @title Bar
+ @brief Normal, symmetrical and range modes, plus a subject-bound bar.
 
- The first slider is bound to `subject_value` with `bind_value`, so the
- label above it updates as you drag. The second uses `mode="range"` with a
- `start_value` and `value` for a two-knob span. The third sets
- `orientation="vertical"` to grow bottom-to-top.
+ The first bar is bound to `subject_value`. The second uses
+ `mode="symmetrical"` with a range crossing zero so the indicator grows out
+ from the midpoint. The third uses `mode="range"` with a `start_value` and
+ `value` to show a span, and the last is vertical.
 -->
 <screen>
+	<consts>
+		<int name="thickness" value="16" />
+	</consts>
 	<styles>
-		<style name="style_track" bg_color="0xcbd5e1" bg_opa="100%" radius="10" />
-		<style name="style_ind" bg_color="0x3b82f6" radius="10" />
-		<style name="style_knob" bg_color="0x1d4ed8" pad_all="4" />
+		<style
+			name="style_bar"
+			bg_color="0xdee2e7"
+			bg_opa="100%"
+			radius="8"
+			outline_width="1"
+			outline_color="0x3b82f6"
+			outline_opa="90%"
+		/>
+
+		<style name="style_bar_ind" bg_color="0x3b82f6" radius="6" />
+		<style
+			name="style_bar_knob"
+			bg_color="0x3b82f6"
+			radius="100"
+			pad_all="8"
+			border_color="0xfff"
+			border_width="2"
+			shadow_width="8"
+			shadow_offset_y="4"
+			shadow_opa="30%"
+		/>
 	</styles>
 
-	<view flex_flow="column" style_pad_row="16" style_pad_all="16"
-		style_flex_cross_place="center">
-
-		<!-- 💡 Drag the first slider; the % readout above it follows subject_value. -->
-		<lv_label width="100%" style_text_align="center" text="Slider: modes and binding" />
-
-		<lv_label bind_text="subject_value" bind_text-fmt="%d %%"
-			style_text_color="#color_text_on_fill" />
-
-		<!-- Bound, normal mode -->
-		<lv_slider width="240" bind_value="subject_value">
-			<style name="style_track" />
-			<style name="style_ind" selector="indicator" />
-			<style name="style_knob" selector="knob" />
+	<view>
+		<!-- Bound, normal mode, with an overlaid readout -->
+		<lv_slider
+			width="240"
+			height="#thickness"
+			bind_value="subject_value"
+			align="left_mid"
+			y="-40"
+			x="20"
+			ext_click_area="8"
+		>
+			<style name="style_bar" />
+			<style name="style_bar_ind" selector="indicator" />
+			<style name="style_bar_knob" selector="knob" />
+			<lv_label align="center" bind_text="subject_value" bind_text-fmt="%d %%" style_text_color="0x192e4f" />
 		</lv_slider>
 
-		<!-- Range mode: two knobs select a span -->
-		<lv_slider width="240" mode="range" start_value="20" value="70">
-			<style name="style_track" />
-			<style name="style_ind" selector="indicator" />
-			<style name="style_knob" selector="knob" />
+		<!-- Range: indicator spans start_value..value -->
+		<lv_slider
+			width="240"
+			height="#thickness"
+			mode="range"
+			value="80"
+			start_value="10"
+			align="left_mid"
+			x="20"
+			ext_click_area="8"
+		>
+			<style name="style_bar" />
+			<style name="style_bar_ind" selector="indicator" />
+			<style name="style_bar_knob" selector="knob" />
+		</lv_slider>
+
+		<!-- Right to left fill when max_value < min_value with gradient -->
+		<lv_slider
+			width="240"
+			height="#thickness"
+			min_value="100"
+			max_value="0"
+			value="80"
+			align="left_mid"
+			x="20"
+			y="40"
+			ext_click_area="8"
+			style_bg_color-indicator="0x04f"
+			style_bg_grad_color-indicator="0xa8f"
+			style_bg_grad_dir-indicator="hor"
+		>
+			<style name="style_bar" />
+			<style name="style_bar_ind" selector="indicator" />
+			<style name="style_bar_knob" selector="knob" />
 		</lv_slider>
 
 		<!-- Vertical orientation -->
-		<lv_slider width="16" height="90" orientation="vertical" value="40">
-			<style name="style_track" />
-			<style name="style_ind" selector="indicator" />
-			<style name="style_knob" selector="knob" />
+		<lv_slider
+			width="#thickness"
+			height="160"
+			orientation="vertical"
+			value="65"
+			align="right_mid"
+			y="0"
+			x="-60"
+			ext_click_area="8"
+		>
+			<style name="style_bar" />
+			<style name="style_bar_ind" selector="indicator" />
+			<style name="style_bar_knob" selector="knob" />
+		</lv_slider>
+
+		<lv_slider
+			width="#thickness"
+			height="160"
+			orientation="vertical"
+			min_value="100"
+			max_value="0"
+			value="65"
+			align="right_mid"
+			y="0"
+			x="-20"
+			ext_click_area="8"
+		>
+			<style name="style_bar" />
+			<style name="style_bar_ind" selector="indicator" />
+			<style name="style_bar_knob" selector="knob" />
 		</lv_slider>
 	</view>
 </screen>

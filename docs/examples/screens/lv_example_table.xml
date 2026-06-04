@@ -9,21 +9,22 @@
 -->
 <screen>
 	<styles>
-		<style name="style_table"
-			bg_color="0x111827" bg_opa="100%" text_color="0xe5e7eb" radius="8" />
+		<style name="style_table" bg_color="0x111827" bg_opa="100%" radius="8" pad_all="8" />
 		<!-- Header row cells (the "items" part in selected/first row) -->
-		<style name="style_header"
-			bg_color="0x2563eb" text_color="0xffffff" />
+		<style
+			name="style_items"
+			bg_opa="100%"
+			bg_color="0x4b5362"
+			border_side="full"
+			text_color="0xe5e7eb"
+			border_color="0x111827"
+		/>
 	</styles>
 
-	<view flex_flow="column" style_pad_all="14" style_flex_cross_place="center">
-
-		<!-- 💡 The bottom-left cell uses merge_right, so it spans two columns. -->
-		<lv_label width="100%" style_text_align="center" text="Table: columns, cells and merge" />
-
-		<lv_table row_count="4" column_count="2">
+	<view>
+		<lv_table row_count="4" column_count="2" align="center">
 			<style name="style_table" />
-			<style name="style_header" selector="items" />
+			<style name="style_items" selector="items" />
 
 			<lv_table-column column="0" width="150" />
 			<lv_table-column column="1" width="90" />
@@ -36,8 +37,7 @@
 			<lv_table-cell row="2" column="1" value="48 %" />
 
 			<!-- Footer spanning both columns -->
-			<lv_table-cell row="3" column="0" value="All readings nominal"
-				ctrl="merge_right" />
+			<lv_table-cell row="3" column="0" value="All readings nominal" ctrl="merge_right" />
 		</lv_table>
 	</view>
 </screen>
