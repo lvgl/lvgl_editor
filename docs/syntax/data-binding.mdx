@@ -104,12 +104,12 @@ write `bind_state_if_gt` instead.
 ```xml
 <!-- Set the "hidden" flag while subject_mode != 1 -->
 <lv_obj>
-  <bind_flag_if_not_eq subject="subject_mode" flag="hidden" ref_value="1">
+  <bind_flag_if_not_eq subject="subject_mode" flag="hidden" ref_value="1"/>
 </lv_obj>
 
 <!-- Enter the "checked" state while subject_lamp == 2 -->
 <lv_obj>
-  <bind_state_if_eq subject="subject_lamp" state="checked" ref_value="2">
+  <bind_state_if_eq subject="subject_lamp" state="checked" ref_value="2"/>
 </lv_obj>
 ```
 
