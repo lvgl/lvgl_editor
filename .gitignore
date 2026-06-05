@@ -3,3 +3,4 @@
 **/*.log
 **/preview-build/
 **/preview-bin/.hash
+**/__pycache_/**

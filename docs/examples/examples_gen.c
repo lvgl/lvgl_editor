@@ -170,7 +170,7 @@ void examples_init_gen(const char * asset_path)
      *  Permanent screens
      *-------------------*/
     /* If XML is enabled it's assumed that the permanent screens are created
-     * manually from XML using lv_xml_create() */
+     * manaully from XML using lv_xml_create() */
 #endif
 }
 
