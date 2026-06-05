@@ -1,0 +1,64 @@
+---
+title: Project File
+description: Configure your LVGL Pro project with project.xml — set the LVGL version, exported code name, and the display targets used to preview screens.
+---
+
+`project.xml` is the top-level configuration file of an LVGL Pro project. It is read by the Editor, by the CLI, and by the runtime XML loader to learn the target LVGL version, the exported code's name, and the display configurations used to render screens in the preview.
+
+`project.xml` lives next to `globals.xml` at the root of the project folder.
+
+## Recommended Project Layout
+
+LVGL Pro doesn't enforce a folder structure, but the Editor, the tutorials, and the example projects all follow the same convention. Sticking to it keeps `src_path` references short and makes generated code predictable.
+
+```
+my_project/
+├── project.xml          ← target/display configuration (this file)
+├── globals.xml          ← shared fonts, images, subjects, consts, styles
+├── translations.xml     ← optional, multi-language strings
+├── fonts/               ← .ttf / .bin source files referenced by globals.xml
+├── images/              ← .png assets referenced by globals.xml
+├── widgets/             ← custom <widget> XMLs (one file per widget)
+├── components/          ← reusable <component> XMLs (one file per component)
+└── screens/             ← <screen> XMLs (one file per screen)
+```
+
+The three XML files (`project.xml`, `globals.xml`, `translations.xml`) sit at the project root; the five sub-folders hold everything else. Any of the sub-folders can be omitted if the project doesn't use that category.
+
+## Minimal Example
+
+The simplest valid project file just declares the LVGL version:
+
+```xml
+<project lvgl_version="9.5.0">
+</project>
+```
+
+This is enough for the Editor to load the project, but no preview targets are defined — screens fall back to a default preview size.
+
+## Defining Display Targets
+
+To preview Screens at the resolution(s) of the real hardware, declare one or more `<target>` elements inside `<targets>`. Each target contains a `<display>` describing the screen size.
+
+```xml
+<project lvgl_version="9.5.0">
+    <targets>
+        <target name="dashboard_large">
+            <display width="800" height="480"/>
+        </target>
+        <target name="controller_small">
+            <display width="480" height="320"/>
+        </target>
+    </targets>
+</project>
+```
+
+When a Screen is open in the Editor, the Preview panel shows one entry per `<target>`. This is also how the Editor knows how to size a Screen's `<view>` when `width="100%"` or `height="100%"` is used at the screen root.
+
+All Screens see all targets — there is no per-screen targeting.
+
+## Relation to Other Files
+
+- **`globals.xml`** — Defines project-wide fonts, images, subjects, constants, and shared styles. See [Introduction](./introduction#shared-resources-with-globalsxml).
+- **Screens** — Use the targets declared here to choose a preview resolution. See [Screens](./screens#preview).
+- **Code export** — The `name` attribute controls the exported project name and init function. See [Using Exported C Code](../integration/using-exported-c-code).
