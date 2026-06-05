@@ -1,9 +1,9 @@
 /**
- * @file screen_assets_gen.h
+ * @file circle_button_gen.h
  */
 
-#ifndef SCREEN_ASSETS_H
-#define SCREEN_ASSETS_H
+#ifndef CIRCLE_BUTTON_H
+#define CIRCLE_BUTTON_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,9 +37,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-
-
-lv_obj_t * screen_assets_create(void);
+lv_obj_t * circle_button_create(lv_obj_t * parent, const void * icon);
 
 /**********************
  *      MACROS
@@ -49,4 +47,4 @@ lv_obj_t * screen_assets_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*SCREEN_ASSETS_H*/
+#endif /*CIRCLE_BUTTON_H*/

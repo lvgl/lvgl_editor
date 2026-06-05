@@ -29,10 +29,6 @@ extern "C" {
     #include "lv_xml/lv_xml.h"
 #endif
 
-#ifndef LV_XML_EVAL_STRING_BUF_SIZE
-    #define LV_XML_EVAL_STRING_BUF_SIZE 256
-#endif
-
 
 
 /*********************

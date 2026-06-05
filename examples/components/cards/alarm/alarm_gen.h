@@ -1,9 +1,9 @@
 /**
- * @file screen_assets_gen.h
+ * @file alarm_gen.h
  */
 
-#ifndef SCREEN_ASSETS_H
-#define SCREEN_ASSETS_H
+#ifndef ALARM_H
+#define ALARM_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,13 +33,24 @@ extern "C" {
  *      TYPEDEFS
  **********************/
 
+typedef enum {
+    ALARM_TIMELINE_OPEN = 0,
+    _ALARM_TIMELINE_CNT = 1
+}alarm_timeline_t;
+
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
 
+lv_obj_t * alarm_create(lv_obj_t * parent);
 
-
-lv_obj_t * screen_assets_create(void);
+/**
+ * Get a timeline of a alarm
+ * @param obj          pointer to a alarm component
+ * @param timeline_id  ID of the the timeline
+ * @return             pointer to the timeline or NULL if not found
+ */
+lv_anim_timeline_t * alarm_get_timeline(lv_obj_t * obj, alarm_timeline_t timeline_id);
 
 /**********************
  *      MACROS
@@ -49,4 +60,4 @@ lv_obj_t * screen_assets_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*SCREEN_ASSETS_H*/
+#endif /*ALARM_H*/

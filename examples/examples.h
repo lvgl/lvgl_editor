@@ -1,9 +1,9 @@
 /**
- * @file screen_assets_gen.h
+ * @file examples.h
  */
 
-#ifndef SCREEN_ASSETS_H
-#define SCREEN_ASSETS_H
+#ifndef EXAMPLES_H
+#define EXAMPLES_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,18 +12,7 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-
-#ifdef LV_LVGL_H_INCLUDE_SIMPLE
-    #include "lvgl.h"
-    #include "lvgl_private.h"
-#else
-    #include "lvgl/lvgl.h"
-    #include "lvgl/lvgl_private.h"
-#endif
-
-#ifdef LV_USE_XML
-    #include "lv_xml/lv_xml.h"
-#endif
+#include "examples_gen.h"
 
 /*********************
  *      DEFINES
@@ -33,13 +22,20 @@ extern "C" {
  *      TYPEDEFS
  **********************/
 
+
+
+/**********************
+ * GLOBAL VARIABLES
+ **********************/
+
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
 
-
-
-lv_obj_t * screen_assets_create(void);
+/**
+ * Initialize the component library
+ */
+void examples_init(const char * asset_path);
 
 /**********************
  *      MACROS
@@ -49,4 +45,4 @@ lv_obj_t * screen_assets_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*SCREEN_ASSETS_H*/
+#endif /*EXAMPLES_H*/

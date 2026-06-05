@@ -1,9 +1,9 @@
 /**
- * @file screen_assets_gen.h
+ * @file location_gen.h
  */
 
-#ifndef SCREEN_ASSETS_H
-#define SCREEN_ASSETS_H
+#ifndef LOCATION_H
+#define LOCATION_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,9 +37,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-
-
-lv_obj_t * screen_assets_create(void);
+lv_obj_t * location_create(lv_obj_t * parent, const char * city_text, lv_subject_t * temp, const void * icon, const char * weather_text);
 
 /**********************
  *      MACROS
@@ -49,4 +47,4 @@ lv_obj_t * screen_assets_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*SCREEN_ASSETS_H*/
+#endif /*LOCATION_H*/

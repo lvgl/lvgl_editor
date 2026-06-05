@@ -1,9 +1,9 @@
 /**
- * @file screen_assets_gen.h
+ * @file elements_gen.h
  */
 
-#ifndef SCREEN_ASSETS_H
-#define SCREEN_ASSETS_H
+#ifndef ELEMENTS_H
+#define ELEMENTS_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +39,7 @@ extern "C" {
 
 
 
-lv_obj_t * screen_assets_create(void);
+lv_obj_t * elements_create(void);
 
 /**********************
  *      MACROS
@@ -49,4 +49,4 @@ lv_obj_t * screen_assets_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*SCREEN_ASSETS_H*/
+#endif /*ELEMENTS_H*/
