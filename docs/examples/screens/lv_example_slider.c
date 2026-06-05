@@ -7,13 +7,14 @@
 #define THICKNESS 16
 
 /**
- * @title Bar
- * @brief Normal, symmetrical and range modes, plus a subject-bound bar.
+ * @title Slider
+ * @brief Bound, range, reversed-with-gradient and vertical sliders.
  *
- * The first bar is bound to `subject_value`. The second uses
- * `mode="symmetrical"` with a range crossing zero so the indicator grows out
- * from the midpoint. The third uses `mode="range"` with a `start_value` and
- * `value` to show a span, and the last is vertical.
+ * Like a bar but draggable via its knob. The first slider is bound to
+ * `subject_value` and overlays a live readout. The second uses `mode="range"`
+ * with a `start_value` and `value` to show a span. The third sets `min_value`
+ * above `max_value` so it fills right-to-left, with a gradient indicator. The
+ * last two are vertical, the second of them also reversed.
  */
 void lv_example_slider(void)
 {

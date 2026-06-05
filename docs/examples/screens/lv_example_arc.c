@@ -6,12 +6,11 @@
 
 /**
  * @title Arc
- * @brief Custom range and background angles, a styled indicator, and binding.
+ * @brief A bound arc with named styles on its main, indicator and knob parts.
  *
- * The left arc sets a custom `min_value`/`max_value` and a 270° background
- * span (`bg_start_angle`/`bg_end_angle`), with named styles on the MAIN,
- * INDICATOR and KNOB parts. The right arc uses `bind_value` so dragging it
- * updates `subject_value`, which the label below reads back.
+ * The arc uses `bind_value` so dragging it updates `subject_value`, which the
+ * centered label reads back live. Named styles target the MAIN ring, the
+ * INDICATOR sweep and the KNOB separately via the `selector` attribute.
  */
 void lv_example_arc(void)
 {
@@ -44,7 +43,7 @@ void lv_example_arc(void)
 
     lv_obj_t * screen = lv_screen_active();
 
-    /* 💡 Drag the right arc — the label tracks subject_value live. */
+    /* 💡 Drag the arc — the label tracks subject_value live. */
     lv_obj_t * lv_arc_0 = lv_arc_create(screen);
     lv_obj_set_size(lv_arc_0, 120, 120);
     lv_obj_set_align(lv_arc_0, LV_ALIGN_CENTER);

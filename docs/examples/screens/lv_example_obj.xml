@@ -3,9 +3,9 @@
  @brief A plain lv_obj used as a styled, scrollable, flex container.
 
  lv_obj has no widget-specific properties — it is the styling, layout,
- scrolling and state engine every widget inherits. Here one lv_obj is a
- flex column with a scrollbar; a `<bind_style>` swaps its look when
- `subject_checked` is 1, and the child boxes show per-state local styles.
+ scrolling and state engine every widget inherits. Here one lv_obj is a flex
+ column with a scrollbar holding five rows; a `<bind_style>` swaps its look
+ when `subject_checked` is 1, and the switch above toggles that subject.
 -->
 <screen>
 	<styles>

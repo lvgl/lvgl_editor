@@ -6,7 +6,7 @@
 
 /**
  * @title Switch
- * @brief Default, checked and disabled switches, plus a two-way bound pair.
+ * @brief A checked and a disabled switch, plus a two-way bound pair.
  *
  * The first switch starts `checked="true"`, the second is `disabled="true"`.
  * The third uses `bind_checked="subject_checked"`; the fourth binds to the

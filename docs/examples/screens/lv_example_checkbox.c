@@ -6,7 +6,7 @@
 
 /**
  * @title Checkbox
- * @brief Default, checked and disabled checkboxes, plus a bound pair.
+ * @brief A checked and a disabled checkbox, plus a two-way bound pair.
  *
  * Each checkbox gets its caption from the `text` property. The first starts
  * `checked="true"`, the second is `disabled="true"`. The last two share

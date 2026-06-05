@@ -8,10 +8,11 @@
  * @title Label
  * @brief Recoloring, a long-text mode and a value bound to a subject.
  *
- * The first label uses `recolor="true"` so `#hex text#` spans change colour
- * inline. The second is given a fixed width with `long_mode="scroll_circular"`
- * so the over-long text scrolls continuously. The third uses `bind_text` with
- * a `bind_text-fmt` printf string to track `subject_value` live.
+ * A plain heading sits on top. Below it, one label uses `recolor="true"` so
+ * `#hex text#` spans change colour inline. The next is given a fixed width with
+ * `long_mode="scroll_circular"` so the over-long text scrolls continuously. The
+ * last uses `bind_text` with a `bind_text-fmt` printf string to track
+ * `subject_value` live.
  */
 void lv_example_label(void)
 {
@@ -37,7 +38,7 @@ void lv_example_label(void)
     lv_obj_set_style_pad_all(screen, 16, 0);
     lv_obj_set_style_flex_cross_place(screen, LV_FLEX_ALIGN_CENTER, 0);
 
-    /* 💡 The middle label scrolls because its text is wider than its fixed width. */
+    /* 💡 The scrolling label's text is wider than its fixed width, so it loops. */
     lv_obj_t * lv_label_0 = lv_label_create(screen);
     lv_obj_set_width(lv_label_0, lv_pct(100));
     lv_obj_set_style_text_align(lv_label_0, LV_TEXT_ALIGN_CENTER, 0);

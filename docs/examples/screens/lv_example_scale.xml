@@ -1,10 +1,11 @@
 <!--
  @title Scale
- @brief A round scale with labels and a coloured danger section.
+ @brief A round and a horizontal scale, each with a coloured danger section.
 
- `mode="round_inner"` draws a circular scale; `total_tick_count`,
- `major_tick_every` and `angle_range` shape the ticks, and `label_show`
- prints values. A `<lv_scale-section>` restyles the 80–100 range via named
+ The first scale uses `mode="round_inner"` to draw a circular scale; the
+ second uses `mode="horizontal_bottom"`. `total_tick_count`, `major_tick_every`
+ (and `angle_range` on the round one) shape the ticks, and `label_show` prints
+ values. On each, a `<lv_scale-section>` restyles the 80–100 range via named
  styles to mark a danger zone.
 -->
 <screen>
