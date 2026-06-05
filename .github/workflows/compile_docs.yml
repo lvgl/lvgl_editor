@@ -83,7 +83,7 @@ jobs:
       - name: Convert xml files to md
         run: |
             mkdir -p /tmp/xml
-            python3 scripts/docs/xml_to_md.py examples /tmp/xml --source-base https://github.com/lvgl/lvgl/blob/${{ github.sha }}/examples
+            python3 docs/scripts/xml_to_md.py examples /tmp/xml --source-base https://github.com/lvgl/lvgl/blob/${{ github.sha }}/examples
      
       - name: Deploy Latest
         if: >
