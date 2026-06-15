@@ -1,150 +1,92 @@
 ---
-title: Zephyr
-description: Instructions for integrating LVGL Pro Editor projects with Zephyr RTOS.
+title: Zephyr project
+description: Create a ready-to-use Zephyr RTOS project from the LVGL Pro Editor launcher, pick your board, and build for hardware or the PC simulator.
 ---
 
-Integrate LVGL Editor-generated UI projects seamlessly with Zephyr RTOS using CMake-based build systems and configuration tools.
+<Callout type="info">
+This feature requires [LVGL Pro Editor v2.0](https://github.com/lvgl/lvgl_editor/releases) or higher.
+</Callout>
 
-## Overview
+The Editor can generate a complete, ready-to-build **Zephyr project** for you — the same way it creates a [VS Code project](./vscode) or a [simulator](./simulator). You don't need to wire up CMake, Kconfig or the devicetree by hand: pick a board on the launcher and the Editor produces a full Zephyr workspace application with your UI already hooked up.
 
-The goal of this guide is to ensure a simple integration between a
-Zephyr project and the LVGL Editor.
+## Create a project
 
-### Build System
+On the Editor's home screen, choose **Zephyr** as the target project and **select a development board** from the list. That's the only decision you need to make — the board choice pulls in the right Kconfig, devicetree overlays and HAL modules automatically.
 
-When creating a new interface in the LVGL Editor, a `CMakeLists.txt`
-file is generated, which allows for conditional fields, differentiating
-between what belongs to the editor and the target project. This enables
-the inclusion of symbols and directories with lower complexity.
+The following boards are supported out of the box:
 
-``` cmake
-if (LV_EDITOR_PREVIEW)
- # things for the Preview
-else ()
- # things for your Project
-endif ()
+| Board | Resolution | Interface / Panel |
+| --- | --- | --- |
+| **EK-RA8D1** (Renesas) | 480 × 854 | MIPI DSI — ILI9806E |
+| **EK-RA6M3** (Renesas) | 480 × 272 | GLCDC parallel RGB — RTK7EKA6M3B00001BU |
+| **EK-RA8D2** (Renesas) | 1024 × 600 | GLCDC parallel RGB — RTK-LCD-PAR1S-00001BE |
+| **STM32U5G9J-DK2** (ST) | 800 × 480 | LTDC parallel RGB — GT911 touch |
+| **FRDM-MCXN947** (NXP) | 480 × 320 | 8080 MIPI DBI — ST7796S |
+| **MIMXRT1170-EVK** (NXP) | 720 × 1280 | MIPI DSI — HX8394 |
+| **M5Stack Core2** (ESP32) | 320 × 240 | SPI — ILI9342C |
+
+Your UI is exported into the project's `ui/` folder and is picked up automatically — you can keep designing in the Editor and re-export at any time.
+
+## Get started
+
+The generated project is a standard [Zephyr workspace application](https://docs.zephyrproject.org/latest/develop/west/workspaces.html) driven by `west`. Its `README.md` contains the exact build command for the board you picked; the steps below are the general flow.
+
+### 1. Install the prerequisites
+
+Follow the [Zephyr Getting Started Guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) to install the host dependencies, `west`, and the Zephyr SDK.
+
+To run the PC simulator you also need SDL2:
+
+```sh
+sudo apt install libsdl2-dev   # Debian / Ubuntu
 ```
 
-The Zephyr ecosystem is based on CMake, making the integration between
-projects relatively straightforward through the use of `CMakeLists.txt`
-files. For libraries like LVGL, the Kconfig system is used to configure
-parameters, thus avoiding direct modification of `lv_conf.h`.
+### 2. Initialize the workspace
 
-For more details on Kconfig configuration methods, refer to the [Zephyr
-Kconfig documentation](https://docs.zephyrproject.org/latest/build/kconfig/setting.html).
+From the project folder, fetch Zephyr and the required modules:
 
-In this guide, we will use `prj.conf` for simplicity, but you may adapt
-the configuration approach to your project's needs.
+```sh
+west init -l manifest
+west update
+```
 
-### Configuration
+### 3. Run on your PC (simulator)
 
-Zephyr has its own configuration wrapper for LVGL that translates
-Kconfig options into LVGL settings. Therefore, some symbols need to be
-included in configuration files:
+You can try the UI without any hardware:
 
-``` text
-CONFIG_LVGL=y
-CONFIG_LV_Z_MEM_POOL_SIZE=58368
-CONFIG_LV_Z_SHELL=y
+```sh
+west build -b native_sim/native/64 -t run
+```
+
+### 4. Run on your development board
+
+Use the build command from the project's `README.md` (it's filled in for the board you selected), for example:
+
+```sh
+west build -p -b ek_ra8d2/r7ka8d2kflcac/cm85
+```
+
+Then flash and debug:
+
+```sh
+west flash
+west debug
 ```
 
 <Callout type="info">
-The CONFIG_LV_Z_MEM_POOL_SIZE parameter defines the LVGL heap size in bytes. The value must be adjusted based on the number and complexity of UI components. Insufficient memory allocation will result in Out Of Memory (OOM) errors.
-
-As a reference, some LVGL demos require significantly more than the default allocation. Start with at least 58 KB (58368 bytes) and increase if needed based on your application.
+Some boards need vendor HAL blobs before the first build, e.g. `west blobs fetch hal_renesas` (Renesas) or `west blobs fetch hal_espressif` (ESP32). ESP32 boards also need the `esptool` package on your `PATH`. Install it with `west packages pip --install`. The generated `README.md` and `BOARDS.md` list any extra step for your board.
 </Callout>
 
-Additionally, it is necessary to enable display and input drivers:
+## Updating the UI
 
-``` text
-CONFIG_DISPLAY=y
-CONFIG_INPUT=y
-```
+Design your UI in the Editor and export to the project's `ui/` folder. The application detects it automatically and builds it as a library, so re-exporting is all it takes to update the interface — no code changes needed.
 
-In the devicetree file `your_board.dts` and/or overlay
-`your_overlay.overlay`, you must configure the specific nodes for your
-hardware's display and touchscreen. Example:
+## Adding another board
 
-``` text
-/ {
- chosen {
- zephyr,display = &display_controller;
- };
+The project ships a `BOARDS.md` with the full list of supported boards, their build commands and display details. To target a board that isn't included:
 
- lvgl_pointer {
- compatible = "zephyr,lvgl-pointer-input";
- input = <&touch_controller>;
- };
-};
+1. Add the board's HAL module to the `name-allowlist` in `manifest/west.yml`, then run `west update`.
+2. Optionally add board-specific settings in the `boards/` folder (`<board>.conf` for Kconfig, `<board>.overlay` for devicetree, `<board>.cmake` for CMake variables such as a default shield).
+3. Build with `west build -p -b <board>`.
 
-&display_controller {
-/* Display-specific parameters (resolution, timing, etc.) */
- status = "okay";
-};
-
-&touch_controller {
-/* Touch controller-specific parameters (sensitivity, etc.) */
- status = "okay";
-};
-```
-
-If some resources are not supported on your board, refer to the official
-Zephyr documentation. There is a guide detailing how to [port a
-board](https://docs.zephyrproject.org/latest/hardware/porting/board_porting.html)
-and the valid properties in the devicetree for
-[input](https://docs.zephyrproject.org/latest/build/dts/api/bindings/input/zephyr%2Clvgl-pointer-input.html).
-
-### Integration
-
-Considering an example structure using Zephyr with LVGL Editor:
-
-``` text
-app/
-├── src/
-│ └── main.c
-├── ui_project/
-│ ├── ui_project.h
-│ ├── ui_project.c
-│ ├── screens/
-│ ├── widgets/
-│ ├── components/
-│ └── CMakeLists.txt
-└── CMakeLists.txt
-```
-
-Add a subdirectory in the project's root `CMakeLists.txt` to include
-the UI in the compilation stage:
-
-``` cmake
-add_subdirectory(ui_project)
-target_link_libraries(app PUBLIC lib-ui)
-```
-
-In the `CMakeLists.txt` file of the `ui_project/` directory, created by
-the LVGL Editor, add:
-
-``` cmake
-# Create the UI sources as a library
-add_library(lib-ui ${PROJECT_SOURCES})
-
-# You may use this check to add configuration when compiling for the Editor preview,
-# or for your target.
-if (LV_EDITOR_PREVIEW)
- # things for the Preview
-else ()
- # things for your target
-
- # Link with Zephyr interface to inherit compiler flags and settings
- target_link_libraries(lib-ui PUBLIC zephyr_interface)
-
- # Include LVGL headers from Zephyr's module path
- target_include_directories(lib-ui PUBLIC
- ${CMAKE_BINARY_DIR}/zephyr/include/generated/lvgl
- ${ZEPHYR_LVGL_MODULE_DIR}
- )
-endif ()
-```
-
-<Callout type="info">
-Zephyr automatically defines the `LV_CONF_INCLUDE_SIMPLE` symbol during the LVGL module build process, so it is not necessary to define it manually in your CMakeLists.txt.
-</Callout>
+See `BOARDS.md` in the generated project for details on the overlay files and how they are applied.

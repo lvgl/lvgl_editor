@@ -1,0 +1,77 @@
+---
+title: AI Integration
+description: Connect AI assistants to LVGL Pro through the LVGL MCP server for grounded documentation answers, and close the loop with the CLI for validation and visual feedback.
+---
+
+LVGL Pro is built to work hand-in-hand with AI coding assistants. Two pieces make this possible:
+
+- **The LVGL MCP server** gives the AI accurate, up-to-date knowledge of LVGL and LVGL Pro, so it stops guessing APIs.
+- **The [CLI](/cli)** gives the AI objective validation and *eyes*. It can validate XML, generate code, and screenshot the result to verify its own work.
+
+This page covers the MCP server. For the validation-and-screenshot loop, see the [CLI page](/cli).
+
+## The LVGL MCP server
+
+The LVGL MCP server is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server, powered by [kapa.ai](https://www.kapa.ai), that answers questions from LVGL's official documentation, forum, and source knowledge with links back to the sources.
+
+Connecting it to your AI assistant means answers are grounded in the real, current docs instead of the model's training data, which is often outdated for a fast-moving library like LVGL.
+
+<Callout type="info">
+The server endpoint is `https://lvgl.mcp.kapa.ai/`. It is read-only: it returns documentation answers and never edits or runs your code.
+</Callout>
+
+## Using it
+
+LVGL Pro projects ship with the MCP configuration already in place (in the project's `.claude` folder), so supported tools detect it as soon as you open the project.
+
+1. **Open the project** in your AI assistant (e.g. Claude Code) from the project root.
+2. **Approve & authenticate.** On first use, the assistant asks you to approve the server, then walks you through a one-time login. After that it stays connected.
+3. **Ask in plain language.** You don't call the server directly. The assistant invokes it on its own when a question needs LVGL knowledge. A few examples:
+   - *"Create a new screen with 3 sliders and labels showing the sliders' current value."* 
+   - *"How do I create a chart with two series in LVGL?"*
+   - *"dashboard.xml is too complex. Split it into smaller components."*
+
+Phrasing like *"look up"* or *"check the LVGL docs"* nudges the assistant to consult the server rather than answer from memory.
+
+<Callout type="info">
+In Claude Code, run `/mcp` to confirm the `lvgl` server is connected and to see the tools it exposes.
+</Callout>
+
+## Adding it manually
+
+If your project doesn't already include the configuration, add it yourself. For **Claude Code**, create a `.claude/.mcp.json` file in your project's root:
+
+```json
+{
+  "mcpServers": {
+    "lvgl": {
+      "type": "http",
+      "url": "https://lvgl.mcp.kapa.ai/"
+    }
+  }
+}
+```
+
+Restart the assistant (or reload the project) and approve the server when prompted.
+
+Other tools use the same idea but look for a different file in a slightly different shape. Most reuse the `mcpServers` structure above. The main differences are the file location and, for VS Code/Copilot, the top-level key (`servers` instead of `mcpServers`):
+
+| Tool | Config file |
+| --- | --- |
+| Claude Code | `.mcp.json` (project root) or `~/.claude.json` (global) |
+| Cursor | `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global) |
+| GitHub Copilot (VS Code) | `.vscode/mcp.json` — uses the `servers` key |
+| Gemini CLI | `.gemini/settings.json` (project) or `~/.gemini/settings.json` |
+| Windsurf | `~/.codeium/windsurf/mcp_config.json` |
+
+## The AI development loop
+
+The MCP server gives the AI *knowledge*; the [CLI](/cli) closes the loop with *validation* and *eyes*. Together they let the assistant write, check, and visually verify a UI on its own:
+
+1. **Ask**: the AI consults the MCP server for the right LVGL approach.
+3. **Validate**: `validate` returns precise, machine-readable errors to fix and repeat until clean.
+2. **Generate**: it writes or edits XML, then runs `generate` to export C code.
+4. **See**: `screenshot` renders the screen to a PNG.
+5. **Judge**: a vision-capable model compares the image to the intent and iterates from step 1.
+
+See the [CLI page](/cli) for the full command reference and a ready-to-use CI/CD example.

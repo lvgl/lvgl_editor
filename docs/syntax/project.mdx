@@ -27,35 +27,58 @@ The three XML files (`project.xml`, `globals.xml`, `translations.xml`) sit at th
 
 ## Minimal Example
 
-The simplest valid project file just declares the LVGL version:
+The simplest valid project file declares a `name`, the LVGL version, and at least one `<target>` with a `<display>`:
 
 ```xml
-<project lvgl_version="9.5.0">
+<project name="ui" lvgl_version="9.5.0">
+    <targets>
+        <target name="target1">
+            <display width="800" height="480"/>
+        </target>
+    </targets>    
 </project>
 ```
 
-This is enough for the Editor to load the project, but no preview targets are defined — screens fall back to a default preview size.
+This is enough for the Editor to load the project with a given resolution. However, `project.xml`
+supports a whole lot of useful features. Keep reading to learn them all.
 
-## Defining Display Targets
+## Multiple Targets
 
-To preview Screens at the resolution(s) of the real hardware, declare one or more `<target>` elements inside `<targets>`. Each target contains a `<display>` describing the screen size.
+To preview Screens at multiple resolutions of real hardware, declare multiple `<target>` elements inside `<targets>`. 
+Each target contains a `<display>` describing the screen size.
 
 ```xml
-<project lvgl_version="9.5.0">
+<project name="ui" lvgl_version="9.5.0">
     <targets>
-        <target name="dashboard_large">
+        <target name="large">
             <display width="800" height="480"/>
         </target>
-        <target name="controller_small">
+        <target name="small">
             <display width="480" height="320"/>
         </target>
     </targets>
 </project>
 ```
 
-When a Screen is open in the Editor, the Preview panel shows one entry per `<target>`. This is also how the Editor knows how to size a Screen's `<view>` when `width="100%"` or `height="100%"` is used at the screen root.
+When a Screen is open in the Editor, the Preview panel shows one entry per `<target>`. 
+This is also how the Editor knows how to size a Screen's `<view>`.
 
-All Screens see all targets — there is no per-screen targeting.
+It's also possible to conditionally use assets, styles or even views based on selected target. 
+It's a great way to manage assets and the appearance of components separately for different targets. 
+Learn more at [Targets](./targets)
+
+
+## Theme
+
+In `project.xml` you can also select the LVGL Theme you would like to use:
+1. Simple: minimal styles for easy customization
+2. Default: a good looking theme to quickly get started
+
+TODO add images
+
+To set a theme use `<project theme="simple">` or `<project theme="default">`.
+If the theme is not set, `default` will be used.
+
 
 ## Relation to Other Files
 

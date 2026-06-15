@@ -35,12 +35,23 @@ Each `translation` defines a `tag`, which acts as the lookup key, and
 attributes for each language.
 
 Translations may be omitted — fallbacks will be applied when needed.
-Refer to the LVGL translation module documentation for details on fallback behavior.
+Refer to the [LVGL translation](https://lvgl.io/docs/open/main-modules/translation) module documentation for details on fallback behavior.
 
-To register XML translations:
+## Code export
 
-- `lv_xml_register_translation_from_file("path/to/file.xml")`
-- `lv_xml_register_translation_from_data(xml_string)`
+Based on the translations defined in XML, C code is exported in the format required by the
+[Translation module of LVGL](https://lvgl.io/docs/open/main-modules/translation), and it is also
+registered automatically when the UI is initialized.
 
-Multiple XML sources can be registered; they will be merged and searched
-collectively.
+## Relation to fonts
+
+To effectively handle Asian (e.g. Chinese, Japanese, or Korean) characters it's recommended to use a
+`<tiny_ttf>` font, as it loads the characters to draw on demand from a single TTF file. This way:
+
+1. Any character can be rendered (assuming the font supports it)
+2. Any size can be rendered
+
+If you would like to use a C array font instead, it's recommended to use the `fallback` feature of the
+fonts to chain multiple fonts, e.g. one per language.
+
+Learn more on the [Fonts](./fonts) page.

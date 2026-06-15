@@ -1,0 +1,97 @@
+---
+title: Built-in Simulator
+description: Build, run, and debug your exported UI on your computer directly from the LVGL Editor using the bundled sim/ project.
+---
+
+<Callout type="info">
+This feature requires [LVGL Pro Editor v2.0](https://github.com/lvgl/lvgl_editor/releases) or higher.
+</Callout>
+
+Every LVGL Pro project includes a **simulator**: a small `sim/` folder that lets you compile, run, and debug your UI on your computer — no hardware required. It opens a desktop window (SDL on Linux/macOS, the native Win32 driver on Windows) and runs the exact same C code you would flash to your device.
+
+The simulator is created automatically together with the project, so you can run your UI straight from the LVGL Pro Editor.
+
+## Overview
+
+The `sim/` folder is a self-contained CMake wrapper that lives *inside* your project. The project root holds the UI exported from the Editor (its own `CMakeLists.txt` builds a `lib-ui` target), and `sim/` builds a small desktop application that links against it.
+
+```
+my_project/
+├── project.xml            # name + display size, read by the simulator
+├── CMakeLists.txt         # builds the UI as `lib-ui`
+├── globals.xml, screens/, components/, images/, fonts/ …
+└── sim/
+    ├── CMakeLists.txt      # the simulator build (use this as the CMake source dir)
+    ├── main.c              # entry point: opens the window, starts LVGL
+    ├── hal.c / hal.h       # display + input backend (SDL or Win32)
+    ├── lv_conf_sdl.defaults       # LVGL config for Linux/macOS
+    └── lv_conf_windows.defaults   # LVGL config for Windows
+```
+
+When configured, the simulator:
+
+1. Fetches LVGL automatically with CMake `FetchContent` (the version is taken from `project.xml`'s `lvgl_version`).
+2. Generates `lv_conf.h` from the matching `lv_conf_*.defaults` for your platform.
+3. Builds your exported UI (`lib-ui`) from the parent folder.
+4. Reads the project `name` and the first `<display>` size from `project.xml`, and passes them to `main.c` so the window matches your target resolution and the correct `<name>_init()` is called.
+
+## Running from the Editor
+
+Because the project ships with a pre-configured `.vscode/` folder, the Editor can build, run, and debug the simulator for you. Use the Editor's run/build controls and it will configure the `sim/` folder, compile, and launch the simulator window.
+
+Just hit `F5` to compile and start debugging the project.
+
+## Building from the command line
+
+You can also build the simulator yourself by pointing CMake at the `sim/` folder:
+
+```bash
+cd my_project
+cmake -S sim -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build -j
+```
+
+Run it from the project root so the `A:` asset path resolves to your project's image and font files. The bundled `run` target does this for you:
+
+```bash
+cmake --build build --target run
+```
+
+## Dependencies
+
+You need **CMake** (≥ 3.16), **Python 3** (used by LVGL to generate `lv_conf.h`), a **C compiler**, and a **debugger**. On Linux and macOS you also need **SDL2**; on Windows nothing extra is required because LVGL's built-in Win32 driver is used.
+
+```bash
+# Debian / Ubuntu
+sudo apt install build-essential cmake gdb python3 libsdl2-dev
+# Arch
+sudo pacman -S base-devel cmake gdb python sdl2
+# Fedora
+sudo dnf install @development-tools cmake gdb python3 SDL2-devel
+
+# macOS
+brew install cmake llvm python sdl2
+```
+
+## Choosing what to show
+
+By default `sim/main.c` loads a placeholder screen. Edit the `lv_screen_load(...)` line to load one of your own screens:
+
+```c
+hal_init(UI_WIDTH, UI_HEIGHT);
+UI_INIT("A:");                 /* "A:" = drive letter for file-based assets */
+
+lv_screen_load(my_screen_create());
+```
+
+`main.c` is a user file, it is created once and not overwritten on re-export, so your changes are safe.
+
+## Configuration
+
+LVGL is configured through the per-platform defaults file picked automatically by CMake: `lv_conf_sdl.defaults` (Linux/macOS) or `lv_conf_windows.defaults` (Windows). Each only lists the options that differ from LVGL's defaults; CMake merges it with LVGL's `lv_conf_template.h` to produce `build/lv_conf.h`. Edit the file for your platform and rebuild to change things such as `LV_COLOR_DEPTH` or `LV_USE_PERF_MONITOR`.
+
+The window size and the LVGL version come from [`project.xml`](../syntax/project), so changing the `<display>` size or `lvgl_version` there is reflected in the simulator on the next configure.
+
+<Callout type="info">
+    For a standalone desktop project that you can open in plain VS Code and extend with any extensions, see the [VS Code project](./vscode) instead. The two are independent: a VS Code project can itself contain a UI that ships with its own `sim/` folder.
+</Callout>

@@ -1,11 +1,15 @@
 {
   "title": "Integration",
   "pages": [
-    "---General---",
+    "---Overviews---",
     "using-exported-c-code",
     "loading-xml-files",
+    "---Simulators---",
+    "simulator",
+    "vscode",
     "---Ecosystems---",
     "cmake",
+    "linux",
     "zephyr",
     "arduino-ide",
     "renesas"

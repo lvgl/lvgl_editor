@@ -30,7 +30,7 @@ Example:
   </timeline>
 
   <!-- Shake horizontally -->
-  <timeline name="shake">
+  <timeline name="shake" repeat_count="infinite" repeat_delay="200">
    <animation prop="translate_x" target="self" start="0" end="-30" duration="150"/>
    <animation prop="translate_x" target="self" start="-30" end="30" duration="300" delay="150"/>
    <animation prop="translate_x" target="self" start="30" end="0" duration="150" delay="450"/>
@@ -46,9 +46,17 @@ Example:
 </component>
 ```
 
+### Timeline Properties
+
+Inside `<animations>`, you can define `<timeline>`s with unique names that you can reference later. A `<timeline>` supports these properties:
+
+- `name` - Unique name used to reference and play the timeline.
+- `repeat_count` - How many times the whole timeline repeats. Use a number, or `infinite` to loop forever. Default is `1`.
+- `repeat_delay` - Delay in milliseconds between repetitions. Default is `0`.
+
 ### Simple Animations 
 
-Inside `<animations>`, you can define `<timeline>`s with unique names that you can reference later. Within each `timeline`, add individual `<animation>` elements to describe each step. The following properties are supported:
+Within each `timeline`, add individual `<animation>` elements to describe each step. The following properties are supported:
 
 - `prop` - Style property to animate. All integer, percentage, and color style properties are supported.
 - `selector` - Style selector, e.g. `knob|pressed`. Default: `main|default`.

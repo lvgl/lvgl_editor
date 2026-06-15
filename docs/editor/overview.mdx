@@ -1,61 +1,125 @@
 ---
 title: Editor Overview
-description: Discover LVGL Pro Editor features including XML editing, real-time preview, code generation, and widget support.
+description: Discover LVGL Pro Editor features including XML editing, Design mode, real-time preview, and C code generation.
 ---
 
-Develop embedded UIs faster with a visual XML editor that combines real-time preview, intelligent autocomplete, and seamless code generation. Work with components, screens, animations, and tests all in one integrated environment.
+The Editor, along with the [CLI](../cli), [Figma plugin](../figma), and [online viewer](../online-viewer), is part of **LVGL Pro**, a professional toolkit to develop embedded UIs.
 
-## What is the Editor?
+The LVGL Pro Editor is a visual development environment for building embedded UIs. It combines a real-time preview, [XML editing](../syntax/overview) with intelligent autocomplete, and a drag-and-drop **Design mode**, then generates clean, optimized **C code** you can drop straight into your firmware.
 
-LVGL Pro's Editor is a powerful XML-based development environment that simplifies embedded UI creation. Its core features include:
+Because the preview uses real LVGL rendering, what you see in the Editor matches pixel-for-pixel what runs on the device, so you skip the slow edit-compile-flash loop while designing.
 
-- **Real-time preview** - See pixel-perfect UI changes instantly as you type
-- **XML editing** - Complete support for components, screens, tests, animations, and translations
-- **Code generation** - Export optimized C code ready for firmware integration
-- **Custom widget support** - Recompile preview with LVGL and custom C-based widgets
-- **Cross-platform** - Available as desktop app, VSCode extension, or web application
 
-## Key Advantages
+## Key features
 
-<Cards>
-  <Card
-    icon={<Sparkles />}
-    title="Visual Development"
-  >
-    See components instantly in a pixel-perfect preview while writing XML, eliminating the edit-compile-test cycle.
-  </Card>
+- **Real-time preview**: See pixel-perfect changes instantly as you edit, powered by real LVGL rendering. Learn more in the [preview](../syntax/preview) documentation.
+- **XML Editor**: Powerful tools to autocomplete and syntax-highlight your XML code.
+- **Design mode**: Create UIs in a drag-and-drop way from components already built in XML.
+- **C code generation**: Export optimized C code ready for firmware integration. See [Using exported C code](../integration/using-exported-c-code) for adding the generated UI to your project.
+- **Custom widget support**: Recompile the preview with LVGL and your own C-based [widgets](../syntax/widgets).
+- **Data bindings**: Connect UI elements to dynamic data with [data bindings](../syntax/data-binding) and try them out live in the preview, no firmware flash required.
+- **UI tests**: Record and run [UI tests](../syntax/testing) in a few clicks to catch visual and behavioral regressions early.
+- **Animations**: Design timeline-based [animations](../syntax/animations) and preview them in real time.
+- **Multi-language UIs**: Manage [translations](../syntax/translations) and switch languages right in the preview.
+- **Figma plugin**: Export screens, components, and styles from Figma into XML with a single click using the [Figma plugin](../figma).
+- **Online preview**: A simplified version of the Editor to open and review projects in a browser. Learn more [here](../online-viewer).
 
-  <Card
-    icon={<FileCode />}
-    title="Smart Editing"
-  >
-    Autocomplete speeds up XML writing, while the inspector tool visualizes widget sizes, paddings, and spacing.
-  </Card>
+## User interface
 
-  <Card
-    icon={<Palette />}
-    href="/figma"
-    title="Design Integration"
-  >
-    Accelerate Figma design implementation with the dedicated plugin to sync styles and layouts.
-  </Card>
+The Editor is built on a full **VS Code-like** environment, so if you've used VS Code you'll feel right at home. All the familiar power tools are there: quick file navigation with <kbd>Ctrl</kbd> + <kbd>P</kbd>, a built-in terminal, a debugger, editor tabs, a smart code navigator, Git integration, and support for installing extensions from the [Open VSX Registry](https://open-vsx.org/).
 
-  <Card
-    icon={<BookOpen />}
-    title="Testing & Bindings"
-  >
-    Write and run UI tests in seconds, and use data bindings to connect UI to dynamic data sources.
-  </Card>
-</Cards>
+Every project can be edited in two modes:
+1. **XML mode** for full control
+2. **Design mode** for visual, drag-and-drop editing of screens
 
-## Available Platforms
+Switch between them at any time using the toggle at the top of the window. Both modes edit the *same* project files, so a team can freely mix them.
 
-The Editor can run on multiple platforms to fit your workflow:
+<Figure
+  src="/_static/images/design_and_code_mode.png"
+  alt="The Code / Design mode switch in the Editor toolbar"
+  caption="Switch between XML and Design mode from the toolbar"
+/>
 
-- **Desktop Applications** - Native apps for Windows, macOS, and Linux
-- **VSCode Extension** - Develop directly within your preferred code editor
-- **Web Browser** - Online version accessible from anywhere without installation
+### XML mode
 
-## Learn More
+While you write [XML](../syntax/overview) on the left, a live, pixel-perfect preview updates on the right. It's powered by real LVGL rendering, so what you see matches the device exactly. Autocomplete, syntax highlighting, and validation guide you as you type. This is where you define reusable [components](../syntax/components), [widgets](../syntax/widgets), [styles](../syntax/styles), [animations](../syntax/animations), [data bindings](../syntax/data-binding), and [tests](../syntax/testing).
 
-For detailed information about XML syntax and structure, see the [XML Overview](../syntax/overview) documentation.
+<Figure
+  src="/_static/images/xml_mode.png"
+  alt="XML mode: XML source on the left, live preview on the right"
+  caption="XML on the left, a live LVGL preview on the right"
+/>
+
+### Design mode
+
+Design mode lets you assemble and edit UIs visually (dragging, dropping, and adjusting properties) without ever seeing the XML. It's ideal for building [screens](../syntax/screens) from components that developers prepared in XML, so designers or less technical team members can create UIs without deep technical knowledge.
+
+<Figure
+  src="/_static/images/design_mode.png"
+  alt="Editing a screen visually in Design mode"
+  caption="Design mode: build screens from components without seeing the XML"
+/>
+
+### The preview toolbar
+
+A small toolbar sits above the preview and gives quick access to three actions:
+
+<Figure
+  src="/_static/images/preview_toolbar.png"
+  alt="The preview toolbar with Inspector, Figma, and build buttons"
+  caption="The preview toolbar: Inspector, Connect to Figma plugin, and Compile & export code"
+/>
+
+- **Inspector** - Toggle [Inspector mode](#inspector-mode) on or off.
+- **Connect to Figma plugin** - Link the Editor to the [Figma plugin](../figma) to sync styles and layouts.
+- **Compile and export code** - Generate the [C code](../integration/using-exported-c-code) and recompile the preview.
+
+
+### Inspector mode
+
+Inspector mode overlays a lot of useful information on the selected element, making it easy to understand and fine-tune your layout. Enable it from the [toolbar](#the-preview-toolbar) button, or temporarily by holding <kbd>Alt</kbd> while hovering over the preview (see all [keyboard shortcuts](./hotkeys#inspector-mode)).
+
+<Figure
+  src="/_static/images/inspector_on.png"
+  alt="A button shown with Inspector mode enabled"
+  caption="Inspector mode shows the element size, component name, and click area"
+/>
+
+While Inspector mode is active you can see:
+
+- The element's **size** and the **component name**
+- **Padding** and **margins**
+- The **extra click area** as a dashed outline
+- Handles to **resize and reposition** the element directly in the preview
+
+### A workflow for whole teams
+
+These two modes enable a workflow where developers and designers each work at the level that suits them best:
+
+1. **Advanced developers build the toolkit.** In Code mode they create well-structured [components](../syntax/components) — reusable building blocks written in XML (buttons, cards, screen templates, and so on). Each component declares an [`<api>`](../syntax/api) that defines exactly which properties are exposed.
+2. **Anyone assembles the UI.** In Design mode, designers, product managers, or less technical team members drag those components onto [screens](../syntax/screens) and configure them — building complete UIs without deep technical knowledge and without touching XML.
+
+Because only the properties listed in a component's [`<api>`](../syntax/api) are shown in Design mode (not every internal detail), developers decide precisely what is configurable and what stays fixed. This keeps the design surface clean and prevents accidental breakage.
+
+Designers stay in the loop at both ends of this workflow. Screens, components, and layouts can be brought over from Figma with a single click using the [Figma plugin](../figma), and any project can be opened in the [online viewer](../online-viewer) (a simplified browser version of the Editor) to quickly review or share the UI without installing anything.
+
+## Getting started quickly
+
+You don't have to start from a blank project. When you create a new project from the launcher, the Editor can scaffold a **ready-to-use project** tailored to your target, so you can build and run it right away:
+
+- **UI Only** - A project containing only the UI, which can be freely integrated into any application. Learn more [here](../integration/using-exported-c-code).
+- **VS Code project** - A project pre-wired for the [VS Code](../integration/vscode) workflow to run the UI on your desktop.
+- **Zephyr project** - A starter set up for [Zephyr](../integration/zephyr).
+- **Linux project** - A starter for [Linux](../integration/linux) targets.
+
+These projects can be created as:
+- **Empty UI project** - Just a basic folder structure (screens, components, widgets, images, and fonts) with no UI files.
+- **Template project** - A project preloaded with many useful, ready-made [components](../syntax/components) (headings, buttons, controls, text inputs, lists, and more) that you can reuse and adapt.
+
+<Figure
+  src="/_static/images/components.png"
+  alt="A project preloaded with ready-made components"
+  caption="The Template project comes with a rich set of reusable widgets and components"
+/>
+
+The launcher also offers **Learn by Examples**, where you can create a project from **100+ simple examples and useful tutorials** — from Hello World to animations and data binding. See the [Learn by Examples](../learn-by-examples) page for the full list.

@@ -228,12 +228,70 @@ Navigate and interact with the preview pane using these shortcuts:
   </table>
 </div>
 
-## Advanced Ctrl Key Features
+## Inspector Mode
 
-Pressing the <Kbd>Ctrl</Kbd> key while hovering over the preview pane enables additional functionality:
+Enable **Inspector mode** from the [preview toolbar](./overview#the-preview-toolbar) to keep it on, or hold the <Kbd>Alt</Kbd> key while hovering over the preview to enable it temporarily. While it's active, you can:
 
-- Visualize bounding box, padding, margins and click area
-- Check size and position by dragging
+- Visualize bounding box, padding, margins, and the extra click area
+- Check size and position, and resize or reposition the element by dragging
 - Perform measurements
-- Double click to jump to the XML file
-- Single click to change editor focus to the matching XML element
+
+The following actions work while Inspector mode is active (no need to keep <Kbd>Alt</Kbd> held once it's toggled on from the toolbar):
+
+<div className="not-prose my-6">
+  <table className="w-full">
+    <thead>
+      <tr className="border-b border-fd-border">
+        <th className="text-left py-3 px-4 font-medium">Shortcut</th>
+        <th className="text-left py-3 px-4 font-medium">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-b border-fd-border/50">
+        <td className="py-3 px-4">
+          <KbdGroup>
+            <Kbd>Alt</Kbd>
+          </KbdGroup>
+        </td>
+        <td className="py-3 px-4">Temporarily enable Inspector mode while held</td>
+      </tr>
+      <tr className="border-b border-fd-border/50">
+        <td className="py-3 px-4">
+          <span>Click</span>
+        </td>
+        <td className="py-3 px-4">Jump to the matching element in the XML</td>
+      </tr>
+      <tr className="border-b border-fd-border/50">
+        <td className="py-3 px-4">
+          <span>Double Click</span>
+        </td>
+        <td className="py-3 px-4">Open the component's XML file</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Code Navigation
+
+<div className="not-prose my-6">
+  <table className="w-full">
+    <thead>
+      <tr className="border-b border-fd-border">
+        <th className="text-left py-3 px-4 font-medium">Shortcut</th>
+        <th className="text-left py-3 px-4 font-medium">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-b border-fd-border/50">
+        <td className="py-3 px-4">
+          <KbdGroup>
+            <Kbd>Ctrl</Kbd>
+            <span className="text-fd-muted-foreground">+</span>
+            <span>Click</span>
+          </KbdGroup>
+        </td>
+        <td className="py-3 px-4">Click an XML tag to open its XML file</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

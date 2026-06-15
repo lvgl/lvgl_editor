@@ -1,0 +1,100 @@
+---
+title: VS Code project
+description: A standalone desktop project for VS Code that builds, runs, and debugs your exported LVGL UI and can be extended with any VS Code extension.
+---
+
+<Callout type="info">
+This feature requires [LVGL Pro Editor v2.0](https://github.com/lvgl/lvgl_editor/releases) or higher.
+</Callout>
+
+The **VS Code project** is a standalone desktop project, similar to the [simulator](./simulator), but instead of living inside your UI project it is a self-contained workspace you open in plain [Visual Studio Code](https://code.visualstudio.com/). It comes with a pre-configured `.vscode/` folder so you can build and debug with a single key press, and — because it's an ordinary VS Code workspace — you can add **any** VS Code extension on top.
+
+On the Editor's home screen you can pick the VS Code project as the **target project** to export into. Your UI is then exported into its `ui/` folder and picked up automatically.
+
+## Overview
+
+Unlike the simulator (where `sim/` is a wrapper *inside* the UI project), the VS Code project is the other way around: the wrapper is at the root and your exported UI lives in a `ui/` subfolder.
+
+```
+my_vscode_project/
+├── CMakeLists.txt           # the simulator build (root = CMake source dir)
+├── src/
+│   ├── main.c               # entry point: opens the window, starts LVGL
+│   └── hal.c / hal.h        # display + input backend (SDL or Win32)
+├── lv_conf_sdl.defaults     # LVGL config for Linux/macOS
+├── lv_conf_windows.defaults # LVGL config for Windows
+├── .vscode/                 # tasks + launch config (build & debug with F5)
+└── ui/                      # ← export your LVGL Editor UI here
+    └── CMakeLists.txt        # builds `lib-ui`, detected automatically
+```
+
+When configured, the project:
+
+1. Fetches LVGL automatically with CMake `FetchContent` (the `LVGL_VERSION` cache option, default `v9.5.0`).
+2. Generates `lv_conf.h` from the matching `lv_conf_*.defaults` for your platform.
+3. Detects `ui/CMakeLists.txt` if a UI has been exported, links its `lib-ui` target, and defines `HAS_UI` so `main.c` initializes it.
+4. Builds a `lvgl_simulator` executable.
+
+Until you export a UI, the project still builds and runs — it shows a placeholder screen so it works out of the box.
+
+<Callout type="info">
+    Because the exported UI in `ui/` is a complete LVGL Pro project, it can itself contain its own `sim/` folder. That's expected: the VS Code project builds the UI as a library through `ui/CMakeLists.txt` and ignores the nested `sim/`.
+</Callout>
+
+## Building and debugging
+
+### In VS Code (recommended)
+
+1. Open the project folder in VS Code.
+2. Install the recommended extensions when prompted (_CMake Tools_, _C/C++_).
+3. CMake configures automatically on open (LVGL is downloaded on first run).
+4. Press **F5** to build and start debugging.
+
+### From the command line
+
+```bash
+cmake -B build
+cmake --build build
+```
+
+Run it from the project root so the `A:ui` asset path resolves to the `ui/` folder. The bundled `run` target does this for you:
+
+```bash
+cmake --build build --target run
+```
+
+## Dependencies
+
+You need **CMake** (≥ 3.16), **Python 3** (used by LVGL to generate `lv_conf.h`), a **C compiler**, and a **debugger**. On Linux and macOS you also need **SDL2**; on Windows nothing extra is required because LVGL's built-in Win32 driver is used.
+
+```bash
+# Debian / Ubuntu
+sudo apt install build-essential cmake gdb python3 libsdl2-dev
+# Arch
+sudo pacman -S base-devel cmake gdb python sdl2
+# Fedora
+sudo dnf install @development-tools cmake gdb python3 SDL2-devel
+
+# macOS
+brew install cmake llvm python sdl2
+```
+
+## Choosing what to show
+
+After exporting, edit the `lv_screen_load(...)` line in `src/main.c` to load one of your screens:
+
+```c
+#if HAS_UI
+    ui_init("A:ui");           /* "A:ui" = asset path for file-based images/fonts */
+    lv_screen_load(home_create());
+#endif
+```
+
+## Configuration
+
+LVGL is configured through the per-platform defaults file picked automatically by CMake: `lv_conf_sdl.defaults` (Linux/macOS) or `lv_conf_windows.defaults` (Windows). Each only lists the options that differ from LVGL's defaults; CMake merges it with LVGL's `lv_conf_template.h` to produce `build/lv_conf.h`. Edit the file for your platform and rebuild to change things such as `LV_COLOR_DEPTH` or `LV_USE_PERF_MONITOR`.
+
+CMake cache options (pass with `-D`):
+
+- `LVGL_VERSION` — LVGL git tag or branch to fetch (default `v9.5.0`).
+- `UI_DIR` — folder with the exported Editor code (default `ui`).

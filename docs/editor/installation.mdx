@@ -1,107 +1,73 @@
 ---
 title: Installation
-description: Install LVGL Pro Editor on Windows, macOS, and Linux with platform-specific setup instructions and troubleshooting.
+description: Install LVGL Pro Editor on Windows, macOS, and Linux, and set up the tools needed to compile custom C code.
 howTos:
   - name: "Install LVGL Pro Editor on Windows"
-    description: "Complete step-by-step guide to installing LVGL Pro Editor on Windows, including WSL setup and editor installation."
-    totalTime: "PT15M"
+    description: "Download and install LVGL Pro Editor on Windows and install the tools required to compile custom C code."
+    totalTime: "PT5M"
     estimatedCost: "$0 (free)"
     steps:
-      - name: "Check if WSL is installed"
-        text: "Open Windows Terminal or Command Prompt and run 'wsl.exe --list --verbose' to check if Windows Subsystem for Linux is already installed on your system."
-        url: "#install-wsl"
-      - name: "Install WSL if needed"
-        text: "If WSL is not installed, run 'wsl --install' in Terminal and press Enter. Wait for the installation to complete. WSL is required for the editor to compile and run C code on Windows."
-        url: "#install-wsl"
       - name: "Download the editor installer"
-        text: "Visit pro.lvgl.io/#download in your web browser and click the Download button. Save the installer file to your Downloads folder or preferred location."
+        text: "Visit pro.lvgl.io/#download in your web browser and click the Download button. Save the installer to your computer."
         url: "#install-the-editor"
       - name: "Run the installer"
-        text: "Locate the downloaded installer file and double-click it to launch the installation wizard. Follow the on-screen prompts to complete the installation."
+        text: "Locate the downloaded installer and double-click it to launch the installation wizard. Follow the on-screen prompts to complete the installation."
         url: "#install-the-editor"
-      - name: "Launch LVGL Pro Editor"
-        text: "After installation completes, find LVGL Pro Editor in your Start menu or desktop and launch it. The editor is now ready to use for creating LVGL user interfaces."
-        url: "#install-the-editor"
+      - name: "Install the build tools"
+        text: "Install Git and Ninja so the editor can compile custom C code. These are only needed if your project uses widgets or custom C code in init functions."
+        url: "#compiling-c-code"
 
   - name: "Install LVGL Pro Editor on macOS"
-    description: "Step-by-step guide to installing LVGL Pro Editor on macOS with Podman setup for both Apple Silicon and Intel Macs."
-    totalTime: "PT10M"
+    description: "Download and install LVGL Pro Editor on macOS and install the tools required to compile custom C code."
+    totalTime: "PT5M"
     estimatedCost: "$0 (free)"
     steps:
-      - name: "Install Podman using Homebrew"
-        text: "Open Terminal and run 'brew install podman' to install Podman. Podman is required for the editor to compile and run C code in containers. If you don't have Homebrew, visit brew.sh to install it first."
-        url: "#install-podman"
       - name: "Download LVGL Pro Editor"
         text: "Visit pro.lvgl.io/#download and download the appropriate version for your Mac. Choose ARM for Apple Silicon Macs (M1/M2/M3/M4) or AMD for Intel-based Macs."
         url: "#install-the-editor"
       - name: "Install the application"
-        text: "Open the downloaded file and drag the LVGL Pro Editor application to your Applications folder in Finder. This installs the editor on your system."
+        text: "Open the downloaded file and drag the LVGL Pro Editor application to your Applications folder in Finder."
         url: "#install-the-editor"
-      - name: "Launch the editor"
-        text: "Open your Applications folder or use Spotlight search (Cmd+Space) to find and launch LVGL Pro Editor. The editor is now ready for creating LVGL user interfaces."
-        url: "#install-the-editor"
+      - name: "Install the build tools"
+        text: "Install Git and Make so the editor can compile custom C code. On macOS these come with the Xcode Command Line Tools. They are only needed if your project uses widgets or custom C code in init functions."
+        url: "#compiling-c-code"
 
   - name: "Install LVGL Pro Editor on Linux"
-    description: "Complete guide to installing LVGL Pro Editor on Linux distributions using AppImage and Podman."
-    totalTime: "PT10M"
+    description: "Download and run LVGL Pro Editor on Linux and install the tools required to compile custom C code."
+    totalTime: "PT5M"
     estimatedCost: "$0 (free)"
     steps:
-      - name: "Install Podman for your distribution"
-        text: "Install Podman using your package manager. For Debian/Ubuntu/Mint run 'sudo apt-get install podman'. For Fedora run 'sudo dnf -y install podman'. For Arch/Manjaro run 'sudo pacman -S podman'. Podman is required to compile and run C code."
-        url: "#install-podman"
       - name: "Download the AppImage"
-        text: "Visit pro.lvgl.io/#download and download the LVGL_Pro_Editor.AppImage file. Save it to a location like your Downloads or home directory."
+        text: "Visit pro.lvgl.io/#download and download the LVGL_Pro_Editor.AppImage file."
         url: "#install-the-editor"
       - name: "Make the AppImage executable"
-        text: "Open Terminal, navigate to where you saved the file, and run 'chmod +x LVGL_Pro_Editor.AppImage' to make it executable. This allows you to run the application."
+        text: "Open Terminal, navigate to where you saved the file, and run 'chmod +x LVGL_Pro_Editor.AppImage'."
         url: "#install-the-editor"
       - name: "Run the editor"
-        text: "Launch the editor by running './LVGL_Pro_Editor.AppImage' in Terminal. If you encounter a GTK error, use './LVGL_Pro_Editor.AppImage --gtk-version=3' instead."
+        text: "Launch the editor by running './LVGL_Pro_Editor.AppImage'. If you encounter a GTK error, use './LVGL_Pro_Editor.AppImage --gtk-version=3' instead."
         url: "#install-the-editor"
+      - name: "Install the build tools"
+        text: "Install Git and Make so the editor can compile custom C code. They are only needed if your project uses widgets or custom C code in init functions."
+        url: "#compiling-c-code"
 ---
 
 Get LVGL Pro Editor running on your system with installation steps tailored to your operating system.
 
 ## Windows
 
-### Install WSL
-
-The Editor requires **Windows Subsystem for Linux** (WSL) to run on Windows.
-
-First, check if WSL is already installed by opening a Terminal and running:
-
-```bash title="bash"
-wsl.exe --list --verbose
-```
-
-If WSL is not installed, run:
-
-```bash
-wsl --install
-```
-
-Then press Enter and wait for the installation to complete.
-
-### Install the Editor
-
 1. Go to [pro.lvgl.io/#download](https://pro.lvgl.io/#download)
-2. Click the **Download** button
-3. Save the installer to your computer
-4. Run the installer and follow the prompts to complete the installation
+2. Click the **Download** button and save the installer to your computer
+3. Run the installer and follow the prompts to complete the installation
+
+## macOS
+
+1. Download the appropriate version from [pro.lvgl.io/#download](https://pro.lvgl.io/#download):
+   - **ARM** for Apple Silicon (M1/M2/M3/M4)
+   - **AMD** for Intel-based Macs
+2. Drag the application to your **Applications** folder in Finder
+3. Launch the Editor from Applications or Spotlight
 
 ## Linux
-
-### Install Podman
-
-The Editor compiles and runs C code in containers using **Podman** (similar to Docker). Install Podman for your Linux distribution:
-
-- **Debian, Ubuntu, Linux Mint**: `sudo apt-get install podman`
-- **Fedora**: `sudo dnf -y install podman`
-- **Arch, Manjaro Linux**: `sudo pacman -S podman`
-
-For other distributions, see the [Podman installation guide](https://podman.io/docs/installation#installing-on-linux).
-
-### Install the Editor
 
 1. Download the AppImage from [pro.lvgl.io/#download](https://pro.lvgl.io/#download)
 2. Make it executable:
@@ -129,22 +95,18 @@ Trace/breakpoint trap (core dumped)
 ./LVGL_Pro_Editor.AppImage --gtk-version=3
 ```
 
-## MacOS
+## Compiling C code
 
-### Install Podman
+Component and screen XMLs run directly from XML, so **most projects work without any extra setup**. The `preview-bin` folder in your project contains the compiled C code — LVGL plus some glue code — used for the live preview. If it isn't there, the editor still works and runs your components and screens from pure XML.
 
-The Editor compiles and runs C code in containers using **Podman** (similar to Docker). Install it using Homebrew:
+Compilation is only needed when your project also uses **widgets**, or you add **custom C code** in the init functions.
 
-```bash
-brew install podman
-```
+To compile, click the **hammer icon** in the editor. The first time, the editor automatically downloads and installs **EMSDK 4.0.6**, which is used to compile the C code to run in the preview. For this to work, a few tools must already be installed:
 
-For more information, see the [Podman installation guide for macOS](https://podman.io/docs/installation#macos).
+| OS | Install |
+| --- | --- |
+| **Windows** | [Git](https://git-scm.com/download/win) and [Ninja](https://github.com/ninja-build/ninja/releases) |
+| **macOS** | Git and Make — both included in the Xcode Command Line Tools: `xcode-select --install` |
+| **Linux** | Git and Make — e.g. `sudo apt install git make` (Debian/Ubuntu/Mint), `sudo dnf install git make` (Fedora), or `sudo pacman -S git make` (Arch/Manjaro) |
 
-### Install the Editor
-
-1. Download the appropriate version from [pro.lvgl.io/#download](https://pro.lvgl.io/#download):
-   - **ARM** for Apple Silicon (M1/M2/M3)
-   - **AMD** for Intel-based Macs
-2. Drag the application to your **Applications** folder in Finder
-3. Launch the Editor from Applications or Spotlight
+If a tool is missing, the editor shows a message such as *"Missing Dependency: Emsdk 4.0.6 required for compilation."* Install the listed tools and click the hammer icon again.

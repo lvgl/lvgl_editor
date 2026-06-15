@@ -15,8 +15,9 @@ LVGL Pro Editor uses standard XML syntax with special conventions for property n
   - Hex without prefix: `112233`
   - Short hex: `0x123`, `#123`, or `123` (all equivalent to `#112233`)
 - **LVGL API alignment**: Follow LVGL naming conventions (e.g., `align="center"`, `bg_color="0xff0000"`)
-- **Parameter references**: Use `$` prefix (e.g., `$param_name`)
+- **Property references**: Use `$` prefix (e.g., `$param_name`)
 - **Constant references**: Use `#` prefix (e.g., `#const_name`)
+- [**Expressions**](./evaluate): Use `{ }`. When referencing properties or constants inside, no `$` or `#` is needed
 
 ## Property Names
 

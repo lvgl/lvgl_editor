@@ -25,7 +25,9 @@
     "api",
     "events",
     "data-binding",
+    "evaluate",
     "translations",
+    "targets",
 
     "---Test & Preview---",
     "testing",
