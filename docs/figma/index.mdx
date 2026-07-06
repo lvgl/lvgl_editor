@@ -1,0 +1,89 @@
+---
+title: Figma
+description: Bring your Figma screens, components, and styles into LVGL as clean, editable UI files. You design, and LVGL Flow handles the translation.
+---
+
+Design your interface in Figma the way you always have. **LVGL Flow for Figma** reads
+your file (screens, components, colors, fonts, spacing) and turns it into LVGL XML
+files you can open, run, and refine in LVGL Pro Editor.
+
+You don't write any code to get started. You design; the plugin and the Editor do the
+translation. And because a developer stays in control of the final structure, nothing you
+hand off ever locks them in.
+
+<Figure
+  src="/_static/images/figma/hero-image.png"
+  alt="LVGL Flow for Figma: convert your designs to LVGL XML in minutes"
+  caption="LVGL Flow reads your Figma file and hands it to LVGL Pro Editor as real UI files."
+  border={false}
+/>
+
+## Start here
+
+<Cards>
+  <Card
+    icon={<Figma />}
+    href="./how-it-works"
+    title="How it works"
+  >
+    The quick mental model: you design in Figma, the plugin reads it, and the service in
+    LVGL Pro Editor writes the files.
+  </Card>
+
+  <Card
+    icon={<Download />}
+    href="./installation"
+    title="Install & set up"
+  >
+    Add the plugin from Figma's Community and start the service inside LVGL Pro Editor.
+  </Card>
+
+
+</Cards>
+
+## What you can do
+
+<Cards>
+
+  <Card
+    icon={<Server />}
+    href="./connecting"
+    title="Connect to the Editor"
+  >
+    Run the service, match the connection, and make your first export end to end.
+  </Card>
+  <Card
+    icon={<Sparkles />}
+    href="./annotating"
+    title="Add intent"
+  >
+    Tell the plugin what a layer really is (a slider, a switch, a label) and point live
+    layers at their data.
+  </Card>
+
+  <Card
+    icon={<Eye />}
+    href="./inspect"
+    title="Inspect styles"
+  >
+    Read any layer's LVGL style and copy it straight into your XML.
+  </Card>
+
+  <Card
+    icon={<Download />}
+    href="./exporting"
+    title="Export your work"
+  >
+    Send your tokens, components, screens, or whole prototype flows to the Editor.
+  </Card>
+
+
+</Cards>
+
+---
+
+## How it fits together
+
+There are two halves. The **plugin** lives in Figma and reads your design. **The service**
+lives inside LVGL Pro Editor and writes the LVGL files to your project. They talk to each
+other on your own machine.

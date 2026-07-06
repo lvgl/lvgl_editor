@@ -1,0 +1,109 @@
+---
+title: Install & Set Up
+description: "Add LVGL Flow for Figma from the Community and start the service inside LVGL Pro Editor."
+---
+
+## Install the plugin
+
+Add [**LVGL Flow for Figma**](https://www.figma.com/community/plugin/1362005814860504095/lvgl-flow-for-figma) from Figma's Community, the same way you'd add any plugin.
+
+<Figure
+  src="/_static/images/figma/install.png"
+  alt="The LVGL Flow for Figma listing in the Figma Community"
+  caption="Find LVGL Flow for Figma in the Community and add it once. It's then available in every file you open."
+/>
+
+<Steps>
+
+<Step>
+
+### Open Figma's Community
+
+In Figma, go to the Community search and look for **LVGL Flow for Figma**. You can be in the
+desktop app or the browser to browse, but you'll want the **desktop app** when it's time to
+connect, so this is a good moment to switch over if you haven't.
+
+</Step>
+
+<Step>
+
+### Add it to your files
+
+Click **Add** (or **Try it out**) to install the plugin into your account. It stays with
+your account, so it's available in every file you open, personal or team, public or
+private.
+
+</Step>
+
+<Step>
+
+### Open it from any file
+
+Open the file you want to bring across, then launch **LVGL Flow** from your Plugins menu (or
+right-click the canvas → **Plugins**). The plugin opens, greets you, and immediately starts
+scanning your file, reading your tokens, components, and screens so it knows what's there.
+
+</Step>
+
+</Steps>
+
+<Callout type="success">
+  **Works on any Figma plan.** LVGL Flow runs on free Figma, and on both public and private
+  files.
+</Callout>
+
+---
+
+## Turn on the service
+
+The other half (**the service**) is the helper that receives your design and writes the
+LVGL files to disk. Here's the good news: **it already ships inside LVGL Pro Editor.** There's
+nothing extra to download and no second install. You just start it.
+
+- **It's built in.** If you have LVGL Pro Editor, you already have the service. You'll find
+  its commands in the Editor, and you start, stop, and configure it there, never from a
+  terminal.
+
+<Callout type="info">
+  Don't have LVGL Pro Editor yet? You can still install the plugin now and explore your file.
+  When you're ready to actually write LVGL files, you'll do it through the Editor.
+</Callout>
+
+---
+
+## Before your first export
+
+Two quick things: **connect from the Figma desktop app** (the handshake is most reliable
+there), and you'll set a **project folder** and a **display size** once inside the Editor,
+covered in [Connect to the Editor](./connecting) and [Project settings](./project-settings).
+
+---
+
+## What's next
+
+<Cards>
+  <Card
+    icon={<Server />}
+    href="../connecting"
+    title="Connect to the Editor"
+  >
+    Start the service, match the connection, and make your first export from start to finish.
+  </Card>
+
+  <Card
+    icon={<Layout />}
+    href="../interface"
+    title="Tour the plugin"
+  >
+    A quick walk through the wizard and the Project, Annotate, Export, and Inspect views.
+  </Card>
+
+  <Card
+    icon={<Figma />}
+    href="../how-it-works"
+    title="How it works"
+  >
+    The two-minute mental model: you design, the plugin reads, and the service writes the
+    files.
+  </Card>
+</Cards>

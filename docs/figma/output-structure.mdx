@@ -1,0 +1,132 @@
+---
+title: Output Structure
+description: "A map of everything the service writes to disk when you export: which files are yours, which are generated, and where fonts and images land."
+---
+
+When you export, the service writes to an LVGL project. This
+page is the map: what each file is, where assets go, and which pieces the service owns
+versus the ones it hands to you.
+
+Everything here lands under the **project directory** you set for the service (the
+`projectDir` setting, or your workspace root if you leave it empty). See
+[Connect to the Editor](./connecting) for where that setting lives.
+
+## The project on disk
+
+A freshly exported project looks like this:
+
+```text
+your-project/
+├── project.xml                     # project root: display size, required
+├── globals.xml                     # tokens: colors, fonts, images, styles
+├── components/
+│   ├── card_summary/
+│   │   └── card_summary.xml        # one folder per component
+│   ├── nav_button/
+│   │   └── nav_button.xml
+│   └── base/                       # shared base library (row, column, panel, h1–h4)
+│       └── …
+├── screens/
+│   ├── screen_home.xml             # one file per screen, safe-named
+│   └── screen_settings.xml
+├── images/
+│   └── logo.png                    # extracted image + vector assets
+├── fonts/                          # your TTFs go here (read, never overwritten)
+│   └── FONTS-MISSING.md            # written only when a font can't be resolved
+└── .lvgl-flow/                     # internal state, leave it alone
+```
+
+Not every export writes every folder. An **All Globals** export touches `globals.xml`
+and its assets; a **Selected Screens** export writes the screens plus the components and
+tokens they reference. See [Exporting](./exporting) for what each action's scope covers.
+
+---
+
+## What each file is
+
+**`project.xml`**: the project root LVGL loads first. It carries the `<display>` block
+built from the display size you set in Project mode, which is why that field
+[gates every export](./project-settings). Required, and owned by the service.
+
+**`globals.xml`** holds your design tokens in one place: color, number, and string variables,
+font declarations, and the paint / text / effect / grid styles from your file. Every
+export that ships tokens rewrites this, so components and screens always resolve against a
+current set.
+
+**`components/<name>/<name>.xml`**: one nested folder per component, matching LVGL's
+component layout (never a flat file). Variants fold into states inside the component. The
+service owns these.
+
+**`components/base/…`** is a small shared base library the generated components extend:
+layout primitives like `row`, `column`, and `panel`. It's
+demand-driven. The service only writes the bases your components actually reference.
+
+**`screens/<safe_name>.xml`**: one file per screen, with the name normalized for the
+filesystem.
+
+**`images/<name>.png`**: image and vector fills pulled out of your design and written as
+files. Anything that wasn't already a PNG is re-encoded to PNG on the way out, so LVGL has
+a consistent format to load.
+
+<Callout type="info">
+  The `.lvgl-flow/` folder is the service's own bookkeeping: component, screen, and
+  widget-name records plus an export manifest and asset sidecars. It's how re-exports keep
+  names stable and know which files they own. You never edit it by hand; it isn't part of
+  the LVGL build.
+</Callout>
+
+---
+
+## Fonts
+
+Fonts are the one place the service reaches outside your project, and it does it in a
+fixed order. For every font your design references, it tries:
+
+<Steps>
+
+<Step>
+**Your `fonts/` folder.** Drop a TTF into `<project>/fonts/` and the service uses it
+directly. This folder is read-only from the service's side. It never overwrites what you
+put there.
+</Step>
+
+<Step>
+**Google Fonts.** If a face isn't on disk, the service fetches it, unless the service is
+running with offline fonts on, in which case it skips this step entirely.
+</Step>
+
+<Step>
+**The bundled Inter placeholder.** An opt-in fallback (the "Use Inter for missing fonts"
+toggle in [Project settings](./project-settings)) so a missing face doesn't leave a screen
+blank.
+</Step>
+
+<Step>
+**`FONTS-MISSING.md`.** If nothing resolves, the service records the gap in this file at
+the project root instead of failing the export.
+</Step>
+
+</Steps>
+
+A font that can't be found is a **non-fatal warning**, not a stopped export. The rest of
+your project still writes. Check `FONTS-MISSING.md`
+when text renders with the wrong face.
+
+<Cards>
+  <Card
+    icon={<FileCode />}
+    href="../updating"
+    title="Updating & File Ownership"
+  >
+    How re-exports regenerate owned files, how to take a file over so your hand edits
+    survive, and why component and screen names stay stable across exports.
+  </Card>
+
+  <Card
+    icon={<Download />}
+    href="../exporting"
+    title="Exporting"
+  >
+    The four export actions and exactly which of the files above each one writes.
+  </Card>
+</Cards>

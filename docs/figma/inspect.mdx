@@ -1,0 +1,65 @@
+---
+title: Inspect Styles
+description: "Read any layer's LVGL style straight from Figma and copy it into your XML: colors, borders, radius, and size, with no export needed."
+---
+
+Sometimes you don't want to export a whole screen. You just want to know what one
+layer looks like in LVGL and drop that style into a file you're already writing.
+Inspect mode is for exactly that: pick a layer, read its LVGL style, copy it.
+
+It's a read-only view. It never writes files and never changes your design, and it works
+entirely on your machine.
+
+## Reading a layer's style
+
+Open Inspect from the `</>` icon at the top of the plugin, beside the mode toggle. Then
+select a single layer on the Figma canvas.
+
+The plugin shows you everything it knows about that layer:
+
+- **The LVGL style snippet**: the layer's look expressed as LVGL style attributes,
+  syntax-highlighted so it's easy to read, covering its color, border, radius, padding,
+  and size (the visual properties that layer would carry as a widget).
+- **Layer details**: the layer's icon, type, dimensions, and node id, so you can confirm
+  you're looking at the right thing.
+
+If nothing is selected, you'll just see "Select a layer." Pick one node and the panel
+fills in.
+
+<Figure src="/_static/images/figma/inspect-mode.png" alt="Inspect mode showing a layer's LVGL style snippet" caption="Select one layer and Inspect shows its LVGL style, layer details, and a Copy button." />
+
+## Copying the style
+
+There's a **Copy** button on the panel. It copies the style attributes only, just the
+part you'd paste into a `<style>` in your XML, not the surrounding tags.
+
+Paste it into the widget you're hand-writing, and you're done. Read here, paste there,
+with no files written to disk.
+
+<Callout type="info">
+  Want the plugin to write real files instead of copying snippets by hand? That's what
+  [Export](./exporting) is for: it hands whole screens and components to the
+  LVGL Pro Editor. Inspect is the lightweight, copy-one-layer alternative.
+</Callout>
+
+---
+
+## Where to next
+
+<Cards>
+  <Card
+    icon={<Download />}
+    href="../exporting"
+    title="Export whole screens"
+  >
+    When you want files written for you instead of copying one layer at a time.
+  </Card>
+
+  <Card
+    icon={<Sparkles />}
+    href="../annotating"
+    title="Add intent"
+  >
+    Tell the plugin what a layer really is before you export it.
+  </Card>
+</Cards>
