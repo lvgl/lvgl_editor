@@ -1,10 +1,7 @@
 {
   "title": "Figma Flow",
   "pages": [
-    "---Get Started---",
-    "how-it-works",
-    "installation",
-    "connecting",
+    "get-started",
     "---Using the Plugin---",
     "interface",
     "project-settings",
