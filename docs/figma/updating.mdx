@@ -25,8 +25,6 @@ files from scratch each time.
   - **Selected Screens** rewrites just the screens you selected plus the components those
     screens reference, and adds the tokens they use to `globals.xml`.
 
----
-
 ## The ownership gate
 
 This is the core rule. Every file the service writes starts with a two-line header
@@ -45,8 +43,6 @@ While the header reads `OWNED_BY=FIGMA`, the service **owns** the file and will 
 on the next export that covers its scope. That word is the switch: it's what tells the
 writer "this file is mine to regenerate." (The comments are plain XML that LVGL ignores,
 so they never affect how your UI compiles.)
-
----
 
 ## Taking over a file
 
@@ -88,15 +84,11 @@ it stays opted out until you decide to hand the file back: switch the marker bac
   flow into it anymore. Take over only the files you truly need to own by hand.
 </Callout>
 
----
-
 ## Stable names across exports
 
 Re-exports don't churn names. The service claims component, screen, and widget names
 (plus the image references it has used) **cumulatively**, and persists those claims in the
 project's internal `.lvgl-flow/` state.
-
----
 
 ## Where to next
 
