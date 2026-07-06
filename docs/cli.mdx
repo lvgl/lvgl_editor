@@ -3,7 +3,7 @@ title: CLI
 description: Command-line interface for LVGL Pro Editor enabling CI/CD integration and automated workflows.
 ---
 
-The LVGL Editor provides a Node-based command line tool, `lved-cli.js`, for generating and compiling code from XML, validating projects, syncing from Figma, comparing trees, and running headless UI tests.
+The LVGL Editor provides a Node-based command line tool, `lved-cli.js`, for generating and compiling code from XML, validating projects, [syncing from Figma](./figma), comparing trees, and running headless UI tests.
 
 <Callout type="warn">
 Pre-release build intended for development and CI integration.
@@ -80,7 +80,7 @@ lved-cli.js compare <first-project-path> <second-project-path>
 
 ### figma-sync
 
-Synchronize project with Figma.
+Synchronize project with Figma. See [Figma Flow](./figma) for the full plugin workflow.
 
 ```bash
 lved-cli.js figma-sync <project-path> [--start-service]

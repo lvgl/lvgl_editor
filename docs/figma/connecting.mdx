@@ -3,7 +3,7 @@ title: Connecting to the Editor
 description: Start the service inside LVGL Pro Editor with one click, and the plugin connects on its own.
 ---
 
-To start the link between LVGL Pro Editor and LVGL Flow for Figma, first head to the editor and start the service.
+To start the link between [LVGL Pro Editor](../editor) and LVGL Flow for Figma, first head to the editor and start the service.
 
 ## Starting the service
 
@@ -38,35 +38,8 @@ turns green, and it shows the repo, branch, and path it's working in.
 
 <Callout type="success">
   Turn on **Start service when the IDE opens** in the panel's Settings and it's running
-  everytime the editor launches.
+  every time the editor launches.
 </Callout>
-
-## Your first export
-
-With the service running, the rest happens in the plugin:
-
-<Steps>
-
-<Step>
-**Open the plugin.** It scans your file, then lands on the main view.
-</Step>
-
-<Step>
-**Set your display size** in the Project view, the one required setting. See
-[Project settings](./project-settings).
-</Step>
-
-<Step>
-**Pick a screen and export.** In the Export view, choose **Selected Screens**; the plugin
-sends them to the service.
-</Step>
-
-<Step>
-**Find your files.** The service writes LVGL XML into your project folder. See
-[Output structure](./output-structure).
-</Step>
-
-</Steps>
 
 ## Settings and ports
 
@@ -77,7 +50,7 @@ Everything the service needs is in that panel:
 - **Start service when the IDE opens**: auto-start, so it's always ready.
 
 The service and plugin both default to the **Alpha** port preset, so they match out of the
-box, so you won't normally touch this. If a port is already in use, switch **both** ends to
+box, and you won't normally need to touch this. If a port is already in use, switch **both** ends to
 **Beta** or **Gamma**, then **Restart Service** (the service reads settings at start).
 
 More in [Troubleshooting](./troubleshooting).

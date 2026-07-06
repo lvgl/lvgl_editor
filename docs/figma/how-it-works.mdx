@@ -3,8 +3,8 @@ title: How It Works
 description: "The two-minute mental model: you design in Figma, the plugin reads your file, and the service inside LVGL Pro Editor writes real UI files to disk."
 ---
 
-You design in Figma the way you always have, and **LVGL Flow for Figma** turns that design
-into LVGL XML files a developer can open, run, and refine. You don't write code to make
+You design in Figma the way you always have, and [**LVGL Flow for Figma**](https://www.figma.com/community/plugin/1362005814860504095/lvgl-flow-for-figma) turns that design
+into [LVGL XML](../syntax/introduction) files a developer can open, run, and refine. You don't write code to make
 it happen.
 
 ## Start to finish
@@ -30,7 +30,7 @@ It's the single required setting, and exports wait until it's filled in.
 <Step>
 
 **Annotate any widgets.** For a purely visual screen you can skip this. When a layer is
-really a control or shows live data, tell the plugin so in Annotate mode. It makes a smart
+really a control or shows live data (e.g. a slider or a button), tell the plugin so in Annotate mode. It makes a smart
 guess you confirm or adjust.
 
 </Step>
@@ -61,13 +61,13 @@ LVGL Flow has two parts, and it helps to picture them side by side.
 
 - **The plugin** lives in Figma. It reads your file (your screens, components, colors,
   fonts, and spacing) and gets it ready to hand off.
-- **The service** lives inside **LVGL Pro Editor**. It receives your design and writes the
+- **The service** lives inside **[LVGL Pro Editor](../editor)**. It receives your design and writes the
   XML files into your project. You start it in the Editor with a simple click.
 
 ## What converts on its own, and what needs a nudge
 
 - **A purely visual screen exports fully with no annotation.** Frames, text, images, shapes,
-  and layout all come across on their own: your auto-layout becomes LVGL flex, your styling
+  and layout all come across on their own: your auto-layout becomes [LVGL flex](../syntax/view), your styling
   and colors and fonts convert as tokens, no extra steps.
 - **Widgets are not auto-detected.** To get a functional LVGL widget (a slider, switch,
   checkbox, dropdown, bar, or text area) or any data binding, you must **annotate** that layer
@@ -85,9 +85,9 @@ LVGL Flow reads the **structure** in your file, not just the pixels. So the more
 on Figma's building blocks, the cleaner the LVGL output.
 
 - **Variables and styles**: your colors, fonts, and spacing saved as reusable values.
-  LVGL Flow turns them into design **tokens**. [Guide to variables in Figma](https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma).
-- **Components**: elements you build once and reuse. They come across as reusable LVGL
-  components. [Guide to components in Figma](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma).
+  LVGL Flow turns them into design **tokens** saved in `globals.xml` or in the XML file of the components and screens. [Guide to variables in Figma](https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma).
+- **Components**: elements you build once and reuse. They come across as reusable [LVGL
+  components](../syntax/components). [Guide to components in Figma](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma).
 - **Variants** are the states of a component: Default, Hover, Pressed, and so on. LVGL Flow
   can fold them into a single interactive widget whose look changes with its **state**. [Create and use variants](https://help.figma.com/hc/en-us/articles/360056440594-Create-and-use-variants).
 - **Auto layout**: Figma's flex-style spacing and alignment. It maps directly onto LVGL's
