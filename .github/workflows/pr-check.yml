@@ -14,6 +14,17 @@ jobs:
       LVGL_CLI_TOKEN: ${{ secrets.LVGL_CLI_TOKEN }}
 
     steps:
+      - name: Check token
+        env:
+          LVGL_CLI_TOKEN: ${{ secrets.LVGL_CLI_TOKEN }}
+        run: |
+          if [ -z "$LVGL_CLI_TOKEN" ]; then
+            echo "LVGL_CLI_TOKEN is empty"
+            exit 1
+          else
+            echo "LVGL_CLI_TOKEN is set"
+          fi
+
       - name: Checkout current repository
         uses: actions/checkout@v4
 
