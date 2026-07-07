@@ -2,6 +2,9 @@ name: Pull Request Check
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]
+  push:
+    branches:
+      - master
 jobs:
   pr-check:
     runs-on: ubuntu-latest
@@ -23,6 +26,10 @@ jobs:
 
       - name: Unzip CLI
         run: unzip lvgl-cli.zip -d lvgl-cli
+
+     - name: Use repository secret
+        env:
+          LVGL_CLI_TOKEN: ${{ secrets.LVGL_CLI_TOKEN }}
 
       - name: Generate Code
         run: |
