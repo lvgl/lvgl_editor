@@ -104,12 +104,12 @@ lv_obj_t * alarm_create(lv_obj_t * parent)
         lv_roller_set_options(roller_1, MINS_STRING, LV_ROLLER_MODE_NORMAL);
         lv_roller_bind_value(roller_1, &alarm_min);
 
-        lv_obj_t * div_1 = div_create(card_0);
-        lv_obj_set_name(div_1, "div_1");
-        lv_obj_set_flex_flow(div_1, LV_FLEX_FLOW_COLUMN);
-        lv_obj_add_style(div_1, &settings, 0);
-        lv_obj_bind_style(div_1, &settings_dark, 0, &dark_theme, 1);
-        lv_obj_t * div_1 = div_create(div_1);
+        lv_obj_t * div_bottom = div_create(card_0);
+        lv_obj_set_name(div_bottom, "div_bottom");
+        lv_obj_set_flex_flow(div_bottom, LV_FLEX_FLOW_COLUMN);
+        lv_obj_add_style(div_bottom, &settings, 0);
+        lv_obj_bind_style(div_bottom, &settings_dark, 0, &dark_theme, 1);
+        lv_obj_t * div_1 = div_create(div_bottom);
         lv_obj_set_flex_flow(div_1, LV_FLEX_FLOW_ROW);
         lv_obj_set_style_flex_main_place(div_1, LV_FLEX_ALIGN_SPACE_BETWEEN, 0);
         lv_obj_set_style_pad_hor(div_1, 20, 0);
@@ -124,7 +124,7 @@ lv_obj_t * alarm_create(lv_obj_t * parent)
         lv_label_set_text(lv_label_2, "Seedling");
         lv_obj_set_style_text_font(lv_label_2, geist_regular_14, 0);
 
-        lv_obj_t * div_2 = div_create(div_1);
+        lv_obj_t * div_2 = div_create(div_bottom);
         lv_obj_set_flex_flow(div_2, LV_FLEX_FLOW_ROW);
         lv_obj_set_style_flex_main_place(div_2, LV_FLEX_ALIGN_SPACE_BETWEEN, 0);
         lv_obj_set_style_pad_hor(div_2, 20, 0);
@@ -261,7 +261,7 @@ static lv_anim_timeline_t * timeline_open_create(lv_obj_t * obj)
     selector_and_prop = ((LV_STYLE_OPA & 0xff) << 24) | 0;
     lv_anim_init(&a);
     lv_anim_set_custom_exec_cb(&a, int_anim_exec_cb);
-    lv_anim_set_var(&a, lv_obj_find_by_name(obj, "div_1"));
+    lv_anim_set_var(&a, lv_obj_find_by_name(obj, "div_bottom"));
     lv_anim_set_values(&a, 0, 255);
     lv_anim_set_duration(&a, 200);
     lv_anim_set_user_data(&a, (void *)((uintptr_t)selector_and_prop));
@@ -271,7 +271,7 @@ static lv_anim_timeline_t * timeline_open_create(lv_obj_t * obj)
     selector_and_prop = ((LV_STYLE_TRANSLATE_Y & 0xff) << 24) | 0;
     lv_anim_init(&a);
     lv_anim_set_custom_exec_cb(&a, int_anim_exec_cb);
-    lv_anim_set_var(&a, lv_obj_find_by_name(obj, "div_1"));
+    lv_anim_set_var(&a, lv_obj_find_by_name(obj, "div_bottom"));
     lv_anim_set_values(&a, -40, 0);
     lv_anim_set_duration(&a, 200);
     lv_anim_set_user_data(&a, (void *)((uintptr_t)selector_and_prop));

@@ -50,9 +50,17 @@
 				delay="100"
 				early_apply="true"
 			/>
-			<animation target="div_1" prop="opa" start="0" end="255" duration="200" early_apply="true" delay="100" />
 			<animation
-				target="div_1"
+				target="div_bottom"
+				prop="opa"
+				start="0"
+				end="255"
+				duration="200"
+				early_apply="true"
+				delay="100"
+			/>
+			<animation
+				target="div_bottom"
 				prop="translate_y"
 				start="-40"
 				end="0"
@@ -76,7 +84,7 @@
 			<roller name="roller_1" options="#mins_string" subject_enable="alarm_on" bind_value="alarm_min" />
 		</div>
 
-		<div name="div_1" flex_flow="column">
+		<div name="div_bottom" flex_flow="column">
 			<style name="settings" />
 			<bind_style subject="dark_theme" name="settings_dark" ref_value="1" />
 			<div flex_flow="row" style_flex_main_place="space_between" style_pad_hor="20" style_pad_ver="12">
