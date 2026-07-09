@@ -19,11 +19,11 @@
 
 	<view extends="card" style_flex_track_place="center" style_flex_cross_place="center">
 		<card_header title="Light temperature">
-			<switch bind_checked="light_temperature" />
+			<switch bind_checked="light_temp" />
 		</card_header>
 
 		<lv_arc
-			bind_value="light_temperature_temp"
+			bind_value="light_temp_temp"
 			min_value="2000"
 			max_value="10000"
 			bg_start_angle="160"
@@ -36,12 +36,12 @@
 			<style name="disabled" selector="disabled" />
 
 			<bind_style name="arc_knob_dark" subject="dark_theme" ref_value="1" selector="knob" />
-			<bind_state_if_eq subject="light_temperature" ref_value="0" state="disabled" />
+			<bind_state_if_eq subject="light_temp" ref_value="0" state="disabled" />
 
 			<column style_flex_cross_place="center" align="center" y="-10">
-				<bind_style subject="light_temperature" ref_value="0" name="disabled" />
+				<bind_style subject="light_temp" ref_value="0" name="disabled" />
 				<lv_label
-					bind_text="light_temperature_temp"
+					bind_text="light_temp_temp"
 					style_text_font="geist_semibold_28"
 					style_text_letter_space="-1"
 					bind_text-fmt="%dK"

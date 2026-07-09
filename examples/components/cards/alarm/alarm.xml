@@ -69,14 +69,14 @@
 		</card_header>
 
 		<div flex_flow="row" style_flex_main_place="space_between" style_flex_cross_place="center" scrollable="false">
-			<roller options="#hours_string" subject_enable="alarm_on" bind_value="alarm_hour" />
+			<roller name="roller_0" options="#hours_string" subject_enable="alarm_on" bind_value="alarm_hour" />
 			<lv_label text=":" style_text_font="geist_light_60">
 				<bind_style subject="alarm_on" ref_value="0" name="style_disabled" />
 			</lv_label>
-			<roller options="#mins_string" subject_enable="alarm_on" bind_value="alarm_min" />
+			<roller name="roller_1" options="#mins_string" subject_enable="alarm_on" bind_value="alarm_min" />
 		</div>
 
-		<div flex_flow="column">
+		<div name="div_1" flex_flow="column">
 			<style name="settings" />
 			<bind_style subject="dark_theme" name="settings_dark" ref_value="1" />
 			<div flex_flow="row" style_flex_main_place="space_between" style_pad_hor="20" style_pad_ver="12">
