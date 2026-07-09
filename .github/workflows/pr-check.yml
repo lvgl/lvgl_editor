@@ -48,7 +48,7 @@ jobs:
 
       - name: Compile Code
         run: |
-          node ./lvgl-cli/lved-cli.js compile examples --target cli
+          node ./lvgl-cli/lved-cli.js compile examples --target node
 
       - name: Run tests
         run: |
